@@ -1,0 +1,610 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		034EF8852423D99200741711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8842423D99200741711 /* AppDelegate.swift */; };
+		034EF8872423D99200741711 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8862423D99200741711 /* SceneDelegate.swift */; };
+		034EF88A2423D99200741711 /* zeitgeist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8882423D99200741711 /* zeitgeist.xcdatamodeld */; };
+		034EF88C2423D99200741711 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF88B2423D99200741711 /* ContentView.swift */; };
+		034EF88E2423D99300741711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 034EF88D2423D99300741711 /* Assets.xcassets */; };
+		034EF8912423D99300741711 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 034EF8902423D99300741711 /* Preview Assets.xcassets */; };
+		034EF8942423D99300741711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034EF8922423D99300741711 /* LaunchScreen.storyboard */; };
+		034EF89F2423D99400741711 /* zeitgeistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF89E2423D99400741711 /* zeitgeistTests.swift */; };
+		034EF8AA2423D99400741711 /* zeitgeistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8A92423D99400741711 /* zeitgeistUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		034EF89B2423D99400741711 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 034EF8792423D99200741711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 034EF8802423D99200741711;
+			remoteInfo = zeitgeist;
+		};
+		034EF8A62423D99400741711 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 034EF8792423D99200741711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 034EF8802423D99200741711;
+			remoteInfo = zeitgeist;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		034EF8812423D99200741711 /* zeitgeist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zeitgeist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		034EF8842423D99200741711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		034EF8862423D99200741711 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		034EF8892423D99200741711 /* zeitgeist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = zeitgeist.xcdatamodel; sourceTree = "<group>"; };
+		034EF88B2423D99200741711 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		034EF88D2423D99300741711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		034EF8902423D99300741711 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		034EF8932423D99300741711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		034EF8952423D99300741711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		034EF89A2423D99400741711 /* zeitgeistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zeitgeistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		034EF89E2423D99400741711 /* zeitgeistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zeitgeistTests.swift; sourceTree = "<group>"; };
+		034EF8A02423D99400741711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		034EF8A52423D99400741711 /* zeitgeistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zeitgeistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		034EF8A92423D99400741711 /* zeitgeistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zeitgeistUITests.swift; sourceTree = "<group>"; };
+		034EF8AB2423D99400741711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		034EF87E2423D99200741711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		034EF8972423D99400741711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		034EF8A22423D99400741711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034EF8782423D99200741711 = {
+			isa = PBXGroup;
+			children = (
+				034EF8832423D99200741711 /* zeitgeist */,
+				034EF89D2423D99400741711 /* zeitgeistTests */,
+				034EF8A82423D99400741711 /* zeitgeistUITests */,
+				034EF8822423D99200741711 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		034EF8822423D99200741711 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				034EF8812423D99200741711 /* zeitgeist.app */,
+				034EF89A2423D99400741711 /* zeitgeistTests.xctest */,
+				034EF8A52423D99400741711 /* zeitgeistUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		034EF8832423D99200741711 /* zeitgeist */ = {
+			isa = PBXGroup;
+			children = (
+				034EF8842423D99200741711 /* AppDelegate.swift */,
+				034EF8862423D99200741711 /* SceneDelegate.swift */,
+				034EF88B2423D99200741711 /* ContentView.swift */,
+				034EF88D2423D99300741711 /* Assets.xcassets */,
+				034EF8922423D99300741711 /* LaunchScreen.storyboard */,
+				034EF8952423D99300741711 /* Info.plist */,
+				034EF8882423D99200741711 /* zeitgeist.xcdatamodeld */,
+				034EF88F2423D99300741711 /* Preview Content */,
+			);
+			path = zeitgeist;
+			sourceTree = "<group>";
+		};
+		034EF88F2423D99300741711 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				034EF8902423D99300741711 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		034EF89D2423D99400741711 /* zeitgeistTests */ = {
+			isa = PBXGroup;
+			children = (
+				034EF89E2423D99400741711 /* zeitgeistTests.swift */,
+				034EF8A02423D99400741711 /* Info.plist */,
+			);
+			path = zeitgeistTests;
+			sourceTree = "<group>";
+		};
+		034EF8A82423D99400741711 /* zeitgeistUITests */ = {
+			isa = PBXGroup;
+			children = (
+				034EF8A92423D99400741711 /* zeitgeistUITests.swift */,
+				034EF8AB2423D99400741711 /* Info.plist */,
+			);
+			path = zeitgeistUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		034EF8802423D99200741711 /* zeitgeist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 034EF8AE2423D99400741711 /* Build configuration list for PBXNativeTarget "zeitgeist" */;
+			buildPhases = (
+				034EF87D2423D99200741711 /* Sources */,
+				034EF87E2423D99200741711 /* Frameworks */,
+				034EF87F2423D99200741711 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = zeitgeist;
+			productName = zeitgeist;
+			productReference = 034EF8812423D99200741711 /* zeitgeist.app */;
+			productType = "com.apple.product-type.application";
+		};
+		034EF8992423D99400741711 /* zeitgeistTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 034EF8B12423D99400741711 /* Build configuration list for PBXNativeTarget "zeitgeistTests" */;
+			buildPhases = (
+				034EF8962423D99400741711 /* Sources */,
+				034EF8972423D99400741711 /* Frameworks */,
+				034EF8982423D99400741711 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				034EF89C2423D99400741711 /* PBXTargetDependency */,
+			);
+			name = zeitgeistTests;
+			productName = zeitgeistTests;
+			productReference = 034EF89A2423D99400741711 /* zeitgeistTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		034EF8A42423D99400741711 /* zeitgeistUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 034EF8B42423D99400741711 /* Build configuration list for PBXNativeTarget "zeitgeistUITests" */;
+			buildPhases = (
+				034EF8A12423D99400741711 /* Sources */,
+				034EF8A22423D99400741711 /* Frameworks */,
+				034EF8A32423D99400741711 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				034EF8A72423D99400741711 /* PBXTargetDependency */,
+			);
+			name = zeitgeistUITests;
+			productName = zeitgeistUITests;
+			productReference = 034EF8A52423D99400741711 /* zeitgeistUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		034EF8792423D99200741711 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Z Team";
+				TargetAttributes = {
+					034EF8802423D99200741711 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					034EF8992423D99400741711 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 034EF8802423D99200741711;
+					};
+					034EF8A42423D99400741711 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 034EF8802423D99200741711;
+					};
+				};
+			};
+			buildConfigurationList = 034EF87C2423D99200741711 /* Build configuration list for PBXProject "zeitgeist" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 034EF8782423D99200741711;
+			productRefGroup = 034EF8822423D99200741711 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				034EF8802423D99200741711 /* zeitgeist */,
+				034EF8992423D99400741711 /* zeitgeistTests */,
+				034EF8A42423D99400741711 /* zeitgeistUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		034EF87F2423D99200741711 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034EF8942423D99300741711 /* LaunchScreen.storyboard in Resources */,
+				034EF8912423D99300741711 /* Preview Assets.xcassets in Resources */,
+				034EF88E2423D99300741711 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		034EF8982423D99400741711 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		034EF8A32423D99400741711 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		034EF87D2423D99200741711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034EF8852423D99200741711 /* AppDelegate.swift in Sources */,
+				034EF8872423D99200741711 /* SceneDelegate.swift in Sources */,
+				034EF88C2423D99200741711 /* ContentView.swift in Sources */,
+				034EF88A2423D99200741711 /* zeitgeist.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		034EF8962423D99400741711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034EF89F2423D99400741711 /* zeitgeistTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		034EF8A12423D99400741711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034EF8AA2423D99400741711 /* zeitgeistUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		034EF89C2423D99400741711 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 034EF8802423D99200741711 /* zeitgeist */;
+			targetProxy = 034EF89B2423D99400741711 /* PBXContainerItemProxy */;
+		};
+		034EF8A72423D99400741711 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 034EF8802423D99200741711 /* zeitgeist */;
+			targetProxy = 034EF8A62423D99400741711 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		034EF8922423D99300741711 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				034EF8932423D99300741711 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		034EF8AC2423D99400741711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		034EF8AD2423D99400741711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		034EF8AF2423D99400741711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"zeitgeist/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = zeitgeist/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zteam.zeitgeist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		034EF8B02423D99400741711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"zeitgeist/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = zeitgeist/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zteam.zeitgeist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		034EF8B22423D99400741711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = zeitgeistTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zteam.zeitgeistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zeitgeist.app/zeitgeist";
+			};
+			name = Debug;
+		};
+		034EF8B32423D99400741711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = zeitgeistTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zteam.zeitgeistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zeitgeist.app/zeitgeist";
+			};
+			name = Release;
+		};
+		034EF8B52423D99400741711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = zeitgeistUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zteam.zeitgeistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = zeitgeist;
+			};
+			name = Debug;
+		};
+		034EF8B62423D99400741711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = zeitgeistUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zteam.zeitgeistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = zeitgeist;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		034EF87C2423D99200741711 /* Build configuration list for PBXProject "zeitgeist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034EF8AC2423D99400741711 /* Debug */,
+				034EF8AD2423D99400741711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		034EF8AE2423D99400741711 /* Build configuration list for PBXNativeTarget "zeitgeist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034EF8AF2423D99400741711 /* Debug */,
+				034EF8B02423D99400741711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		034EF8B12423D99400741711 /* Build configuration list for PBXNativeTarget "zeitgeistTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034EF8B22423D99400741711 /* Debug */,
+				034EF8B32423D99400741711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		034EF8B42423D99400741711 /* Build configuration list for PBXNativeTarget "zeitgeistUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034EF8B52423D99400741711 /* Debug */,
+				034EF8B62423D99400741711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		034EF8882423D99200741711 /* zeitgeist.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				034EF8892423D99200741711 /* zeitgeist.xcdatamodel */,
+			);
+			currentVersion = 034EF8892423D99200741711 /* zeitgeist.xcdatamodel */;
+			path = zeitgeist.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 034EF8792423D99200741711 /* Project object */;
+}
