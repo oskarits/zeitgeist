@@ -9,9 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
+let notif = Notificator()
+    
     var body: some View {
-        Text("Hello, World!")
     }
+
+
 }
 
 struct ContentView_Previews: PreviewProvider {
