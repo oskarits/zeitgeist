@@ -12,11 +12,9 @@ struct ContentView: View {
 let notif = Notificator()
     
     var body: some View {
-    }
-
-
+        NavigationView()
 }
-
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
