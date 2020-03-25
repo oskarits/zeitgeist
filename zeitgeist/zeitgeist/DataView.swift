@@ -14,7 +14,7 @@ struct DataView: View {
     @ObservedObject var networkingManager = NetworkingManager()
     
     var body: some View {
-        NavigationView() {
+        NavigationView {
             List(networkingManager.clothingList.items) { item in
                 // Makes list item clickable and opens in own view
                 NavigationLink(destination: VStack {
@@ -26,15 +26,15 @@ struct DataView: View {
                         .foregroundColor(Color.orange)
                 }) {
                 // List items
-                VStack(alignment: .leading) {
-                    Text(item.brand)
-                    Text(item.size)
-                        .font(.system(size: 11))
-                        .foregroundColor(Color.gray)
-                    Text("\(item.price) €")
-                        .font(.system(size: 11))
-                        .foregroundColor(Color.orange)
-                }.padding()
+                    VStack(alignment: .leading) {
+                        Text(item.brand)
+                        Text(item.size)
+                            .font(.system(size: 11))
+                            .foregroundColor(Color.gray)
+                        Text("\(item.price) €")
+                            .font(.system(size: 11))
+                            .foregroundColor(Color.orange)
+                    }.padding()
                 }
             }
         }

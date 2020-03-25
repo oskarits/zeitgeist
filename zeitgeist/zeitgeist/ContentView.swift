@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
 
-        NavigationView()
+        NavigationBarView()
     }
 }
 struct ContentView_Previews: PreviewProvider {
