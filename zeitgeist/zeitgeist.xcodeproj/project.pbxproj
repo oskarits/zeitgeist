@@ -16,9 +16,27 @@
 		034EF8942423D99300741711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034EF8922423D99300741711 /* LaunchScreen.storyboard */; };
 		034EF89F2423D99400741711 /* zeitgeistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF89E2423D99400741711 /* zeitgeistTests.swift */; };
 		034EF8AA2423D99400741711 /* zeitgeistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8A92423D99400741711 /* zeitgeistUITests.swift */; };
+
+
 		A737CD59242B4FED00A58238 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A737CD58242B4FED00A58238 /* DataView.swift */; };
 		A737CD5B242B5B6200A58238 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A737CD5A242B5B6200A58238 /* NetworkingManager.swift */; };
 		A7AECD74242908BA005307B3 /* SingleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AECD73242908BA005307B3 /* SingleResult.swift */; };
+
+
+		035C56AE2429369800139C8E /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56AD2429369800139C8E /* NavigationView.swift */; };
+		035C56AF2429369800139C8E /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56AD2429369800139C8E /* NavigationView.swift */; };
+		035C56B02429369800139C8E /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56AD2429369800139C8E /* NavigationView.swift */; };
+		035C56B22429376E00139C8E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56B12429376E00139C8E /* HomeView.swift */; };
+		035C56B32429376E00139C8E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56B12429376E00139C8E /* HomeView.swift */; };
+		035C56B42429376E00139C8E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56B12429376E00139C8E /* HomeView.swift */; };
+		035C56B6242937A900139C8E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56B5242937A900139C8E /* SearchView.swift */; };
+		035C56B7242937A900139C8E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56B5242937A900139C8E /* SearchView.swift */; };
+		035C56B8242937A900139C8E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56B5242937A900139C8E /* SearchView.swift */; };
+		035C56BA242937C700139C8E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56B9242937C700139C8E /* ProfileView.swift */; };
+		035C56BB242937C700139C8E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56B9242937C700139C8E /* ProfileView.swift */; };
+		035C56BC242937C700139C8E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56B9242937C700139C8E /* ProfileView.swift */; };
+
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +72,19 @@
 		034EF8A52423D99400741711 /* zeitgeistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zeitgeistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EF8A92423D99400741711 /* zeitgeistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zeitgeistUITests.swift; sourceTree = "<group>"; };
 		034EF8AB2423D99400741711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+
+
 		A737CD58242B4FED00A58238 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		A737CD5A242B5B6200A58238 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		A7AECD73242908BA005307B3 /* SingleResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleResult.swift; sourceTree = "<group>"; };
+
+
+		035C56AD2429369800139C8E /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		035C56B12429376E00139C8E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		035C56B5242937A900139C8E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		035C56B9242937C700139C8E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +138,16 @@
 				034EF8842423D99200741711 /* AppDelegate.swift */,
 				034EF8862423D99200741711 /* SceneDelegate.swift */,
 				034EF88B2423D99200741711 /* ContentView.swift */,
+
 				A737CD58242B4FED00A58238 /* DataView.swift */,
 				A737CD5A242B5B6200A58238 /* NetworkingManager.swift */,
 				A7AECD73242908BA005307B3 /* SingleResult.swift */,
+
+				035C56B12429376E00139C8E /* HomeView.swift */,
+				035C56B5242937A900139C8E /* SearchView.swift */,
+				035C56B9242937C700139C8E /* ProfileView.swift */,
+				035C56AD2429369800139C8E /* NavigationView.swift */,
+
 				034EF88D2423D99300741711 /* Assets.xcassets */,
 				034EF8922423D99300741711 /* LaunchScreen.storyboard */,
 				034EF8952423D99300741711 /* Info.plist */,
@@ -279,11 +314,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				A7AECD74242908BA005307B3 /* SingleResult.swift in Sources */,
 				034EF8852423D99200741711 /* AppDelegate.swift in Sources */,
 				034EF8872423D99200741711 /* SceneDelegate.swift in Sources */,
 				A737CD59242B4FED00A58238 /* DataView.swift in Sources */,
 				A737CD5B242B5B6200A58238 /* NetworkingManager.swift in Sources */,
+
+				035C56BA242937C700139C8E /* ProfileView.swift in Sources */,
+				034EF8852423D99200741711 /* AppDelegate.swift in Sources */,
+				034EF8872423D99200741711 /* SceneDelegate.swift in Sources */,
+				035C56AE2429369800139C8E /* NavigationView.swift in Sources */,
+				035C56B6242937A900139C8E /* SearchView.swift in Sources */,
+				035C56B22429376E00139C8E /* HomeView.swift in Sources */,
+
 				034EF88C2423D99200741711 /* ContentView.swift in Sources */,
 				034EF88A2423D99200741711 /* zeitgeist.xcdatamodeld in Sources */,
 			);
@@ -293,6 +337,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035C56B7242937A900139C8E /* SearchView.swift in Sources */,
+				035C56B32429376E00139C8E /* HomeView.swift in Sources */,
+				035C56BB242937C700139C8E /* ProfileView.swift in Sources */,
+				035C56AF2429369800139C8E /* NavigationView.swift in Sources */,
 				034EF89F2423D99400741711 /* zeitgeistTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +349,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035C56B8242937A900139C8E /* SearchView.swift in Sources */,
+				035C56B42429376E00139C8E /* HomeView.swift in Sources */,
+				035C56BC242937C700139C8E /* ProfileView.swift in Sources */,
+				035C56B02429369800139C8E /* NavigationView.swift in Sources */,
 				034EF8AA2423D99400741711 /* zeitgeistUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +506,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"zeitgeist/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = zeitgeist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,6 +526,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"zeitgeist/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = zeitgeist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
