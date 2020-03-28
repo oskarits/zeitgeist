@@ -24,7 +24,7 @@ struct NavigationBarView: View {
              .tabItem {
                 Image(systemName: "house").font(Font.system(size: 30, weight: .regular))
             }
-           SearchView()
+           Search()
              .tabItem {
                 Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
                 }
