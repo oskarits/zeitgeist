@@ -30,7 +30,7 @@ class NetworkingManager: ObservableObject {
                     print("No Data")
                 }
             } catch {
-                print ("Error")
+                print("Error")
             }
             
         }.resume()
