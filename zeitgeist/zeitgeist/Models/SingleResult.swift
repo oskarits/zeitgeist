@@ -20,5 +20,6 @@ struct ClothingListEntry: Decodable, Identifiable {
     var size: String
     var condition: String
     var price: String
+    var description: String
 }
 
