@@ -36,3 +36,33 @@ class NetworkingManager: ObservableObject {
         }.resume()
     }
 }
+
+
+struct ClothingList: Decodable {
+    var items: [ClothingListEntry]
+}
+
+struct ClothingListEntry: Decodable, Identifiable {
+    var id = UUID()
+    var brand: String
+    var size: String
+    var condition: String
+    var price: String
+}
+
+//struct Clothing: Decodable, Hashable ,Identifiable {
+//    var id: Int
+//    var brand: String
+//    var size: String
+//    var condition: String
+//    var price: String
+//}
+//
+//struct ClothingFeed: Decodable {
+//    var results: [Clothing]
+//}
+//
+//struct ClothingResult: Decodable {
+//    var feed: ClothingFeed
+//}
+//
