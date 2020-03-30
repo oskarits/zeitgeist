@@ -11,10 +11,7 @@ import SwiftUI
 struct SearchView: View {
     @ObservedObject var networkingManager = NetworkingManager()
     @State private var searchText : String = ""
-    var notifier = Notificator()
-    init() {
-        self.notifier.PermissionRequest()
-    }
+    var notification = Notification()
     
     var body: some View {
         VStack {
