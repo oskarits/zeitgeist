@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
-        if response.actionIdentifier == "open" {
+        if response.actionIdentifier != "cancel" {
             NotificationCenter.default.post(name: NSNotification.Name("Detail"), object: nil)
         }
     }

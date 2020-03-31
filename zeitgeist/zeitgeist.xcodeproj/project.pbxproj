@@ -28,6 +28,11 @@
 		035C56BA242937C700139C8E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56B9242937C700139C8E /* ProfileView.swift */; };
 		035C56BB242937C700139C8E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56B9242937C700139C8E /* ProfileView.swift */; };
 		035C56BC242937C700139C8E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56B9242937C700139C8E /* ProfileView.swift */; };
+		0364AE84243279DE005AB2A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF88B2423D99200741711 /* ContentView.swift */; };
+		0398157924328FCD00C168D8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398157824328FCD00C168D8 /* SearchBar.swift */; };
+		0398157A24328FCD00C168D8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398157824328FCD00C168D8 /* SearchBar.swift */; };
+		039815822432C70700C168D8 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039815812432C70700C168D8 /* HideKeyboard.swift */; };
+		039815832432C70700C168D8 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039815812432C70700C168D8 /* HideKeyboard.swift */; };
 		03A2DD212431742D007A1387 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2DD202431742D007A1387 /* Notification.swift */; };
 		03A2DD222431742D007A1387 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2DD202431742D007A1387 /* Notification.swift */; };
 		03F1DF9724311A8100BD9E19 /* SingleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DF9624311A8100BD9E19 /* SingleResult.swift */; };
@@ -85,6 +90,8 @@
 		035C56B12429376E00139C8E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		035C56B5242937A900139C8E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		035C56B9242937C700139C8E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		0398157824328FCD00C168D8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		039815812432C70700C168D8 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		03A2DD202431742D007A1387 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		03F1DF9624311A8100BD9E19 /* SingleResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleResult.swift; sourceTree = "<group>"; };
 		03F1DF9924311ABD00BD9E19 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
@@ -153,6 +160,8 @@
 				03F1DFAE24311D0100BD9E19 /* DataView.swift */,
 				03A2DD202431742D007A1387 /* Notification.swift */,
 				035C56B12429376E00139C8E /* HomeView.swift */,
+				039815812432C70700C168D8 /* HideKeyboard.swift */,
+				0398157824328FCD00C168D8 /* SearchBar.swift */,
 				035C56B5242937A900139C8E /* SearchView.swift */,
 				035C56B9242937C700139C8E /* ProfileView.swift */,
 				035C56AD2429369800139C8E /* NavigationBarView.swift */,
@@ -350,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039815822432C70700C168D8 /* HideKeyboard.swift in Sources */,
 				03F1DFAF24311D0100BD9E19 /* DataView.swift in Sources */,
 				03F1DF9D24311AD900BD9E19 /* Course.swift in Sources */,
 				034EF8852423D99200741711 /* AppDelegate.swift in Sources */,
@@ -367,6 +377,7 @@
 				03F1DFA924311CA600BD9E19 /* ImageLoader.swift in Sources */,
 				03A2DD212431742D007A1387 /* Notification.swift in Sources */,
 				03F1DF9A24311ABD00BD9E19 /* NetworkingManager.swift in Sources */,
+				0398157924328FCD00C168D8 /* SearchBar.swift in Sources */,
 				034EF88C2423D99200741711 /* ContentView.swift in Sources */,
 				034EF88A2423D99200741711 /* zeitgeist.xcdatamodeld in Sources */,
 			);
@@ -378,8 +389,10 @@
 			files = (
 				03F1DFA724311BD000BD9E19 /* CampaignView.swift in Sources */,
 				03F1DF9E24311AD900BD9E19 /* Course.swift in Sources */,
+				0364AE84243279DE005AB2A4 /* ContentView.swift in Sources */,
 				035C56B7242937A900139C8E /* SearchView.swift in Sources */,
 				035C56B32429376E00139C8E /* HomeView.swift in Sources */,
+				039815832432C70700C168D8 /* HideKeyboard.swift in Sources */,
 				03F1DFA124311AFD00BD9E19 /* CampaingNetworkManager.swift in Sources */,
 				03F1DFA424311BAC00BD9E19 /* ImageViewComponent.swift in Sources */,
 				035C56BB242937C700139C8E /* ProfileView.swift in Sources */,
@@ -389,6 +402,7 @@
 				03A2DD222431742D007A1387 /* Notification.swift in Sources */,
 				03F1DF9824311A8100BD9E19 /* SingleResult.swift in Sources */,
 				034EF89F2423D99400741711 /* zeitgeistTests.swift in Sources */,
+				0398157A24328FCD00C168D8 /* SearchBar.swift in Sources */,
 				03F1DFAA24311CA600BD9E19 /* ImageLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,7 +656,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zteam.zeitgeistUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = zeitgeist;
 			};
 			name = Debug;
@@ -661,7 +675,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zteam.zeitgeistUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = zeitgeist;
 			};
 			name = Release;
