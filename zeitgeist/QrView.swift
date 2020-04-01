@@ -1,5 +1,5 @@
 //
-//  QRCodeScan.swift
+//  QrView.Swift
 //  zeitgeist
 //
 //  Created by Otto Söderlund on 1.4.2020.

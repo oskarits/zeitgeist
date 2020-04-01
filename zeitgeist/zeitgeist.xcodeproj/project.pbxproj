@@ -53,7 +53,7 @@
 		03F1DFAF24311D0100BD9E19 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFAE24311D0100BD9E19 /* DataView.swift */; };
 		03F1DFB024311D0100BD9E19 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFAE24311D0100BD9E19 /* DataView.swift */; };
 		6CDBE6392434ABF1007B7CC5 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBE6382434ABF1007B7CC5 /* ScannerViewController.swift */; };
-		6CDBE63B2434B03B007B7CC5 /* QRCodeScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBE63A2434B03B007B7CC5 /* QRCodeScan.swift */; };
+		6CF46C2A2434E82B001EC855 /* QrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF46C292434E82B001EC855 /* QrView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +106,7 @@
 		03F1DFA824311CA600BD9E19 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		03F1DFAE24311D0100BD9E19 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		6CDBE6382434ABF1007B7CC5 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
-		6CDBE63A2434B03B007B7CC5 /* QRCodeScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScan.swift; sourceTree = "<group>"; };
+		6CF46C292434E82B001EC855 /* QrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QrView.swift; path = ../QrView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,8 +170,8 @@
 				0398157824328FCD00C168D8 /* SearchBar.swift */,
 				035C56B5242937A900139C8E /* SearchView.swift */,
 				035C56B9242937C700139C8E /* ProfileView.swift */,
+				6CF46C292434E82B001EC855 /* QrView.swift */,
 				035C56AD2429369800139C8E /* NavigationBarView.swift */,
-				6CDBE63A2434B03B007B7CC5 /* QRCodeScan.swift */,
 				6CDBE6382434ABF1007B7CC5 /* ScannerViewController.swift */,
 				034EF88D2423D99300741711 /* Assets.xcassets */,
 				034EF8922423D99300741711 /* LaunchScreen.storyboard */,
@@ -379,6 +379,7 @@
 				034EF8872423D99200741711 /* SceneDelegate.swift in Sources */,
 				035C56AE2429369800139C8E /* NavigationBarView.swift in Sources */,
 				03F1DFA024311AFD00BD9E19 /* CampaingNetworkManager.swift in Sources */,
+				6CF46C2A2434E82B001EC855 /* QrView.swift in Sources */,
 				035C56B6242937A900139C8E /* SearchView.swift in Sources */,
 				03F1DFA624311BD000BD9E19 /* CampaignView.swift in Sources */,
 				03F1DF9724311A8100BD9E19 /* SingleResult.swift in Sources */,
@@ -389,7 +390,6 @@
 				03F1DF9A24311ABD00BD9E19 /* NetworkingManager.swift in Sources */,
 				0398157924328FCD00C168D8 /* SearchBar.swift in Sources */,
 				034EF88C2423D99200741711 /* ContentView.swift in Sources */,
-				6CDBE63B2434B03B007B7CC5 /* QRCodeScan.swift in Sources */,
 				034EF88A2423D99200741711 /* zeitgeist.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,7 +32,7 @@ struct NavigationBarView: View {
                .tabItem {
                 Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
                 }
-            QRCodeScan()
+            QrView()
                 .tabItem {
                     Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
             }
