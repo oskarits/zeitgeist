@@ -16,6 +16,7 @@ struct SearchView: View {
     @State private var show = false
     @State private var selectedItem : String = ""
     @State private var shoppingCartTitleText : String = "Shopping cart"
+    @State private var shoppingList: [(key: String, value: String)] = [:].sorted{$0.value < $1.value}
     
     var shoppingCart: some View {
         NavigationView {
@@ -36,20 +37,30 @@ struct SearchView: View {
                                 .font(Font.system(size: 30, weight: .regular))
                         }.padding(20)
                     }
-                    List{
-                        
-                        if itemCart != nil {
-                            ForEach(itemCart, id: \.self) { item in
-                                VStack {
-                                    HStack {
-                                        Text(item)
-                                        Spacer()
-                                        Button(action: {
-                                            self.itemCart = self.itemCart.filter{$0 != item}
-                                            
-                                        }) {
-                                            Image(systemName: "cart.fill.badge.minus")
-                                            .font(Font.system(size: 20, weight: .regular))
+                            List {
+                                ForEach(shoppingList, id: \.0) { index, item in
+                                    
+                                    VStack {
+                                        HStack {
+                                            VStack {
+                                                Text(index)
+                                                Text(item.description)
+                                            }
+                                            Spacer()
+                                            Button(action: {
+                                                if self.shoppingList.count > 0 {
+                                                    //if let indx = shoppingList.in
+                                                    let indx = self.shoppingList.firstIndex(where: {$0.key == index})
+                                                    print(indx ?? "nothing")
+                                                    if indx != nil {
+                                                        self.shoppingList.remove(at: indx ?? 0)
+                                                    }
+                                                }
+                                                
+                                            }) {
+                                                Image(systemName: "cart.fill.badge.minus")
+                                                    .font(Font.system(size: 20, weight: .regular))
+                                            }
                                         }
                                     }
                                 }
@@ -58,9 +69,7 @@ struct SearchView: View {
                     }
                 }
             }
-        }
-    }
-    
+
     var searchNavigation: some View {
         ForEach(networkingManager.clothingList.items) { item in
             if (self.searchText.isEmpty) {
@@ -91,7 +100,11 @@ struct SearchView: View {
                             Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
                                 self.itemCart.append(item.brand)
                                 self.show.toggle()
-                                print("item added")
+                                //self.shoppingList.append((key: item.brand, value: String(item.created)))
+                                self.shoppingList.insert((key: item.brand, value: String(item.created)), at: self.shoppingList.count)
+                                //--------------------
+                                print("item \(item.brand) added")
+                                print("\(item.id)")
                                 self.selectedItem = item.brand
                             }
                         }
@@ -169,21 +182,4 @@ struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView()
     }
-}
-
-
-/*
- "cart.fill"
- "cart.fill.badge.plus"
- "cart.fill.badge.minus"
- */
-
-   extension Array where Element: Equatable {
-
-    // Remove first collection element that is equal to the given `object`:
-    mutating func remove(object: Element) {
-        guard let index = firstIndex(of: object) else {return}
-        remove(at: index)
-    }
-
 }
