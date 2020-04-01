@@ -15,20 +15,27 @@ struct HomeView: View {
     
     var body: some View {
         
-       NavigationView {
-        VStack(alignment: .center) {
-            HStack {
-                Text("Share your")
-                Text("wardrobe").foregroundColor(Color.orange)
+        VStack {
+            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                Text("SCAN")
+                    .foregroundColor(Color.red)
             }
-            Image("qrCode")
-                .resizable()
-                .frame(width: 200, height: 200)
-            List(networkManager.courses) { course in
-                CampaignView(course: course)
-           }
+            Image("turtlerock")
+            NavigationView {
+            VStack(alignment: .center) {
+                HStack {
+                    Text("Share your")
+                    Text("wardrobe").foregroundColor(Color.orange)
+                }
+                Image("qrCode")
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                List(networkManager.courses) { course in
+                    CampaignView(course: course)
+               }
+            }
+            }
         }
-       }
         
 
     }
