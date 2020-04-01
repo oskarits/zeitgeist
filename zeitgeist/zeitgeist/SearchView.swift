@@ -37,17 +37,23 @@ struct SearchView: View {
                                 .font(Font.system(size: 30, weight: .regular))
                         }.padding(20)
                     }
-                            List {
-                                ForEach(shoppingList, id: \.0) { index, item in
-                                    
-                                    VStack {
-                                        HStack {
-                                            VStack {
-                                                Text(index)
-                                                Text(item.description)
-                                            }
-                                            Spacer()
-                                            Button(action: {
+                    List {
+                        ForEach(shoppingList, id: \.0) { index, item in
+                            NavigationLink(
+                                destination:
+                                VStack {
+                                    Text(index)
+                                    Text(item.description)
+                            }) {
+                                VStack {
+                                    HStack {
+                                        VStack {
+                                            Text(index)
+                                            Text(item.description)
+                                        }
+                                        Spacer()
+                                        Image(systemName: "cart.fill.badge.minus")
+                                            .font(Font.system(size: 20, weight: .regular)).onTapGesture {
                                                 if self.shoppingList.count > 0 {
                                                     //if let indx = shoppingList.in
                                                     let indx = self.shoppingList.firstIndex(where: {$0.key == index})
@@ -56,11 +62,6 @@ struct SearchView: View {
                                                         self.shoppingList.remove(at: indx ?? 0)
                                                     }
                                                 }
-                                                
-                                            }) {
-                                                Image(systemName: "cart.fill.badge.minus")
-                                                    .font(Font.system(size: 20, weight: .regular))
-                                            }
                                         }
                                     }
                                 }
@@ -69,7 +70,9 @@ struct SearchView: View {
                     }
                 }
             }
-
+        }
+    }
+    
     var searchNavigation: some View {
         ForEach(networkingManager.clothingList.items) { item in
             if (self.searchText.isEmpty) {
