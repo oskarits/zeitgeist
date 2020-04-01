@@ -16,6 +16,9 @@ struct SearchView: View {
         VStack(alignment: .leading) {
             NavigationView{
                 VStack {
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
+                    }
                     SearchBar(text: $searchText, placeholder: "Search items")
                     List {
                         ForEach(networkingManager.clothingList.items) { item in
