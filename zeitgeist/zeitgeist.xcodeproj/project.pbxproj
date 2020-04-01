@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0319474F2434B00E003F021E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319474E2434B00E003F021E /* Toast.swift */; };
+		031947502434B00E003F021E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319474E2434B00E003F021E /* Toast.swift */; };
 		034EF8852423D99200741711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8842423D99200741711 /* AppDelegate.swift */; };
 		034EF8872423D99200741711 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8862423D99200741711 /* SceneDelegate.swift */; };
 		034EF88A2423D99200741711 /* zeitgeist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8882423D99200741711 /* zeitgeist.xcdatamodeld */; };
@@ -72,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0319474E2434B00E003F021E /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		034EF8812423D99200741711 /* zeitgeist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zeitgeist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EF8842423D99200741711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		034EF8862423D99200741711 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +164,7 @@
 				034EF88B2423D99200741711 /* ContentView.swift */,
 				03F1DFAE24311D0100BD9E19 /* DataView.swift */,
 				03A2DD202431742D007A1387 /* Notification.swift */,
+				0319474E2434B00E003F021E /* Toast.swift */,
 				035C56B12429376E00139C8E /* HomeView.swift */,
 				039815812432C70700C168D8 /* HideKeyboard.swift */,
 				0398157824328FCD00C168D8 /* SearchBar.swift */,
@@ -381,6 +385,7 @@
 				03A2DD212431742D007A1387 /* Notification.swift in Sources */,
 				03F1DF9A24311ABD00BD9E19 /* NetworkingManager.swift in Sources */,
 				0398157924328FCD00C168D8 /* SearchBar.swift in Sources */,
+				0319474F2434B00E003F021E /* Toast.swift in Sources */,
 				034EF88C2423D99200741711 /* ContentView.swift in Sources */,
 				034EF88A2423D99200741711 /* zeitgeist.xcdatamodeld in Sources */,
 			);
@@ -393,6 +398,7 @@
 				03F1DFA724311BD000BD9E19 /* CampaignView.swift in Sources */,
 				03F1DF9E24311AD900BD9E19 /* Course.swift in Sources */,
 				0364AE84243279DE005AB2A4 /* ContentView.swift in Sources */,
+				031947502434B00E003F021E /* Toast.swift in Sources */,
 				035C56B7242937A900139C8E /* SearchView.swift in Sources */,
 				0363CA1E2433428500876BDD /* ViewNotNilTests.swift in Sources */,
 				035C56B32429376E00139C8E /* HomeView.swift in Sources */,
