@@ -32,6 +32,7 @@ struct SearchView: View {
                         Spacer()
                         Button(action: {
                             self.showPopover.toggle()
+                            UIApplication.shared.endEditing(true)
                         }) {
                             Image(systemName: "return")
                                 .font(Font.system(size: 30, weight: .regular))
@@ -170,6 +171,7 @@ struct SearchView: View {
                     .navigationBarItems( trailing:
                         Button(action: {
                             self.showPopover.toggle()
+                            UIApplication.shared.endEditing(true)
                         }) {
                             Image(systemName: "cart.fill")
                                 .font(Font.system(size: 30, weight: .regular))
