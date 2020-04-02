@@ -12,6 +12,15 @@ struct ListItem: View {
     var item : ClothingListEntry
     
     var body: some View {
-        Text(item.brand)
+        
+        VStack(alignment: .leading) {
+            Text(item.brand)
+            Text(item.size)
+                .font(.system(size: 11))
+                .foregroundColor(Color.gray)
+            Text("\(item.price) €")
+                .font(.system(size: 11))
+                .foregroundColor(Color.orange)
+        }
     }
 }

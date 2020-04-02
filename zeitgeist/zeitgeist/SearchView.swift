@@ -90,15 +90,7 @@ struct SearchView: View {
                 }) {
                     VStack(alignment: .leading) {
                         HStack {
-                            VStack(alignment: .leading) {
-                                Text(item.brand)
-                                Text(item.size)
-                                    .font(.system(size: 11))
-                                    .foregroundColor(Color.gray)
-                                Text("\(item.price) €")
-                                    .font(.system(size: 11))
-                                    .foregroundColor(Color.orange)
-                            }
+                            ListItem(item: item)
                             Spacer()
                             Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
                                 self.itemCart.append(item.brand)
@@ -127,15 +119,7 @@ struct SearchView: View {
                 }) {
                     VStack(alignment: .leading) {
                         HStack {
-                            VStack(alignment: .leading) {
-                                Text(item.brand)
-                                Text(item.size)
-                                    .font(.system(size: 11))
-                                    .foregroundColor(Color.gray)
-                                Text("\(item.price) €")
-                                    .font(.system(size: 11))
-                                    .foregroundColor(Color.orange)
-                            }
+                            ListItem(item: item)
                             Spacer()
                             Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
                                 self.itemCart.append(item.brand)

@@ -194,6 +194,7 @@
 				039815812432C70700C168D8 /* HideKeyboard.swift */,
 				0398157824328FCD00C168D8 /* SearchBar.swift */,
 				035C56B5242937A900139C8E /* SearchView.swift */,
+				0381A0A42436363D00726C75 /* ListItem.swift */,
 				035C56B9242937C700139C8E /* ProfileView.swift */,
 				035C56AD2429369800139C8E /* NavigationBarView.swift */,
 				034EF88D2423D99300741711 /* Assets.xcassets */,
@@ -203,7 +204,6 @@
 				034EF88F2423D99300741711 /* Preview Content */,
 				0319475E2434FAAC003F021E /* QrView.swift */,
 				031947612434FACD003F021E /* ScannerViewController.swift */,
-				0381A0A42436363D00726C75 /* ListItem.swift */,
 			);
 			path = zeitgeist;
 			sourceTree = "<group>";
