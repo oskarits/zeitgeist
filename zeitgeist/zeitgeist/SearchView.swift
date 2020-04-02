@@ -32,6 +32,7 @@ struct SearchView: View {
                         Spacer()
                         Button(action: {
                             self.showPopover.toggle()
+                            UIApplication.shared.endEditing(true)
                         }) {
                             Image(systemName: "return")
                                 .font(Font.system(size: 30, weight: .regular))
@@ -55,7 +56,6 @@ struct SearchView: View {
                                         Image(systemName: "cart.fill.badge.minus")
                                             .font(Font.system(size: 20, weight: .regular)).onTapGesture {
                                                 if self.shoppingList.count > 0 {
-                                                    //if let indx = shoppingList.in
                                                     let indx = self.shoppingList.firstIndex(where: {$0.key == index})
                                                     print(indx ?? "nothing")
                                                     if indx != nil {
@@ -103,12 +103,11 @@ struct SearchView: View {
                             Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
                                 self.itemCart.append(item.brand)
                                 self.show.toggle()
-                                //self.shoppingList.append((key: item.brand, value: String(item.created)))
                                 self.shoppingList.insert((key: item.brand, value: String(item.created)), at: self.shoppingList.count)
-                                //--------------------
                                 print("item \(item.brand) added")
                                 print("\(item.id)")
                                 self.selectedItem = item.brand
+                                UIApplication.shared.endEditing(true)
                             }
                         }
                     }
@@ -127,13 +126,27 @@ struct SearchView: View {
                         UIApplication.shared.endEditing(true)
                 }) {
                     VStack(alignment: .leading) {
-                        Text(item.brand)
-                        Text(item.size)
-                            .font(.system(size: 11))
-                            .foregroundColor(Color.gray)
-                        Text("\(item.price) €")
-                            .font(.system(size: 11))
-                            .foregroundColor(Color.orange)
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(item.brand)
+                                Text(item.size)
+                                    .font(.system(size: 11))
+                                    .foregroundColor(Color.gray)
+                                Text("\(item.price) €")
+                                    .font(.system(size: 11))
+                                    .foregroundColor(Color.orange)
+                            }
+                            Spacer()
+                            Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                self.itemCart.append(item.brand)
+                                self.show.toggle()
+                                self.shoppingList.insert((key: item.brand, value: String(item.created)), at: self.shoppingList.count)
+                                print("item \(item.brand) added")
+                                print("\(item.id)")
+                                self.selectedItem = item.brand
+                                UIApplication.shared.endEditing(true)
+                            }
+                        }
                     }
                 }
             }
@@ -158,6 +171,7 @@ struct SearchView: View {
                     .navigationBarItems( trailing:
                         Button(action: {
                             self.showPopover.toggle()
+                            UIApplication.shared.endEditing(true)
                         }) {
                             Image(systemName: "cart.fill")
                                 .font(Font.system(size: 30, weight: .regular))

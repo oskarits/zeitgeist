@@ -38,6 +38,16 @@
                ReferencedContainer = "container:zeitgeist.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "034EF8A42423D99400741711"
+               BuildableName = "zeitgeistUITests.xctest"
+               BlueprintName = "zeitgeistUITests"
+               ReferencedContainer = "container:zeitgeist.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

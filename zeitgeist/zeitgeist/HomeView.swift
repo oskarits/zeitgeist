@@ -19,7 +19,7 @@ struct HomeView: View {
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                 Text("SCAN")
                     .foregroundColor(Color.red)
-            }
+            }.accessibility(identifier: "abc")
             Image("turtlerock")
             NavigationView {
             VStack(alignment: .center) {

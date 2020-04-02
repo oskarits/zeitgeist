@@ -42,6 +42,21 @@
 		039815832432C70700C168D8 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039815812432C70700C168D8 /* HideKeyboard.swift */; };
 		03A2DD212431742D007A1387 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2DD202431742D007A1387 /* Notification.swift */; };
 		03A2DD222431742D007A1387 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2DD202431742D007A1387 /* Notification.swift */; };
+		03D2BC8824360AEE0098C66B /* QrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319475E2434FAAC003F021E /* QrView.swift */; };
+		03D2BC8924360AF00098C66B /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031947612434FACD003F021E /* ScannerViewController.swift */; };
+		03D2BC8A24360AF60098C66B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398157824328FCD00C168D8 /* SearchBar.swift */; };
+		03D2BC8B24360AF80098C66B /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039815812432C70700C168D8 /* HideKeyboard.swift */; };
+		03D2BC8C24360AFB0098C66B /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319474E2434B00E003F021E /* Toast.swift */; };
+		03D2BC8D24360AFD0098C66B /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2DD202431742D007A1387 /* Notification.swift */; };
+		03D2BC8E24360AFE0098C66B /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFAE24311D0100BD9E19 /* DataView.swift */; };
+		03D2BC8F24360B000098C66B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF88B2423D99200741711 /* ContentView.swift */; };
+		03D2BC9024360B060098C66B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DF9C24311AD900BD9E19 /* Course.swift */; };
+		03D2BC9124360B080098C66B /* SingleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DF9624311A8100BD9E19 /* SingleResult.swift */; };
+		03D2BC9224360B0B0098C66B /* CampaingNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DF9F24311AFD00BD9E19 /* CampaingNetworkManager.swift */; };
+		03D2BC9324360B0D0098C66B /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DF9924311ABD00BD9E19 /* NetworkingManager.swift */; };
+		03D2BC9424360B0F0098C66B /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFA824311CA600BD9E19 /* ImageLoader.swift */; };
+		03D2BC9524360B100098C66B /* CampaignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFA524311BD000BD9E19 /* CampaignView.swift */; };
+		03D2BC9624360B130098C66B /* ImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFA224311BAC00BD9E19 /* ImageViewComponent.swift */; };
 		03F1DF9724311A8100BD9E19 /* SingleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DF9624311A8100BD9E19 /* SingleResult.swift */; };
 		03F1DF9824311A8100BD9E19 /* SingleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DF9624311A8100BD9E19 /* SingleResult.swift */; };
 		03F1DF9A24311ABD00BD9E19 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DF9924311ABD00BD9E19 /* NetworkingManager.swift */; };
@@ -433,11 +448,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D2BC9324360B0D0098C66B /* NetworkingManager.swift in Sources */,
+				03D2BC8924360AF00098C66B /* ScannerViewController.swift in Sources */,
 				035C56B8242937A900139C8E /* SearchView.swift in Sources */,
 				035C56B42429376E00139C8E /* HomeView.swift in Sources */,
 				035C56BC242937C700139C8E /* ProfileView.swift in Sources */,
 				035C56B02429369800139C8E /* NavigationBarView.swift in Sources */,
+				03D2BC9524360B100098C66B /* CampaignView.swift in Sources */,
+				03D2BC8A24360AF60098C66B /* SearchBar.swift in Sources */,
+				03D2BC8E24360AFE0098C66B /* DataView.swift in Sources */,
 				034EF8AA2423D99400741711 /* zeitgeistUITests.swift in Sources */,
+				03D2BC9024360B060098C66B /* Course.swift in Sources */,
+				03D2BC8C24360AFB0098C66B /* Toast.swift in Sources */,
+				03D2BC8D24360AFD0098C66B /* Notification.swift in Sources */,
+				03D2BC8F24360B000098C66B /* ContentView.swift in Sources */,
+				03D2BC9224360B0B0098C66B /* CampaingNetworkManager.swift in Sources */,
+				03D2BC9424360B0F0098C66B /* ImageLoader.swift in Sources */,
+				03D2BC9624360B130098C66B /* ImageViewComponent.swift in Sources */,
+				03D2BC9124360B080098C66B /* SingleResult.swift in Sources */,
+				03D2BC8B24360AF80098C66B /* HideKeyboard.swift in Sources */,
+				03D2BC8824360AEE0098C66B /* QrView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
