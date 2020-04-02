@@ -106,6 +106,7 @@ struct SearchView: View {
                                 print("item \(item.brand) added")
                                 print("\(item.id)")
                                 self.selectedItem = item.brand
+                                UIApplication.shared.endEditing(true)
                             }
                         }
                     }
