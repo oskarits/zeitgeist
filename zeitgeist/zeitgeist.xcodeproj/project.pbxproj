@@ -39,6 +39,9 @@
 		0381A0A52436363D00726C75 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381A0A42436363D00726C75 /* ListItem.swift */; };
 		0381A0A62436363D00726C75 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381A0A42436363D00726C75 /* ListItem.swift */; };
 		0381A0A72436363D00726C75 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381A0A42436363D00726C75 /* ListItem.swift */; };
+		0381A0A92436381F00726C75 /* SingleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381A0A82436381F00726C75 /* SingleItemView.swift */; };
+		0381A0AA2436381F00726C75 /* SingleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381A0A82436381F00726C75 /* SingleItemView.swift */; };
+		0381A0AB2436381F00726C75 /* SingleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381A0A82436381F00726C75 /* SingleItemView.swift */; };
 		0398157924328FCD00C168D8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398157824328FCD00C168D8 /* SearchBar.swift */; };
 		0398157A24328FCD00C168D8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398157824328FCD00C168D8 /* SearchBar.swift */; };
 		039815822432C70700C168D8 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039815812432C70700C168D8 /* HideKeyboard.swift */; };
@@ -120,6 +123,7 @@
 		035C56B9242937C700139C8E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0363CA1D2433428500876BDD /* ViewNotNilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNotNilTests.swift; sourceTree = "<group>"; };
 		0381A0A42436363D00726C75 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		0381A0A82436381F00726C75 /* SingleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemView.swift; sourceTree = "<group>"; };
 		0398157824328FCD00C168D8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		039815812432C70700C168D8 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		03A2DD202431742D007A1387 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 				039815812432C70700C168D8 /* HideKeyboard.swift */,
 				0398157824328FCD00C168D8 /* SearchBar.swift */,
 				035C56B5242937A900139C8E /* SearchView.swift */,
+				0381A0A82436381F00726C75 /* SingleItemView.swift */,
 				0381A0A42436363D00726C75 /* ListItem.swift */,
 				035C56B9242937C700139C8E /* ProfileView.swift */,
 				035C56AD2429369800139C8E /* NavigationBarView.swift */,
@@ -405,6 +410,7 @@
 				034EF8852423D99200741711 /* AppDelegate.swift in Sources */,
 				034EF8872423D99200741711 /* SceneDelegate.swift in Sources */,
 				035C56AE2429369800139C8E /* NavigationBarView.swift in Sources */,
+				0381A0A92436381F00726C75 /* SingleItemView.swift in Sources */,
 				03F1DFA024311AFD00BD9E19 /* CampaingNetworkManager.swift in Sources */,
 				0319475F2434FAAC003F021E /* QrView.swift in Sources */,
 				035C56B6242937A900139C8E /* SearchView.swift in Sources */,
@@ -445,6 +451,7 @@
 				03A2DD222431742D007A1387 /* Notification.swift in Sources */,
 				03F1DF9824311A8100BD9E19 /* SingleResult.swift in Sources */,
 				034EF89F2423D99400741711 /* zeitgeistTests.swift in Sources */,
+				0381A0AA2436381F00726C75 /* SingleItemView.swift in Sources */,
 				031947602434FAAC003F021E /* QrView.swift in Sources */,
 				0398157A24328FCD00C168D8 /* SearchBar.swift in Sources */,
 				03F1DFAA24311CA600BD9E19 /* ImageLoader.swift in Sources */,
@@ -458,6 +465,7 @@
 				03D2BC9324360B0D0098C66B /* NetworkingManager.swift in Sources */,
 				03D2BC8924360AF00098C66B /* ScannerViewController.swift in Sources */,
 				035C56B8242937A900139C8E /* SearchView.swift in Sources */,
+				0381A0AB2436381F00726C75 /* SingleItemView.swift in Sources */,
 				035C56B42429376E00139C8E /* HomeView.swift in Sources */,
 				035C56BC242937C700139C8E /* ProfileView.swift in Sources */,
 				035C56B02429369800139C8E /* NavigationBarView.swift in Sources */,

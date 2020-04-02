@@ -77,17 +77,7 @@ struct SearchView: View {
         ForEach(networkingManager.clothingList.items) { item in
             if (self.searchText.isEmpty) {
                 NavigationLink(destination:
-                    VStack(alignment: .leading) {
-                        Text(item.brand).font(.largeTitle)
-                        Text(item.size)
-                        Text(item.condition)
-                        Text(item.description)
-                        Text("\(item.price) €")
-                            .font(.system(size: 20))
-                            .foregroundColor(Color.orange)
-                    }.onAppear {
-                        UIApplication.shared.endEditing(true)
-                }) {
+                    SingleItemView(item: item)) {
                     VStack(alignment: .leading) {
                         HStack {
                             ListItem(item: item)
@@ -107,16 +97,7 @@ struct SearchView: View {
             }
             if (item.brand.lowercased().contains(self.searchText.lowercased())) {
                 NavigationLink(destination:
-                    VStack(alignment: .leading) {
-                        Text(item.brand).font(.largeTitle)
-                        Text(item.size)
-                        Text(item.condition)
-                        Text("\(item.price) €")
-                            .font(.system(size: 20))
-                            .foregroundColor(Color.orange)
-                    }.onAppear {
-                        UIApplication.shared.endEditing(true)
-                }) {
+                    SingleItemView(item: item)) {
                     VStack(alignment: .leading) {
                         HStack {
                             ListItem(item: item)
@@ -129,13 +110,7 @@ struct SearchView: View {
                                 print("\(item.id)")
                                 self.selectedItem = item.brand
                                 UIApplication.shared.endEditing(true)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+                            }}}}}}}
     
     var body: some View {
         ZStack(alignment: .leading) {
