@@ -77,19 +77,13 @@ struct SearchView: View {
         ForEach(networkingManager.clothingList.items) { item in
             if (self.searchText.isEmpty) {
                 NavigationLink(destination:
-                    SingleItemView(item: item)) {
+                SingleItemView(item: item)) {
                     VStack(alignment: .leading) {
                         HStack {
                             ListItem(item: item)
                             Spacer()
                             Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
-                                self.itemCart.append(item.brand)
-                                self.show.toggle()
-                                self.shoppingList.insert((key: item.brand, value: String(item.created)), at: self.shoppingList.count)
-                                print("item \(item.brand) added")
-                                print("\(item.id)")
-                                self.selectedItem = item.brand
-                                UIApplication.shared.endEditing(true)
+                                self.ShoppingCartPlus(key: item.brand, value: String(item.created))
                             }
                         }
                     }
@@ -97,20 +91,20 @@ struct SearchView: View {
             }
             if (item.brand.lowercased().contains(self.searchText.lowercased())) {
                 NavigationLink(destination:
-                    SingleItemView(item: item)) {
+                SingleItemView(item: item)) {
                     VStack(alignment: .leading) {
                         HStack {
                             ListItem(item: item)
                             Spacer()
                             Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
-                                self.itemCart.append(item.brand)
-                                self.show.toggle()
-                                self.shoppingList.insert((key: item.brand, value: String(item.created)), at: self.shoppingList.count)
-                                print("item \(item.brand) added")
-                                print("\(item.id)")
-                                self.selectedItem = item.brand
-                                UIApplication.shared.endEditing(true)
-                            }}}}}}}
+                                self.ShoppingCartPlus(key: item.brand, value: String(item.created))
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -152,7 +146,17 @@ struct SearchView: View {
                 .offset(x:0, y: self.showPopover ? 0 : UIApplication.shared.keyWindow?.frame.height ?? 0)
         }.resignKeyboardOnDragGesture()
     }
+    
+    
+    func ShoppingCartPlus(key: String, value: String) {
+        self.itemCart.append(key)
+        self.show.toggle()
+        self.shoppingList.insert((key: key, value: value), at: self.shoppingList.count)
+        self.selectedItem = key
+        UIApplication.shared.endEditing(true)
+    }
 }
+
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
