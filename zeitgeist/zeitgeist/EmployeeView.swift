@@ -12,23 +12,25 @@ import SwiftUI
 struct EmployeeView: View {
     var body: some View {
         HStack {
-            Button(action: {}) {
-                VStack {
-                    Image(systemName: "pencil.and.outline")
-                    Text("Show\nReservations").padding(.horizontal)
+            NavigationView {
+                HStack {
+                    NavigationLink(destination: ReservationView()) {
+                        VStack {
+                            Image(systemName: "pencil.and.outline")
+                            Text("Show\nReservations").padding(.horizontal)
+                        }
+                        VStack {
+                            Image(systemName: "barcode.viewfinder")
+                            Text("Scan\nQR").padding(.horizontal)
+                        }
+                    }.padding()
                 }
-            }.padding()
-            Button(action: {}) {
-                VStack {
-                    Image(systemName: "barcode.viewfinder")
-                    Text("Scan\nQR").padding(.horizontal)
-                }
-            }.padding()
+                .font(.title)
+                .multilineTextAlignment(.center)
+                .foregroundColor(.orange)
+                .cornerRadius(8)
+            }
         }
-        .font(.title)
-        .multilineTextAlignment(.center)
-        .foregroundColor(.orange)
-        .cornerRadius(8)
     }
 }
 
