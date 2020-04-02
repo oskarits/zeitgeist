@@ -73,6 +73,7 @@
 		03F1DFAA24311CA600BD9E19 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFA824311CA600BD9E19 /* ImageLoader.swift */; };
 		03F1DFAF24311D0100BD9E19 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFAE24311D0100BD9E19 /* DataView.swift */; };
 		03F1DFB024311D0100BD9E19 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFAE24311D0100BD9E19 /* DataView.swift */; };
+		24A65F872436641B00A5215D /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A65F862436641B00A5215D /* EmployeeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		03F1DFA524311BD000BD9E19 /* CampaignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignView.swift; sourceTree = "<group>"; };
 		03F1DFA824311CA600BD9E19 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		03F1DFAE24311D0100BD9E19 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
+		24A65F862436641B00A5215D /* EmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				A737CD5F242BAD6200A58238 /* Network */,
 				A737CD5C242B9FE000A58238 /* Models */,
 				034EF8842423D99200741711 /* AppDelegate.swift */,
+				24A65F862436641B00A5215D /* EmployeeView.swift */,
 				034EF8862423D99200741711 /* SceneDelegate.swift */,
 				034EF88B2423D99200741711 /* ContentView.swift */,
 				03F1DFAE24311D0100BD9E19 /* DataView.swift */,
@@ -409,6 +412,7 @@
 				03F1DFA924311CA600BD9E19 /* ImageLoader.swift in Sources */,
 				03A2DD212431742D007A1387 /* Notification.swift in Sources */,
 				03F1DF9A24311ABD00BD9E19 /* NetworkingManager.swift in Sources */,
+				24A65F872436641B00A5215D /* EmployeeView.swift in Sources */,
 				0398157924328FCD00C168D8 /* SearchBar.swift in Sources */,
 				0319474F2434B00E003F021E /* Toast.swift in Sources */,
 				034EF88C2423D99200741711 /* ContentView.swift in Sources */,
