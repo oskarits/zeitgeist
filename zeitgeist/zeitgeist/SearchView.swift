@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct SearchView: View {
+    @ObservedObject var shoppingHistory = ShoppingHistory()
     @ObservedObject var networkingManager = NetworkingManager()
     @State private var searchText : String = ""
     @State private var itemCart : [String] = []
@@ -37,6 +38,13 @@ struct SearchView: View {
                             Image(systemName: "return")
                                 .font(Font.system(size: 30, weight: .regular))
                         }.padding(20)
+                    }
+                    Button(action: {
+                        self.shoppingHistory.historyList.append(self.shoppingList.description)
+                        self.shoppingList.removeAll()
+                        print(self.shoppingHistory.historyList)
+                    }) {
+                            Text("Apple Pay")
                     }
                     List {
                         ForEach(shoppingList, id: \.value) { index, item in
