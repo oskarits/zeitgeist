@@ -38,7 +38,7 @@ struct NavigationBarView: View {
             }
             EmployeeView()
                 .tabItem {
-                    Image(systemName: "hand.raised").font(Font.system(size: 30, weight: .regular))}
+                    Image("zircle").resizable().frame(width: 30, height: 30)}
             }
         }
     }

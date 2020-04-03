@@ -11,6 +11,9 @@ import SwiftUI
 
 struct ReservationView: View {
     @ObservedObject var networkingManager = NetworkingManager()
+    var notification = Notification()
+    @State private var confirmRes = "Your reservation has been confirmed :)"
+    @State private var declineRes = "Your reservation has been declined :("
     
     var body: some View {
         VStack {
@@ -37,12 +40,12 @@ struct ReservationView: View {
                     Text("\(item.price) €")
                         .font(.system(size: 20))
                         .foregroundColor(Color.orange)
-                    // Notify user when the reservation has bene interacted with
+                    // TODO Remove item from list after it has been accepted or declined
                     HStack {
-                        Button(action: {}) {
+                        Button(action: {self.notification.SendNotification(title: self.confirmRes, body: "Please pickup :)")}) {
                             Image(systemName: "checkmark")
                             Text("Accept")}.foregroundColor(.green).padding()
-                        Button(action: {}) {
+                        Button(action: {self.notification.SendNotification(title: self.declineRes, body: "We're sorry about that :(")}) {
                             Image(systemName: "trash")
                             Text("Decline")}.foregroundColor(.red).padding()
                     }.padding()

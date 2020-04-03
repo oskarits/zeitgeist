@@ -73,6 +73,10 @@
 		03F1DFAA24311CA600BD9E19 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFA824311CA600BD9E19 /* ImageLoader.swift */; };
 		03F1DFAF24311D0100BD9E19 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFAE24311D0100BD9E19 /* DataView.swift */; };
 		03F1DFB024311D0100BD9E19 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFAE24311D0100BD9E19 /* DataView.swift */; };
+		240159442437379500EECDEF /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465675E24367352008BA359 /* ReservationView.swift */; };
+		240159452437379600EECDEF /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465675E24367352008BA359 /* ReservationView.swift */; };
+		240159462437379C00EECDEF /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A65F862436641B00A5215D /* EmployeeView.swift */; };
+		240159472437379D00EECDEF /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A65F862436641B00A5215D /* EmployeeView.swift */; };
 		2465675F24367352008BA359 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465675E24367352008BA359 /* ReservationView.swift */; };
 		24A65F872436641B00A5215D /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A65F862436641B00A5215D /* EmployeeView.swift */; };
 /* End PBXBuildFile section */
@@ -431,6 +435,7 @@
 				03F1DFA724311BD000BD9E19 /* CampaignView.swift in Sources */,
 				03F1DF9E24311AD900BD9E19 /* Course.swift in Sources */,
 				0364AE84243279DE005AB2A4 /* ContentView.swift in Sources */,
+				240159452437379600EECDEF /* ReservationView.swift in Sources */,
 				031947502434B00E003F021E /* Toast.swift in Sources */,
 				035C56B7242937A900139C8E /* SearchView.swift in Sources */,
 				0363CA1E2433428500876BDD /* ViewNotNilTests.swift in Sources */,
@@ -442,6 +447,7 @@
 				035C56BB242937C700139C8E /* ProfileView.swift in Sources */,
 				035C56AF2429369800139C8E /* NavigationBarView.swift in Sources */,
 				03F1DFB024311D0100BD9E19 /* DataView.swift in Sources */,
+				240159462437379C00EECDEF /* EmployeeView.swift in Sources */,
 				03F1DF9B24311ABD00BD9E19 /* NetworkingManager.swift in Sources */,
 				03A2DD222431742D007A1387 /* Notification.swift in Sources */,
 				03F1DF9824311A8100BD9E19 /* SingleResult.swift in Sources */,
@@ -470,8 +476,10 @@
 				03D2BC8C24360AFB0098C66B /* Toast.swift in Sources */,
 				03D2BC8D24360AFD0098C66B /* Notification.swift in Sources */,
 				03D2BC8F24360B000098C66B /* ContentView.swift in Sources */,
+				240159472437379D00EECDEF /* EmployeeView.swift in Sources */,
 				03D2BC9224360B0B0098C66B /* CampaingNetworkManager.swift in Sources */,
 				03D2BC9424360B0F0098C66B /* ImageLoader.swift in Sources */,
+				240159442437379500EECDEF /* ReservationView.swift in Sources */,
 				03D2BC9624360B130098C66B /* ImageViewComponent.swift in Sources */,
 				03D2BC9124360B080098C66B /* SingleResult.swift in Sources */,
 				03D2BC8B24360AF80098C66B /* HideKeyboard.swift in Sources */,
