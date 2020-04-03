@@ -27,8 +27,8 @@ class zeitgeistUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-        let button = app.buttons["abc"]
-        button.tap()
+        //let button = app.buttons["abc"]
+        //button.tap()
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
