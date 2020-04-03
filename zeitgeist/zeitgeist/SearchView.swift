@@ -13,7 +13,7 @@ struct SearchView: View {
     @State private var searchText : String = ""
     @State private var itemCart : [String] = []
     @State private var showPopover: Bool = false
-    @State private var show = false
+    @State private var showToast = false
     @State private var selectedItem : String = ""
     @State private var shoppingCartTitleText : String = "Shopping cart"
     @State private var shoppingList: [(key: String, value: String)] = [:].sorted{$0.value < $1.value}
@@ -125,7 +125,7 @@ struct SearchView: View {
                         }
                 )
                     .navigationBarTitle(Text("Search Items"))
-            }.toast(show: $show, text: selectedItem)
+            }.toast(show: $showToast, text: selectedItem)
             ZStack {
                 VStack {
                     Spacer()
@@ -143,7 +143,7 @@ struct SearchView: View {
     
     func ShoppingCartPlus(key: String, value: String) {
         self.itemCart.append(key)
-        self.show.toggle()
+        self.showToast.toggle()
         self.shoppingList.insert((key: key, value: value), at: self.shoppingList.count)
         self.selectedItem = key
         UIApplication.shared.endEditing(true)
