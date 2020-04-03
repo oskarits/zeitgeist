@@ -73,41 +73,16 @@ struct SearchView: View {
         }
     }
     
-    var searchNavigation: some View {
+     var searchNavigation: some View {
         ForEach(networkingManager.clothingList.items) { item in
             if (self.searchText.isEmpty) {
                 NavigationLink(destination:
-                    VStack(alignment: .leading) {
-                        Text(item.brand).font(.largeTitle)
-                        Text(item.size)
-                        Text(item.condition)
-                        Text(item.description)
-                        Text("\(item.price) €")
-                            .font(.system(size: 20))
-                            .foregroundColor(Color.orange)
-                    }.onAppear {
-                        UIApplication.shared.endEditing(true)
-                }) {
+                SingleItemView(item: item)) {
                     VStack(alignment: .leading) {
                         HStack {
-                            VStack(alignment: .leading) {
-                                Text(item.brand)
-                                Text(item.size)
-                                    .font(.system(size: 11))
-                                    .foregroundColor(Color.gray)
-                                Text("\(item.price) €")
-                                    .font(.system(size: 11))
-                                    .foregroundColor(Color.orange)
-                            }
+                            ListItem(item: item)
                             Spacer()
                             Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
-                                self.itemCart.append(item.brand)
-                                self.show.toggle()
-                                self.shoppingList.insert((key: item.brand, value: String(item.created)), at: self.shoppingList.count)
-                                print("item \(item.brand) added")
-                                print("\(item.id)")
-                                self.selectedItem = item.brand
-                                UIApplication.shared.endEditing(true)
                             }
                         }
                     }
@@ -115,36 +90,12 @@ struct SearchView: View {
             }
             if (item.brand.lowercased().contains(self.searchText.lowercased())) {
                 NavigationLink(destination:
-                    VStack(alignment: .leading) {
-                        Text(item.brand).font(.largeTitle)
-                        Text(item.size)
-                        Text(item.condition)
-                        Text("\(item.price) €")
-                            .font(.system(size: 20))
-                            .foregroundColor(Color.orange)
-                    }.onAppear {
-                        UIApplication.shared.endEditing(true)
-                }) {
+                SingleItemView(item: item)) {
                     VStack(alignment: .leading) {
                         HStack {
-                            VStack(alignment: .leading) {
-                                Text(item.brand)
-                                Text(item.size)
-                                    .font(.system(size: 11))
-                                    .foregroundColor(Color.gray)
-                                Text("\(item.price) €")
-                                    .font(.system(size: 11))
-                                    .foregroundColor(Color.orange)
-                            }
+                            ListItem(item: item)
                             Spacer()
                             Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
-                                self.itemCart.append(item.brand)
-                                self.show.toggle()
-                                self.shoppingList.insert((key: item.brand, value: String(item.created)), at: self.shoppingList.count)
-                                print("item \(item.brand) added")
-                                print("\(item.id)")
-                                self.selectedItem = item.brand
-                                UIApplication.shared.endEditing(true)
                             }
                         }
                     }
