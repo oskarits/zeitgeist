@@ -39,7 +39,7 @@ struct SearchView: View {
                         }.padding(20)
                     }
                     List {
-                        ForEach(shoppingList, id: \.0) { index, item in
+                        ForEach(shoppingList, id: \.value) { index, item in
                             NavigationLink(
                                 destination:
                                 VStack {
@@ -55,13 +55,7 @@ struct SearchView: View {
                                         Spacer()
                                         Image(systemName: "cart.fill.badge.minus")
                                             .font(Font.system(size: 20, weight: .regular)).onTapGesture {
-                                                if self.shoppingList.count > 0 {
-                                                    let indx = self.shoppingList.firstIndex(where: {$0.key == index})
-                                                    print(indx ?? "nothing")
-                                                    if indx != nil {
-                                                        self.shoppingList.remove(at: indx ?? 0)
-                                                    }
-                                                }
+                                                self.ShoppingCartMinus(index: item)
                                         }
                                     }
                                 }
@@ -77,37 +71,13 @@ struct SearchView: View {
         ForEach(networkingManager.clothingList.items) { item in
             if (self.searchText.isEmpty) {
                 NavigationLink(destination:
-                    VStack(alignment: .leading) {
-                        Text(item.brand).font(.largeTitle)
-                        Text(item.size)
-                        Text(item.condition)
-                        Text(item.description)
-                        Text("\(item.price) €")
-                            .font(.system(size: 20))
-                            .foregroundColor(Color.orange)
-                    }.onAppear {
-                        UIApplication.shared.endEditing(true)
-                }) {
+                SingleItemView(item: item)) {
                     VStack(alignment: .leading) {
                         HStack {
-                            VStack(alignment: .leading) {
-                                Text(item.brand)
-                                Text(item.size)
-                                    .font(.system(size: 11))
-                                    .foregroundColor(Color.gray)
-                                Text("\(item.price) €")
-                                    .font(.system(size: 11))
-                                    .foregroundColor(Color.orange)
-                            }
+                            ListItem(item: item)
                             Spacer()
                             Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
-                                self.itemCart.append(item.brand)
-                                self.show.toggle()
-                                self.shoppingList.insert((key: item.brand, value: String(item.created)), at: self.shoppingList.count)
-                                print("item \(item.brand) added")
-                                print("\(item.id)")
-                                self.selectedItem = item.brand
-                                UIApplication.shared.endEditing(true)
+                                self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
                             }
                         }
                     }
@@ -115,36 +85,13 @@ struct SearchView: View {
             }
             if (item.brand.lowercased().contains(self.searchText.lowercased())) {
                 NavigationLink(destination:
-                    VStack(alignment: .leading) {
-                        Text(item.brand).font(.largeTitle)
-                        Text(item.size)
-                        Text(item.condition)
-                        Text("\(item.price) €")
-                            .font(.system(size: 20))
-                            .foregroundColor(Color.orange)
-                    }.onAppear {
-                        UIApplication.shared.endEditing(true)
-                }) {
+                SingleItemView(item: item)) {
                     VStack(alignment: .leading) {
                         HStack {
-                            VStack(alignment: .leading) {
-                                Text(item.brand)
-                                Text(item.size)
-                                    .font(.system(size: 11))
-                                    .foregroundColor(Color.gray)
-                                Text("\(item.price) €")
-                                    .font(.system(size: 11))
-                                    .foregroundColor(Color.orange)
-                            }
+                            ListItem(item: item)
                             Spacer()
                             Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
-                                self.itemCart.append(item.brand)
-                                self.show.toggle()
-                                self.shoppingList.insert((key: item.brand, value: String(item.created)), at: self.shoppingList.count)
-                                print("item \(item.brand) added")
-                                print("\(item.id)")
-                                self.selectedItem = item.brand
-                                UIApplication.shared.endEditing(true)
+                                self.ShoppingCartPlus(key: item.brand, value: String(item.created))
                             }
                         }
                     }
@@ -193,6 +140,30 @@ struct SearchView: View {
                 .offset(x:0, y: self.showPopover ? 0 : UIApplication.shared.keyWindow?.frame.height ?? 0)
         }.resignKeyboardOnDragGesture()
     }
+    
+    func ShoppingCartPlus(key: String, value: String) {
+        self.itemCart.append(key)
+        self.show.toggle()
+        self.shoppingList.insert((key: key, value: value), at: self.shoppingList.count)
+        self.selectedItem = key
+        UIApplication.shared.endEditing(true)
+    }
+    
+    func PopOverToggle() {
+        self.showPopover.toggle()
+        UIApplication.shared.endEditing(true)
+    }
+    
+    func ShoppingCartMinus(index: String) {
+        if self.shoppingList.count > 0 {
+            let indx = self.shoppingList.firstIndex(where: {$0.value == index})
+            print(indx ?? "nothing")
+            if indx != nil {
+                self.shoppingList.remove(at: indx ?? 0)
+            }
+        }
+    }
+
 }
 
 struct SearchView_Previews: PreviewProvider {
