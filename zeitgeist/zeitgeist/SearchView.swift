@@ -55,13 +55,7 @@ struct SearchView: View {
                                         Spacer()
                                         Image(systemName: "cart.fill.badge.minus")
                                             .font(Font.system(size: 20, weight: .regular)).onTapGesture {
-                                                if self.shoppingList.count > 0 {
-                                                    let indx = self.shoppingList.firstIndex(where: {$0.key == index})
-                                                    print(indx ?? "nothing")
-                                                    if indx != nil {
-                                                        self.shoppingList.remove(at: indx ?? 0)
-                                                    }
-                                                }
+                                                self.ShoppingCartMinus(index: index)
                                         }
                                     }
                                 }
