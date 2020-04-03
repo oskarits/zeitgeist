@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    
+    @ObservedObject var shoppingHistory = ShoppingHistory()
     var notification = Notification()
     @State private var notificationTitle : String = "Title test"
     @State private var notificationBody : String = "Body test"
@@ -22,6 +22,9 @@ struct ProfileView: View {
                 NavigationLink(destination: Detail(show: self.$show), isActive: self.$show) {
                     Text("")
                 }
+                List(shoppingHistory.historyList, id: \.self) { item in
+                    Text(item)
+                }.padding()
                 Button(action: {
                     self.notification.SendNotification(title: self.notificationTitle, body: self.notificationBody)
                 }) {
@@ -32,6 +35,7 @@ struct ProfileView: View {
                     self.show = true
                 }
             }
+            
         }
     }
 }

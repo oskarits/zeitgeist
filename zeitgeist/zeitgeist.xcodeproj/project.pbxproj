@@ -85,6 +85,9 @@
 		240159472437379D00EECDEF /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A65F862436641B00A5215D /* EmployeeView.swift */; };
 		2465675F24367352008BA359 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465675E24367352008BA359 /* ReservationView.swift */; };
 		24A65F872436641B00A5215D /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A65F862436641B00A5215D /* EmployeeView.swift */; };
+		A74DC35E24375A32002062CA /* ShoppingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DC35D24375A32002062CA /* ShoppingHistory.swift */; };
+		A74DC35F243761DF002062CA /* ShoppingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DC35D24375A32002062CA /* ShoppingHistory.swift */; };
+		A74DC360243761E0002062CA /* ShoppingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DC35D24375A32002062CA /* ShoppingHistory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +146,7 @@
 		03F1DFAE24311D0100BD9E19 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		2465675E24367352008BA359 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		24A65F862436641B00A5215D /* EmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeView.swift; sourceTree = "<group>"; };
+		A74DC35D24375A32002062CA /* ShoppingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingHistory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,7 @@
 				039815812432C70700C168D8 /* HideKeyboard.swift */,
 				0398157824328FCD00C168D8 /* SearchBar.swift */,
 				035C56B5242937A900139C8E /* SearchView.swift */,
+				A74DC35D24375A32002062CA /* ShoppingHistory.swift */,
 				035C56B9242937C700139C8E /* ProfileView.swift */,
 				035C56AD2429369800139C8E /* NavigationBarView.swift */,
 				034EF88D2423D99300741711 /* Assets.xcassets */,
@@ -410,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				039815822432C70700C168D8 /* HideKeyboard.swift in Sources */,
+				A74DC35E24375A32002062CA /* ShoppingHistory.swift in Sources */,
 				03F1DFAF24311D0100BD9E19 /* DataView.swift in Sources */,
 				03F1DF9D24311AD900BD9E19 /* Course.swift in Sources */,
 				034EF8852423D99200741711 /* AppDelegate.swift in Sources */,
@@ -462,6 +468,7 @@
 				03F1DFB024311D0100BD9E19 /* DataView.swift in Sources */,
 				240159462437379C00EECDEF /* EmployeeView.swift in Sources */,
 				03F1DF9B24311ABD00BD9E19 /* NetworkingManager.swift in Sources */,
+				A74DC35F243761DF002062CA /* ShoppingHistory.swift in Sources */,
 				03A2DD222431742D007A1387 /* Notification.swift in Sources */,
 				03F1DF9824311A8100BD9E19 /* SingleResult.swift in Sources */,
 				03117F172437471E00EB401E /* ListItem.swift in Sources */,
@@ -494,6 +501,7 @@
 				240159472437379D00EECDEF /* EmployeeView.swift in Sources */,
 				03D2BC9224360B0B0098C66B /* CampaingNetworkManager.swift in Sources */,
 				03D2BC9424360B0F0098C66B /* ImageLoader.swift in Sources */,
+				A74DC360243761E0002062CA /* ShoppingHistory.swift in Sources */,
 				240159442437379500EECDEF /* ReservationView.swift in Sources */,
 				03D2BC9624360B130098C66B /* ImageViewComponent.swift in Sources */,
 				03117F14243746EC00EB401E /* SingleItemView.swift in Sources */,
