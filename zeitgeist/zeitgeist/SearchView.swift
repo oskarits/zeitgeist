@@ -39,7 +39,7 @@ struct SearchView: View {
                         }.padding(20)
                     }
                     List {
-                        ForEach(shoppingList, id: \.0) { index, item in
+                        ForEach(shoppingList, id: \.value) { index, item in
                             NavigationLink(
                                 destination:
                                 VStack {
