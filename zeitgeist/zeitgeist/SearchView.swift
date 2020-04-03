@@ -55,7 +55,7 @@ struct SearchView: View {
                                         Spacer()
                                         Image(systemName: "cart.fill.badge.minus")
                                             .font(Font.system(size: 20, weight: .regular)).onTapGesture {
-                                                self.ShoppingCartMinus(index: index)
+                                                self.ShoppingCartMinus(index: item)
                                         }
                                     }
                                 }
@@ -77,7 +77,7 @@ struct SearchView: View {
                             ListItem(item: item)
                             Spacer()
                             Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
-                                self.ShoppingCartPlus(key: item.brand, value: String(item.created))
+                                self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
                             }
                         }
                     }
@@ -156,7 +156,7 @@ struct SearchView: View {
     
     func ShoppingCartMinus(index: String) {
         if self.shoppingList.count > 0 {
-            let indx = self.shoppingList.firstIndex(where: {$0.key == index})
+            let indx = self.shoppingList.firstIndex(where: {$0.value == index})
             print(indx ?? "nothing")
             if indx != nil {
                 self.shoppingList.remove(at: indx ?? 0)
