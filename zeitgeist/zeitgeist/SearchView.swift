@@ -73,7 +73,7 @@ struct SearchView: View {
         }
     }
     
-     var searchNavigation: some View {
+    var searchNavigation: some View {
         ForEach(networkingManager.clothingList.items) { item in
             if (self.searchText.isEmpty) {
                 NavigationLink(destination:
@@ -83,6 +83,7 @@ struct SearchView: View {
                             ListItem(item: item)
                             Spacer()
                             Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                self.ShoppingCartPlus(key: item.brand, value: String(item.created))
                             }
                         }
                     }
@@ -96,6 +97,7 @@ struct SearchView: View {
                             ListItem(item: item)
                             Spacer()
                             Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                self.ShoppingCartPlus(key: item.brand, value: String(item.created))
                             }
                         }
                     }
@@ -144,6 +146,30 @@ struct SearchView: View {
                 .offset(x:0, y: self.showPopover ? 0 : UIApplication.shared.keyWindow?.frame.height ?? 0)
         }.resignKeyboardOnDragGesture()
     }
+    
+    func ShoppingCartPlus(key: String, value: String) {
+        self.itemCart.append(key)
+        self.show.toggle()
+        self.shoppingList.insert((key: key, value: value), at: self.shoppingList.count)
+        self.selectedItem = key
+        UIApplication.shared.endEditing(true)
+    }
+    
+    func PopOverToggle() {
+        self.showPopover.toggle()
+        UIApplication.shared.endEditing(true)
+    }
+    
+    func ShoppingCartMinus(index: String) {
+        if self.shoppingList.count > 0 {
+            let indx = self.shoppingList.firstIndex(where: {$0.key == index})
+            print(indx ?? "nothing")
+            if indx != nil {
+                self.shoppingList.remove(at: indx ?? 0)
+            }
+        }
+    }
+
 }
 
 struct SearchView_Previews: PreviewProvider {
