@@ -16,34 +16,27 @@ struct HomeView: View {
     var body: some View {
         
         VStack {
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                Text("SCAN")
-                    .foregroundColor(Color.red)
-            }.accessibility(identifier: "abc")
-            Image("turtlerock")
             NavigationView {
-            VStack(alignment: .center) {
-                HStack {
-                    Text("Share your")
-                    Text("wardrobe").foregroundColor(Color.orange)
+                VStack(alignment: .center) {
+                    HStack {
+                        Text("Share your")
+                        Text("wardrobe").foregroundColor(Color.orange)
+                    }
+                    Image("qrCode")
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                    List(networkManager.courses) { course in
+                        CampaignView(course: course)
+                    }
                 }
-                Image("qrCode")
-                    .resizable()
-                    .frame(width: 200, height: 200)
-                List(networkManager.courses) { course in
-                    CampaignView(course: course)
-               }
-            }
             }
         }
-        
-
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-           HomeView()
+        HomeView()
     }
 }
 
