@@ -98,8 +98,16 @@ struct SearchView: View {
                         HStack {
                             ListItem(item: item)
                             Spacer()
-                            Image(systemName: "cart.fill.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
-                                self.ShoppingCartPlus(key: item.brand, value: String(item.created))
+                            if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
+                                Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                    self.ShoppingCartMinus(index: "\(item.id)")
+                                }
+                            }
+                            if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
+                                Image(systemName: "cart.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                    self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
+
+                                }
                             }
                         }
                     }
