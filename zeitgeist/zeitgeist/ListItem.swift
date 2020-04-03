@@ -21,6 +21,9 @@ struct ListItem: View {
             Text("\(item.price) €")
                 .font(.system(size: 11))
                 .foregroundColor(Color.orange)
+            Text(item.images[0])
+
+            
         }
     }
 }
