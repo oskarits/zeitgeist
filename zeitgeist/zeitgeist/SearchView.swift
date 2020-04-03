@@ -47,23 +47,25 @@ struct SearchView: View {
                             Text("Apple Pay")
                     }
                     List {
-                        ForEach(shoppingList, id: \.value) { index, item in
-                            NavigationLink(
-                                destination:
-                                VStack {
-                                    Text(index)
-                                    Text(item.description)
-                            }) {
-                                VStack {
-                                    HStack {
-                                        VStack {
-                                            Text(index)
-                                            Text(item.description)
-                                        }
-                                        Spacer()
-                                        Image(systemName: "cart.fill.badge.minus")
-                                            .font(Font.system(size: 20, weight: .regular)).onTapGesture {
-                                                self.ShoppingCartMinus(index: item)
+                        ForEach(networkingManager.clothingList.items) { item in
+                            if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
+                                NavigationLink(destination:
+                                SingleItemView(item: item)) {
+                                    VStack(alignment: .leading) {
+                                        HStack {
+                                            ListItem(item: item)
+                                            Spacer()
+                                            if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
+                                                Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                                    self.ShoppingCartMinus(index: "\(item.id)")
+                                                }
+                                            }
+                                            if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
+                                                Image(systemName: "cart.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                                    self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
+
+                                                }
+                                            }
                                         }
                                     }
                                 }
