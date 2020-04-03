@@ -84,7 +84,13 @@ struct SearchView: View {
                 SingleItemView(item: item)) {
                     VStack(alignment: .leading) {
                         HStack {
-                            ListItem(item: item)
+                            VStack {
+                                VStack {
+                                    ListItem(item: item)
+                                    ImageView(item: item)
+                                }
+                            }
+                            
                             Spacer()
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
                                 Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 22, weight: .regular)).onTapGesture {

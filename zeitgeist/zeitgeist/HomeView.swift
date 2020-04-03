@@ -12,7 +12,8 @@ import Combine
 struct HomeView: View {
     
     @ObservedObject var networkManager = CampaignNetworkManager()
-    
+    @ObservedObject var networkManager2 = NetworkingManager()
+
     var body: some View {
         
         VStack {
@@ -27,6 +28,9 @@ struct HomeView: View {
                         .frame(width: 200, height: 200)
                     List(networkManager.courses) { course in
                         CampaignView(course: course)
+                    }
+                    List(networkManager2.clothingList.items) { item in
+                        ImageView(item: item)
                     }
                 }
             }

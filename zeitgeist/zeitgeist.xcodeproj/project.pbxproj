@@ -19,6 +19,9 @@
 		031947602434FAAC003F021E /* QrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319475E2434FAAC003F021E /* QrView.swift */; };
 		031947622434FACD003F021E /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031947612434FACD003F021E /* ScannerViewController.swift */; };
 		031947632434FACD003F021E /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031947612434FACD003F021E /* ScannerViewController.swift */; };
+		031AC78C24378A5000FEC6DA /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031AC78B24378A5000FEC6DA /* ImageView.swift */; };
+		031AC78D24378A5000FEC6DA /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031AC78B24378A5000FEC6DA /* ImageView.swift */; };
+		031AC78E24378A5000FEC6DA /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031AC78B24378A5000FEC6DA /* ImageView.swift */; };
 		034EF8852423D99200741711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8842423D99200741711 /* AppDelegate.swift */; };
 		034EF8872423D99200741711 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8862423D99200741711 /* SceneDelegate.swift */; };
 		034EF88A2423D99200741711 /* zeitgeist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8882423D99200741711 /* zeitgeist.xcdatamodeld */; };
@@ -113,6 +116,7 @@
 		0319474E2434B00E003F021E /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		0319475E2434FAAC003F021E /* QrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrView.swift; sourceTree = "<group>"; };
 		031947612434FACD003F021E /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		031AC78B24378A5000FEC6DA /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		034EF8812423D99200741711 /* zeitgeist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zeitgeist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EF8842423D99200741711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		034EF8862423D99200741711 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 			children = (
 				03F1DFA224311BAC00BD9E19 /* ImageViewComponent.swift */,
 				03F1DFA524311BD000BD9E19 /* CampaignView.swift */,
+				031AC78B24378A5000FEC6DA /* ImageView.swift */,
 				03F1DFA824311CA600BD9E19 /* ImageLoader.swift */,
 			);
 			path = "URL Image Loader";
@@ -414,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				031AC78C24378A5000FEC6DA /* ImageView.swift in Sources */,
 				039815822432C70700C168D8 /* HideKeyboard.swift in Sources */,
 				A74DC35E24375A32002062CA /* ShoppingHistory.swift in Sources */,
 				03F1DFAF24311D0100BD9E19 /* DataView.swift in Sources */,
@@ -474,6 +480,7 @@
 				03117F172437471E00EB401E /* ListItem.swift in Sources */,
 				034EF89F2423D99400741711 /* zeitgeistTests.swift in Sources */,
 				031947602434FAAC003F021E /* QrView.swift in Sources */,
+				031AC78D24378A5000FEC6DA /* ImageView.swift in Sources */,
 				0398157A24328FCD00C168D8 /* SearchBar.swift in Sources */,
 				03F1DFAA24311CA600BD9E19 /* ImageLoader.swift in Sources */,
 			);
@@ -487,6 +494,7 @@
 				03D2BC8924360AF00098C66B /* ScannerViewController.swift in Sources */,
 				035C56B8242937A900139C8E /* SearchView.swift in Sources */,
 				035C56B42429376E00139C8E /* HomeView.swift in Sources */,
+				031AC78E24378A5000FEC6DA /* ImageView.swift in Sources */,
 				035C56BC242937C700139C8E /* ProfileView.swift in Sources */,
 				035C56B02429369800139C8E /* NavigationBarView.swift in Sources */,
 				03D2BC9524360B100098C66B /* CampaignView.swift in Sources */,
