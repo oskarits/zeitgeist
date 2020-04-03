@@ -73,6 +73,12 @@
 		03F1DFAA24311CA600BD9E19 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFA824311CA600BD9E19 /* ImageLoader.swift */; };
 		03F1DFAF24311D0100BD9E19 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFAE24311D0100BD9E19 /* DataView.swift */; };
 		03F1DFB024311D0100BD9E19 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFAE24311D0100BD9E19 /* DataView.swift */; };
+		240159442437379500EECDEF /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465675E24367352008BA359 /* ReservationView.swift */; };
+		240159452437379600EECDEF /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465675E24367352008BA359 /* ReservationView.swift */; };
+		240159462437379C00EECDEF /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A65F862436641B00A5215D /* EmployeeView.swift */; };
+		240159472437379D00EECDEF /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A65F862436641B00A5215D /* EmployeeView.swift */; };
+		2465675F24367352008BA359 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465675E24367352008BA359 /* ReservationView.swift */; };
+		24A65F872436641B00A5215D /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A65F862436641B00A5215D /* EmployeeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +133,8 @@
 		03F1DFA524311BD000BD9E19 /* CampaignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignView.swift; sourceTree = "<group>"; };
 		03F1DFA824311CA600BD9E19 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		03F1DFAE24311D0100BD9E19 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
+		2465675E24367352008BA359 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
+		24A65F862436641B00A5215D /* EmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,10 +189,12 @@
 				A737CD5F242BAD6200A58238 /* Network */,
 				A737CD5C242B9FE000A58238 /* Models */,
 				034EF8842423D99200741711 /* AppDelegate.swift */,
+				24A65F862436641B00A5215D /* EmployeeView.swift */,
 				034EF8862423D99200741711 /* SceneDelegate.swift */,
 				034EF88B2423D99200741711 /* ContentView.swift */,
 				03F1DFAE24311D0100BD9E19 /* DataView.swift */,
 				03A2DD202431742D007A1387 /* Notification.swift */,
+				2465675E24367352008BA359 /* ReservationView.swift */,
 				0319474E2434B00E003F021E /* Toast.swift */,
 				035C56B12429376E00139C8E /* HomeView.swift */,
 				039815812432C70700C168D8 /* HideKeyboard.swift */,
@@ -398,6 +408,7 @@
 				03F1DFA324311BAC00BD9E19 /* ImageViewComponent.swift in Sources */,
 				031947622434FACD003F021E /* ScannerViewController.swift in Sources */,
 				034EF8852423D99200741711 /* AppDelegate.swift in Sources */,
+				2465675F24367352008BA359 /* ReservationView.swift in Sources */,
 				034EF8872423D99200741711 /* SceneDelegate.swift in Sources */,
 				035C56AE2429369800139C8E /* NavigationBarView.swift in Sources */,
 				03F1DFA024311AFD00BD9E19 /* CampaingNetworkManager.swift in Sources */,
@@ -409,6 +420,7 @@
 				03F1DFA924311CA600BD9E19 /* ImageLoader.swift in Sources */,
 				03A2DD212431742D007A1387 /* Notification.swift in Sources */,
 				03F1DF9A24311ABD00BD9E19 /* NetworkingManager.swift in Sources */,
+				24A65F872436641B00A5215D /* EmployeeView.swift in Sources */,
 				0398157924328FCD00C168D8 /* SearchBar.swift in Sources */,
 				0319474F2434B00E003F021E /* Toast.swift in Sources */,
 				034EF88C2423D99200741711 /* ContentView.swift in Sources */,
@@ -423,6 +435,7 @@
 				03F1DFA724311BD000BD9E19 /* CampaignView.swift in Sources */,
 				03F1DF9E24311AD900BD9E19 /* Course.swift in Sources */,
 				0364AE84243279DE005AB2A4 /* ContentView.swift in Sources */,
+				240159452437379600EECDEF /* ReservationView.swift in Sources */,
 				031947502434B00E003F021E /* Toast.swift in Sources */,
 				035C56B7242937A900139C8E /* SearchView.swift in Sources */,
 				0363CA1E2433428500876BDD /* ViewNotNilTests.swift in Sources */,
@@ -434,6 +447,7 @@
 				035C56BB242937C700139C8E /* ProfileView.swift in Sources */,
 				035C56AF2429369800139C8E /* NavigationBarView.swift in Sources */,
 				03F1DFB024311D0100BD9E19 /* DataView.swift in Sources */,
+				240159462437379C00EECDEF /* EmployeeView.swift in Sources */,
 				03F1DF9B24311ABD00BD9E19 /* NetworkingManager.swift in Sources */,
 				03A2DD222431742D007A1387 /* Notification.swift in Sources */,
 				03F1DF9824311A8100BD9E19 /* SingleResult.swift in Sources */,
@@ -462,8 +476,10 @@
 				03D2BC8C24360AFB0098C66B /* Toast.swift in Sources */,
 				03D2BC8D24360AFD0098C66B /* Notification.swift in Sources */,
 				03D2BC8F24360B000098C66B /* ContentView.swift in Sources */,
+				240159472437379D00EECDEF /* EmployeeView.swift in Sources */,
 				03D2BC9224360B0B0098C66B /* CampaingNetworkManager.swift in Sources */,
 				03D2BC9424360B0F0098C66B /* ImageLoader.swift in Sources */,
+				240159442437379500EECDEF /* ReservationView.swift in Sources */,
 				03D2BC9624360B130098C66B /* ImageViewComponent.swift in Sources */,
 				03D2BC9124360B080098C66B /* SingleResult.swift in Sources */,
 				03D2BC8B24360AF80098C66B /* HideKeyboard.swift in Sources */,

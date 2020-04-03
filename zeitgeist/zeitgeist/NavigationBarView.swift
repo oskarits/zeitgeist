@@ -36,9 +36,12 @@ struct NavigationBarView: View {
                 .tabItem {
                     Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
             }
+            EmployeeView()
+                .tabItem {
+                    Image("zircle").resizable().frame(width: 30, height: 30)}
+            }
         }
     }
-}
 
 struct NavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
