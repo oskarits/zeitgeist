@@ -10,22 +10,19 @@ import SwiftUI
 import CoreData
 
 struct SearchView: View {
+    
     @ObservedObject var shoppingHistory = ShoppingHistory()
     @ObservedObject var networkingManager = NetworkingManager()
+    
     @State private var searchText : String = ""
-    
-    @State private var itemCart : [String] = []
-    
     @State private var showPopover: Bool = false
     @State private var showToast = false
-    
     @State private var selectedItem : String = ""
     @State private var shoppingCartTitleText : String = "Shopping cart"
     @State private var shoppingList: [(key: String, value: String)] = [:].sorted{$0.value < $1.value}
     
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
-    
     
     var searchNavigation: some View {
         ForEach(networkingManager.clothingList.items) { item in
@@ -39,7 +36,6 @@ struct SearchView: View {
                                     ListItem(item: item)
                                 }
                             }
-                            
                             Spacer()
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
                                 Image(systemName: "cart.fill").font(Font.system(size: 30, weight: .regular)).onTapGesture {
@@ -131,9 +127,8 @@ struct SearchView: View {
                 .offset(x:0, y: self.showPopover ? 0 : UIApplication.shared.keyWindow?.frame.height ?? 0)
         }.resignKeyboardOnDragGesture()
     }
-    // ---------FUNCTIONS--------
     
-    
+    //---Functions---
     func addItem(itemID: String, brand: String, size: String, price: String, image: String) {
         let node = ItemNode(context: managedObjectContext)
         node.idString = itemID
@@ -157,7 +152,6 @@ struct SearchView: View {
     
     
     func ShoppingCartPlus(key: String, value: String) {
-        self.itemCart.append(key)
         self.showToast.toggle()
         self.shoppingList.insert((key: key, value: value), at: self.shoppingList.count)
         self.selectedItem = key
