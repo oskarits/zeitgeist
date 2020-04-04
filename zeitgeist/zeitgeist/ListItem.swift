@@ -14,15 +14,18 @@ struct ListItem: View {
     var body: some View {
         
         VStack(alignment: .leading) {
+            ImageView(item: item)
             Text(item.brand)
+                .fontWeight(.medium)
             Text(item.size)
                 .font(.system(size: 11))
-                .foregroundColor(Color.gray)
+                //.foregroundColor(Color.gray)
+            //.fontWeight(.light)
             Text("\(item.price) €")
                 .font(.system(size: 11))
                 .foregroundColor(Color.orange)
-            Text(item.images[0])
-            ImageView(item: item)
+                .fontWeight(.regular)
+            //Text(item.images[0])
         }
     }
 }

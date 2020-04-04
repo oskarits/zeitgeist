@@ -56,7 +56,7 @@ struct SearchView: View {
                                             ListItem(item: item)
                                             Spacer()
                                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-                                                Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                                Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                                     self.ShoppingCartMinus(index: "\(item.id)")
                                                 }
                                             }
@@ -92,12 +92,12 @@ struct SearchView: View {
                             
                             Spacer()
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-                                Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartMinus(index: "\(item.id)")
                                 }
                             }
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
-                                Image(systemName: "cart.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                Image(systemName: "cart.badge.plus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
 
                                 }
@@ -114,12 +114,12 @@ struct SearchView: View {
                             ListItem(item: item)
                             Spacer()
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-                                Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartMinus(index: "\(item.id)")
                                 }
                             }
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
-                                Image(systemName: "cart.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                Image(systemName: "cart.badge.plus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
 
                                 }
