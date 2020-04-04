@@ -87,7 +87,6 @@ struct SearchView: View {
                             VStack {
                                 VStack {
                                     ListItem(item: item)
-                                    ImageView(item: item)
                                 }
                             }
                             

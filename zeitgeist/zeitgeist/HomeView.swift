@@ -29,9 +29,6 @@ struct HomeView: View {
                     List(networkManager.courses) { course in
                         CampaignView(course: course)
                     }
-                    List(networkManager2.clothingList.items) { item in
-                        ImageView(item: item)
-                    }
                 }
             }
         }
