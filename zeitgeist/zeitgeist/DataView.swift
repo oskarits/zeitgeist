@@ -28,8 +28,11 @@ struct DataView: View {
                             Text("\(node.brand)").fontWeight(.medium)
                             Text("SIZE: \(node.size)").font(.system(size: 11))
                             Text("\(node.price) €").font(.system(size: 11))
-                            .foregroundColor(Color.orange)
-                            .fontWeight(.regular)
+                                .foregroundColor(Color.orange)
+                                .fontWeight(.regular)
+                            Button(action: self.deleteCore){
+                                Text("delete")
+                            }
                         }
                     }
                     .onDelete(perform: deleteItems)
@@ -53,6 +56,12 @@ struct DataView: View {
         managedObjectContext.delete(node)
         saveItems()
         
+    }
+    
+    func deleteCore() {
+        let node = fetchedResults[0]
+        managedObjectContext.delete(node)
+        saveItems()
     }
     
     func saveItems() {
