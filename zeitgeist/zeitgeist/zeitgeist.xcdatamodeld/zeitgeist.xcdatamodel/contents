@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19E266" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ItemNode" representedClassName=".ItemNode" syncable="YES">
+        <attribute name="brand" optional="YES" attributeType="String"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="idString" optional="YES" attributeType="String"/>
+        <attribute name="images" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="String"/>
+        <attribute name="size" optional="YES" attributeType="String"/>
         <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemNode" inverseName="parent" inverseEntity="ItemNode"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemNode" inverseName="children" inverseEntity="ItemNode"/>
     </entity>
     <elements>
-        <element name="ItemNode" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="ItemNode" positionX="-63" positionY="-18" width="128" height="28"/>
     </elements>
 </model>

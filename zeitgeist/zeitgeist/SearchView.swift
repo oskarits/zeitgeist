@@ -98,13 +98,13 @@ struct SearchView: View {
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
                                 Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartMinus(index: "\(item.id)")
-                                    self.addItem(itemID: "\(item.id)")
+                                    //self.addItem(itemID: "\(item.id)")
                                 }
                             }
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
                                 Image(systemName: "cart.badge.plus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
-                                    self.addItem(itemID: "\(item.id)")
+                                    self.addItem(itemID: "\(item.id)", size: item.size)
                                 }
                             }
                         }
@@ -121,13 +121,13 @@ struct SearchView: View {
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
                                 Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartMinus(index: "\(item.id)")
-                                    self.addItem(itemID: "\(item.id)")
+                                    //self.addItem(itemID: "\(item.id)")
                                 }
                             }
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
                                 Image(systemName: "cart.badge.plus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
-                                    self.addItem(itemID: "\(item.id)")
+                                    //self.addItem(itemID: "\(item.id)")
                                     
 
                                 }
@@ -182,9 +182,10 @@ struct SearchView: View {
     // ---------FUNCTIONS--------
     
     
-    func addItem(itemID: String) {
+    func addItem(itemID: String, size: String) {
         let node = ItemNode(context: managedObjectContext)
         node.idString = itemID
+        node.size = size
         saveItems()
     }
     

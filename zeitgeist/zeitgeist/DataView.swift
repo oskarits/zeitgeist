@@ -23,7 +23,11 @@ struct DataView: View {
             VStack {
                 List {
                     ForEach(fetchedResults, id: \.self) { node in
-                        Text("\(node.idString)")
+                        VStack {
+                            Text("\(node.size) - \(node.idString)")
+Text("\(node.size) - \(node.idString)")
+                        }
+                        //Text("\(node.idString)")
 
                         /*
                         VStack(alignment: .leading) {
