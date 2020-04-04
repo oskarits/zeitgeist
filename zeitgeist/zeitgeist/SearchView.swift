@@ -24,62 +24,6 @@ struct SearchView: View {
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
     
-    var shoppingCart: some View {
-        NavigationView {
-            VStack {
-                VStack {
-                    Spacer()
-                    HStack(alignment: .center) {
-                        Text("").padding(20)
-                        Spacer()
-                        Text(self.shoppingCartTitleText)
-                            .font(.system(size: 26, weight: .regular))
-                            .foregroundColor(Color.orange)
-                        Spacer()
-                        Button(action: {
-                            self.showPopover.toggle()
-                            UIApplication.shared.endEditing(true)
-                        }) {
-                            Image(systemName: "return")
-                                .font(Font.system(size: 30, weight: .regular))
-                        }.padding(20)
-                    }
-                    Button(action: {
-                        self.shoppingHistory.historyList.append(self.shoppingList.description)
-                        self.shoppingList.removeAll()
-                        print(self.shoppingHistory.historyList)
-                    }) {
-                            Text("Apple Pay")
-                    }
-                    List {
-                        ForEach(networkingManager.clothingList.items) { item in
-                            if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-                                NavigationLink(destination:
-                                SingleItemView(item: item)) {
-                                    VStack(alignment: .leading) {
-                                        HStack {
-                                            ListItem(item: item)
-                                            Spacer()
-                                            if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-                                                Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
-                                                    self.ShoppingCartMinus(index: "\(item.id)")
-                                                }
-                                            }
-                                            if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
-                                                Image(systemName: "cart.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
-                                                    self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
     
     var searchNavigation: some View {
         ForEach(networkingManager.clothingList.items) { item in
@@ -170,7 +114,14 @@ struct SearchView: View {
                     Spacer()
                     VStack{
                         VStack {
-                            self.shoppingCart
+                            Button(action: {
+                                self.showPopover.toggle()
+                                UIApplication.shared.endEditing(true)
+                            }) {
+                                Image(systemName: "return")
+                                    .font(Font.system(size: 30, weight: .regular))
+                            }.padding(20)
+                            ReservationList()
                         }
                     }
                 }

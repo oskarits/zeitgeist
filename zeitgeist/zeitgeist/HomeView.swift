@@ -12,7 +12,6 @@ import Combine
 struct HomeView: View {
     
     @ObservedObject var networkManager = CampaignNetworkManager()
-    @ObservedObject var networkManager2 = NetworkingManager()
 
     var body: some View {
         
