@@ -12,7 +12,7 @@ import CoreData
 
 
 struct DataView: View {
-
+    
     @ObservedObject var networkingManager = NetworkingManager()
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
@@ -24,24 +24,28 @@ struct DataView: View {
                 List {
                     ForEach(fetchedResults, id: \.self) { node in
                         VStack {
-                            Text("\(node.size) - \(node.idString)")
-Text("\(node.size) - \(node.idString)")
+                            Text("\(node.brand)")
+                            Text("\(node.size)")
+                            Text("\(node.idString)")
+                            Text("\(node.price)")
+                            Text("\(node.image)")
+                            
                         }
                         //Text("\(node.idString)")
-
+                        
                         /*
-                        VStack(alignment: .leading) {
-                            
-                            ImageView(item: item)
-                            
-                            Text(item.brand)
-                            Text("SIZE: \(item.size)")
-                            Text("\(item.price) €")
-                        }
-                        */
+                         VStack(alignment: .leading) {
+                         
+                         ImageView(item: item)
+                         
+                         Text(item.brand)
+                         Text("SIZE: \(item.size)")
+                         Text("\(item.price) €")
+                         }
+                         */
                         
                     }
-                .onDelete(perform: deleteItems)
+                    .onDelete(perform: deleteItems)
                 }
             }.navigationBarItems(trailing: EditButton())
         }

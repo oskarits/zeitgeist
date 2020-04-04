@@ -104,7 +104,7 @@ struct SearchView: View {
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
                                 Image(systemName: "cart.badge.plus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
-                                    self.addItem(itemID: "\(item.id)", size: item.size)
+                                    self.addItem(itemID: "\(item.id)", brand: item.brand, size: item.size, price: item.price, image: "\(item.images[0])")
                                 }
                             }
                         }
@@ -182,10 +182,14 @@ struct SearchView: View {
     // ---------FUNCTIONS--------
     
     
-    func addItem(itemID: String, size: String) {
+    func addItem(itemID: String, brand: String, size: String, price: String, image: String) {
         let node = ItemNode(context: managedObjectContext)
         node.idString = itemID
         node.size = size
+        node.brand = brand
+        node.size = size
+        node.price = price
+        node.image = image
         saveItems()
     }
     

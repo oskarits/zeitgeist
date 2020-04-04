@@ -14,10 +14,11 @@ class ItemNode: NSManagedObject {
     @NSManaged var children: NSSet?
     @NSManaged var parent: ItemNode?
     
-    //    @NSManaged var brand: String
+    @NSManaged var brand: String
     @NSManaged var size: String
+    @NSManaged var price: String
+    @NSManaged var image: String
     //    @NSManaged var condition: String
-    //    @NSManaged var price: String
     //    @NSManaged var description: String
 }
 
