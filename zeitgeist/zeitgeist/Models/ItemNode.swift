@@ -10,7 +10,7 @@ import CoreData
 
 class ItemNode: NSManagedObject {
     
-    @NSManaged var id: String?
+    @NSManaged var idString: String
     @NSManaged var children: NSSet?
     @NSManaged var parent: ItemNode?
 }
@@ -18,7 +18,7 @@ class ItemNode: NSManagedObject {
 extension ItemNode {
     static func getNodes() -> NSFetchRequest<ItemNode> {
         let request = ItemNode.fetchRequest() as! NSFetchRequest<ItemNode>
-        request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "idString", ascending: true)]
         return request
     }
 }

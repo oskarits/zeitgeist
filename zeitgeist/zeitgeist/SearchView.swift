@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct SearchView: View {
     @ObservedObject var shoppingHistory = ShoppingHistory()
@@ -18,6 +19,10 @@ struct SearchView: View {
     @State private var selectedItem : String = ""
     @State private var shoppingCartTitleText : String = "Shopping cart"
     @State private var shoppingList: [(key: String, value: String)] = [:].sorted{$0.value < $1.value}
+    
+    //-----
+    @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
     
     var shoppingCart: some View {
         NavigationView {
@@ -114,12 +119,15 @@ struct SearchView: View {
                             Spacer()
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
                                 Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
-                                    self.ShoppingCartMinus(index: "\(item.id)")
+                                    //self.ShoppingCartMinus(index: "\(item.id)")
+                                    self.addItem(itemID: "\(item.id)")
                                 }
                             }
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
                                 Image(systemName: "cart.badge.plus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
-                                    self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
+                                    //self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
+                                    self.addItem(itemID: "\(item.id)")
+                                    
 
                                 }
                             }
@@ -170,6 +178,30 @@ struct SearchView: View {
                 .offset(x:0, y: self.showPopover ? 0 : UIApplication.shared.keyWindow?.frame.height ?? 0)
         }.resignKeyboardOnDragGesture()
     }
+    // ---------FUNCTIONS--------
+    
+    
+    func addItem(itemID: String) {
+        let node = ItemNode(context: managedObjectContext)
+        node.idString = itemID
+        saveItems()
+    }
+    
+    func deleteItems(indexSet: IndexSet) {
+        let node = fetchedResults[indexSet.first!]
+        managedObjectContext.delete(node)
+        saveItems()
+        
+    }
+    
+    func saveItems() {
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print(error)
+        }
+    }
+    
     
     func ShoppingCartPlus(key: String, value: String) {
         self.itemCart.append(key)
@@ -195,6 +227,7 @@ struct SearchView: View {
         UIApplication.shared.endEditing(true)
 
     }
+    
 
 }
 
