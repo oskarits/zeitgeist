@@ -13,14 +13,16 @@ struct SearchView: View {
     @ObservedObject var shoppingHistory = ShoppingHistory()
     @ObservedObject var networkingManager = NetworkingManager()
     @State private var searchText : String = ""
+    
     @State private var itemCart : [String] = []
+    
     @State private var showPopover: Bool = false
     @State private var showToast = false
+    
     @State private var selectedItem : String = ""
     @State private var shoppingCartTitleText : String = "Shopping cart"
     @State private var shoppingList: [(key: String, value: String)] = [:].sorted{$0.value < $1.value}
     
-    //-----
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
     
@@ -40,7 +42,7 @@ struct SearchView: View {
                             
                             Spacer()
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-                                Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+                                Image(systemName: "cart.fill").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartMinus(index: "\(item.id)")
                                     //self.addItem(itemID: "\(item.id)")
                                 }
@@ -63,7 +65,7 @@ struct SearchView: View {
                             ListItem(item: item)
                             Spacer()
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-                                Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+                                Image(systemName: "cart.fill").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartMinus(index: "\(item.id)")
                                     //self.addItem(itemID: "\(item.id)")
                                 }
@@ -71,9 +73,8 @@ struct SearchView: View {
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
                                 Image(systemName: "cart.badge.plus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
-                                    //self.addItem(itemID: "\(item.id)")
+                                    self.addItem(itemID: "\(item.id)", brand: item.brand, size: item.size, price: item.price, image: "\(item.images[0])")
                                     
-
                                 }
                             }
                         }
@@ -145,14 +146,7 @@ struct SearchView: View {
         print("order: \(node.order)")
         saveItems()
     }
-    
-    func deleteItems(indexSet: IndexSet) {
-        let node = fetchedResults[indexSet.first!]
-        managedObjectContext.delete(node)
-        saveItems()
-        
-    }
-    
+
     func saveItems() {
         do {
             try managedObjectContext.save()
