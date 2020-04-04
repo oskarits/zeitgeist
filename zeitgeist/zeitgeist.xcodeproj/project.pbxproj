@@ -66,6 +66,9 @@
 		03D2BC9424360B0F0098C66B /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFA824311CA600BD9E19 /* ImageLoader.swift */; };
 		03D2BC9524360B100098C66B /* CampaignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFA524311BD000BD9E19 /* CampaignView.swift */; };
 		03D2BC9624360B130098C66B /* ImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DFA224311BAC00BD9E19 /* ImageViewComponent.swift */; };
+		03E152DE2438BD1200B0CDA0 /* ItemNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E152DD2438BD1200B0CDA0 /* ItemNode.swift */; };
+		03E152DF2438BD1200B0CDA0 /* ItemNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E152DD2438BD1200B0CDA0 /* ItemNode.swift */; };
+		03E152E02438BD1200B0CDA0 /* ItemNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E152DD2438BD1200B0CDA0 /* ItemNode.swift */; };
 		03E33E462438845A00FDDDF5 /* SearchImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E33E452438845A00FDDDF5 /* SearchImageViewComponent.swift */; };
 		03E33E472438845A00FDDDF5 /* SearchImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E33E452438845A00FDDDF5 /* SearchImageViewComponent.swift */; };
 		03E33E482438845A00FDDDF5 /* SearchImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E33E452438845A00FDDDF5 /* SearchImageViewComponent.swift */; };
@@ -143,6 +146,7 @@
 		0398157824328FCD00C168D8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		039815812432C70700C168D8 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		03A2DD202431742D007A1387 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		03E152DD2438BD1200B0CDA0 /* ItemNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNode.swift; sourceTree = "<group>"; };
 		03E33E452438845A00FDDDF5 /* SearchImageViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageViewComponent.swift; sourceTree = "<group>"; };
 		03F1DF9624311A8100BD9E19 /* SingleResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleResult.swift; sourceTree = "<group>"; };
 		03F1DF9924311ABD00BD9E19 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 			children = (
 				03F1DF9624311A8100BD9E19 /* SingleResult.swift */,
 				03F1DF9C24311AD900BD9E19 /* Course.swift */,
+				03E152DD2438BD1200B0CDA0 /* ItemNode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				0398157924328FCD00C168D8 /* SearchBar.swift in Sources */,
 				0319474F2434B00E003F021E /* Toast.swift in Sources */,
 				034EF88C2423D99200741711 /* ContentView.swift in Sources */,
+				03E152DE2438BD1200B0CDA0 /* ItemNode.swift in Sources */,
 				034EF88A2423D99200741711 /* zeitgeist.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +496,7 @@
 				031AC78D24378A5000FEC6DA /* ImageView.swift in Sources */,
 				0398157A24328FCD00C168D8 /* SearchBar.swift in Sources */,
 				03F1DFAA24311CA600BD9E19 /* ImageLoader.swift in Sources */,
+				03E152DF2438BD1200B0CDA0 /* ItemNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +510,7 @@
 				035C56B42429376E00139C8E /* HomeView.swift in Sources */,
 				031AC78E24378A5000FEC6DA /* ImageView.swift in Sources */,
 				035C56BC242937C700139C8E /* ProfileView.swift in Sources */,
+				03E152E02438BD1200B0CDA0 /* ItemNode.swift in Sources */,
 				035C56B02429369800139C8E /* NavigationBarView.swift in Sources */,
 				03D2BC9524360B100098C66B /* CampaignView.swift in Sources */,
 				03D2BC8A24360AF60098C66B /* SearchBar.swift in Sources */,
