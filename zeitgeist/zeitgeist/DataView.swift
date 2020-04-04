@@ -17,7 +17,7 @@ struct DataView: View {
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
-    
+    @State private var number : Int = 0
     var body: some View {
         NavigationView {
             VStack {
@@ -25,7 +25,9 @@ struct DataView: View {
                     ForEach(fetchedResults, id: \.self) { node in
                         VStack {
                             SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
+                                self.numberToOrder(number: node.order)
                                 self.deleteCore(/*order: node.order*/)
+                                
                             }
                             Text("\(node.brand)").fontWeight(.medium)
                             Text("SIZE: \(node.size)").font(.system(size: 11))
@@ -37,13 +39,18 @@ struct DataView: View {
                     .onDelete(perform: deleteItems)
                     .onMove(perform: moveItem)
                 }
-            }.navigationBarItems(trailing: EditButton())
+            }//.navigationBarItems(trailing: EditButton())
         }
         .navigationBarTitle(Text("Marketplace"))
     }
     
     // ---------FUNCTIONS--------
     
+    func numberToOrder(number: Int) {
+        self.number = (number - 1)
+        print("---------")
+        print("Current order: \(number)")
+    }
     
     func addItem(itemID: String) {
         let node = ItemNode(context: managedObjectContext)
@@ -59,18 +66,63 @@ struct DataView: View {
     }
     
     func deleteCore(/*order: Int*/) {
-        print("------")
-        //let index = (order)
-        //print("index = order: \(index)")
-        let node = fetchedResults[0]
-        //print("delete: \(node)")
-        print("node.order: \(node.order)")
-        let count = fetchedResults.count
-        print(count)
-        managedObjectContext.delete(node)
-        print("deleted")
-        saveItems()
-        print("saved")
+        //lista count
+        //order on last +1
+        if let lastNumber = (fetchedResults.last?.order) {
+            print("last order: \(lastNumber)")
+            print("difference of last and 1: \(lastNumber - 1)")
+
+        }
+        
+        let firstOrder = fetchedResults.first?.order ?? -1
+        print("first order: \(firstOrder)")
+        let difference = firstOrder - 1
+        
+        print("difference of first and 1: \(difference)")
+
+        print("item count: \(fetchedResults.count)")
+        //---- Difference ----
+        if difference > 0 {
+            if (fetchedResults.last?.order ?? 0 <= fetchedResults.count) {
+                let node = fetchedResults[self.number]
+                print("order number fetched: \(node.order)")
+                let countOfOrders = fetchedResults.count
+                
+                if (fetchedResults.last?.order ?? 1) > self.number {
+                    print("--too high order--")
+                }
+                
+                if ((countOfOrders - 1) >= 0 && ( fetchedResults.last?.order ?? 1 == self.number)) {
+                    print("items remaining: \(countOfOrders - 1)")
+                    managedObjectContext.delete(node)
+                    print("deleted")
+                    saveItems()
+                } else {
+                    print("Cant Delete")
+                }
+                
+                print("saved")
+            } else if (fetchedResults.last?.order ?? 0 > fetchedResults.count) {
+                let currentOrder = self.number
+                let cut = (fetchedResults.last?.order ?? 0) - currentOrder
+                
+                /*
+                     click ->
+                 1 : 3
+                 2 : 4
+                 3 : 5
+                 */
+                
+                
+                
+            }
+            
+            
+            
+            
+        } else {
+            print("-Cant Delete-")
+        }
     }
     
     

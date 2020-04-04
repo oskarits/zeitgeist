@@ -190,7 +190,7 @@ struct SearchView: View {
         node.size = size
         node.price = price
         node.image = image
-        node.order = (fetchedResults.last?.order ?? 0) + 1
+        node.order = (fetchedResults.last?.order ?? 0) + 1  //-----
         print("order: \(node.order)")
         saveItems()
     }
