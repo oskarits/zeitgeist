@@ -13,6 +13,12 @@ class ItemNode: NSManagedObject {
     @NSManaged var idString: String
     @NSManaged var children: NSSet?
     @NSManaged var parent: ItemNode?
+    
+    //    @NSManaged var brand: String
+    //    @NSManaged var size: String
+    //    @NSManaged var condition: String
+    //    @NSManaged var price: String
+    //    @NSManaged var description: String
 }
 
 extension ItemNode {

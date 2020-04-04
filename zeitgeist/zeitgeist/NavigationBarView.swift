@@ -20,7 +20,8 @@ struct NavigationBarView: View {
     
     var body: some View {
         TabView {
-           HomeView()
+           DataView()
+            //HomeView()
              .tabItem {
                 Image(systemName: "house").font(Font.system(size: 30, weight: .regular))
             }

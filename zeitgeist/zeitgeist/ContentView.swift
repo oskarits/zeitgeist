@@ -11,8 +11,8 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        ItemNodeView()
-        //NavigationBarView()
+        //ItemNodeView()
+        NavigationBarView()
     }
 }
 struct ContentView_Previews: PreviewProvider {
