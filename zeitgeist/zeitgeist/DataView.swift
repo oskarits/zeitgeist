@@ -16,7 +16,7 @@ struct DataView: View {
     @ObservedObject var networkingManager = NetworkingManager()
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
-    
+    let url : String = "https://www.zalando-wardrobe.de/api/images/"
     
     var body: some View {
         NavigationView {
@@ -24,26 +24,13 @@ struct DataView: View {
                 List {
                     ForEach(fetchedResults, id: \.self) { node in
                         VStack {
-                            Text("\(node.brand)")
-                            Text("\(node.size)")
-                            Text("\(node.idString)")
-                            Text("\(node.price)")
-                            Text("\(node.image)")
-                            
+                            SearchImageViewComponent(url: "\(self.url)" + "\(node.image)")
+                            Text("\(node.brand)").fontWeight(.medium)
+                            Text("SIZE: \(node.size)").font(.system(size: 11))
+                            Text("\(node.price) €").font(.system(size: 11))
+                            .foregroundColor(Color.orange)
+                            .fontWeight(.regular)
                         }
-                        //Text("\(node.idString)")
-                        
-                        /*
-                         VStack(alignment: .leading) {
-                         
-                         ImageView(item: item)
-                         
-                         Text(item.brand)
-                         Text("SIZE: \(item.size)")
-                         Text("\(item.price) €")
-                         }
-                         */
-                        
                     }
                     .onDelete(perform: deleteItems)
                 }
@@ -75,8 +62,6 @@ struct DataView: View {
             print(error)
         }
     }
-    
-    
     
 }
 
