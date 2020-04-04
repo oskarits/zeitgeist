@@ -22,8 +22,7 @@ struct ListItem: View {
                 .font(.system(size: 11))
                 .foregroundColor(Color.orange)
             Text(item.images[0])
-
-            
+            ImageView(item: item)
         }
     }
 }

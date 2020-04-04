@@ -14,6 +14,7 @@ struct SingleItemView: View {
     var body: some View {
             VStack(alignment: .leading) {
                 Text(item.brand).font(.largeTitle)
+                ImageView(item: item)
                 Text(item.size)
                 Text(item.images[0])
                 Text(item.condition)
