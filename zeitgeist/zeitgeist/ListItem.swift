@@ -17,7 +17,7 @@ struct ListItem: View {
             ImageView(item: item)
             Text(item.brand)
                 .fontWeight(.medium)
-            Text(item.size)
+            Text("SIZE: \(item.size)")
                 .font(.system(size: 11))
                 //.foregroundColor(Color.gray)
             //.fontWeight(.light)
