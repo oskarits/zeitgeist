@@ -71,7 +71,7 @@ struct DataView: View {
         if let lastNumber = (fetchedResults.last?.order) {
             print("last order: \(lastNumber)")
             print("difference of last and 1: \(lastNumber - 1)")
-
+            
         }
         
         let firstOrder = fetchedResults.first?.order ?? -1
@@ -79,17 +79,19 @@ struct DataView: View {
         let difference = firstOrder - 1
         
         print("difference of first and 1: \(difference)")
-
+        
         print("item count: \(fetchedResults.count)")
         //---- Difference ----
-        if difference > 0 {
-            if (fetchedResults.last?.order ?? 0 <= fetchedResults.count) {
+        if difference >= 0 { //--
+            if (fetchedResults.last?.order ?? 0 == fetchedResults.count) { //if order number is within index range
                 let node = fetchedResults[self.number]
                 print("order number fetched: \(node.order)")
                 let countOfOrders = fetchedResults.count
                 
                 if (fetchedResults.last?.order ?? 1) > self.number {
                     print("--too high order--")
+                } else {
+                    print("fetchedResults.last?.order ?? 1) > self.number")
                 }
                 
                 if ((countOfOrders - 1) >= 0 && ( fetchedResults.last?.order ?? 1 == self.number)) {
@@ -97,33 +99,45 @@ struct DataView: View {
                     managedObjectContext.delete(node)
                     print("deleted")
                     saveItems()
-                } else {
+                } else if ( fetchedResults.last?.order ?? 1 > self.number) {
+                    
+                    print("last order higher than clicked order")
+                } else if ( fetchedResults.first?.order ?? -1 == self.number) {
+                    let offsetNode = fetchedResults[fetchedResults.first?.order ?? 0]
+                    managedObjectContext.delete(offsetNode)
+                    print("deleted")
+                    saveItems()
+                    print("last order higher than clicked order")
+                }
+                    
+                else {
                     print("Cant Delete")
                 }
                 
                 print("saved")
-            } else if (fetchedResults.last?.order ?? 0 > fetchedResults.count) {
+            }
+                //if order number out of index range
+            else if (fetchedResults.last?.order ?? 0 > fetchedResults.count) {
                 let currentOrder = self.number
                 let cut = (fetchedResults.last?.order ?? 0) - currentOrder
-                
-                /*
-                     click ->
-                 1 : 3
-                 2 : 4
-                 3 : 5
-                 */
-                
-                
-                
+                let correctedIndex = fetchedResults.count - cut
+                let offsetNode = fetchedResults[correctedIndex]
+                managedObjectContext.delete(offsetNode)
+            }else {
+                print("if & else if failed")
             }
-            
-            
-            
-            
         } else {
             print("-Cant Delete-")
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     func saveItems() {
