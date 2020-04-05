@@ -36,7 +36,7 @@ struct ToastView<Content>: View where Content: View {
                         .animation(.easeInOut(duration: 1.0))
                         .transition(.move(edge: .bottom))
                         .onAppear {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 self.show.toggle()
                             }
                     }

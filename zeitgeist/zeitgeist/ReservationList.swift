@@ -65,7 +65,7 @@ struct ReservationList: View {
         
         func deleteCore() {
             let currentOrderString: String = String(self.number + 1)
-            var orderArray = ["x"]
+            var orderArray = ["empty"]
             for i in fetchedResults {
                 orderArray.append("\(i.self.order)")
             }

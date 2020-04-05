@@ -128,7 +128,9 @@ struct SearchView: View {
         }.resignKeyboardOnDragGesture()
     }
     
-    //---Functions---
+    //---FUNCTIONS---
+    
+    //Adds item listing to CoreData
     func addItem(itemID: String, brand: String, size: String, price: String, image: String) {
         let node = ItemNode(context: managedObjectContext)
         node.idString = itemID
@@ -137,11 +139,12 @@ struct SearchView: View {
         node.size = size
         node.price = price
         node.image = image
-        node.order = (fetchedResults.last?.order ?? 0) + 1  //-----
-        print("order: \(node.order)")
+        node.order = (fetchedResults.last?.order ?? 0) + 1
+        print("Order of new item: \(node.order)")
         saveItems()
     }
 
+    //Saves the added items to core data
     func saveItems() {
         do {
             try managedObjectContext.save()
@@ -150,11 +153,15 @@ struct SearchView: View {
         }
     }
     
-    
+    //Function when shopping cart icon is pressed
     func ShoppingCartPlus(key: String, value: String) {
+        //Displays Toast notification
         self.showToast.toggle()
+        //Adds item info to dictionary
         self.shoppingList.insert((key: key, value: value), at: self.shoppingList.count)
+        //Places item name for Toast
         self.selectedItem = key
+        //Toggles keyboard down
         UIApplication.shared.endEditing(true)
     }
     
@@ -174,8 +181,6 @@ struct SearchView: View {
         UIApplication.shared.endEditing(true)
 
     }
-    
-
 }
 
 struct SearchView_Previews: PreviewProvider {
