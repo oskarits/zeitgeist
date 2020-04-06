@@ -37,7 +37,7 @@ struct ReservationList: View {
                         }
                         .onDelete(perform: deleteItems)
                     }
-                }//.navigationBarItems(trailing: EditButton())
+                }.navigationBarItems(trailing: EditButton())
             }
             .navigationBarTitle(Text("Marketplace"))
         }
@@ -63,6 +63,7 @@ struct ReservationList: View {
             
         }
         
+        // Programmatically deletes item
         func deleteCore() {
             let currentOrderString: String = String(self.number + 1)
             var orderArray = ["empty"]
