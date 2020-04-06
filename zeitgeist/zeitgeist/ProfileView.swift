@@ -19,26 +19,29 @@ struct ProfileView: View {
         
         NavigationView {
             ZStack {
-                NavigationLink(destination: Detail(show: self.$show), isActive: self.$show) {
-                    Text("")
+//                NavigationLink(destination: Detail(show: self.$show), isActive: self.$show) {
+//                    Text("")
+//                }
+                NavigationLink(destination: ReservationList()) {
+                    Text("Check your reservations")
                 }
-                List(shoppingHistory.historyList, id: \.self) { item in
-                    Text(item)
-                }.padding()
-                Button(action: {
-                    self.notification.SendNotification(title: self.notificationTitle, body: self.notificationBody)
-                }) {
-                    Text("Send notification")
-                }.navigationBarTitle("Profile")
-            }.onAppear {
-                NotificationCenter.default.addObserver(forName: NSNotification.Name("Detail"), object: nil, queue: .main) { (_) in
-                    self.show = true
-                }
+//                Button(action: {
+//                    self.notification.SendNotification(title: self.notificationTitle, body: self.notificationBody)
+//                }) {
+//                    Text("Send notification")
+//                }
             }
-            
+                .navigationBarTitle(Text("Profile"), displayMode: .inline)
+                .onAppear {
+                    NotificationCenter.default.addObserver(forName: NSNotification.Name("Detail"), object: nil, queue: .main) { (_) in
+                        self.show = true
+                    }
+                }
         }
+            
     }
 }
+
 
 struct Detail : View {
     @Binding var show : Bool
