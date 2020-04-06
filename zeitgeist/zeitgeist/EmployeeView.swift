@@ -10,10 +10,11 @@ import Foundation
 import SwiftUI
 
 struct EmployeeView: View {
+    
     var body: some View {
-        HStack {
+        VStack {
             NavigationView {
-                HStack {
+                VStack {
                     NavigationLink(destination: ReservationView()) {
                         VStack {
                             Image(systemName: "pencil.and.outline")
@@ -27,8 +28,9 @@ struct EmployeeView: View {
                 }
                 .font(.title)
                 .multilineTextAlignment(.center)
-                .foregroundColor(.orange)
+                
                 .cornerRadius(8)
+                .navigationBarTitle(Text("Employee View"), displayMode: .inline)
             }
         }
     }
