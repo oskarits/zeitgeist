@@ -22,5 +22,6 @@ struct ClothingListEntry: Decodable, Identifiable {
     var price: String
     var description: String
     var created: Int
+    var images: [String]
 }
 

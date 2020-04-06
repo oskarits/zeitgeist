@@ -12,7 +12,7 @@ import Combine
 struct HomeView: View {
     
     @ObservedObject var networkManager = CampaignNetworkManager()
-    
+
     var body: some View {
         
         VStack {

@@ -13,8 +13,10 @@ struct SingleItemView: View {
     
     var body: some View {
             VStack(alignment: .leading) {
+                ImageView(item: item)
                 Text(item.brand).font(.largeTitle)
                 Text(item.size)
+                Text(item.images[0])
                 Text(item.condition)
                 Text(item.description)
                 Text("\(item.price) €")

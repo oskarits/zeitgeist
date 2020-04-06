@@ -7,73 +7,23 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct SearchView: View {
+    
     @ObservedObject var shoppingHistory = ShoppingHistory()
     @ObservedObject var networkingManager = NetworkingManager()
+    
     @State private var searchText : String = ""
-    @State private var itemCart : [String] = []
     @State private var showPopover: Bool = false
     @State private var showToast = false
     @State private var selectedItem : String = ""
     @State private var shoppingCartTitleText : String = "Shopping cart"
     @State private var shoppingList: [(key: String, value: String)] = [:].sorted{$0.value < $1.value}
     
-    var shoppingCart: some View {
-        NavigationView {
-            VStack {
-                VStack {
-                    Spacer()
-                    HStack(alignment: .center) {
-                        Text("").padding(20)
-                        Spacer()
-                        Text(self.shoppingCartTitleText)
-                            .font(.system(size: 26, weight: .regular))
-                            .foregroundColor(Color.orange)
-                        Spacer()
-                        Button(action: {
-                            self.showPopover.toggle()
-                            UIApplication.shared.endEditing(true)
-                        }) {
-                            Image(systemName: "return")
-                                .font(Font.system(size: 30, weight: .regular))
-                        }.padding(20)
-                    }
-                    Button(action: {
-                        self.shoppingHistory.historyList.append(self.shoppingList.description)
-                        self.shoppingList.removeAll()
-                        print(self.shoppingHistory.historyList)
-                    }) {
-                            Text("Apple Pay")
-                    }
-                    List {
-                        ForEach(shoppingList, id: \.value) { index, item in
-                            NavigationLink(
-                                destination:
-                                VStack {
-                                    Text(index)
-                                    Text(item.description)
-                            }) {
-                                VStack {
-                                    HStack {
-                                        VStack {
-                                            Text(index)
-                                            Text(item.description)
-                                        }
-                                        Spacer()
-                                        Image(systemName: "cart.fill.badge.minus")
-                                            .font(Font.system(size: 20, weight: .regular)).onTapGesture {
-                                                self.ShoppingCartMinus(index: item)
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+    // CoreData
+    @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
     
     var searchNavigation: some View {
         ForEach(networkingManager.clothingList.items) { item in
@@ -82,17 +32,22 @@ struct SearchView: View {
                 SingleItemView(item: item)) {
                     VStack(alignment: .leading) {
                         HStack {
-                            ListItem(item: item)
+                            VStack {
+                                VStack {
+                                    ListItem(item: item)
+                                }
+                            }
                             Spacer()
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-                                Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                Image(systemName: "cart.fill").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartMinus(index: "\(item.id)")
+                                    //self.addItem(itemID: "\(item.id)")
                                 }
                             }
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
-                                Image(systemName: "cart.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                Image(systemName: "cart.badge.plus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
-
+                                    self.addItem(itemID: "\(item.id)", brand: item.brand, size: item.size, price: item.price, image: "\(item.images[0])")
                                 }
                             }
                         }
@@ -107,14 +62,16 @@ struct SearchView: View {
                             ListItem(item: item)
                             Spacer()
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-                                Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                Image(systemName: "cart.fill").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartMinus(index: "\(item.id)")
+                                    //self.addItem(itemID: "\(item.id)")
                                 }
                             }
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
-                                Image(systemName: "cart.badge.plus").font(Font.system(size: 22, weight: .regular)).onTapGesture {
+                                Image(systemName: "cart.badge.plus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
-
+                                    self.addItem(itemID: "\(item.id)", brand: item.brand, size: item.size, price: item.price, image: "\(item.images[0])")
+                                    
                                 }
                             }
                         }
@@ -155,7 +112,14 @@ struct SearchView: View {
                     Spacer()
                     VStack{
                         VStack {
-                            self.shoppingCart
+                            Button(action: {
+                                self.showPopover.toggle()
+                                UIApplication.shared.endEditing(true)
+                            }) {
+                                Image(systemName: "return")
+                                    .font(Font.system(size: 30, weight: .regular))
+                            }.padding(20)
+                            ReservationList()
                         }
                     }
                 }
@@ -165,11 +129,40 @@ struct SearchView: View {
         }.resignKeyboardOnDragGesture()
     }
     
+    //---FUNCTIONS---
+    
+    //Adds item listing to CoreData
+    func addItem(itemID: String, brand: String, size: String, price: String, image: String) {
+        let node = ItemNode(context: managedObjectContext)
+        node.idString = itemID
+        node.size = size
+        node.brand = brand
+        node.size = size
+        node.price = price
+        node.image = image
+        node.order = (fetchedResults.last?.order ?? 0) + 1
+        print("Order of new item: \(node.order)")
+        saveItems()
+    }
+
+    //Saves the added items to core data
+    func saveItems() {
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print(error)
+        }
+    }
+    
+    //Function when shopping cart icon is pressed
     func ShoppingCartPlus(key: String, value: String) {
-        self.itemCart.append(key)
+        //Displays Toast notification
         self.showToast.toggle()
+        //Adds item info to dictionary
         self.shoppingList.insert((key: key, value: value), at: self.shoppingList.count)
+        //Places item name for Toast
         self.selectedItem = key
+        //Toggles keyboard down
         UIApplication.shared.endEditing(true)
     }
     
@@ -186,8 +179,9 @@ struct SearchView: View {
                 self.shoppingList.remove(at: indx ?? 0)
             }
         }
-    }
+        UIApplication.shared.endEditing(true)
 
+    }
 }
 
 struct SearchView_Previews: PreviewProvider {
