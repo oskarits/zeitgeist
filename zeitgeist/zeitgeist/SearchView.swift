@@ -18,7 +18,7 @@ struct SearchView: View {
     @State private var showPopover: Bool = false
     @State private var showToast = false
     @State private var selectedItem : String = ""
-    @State private var shoppingCartTitleText : String = "Shopping cart"
+    @State private var shoppingCartTitleText : String = "Reservations"
     @State private var shoppingList: [(key: String, value: String)] = [:].sorted{$0.value < $1.value}
     
     // CoreData
@@ -39,13 +39,13 @@ struct SearchView: View {
                             }
                             Spacer()
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-                                Image(systemName: "cart.fill").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+                                Image(systemName: "minus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartMinus(index: "\(item.id)")
                                     //self.addItem(itemID: "\(item.id)")
                                 }
                             }
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
-                                Image(systemName: "cart.badge.plus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+                                Image(systemName: "plus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
                                     self.addItem(itemID: "\(item.id)", brand: item.brand, size: item.size, price: item.price, image: "\(item.images[0])")
                                 }
@@ -62,13 +62,13 @@ struct SearchView: View {
                             ListItem(item: item)
                             Spacer()
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-                                Image(systemName: "cart.fill").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+                                Image(systemName: "minus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartMinus(index: "\(item.id)")
                                     //self.addItem(itemID: "\(item.id)")
                                 }
                             }
                             if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
-                                Image(systemName: "cart.badge.plus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+                                Image(systemName: "plus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
                                     self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
                                     self.addItem(itemID: "\(item.id)", brand: item.brand, size: item.size, price: item.price, image: "\(item.images[0])")
                                     
@@ -83,7 +83,7 @@ struct SearchView: View {
     
     var body: some View {
         ZStack(alignment: .leading) {
-            NavigationView{
+            NavigationView {
                 VStack {
                     SearchBar(text: $searchText, placeholder: "Search items")
                     List {
@@ -96,36 +96,14 @@ struct SearchView: View {
                     minHeight: 0,
                     maxHeight: .infinity,
                     alignment: .topLeading)
-                    .navigationBarItems( trailing:
-                        Button(action: {
-                            self.showPopover.toggle()
-                            UIApplication.shared.endEditing(true)
-                        }) {
-                            Image(systemName: "cart.fill")
-                                .font(Font.system(size: 30, weight: .regular))
+                    // Navigates to reservation list
+                .navigationBarItems( trailing:
+                        NavigationLink(destination: ReservationList()) {
+                            Text("Resevations")
                         }
                 )
-                    .navigationBarTitle(Text("Search Items"))
+                .navigationBarTitle(Text("Search Items"), displayMode: .inline)
             }.toast(show: $showToast, text: selectedItem)
-            ZStack {
-                VStack {
-                    Spacer()
-                    VStack{
-                        VStack {
-                            Button(action: {
-                                self.showPopover.toggle()
-                                UIApplication.shared.endEditing(true)
-                            }) {
-                                Image(systemName: "return")
-                                    .font(Font.system(size: 30, weight: .regular))
-                            }.padding(20)
-                            ReservationList()
-                        }
-                    }
-                }
-            }.background(Color.white)
-                .edgesIgnoringSafeArea(.all)
-                .offset(x:0, y: self.showPopover ? 0 : UIApplication.shared.keyWindow?.frame.height ?? 0)
         }.resignKeyboardOnDragGesture()
     }
     

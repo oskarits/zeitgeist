@@ -38,8 +38,9 @@ struct ReservationList: View {
                         .onDelete(perform: deleteItems)
                     }
                 }.navigationBarItems(trailing: EditButton())
+                .navigationBarTitle(Text("Reservations"), displayMode: .inline)
             }
-            .navigationBarTitle(Text("Marketplace"))
+            
         }
         
         // ---------FUNCTIONS--------

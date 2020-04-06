@@ -17,15 +17,12 @@ struct ReservationView: View {
     
     var body: some View {
         VStack {
-            Text("Reserved Items")
-                .font(.system(size: 26, weight: .regular))
-                .foregroundColor(Color.orange)
             NavigationView {
                 List {
                     self.ReservedItems
                 }
             }
-        }
+        }.navigationBarTitle(Text("Reserved Items"), displayMode: .inline)
     }
     
     var ReservedItems: some View {
