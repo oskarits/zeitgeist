@@ -15,7 +15,7 @@ struct SearchView: View {
     @ObservedObject var networkingManager = NetworkingManager()
     
     @State private var searchText : String = ""
-    @State private var showPopover: Bool = false
+//    @State private var showPopover: Bool = false
     @State private var showToast = false
     @State private var selectedItem : String = ""
     @State private var shoppingCartTitleText : String = "Reservations"
@@ -144,10 +144,10 @@ struct SearchView: View {
         UIApplication.shared.endEditing(true)
     }
     
-    func PopOverToggle() {
-        self.showPopover.toggle()
-        UIApplication.shared.endEditing(true)
-    }
+//    func PopOverToggle() {
+//        self.showPopover.toggle()
+//        UIApplication.shared.endEditing(true)
+//    }
     
     func ShoppingCartMinus(index: String) {
         if self.shoppingList.count > 0 {
