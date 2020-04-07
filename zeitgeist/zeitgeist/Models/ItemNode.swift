@@ -19,6 +19,8 @@ class ItemNode: NSManagedObject {
     @NSManaged var price: String
     @NSManaged var image: String
     @NSManaged var order: Int
+    @NSManaged var isReserved: Bool
+    @NSManaged var isCollected: Bool
     //    @NSManaged var condition: String
     //    @NSManaged var description: String
 }
