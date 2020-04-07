@@ -31,6 +31,9 @@
 		034EF8942423D99300741711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034EF8922423D99300741711 /* LaunchScreen.storyboard */; };
 		034EF89F2423D99400741711 /* zeitgeistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF89E2423D99400741711 /* zeitgeistTests.swift */; };
 		034EF8AA2423D99400741711 /* zeitgeistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8A92423D99400741711 /* zeitgeistUITests.swift */; };
+		035858C4243C92E1004C0266 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035858C3243C92E1004C0266 /* TabBar.swift */; };
+		035858C5243C92E1004C0266 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035858C3243C92E1004C0266 /* TabBar.swift */; };
+		035858C6243C92E1004C0266 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035858C3243C92E1004C0266 /* TabBar.swift */; };
 		035C56AE2429369800139C8E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56AD2429369800139C8E /* NavigationBarView.swift */; };
 		035C56AF2429369800139C8E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56AD2429369800139C8E /* NavigationBarView.swift */; };
 		035C56B02429369800139C8E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56AD2429369800139C8E /* NavigationBarView.swift */; };
@@ -141,6 +144,7 @@
 		034EF8A52423D99400741711 /* zeitgeistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zeitgeistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EF8A92423D99400741711 /* zeitgeistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zeitgeistUITests.swift; sourceTree = "<group>"; };
 		034EF8AB2423D99400741711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		035858C3243C92E1004C0266 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		035C56AD2429369800139C8E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		035C56B12429376E00139C8E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		035C56B5242937A900139C8E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 				03117F11243746EC00EB401E /* SingleItemView.swift */,
 				03117F152437471E00EB401E /* ListItem.swift */,
 				03CBCEE2243951540074EC12 /* ReservationList.swift */,
+				035858C3243C92E1004C0266 /* TabBar.swift */,
 			);
 			path = zeitgeist;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				03F1DF9D24311AD900BD9E19 /* Course.swift in Sources */,
 				034EF8852423D99200741711 /* AppDelegate.swift in Sources */,
 				034EF8872423D99200741711 /* SceneDelegate.swift in Sources */,
+				035858C4243C92E1004C0266 /* TabBar.swift in Sources */,
 				035C56BA242937C700139C8E /* ProfileView.swift in Sources */,
 				03F1DFA324311BAC00BD9E19 /* ImageViewComponent.swift in Sources */,
 				031947622434FACD003F021E /* ScannerViewController.swift in Sources */,
@@ -504,6 +510,7 @@
 				0398157A24328FCD00C168D8 /* SearchBar.swift in Sources */,
 				03F1DFAA24311CA600BD9E19 /* ImageLoader.swift in Sources */,
 				03E152DF2438BD1200B0CDA0 /* ItemNode.swift in Sources */,
+				035858C5243C92E1004C0266 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +527,7 @@
 				03CBCEE5243951540074EC12 /* ReservationList.swift in Sources */,
 				03E152E02438BD1200B0CDA0 /* ItemNode.swift in Sources */,
 				035C56B02429369800139C8E /* NavigationBarView.swift in Sources */,
+				035858C6243C92E1004C0266 /* TabBar.swift in Sources */,
 				03D2BC9524360B100098C66B /* CampaignView.swift in Sources */,
 				03D2BC8A24360AF60098C66B /* SearchBar.swift in Sources */,
 				034EF8AA2423D99400741711 /* zeitgeistUITests.swift in Sources */,

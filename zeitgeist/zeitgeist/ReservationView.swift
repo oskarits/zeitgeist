@@ -20,17 +20,7 @@ struct ReservationView: View {
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
-    
-//    var body: some View {
-//        VStack {
-//            NavigationView {
-//                List {
-//                    self.ReservedItems
-//                }
-//            }
-//        }.navigationBarTitle(Text("Reserved Items"), displayMode: .inline)
-//    }
-    
+
     var body: some View {
         VStack {
             NavigationView {
@@ -49,7 +39,9 @@ struct ReservationView: View {
                                     .foregroundColor(Color.orange)
                                     .fontWeight(.regular)
                                 HStack {
-                                    Button(action: {self.notification.SendNotification(title: self.confirmRes, body: "Please pickup :)")}) {
+                                    Button(action: {self.notification.SendNotification(title: self.confirmRes, body: "Please pickup :)")
+                                        self.updateItemNode(node: node)
+                                    }) {
 //                                        Image(systemName: "checkmark")
                                         Text("Accept")}
                                             .background(Color.green)
@@ -80,51 +72,26 @@ struct ReservationView: View {
                 }
             }
         }.navigationBarTitle(Text("Reserved Items (Employee)"), displayMode: .inline)
-        
-        // TODO replace with a list of the reserved items
-//        ForEach(networkingManager.clothingList.items) { item in
-//            NavigationLink(destination:
-//                VStack(alignment: .leading) {
-//                    Text(item.brand).font(.largeTitle)
-//                    Text(item.size)
-//                    Text(item.condition)
-//                    Text(item.description)
-//                    Text("\(item.price) €")
-//                        .font(.system(size: 20))
-//                        .foregroundColor(Color.orange)
-//                    // TODO Remove item from list after it has been accepted or declined
-//                    HStack {
-//                        Button(action: {self.notification.SendNotification(title: self.confirmRes, body: "Please pickup :)")}) {
-//                            Image(systemName: "checkmark")
-//                            Text("Accept")}.foregroundColor(.green).padding()
-//                        Button(action: {self.notification.SendNotification(title: self.declineRes, body: "We're sorry about that :(")}) {
-//                            Image(systemName: "trash")
-//                            Text("Decline")}.foregroundColor(.red).padding()
-//                    }.padding()
-//                        .font(.title)
-//
-//            }) {
-
-//                VStack(alignment: .leading) { Text(item.brand)
-//                    Text(item.size)
-//                        .font(.system(size: 11))
-//                        .foregroundColor(Color.gray)
-//                    Text("\(item.price) €")
-//                        .font(.system(size: 11))
-//                        .foregroundColor(Color.orange)
-//                }.padding()
-//            }
-//        }
     }
     
     func numberToOrder(number: Int) {
                self.number = (number - 1)
                print("---------")
                print("Current order: \(number)")
-           }
-
+ 
+    }
     
+    func updateItemNode(node: ItemNode) {
+        let isCollected = true
+        let node = node
+        node.isCollected = isCollected
+        managedObjectContext.performAndWait {
+    try? managedObjectContext.save()
+            }
+        }
 }
+
+
 
 
 struct ReservationView_Previews: PreviewProvider {

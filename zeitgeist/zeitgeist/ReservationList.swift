@@ -22,17 +22,34 @@ struct ReservationList: View {
                 VStack {
                     List {
                         ForEach(fetchedResults, id: \.self) { node in
-                            VStack {
-                                SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
-                                    self.numberToOrder(number: node.order)
-                                    self.deleteCore()
+                            HStack {
+                                VStack {
+                                    SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
+                                        self.numberToOrder(number: node.order)
+                                        self.deleteCore()
+                                        
+                                    }
+                                    Text("\(node.brand)").fontWeight(.medium)
+                                    Text("SIZE: \(node.size)").font(.system(size: 11))
+                                    Text("\(node.price) €").font(.system(size: 11))
+                                        .foregroundColor(Color.orange)
+                                        .fontWeight(.regular)
+                                }
+                                VStack {
+                                    if (node.isReserved) {
+                                        Text("Reserved")
+                                    }
+                                    if (node.isReserved == false) {
+                                        Text("Not reserved")
+                                    }
+                                    if (node.isCollected) {
+                                        Text("Collected")
+                                    }
+                                    if (node.isCollected == false) {
+                                        Text("Not Collected")
+                                    }
                                     
                                 }
-                                Text("\(node.brand)").fontWeight(.medium)
-                                Text("SIZE: \(node.size)").font(.system(size: 11))
-                                Text("\(node.price) €").font(.system(size: 11))
-                                    .foregroundColor(Color.orange)
-                                    .fontWeight(.regular)
                             }
                         }
                         .onDelete(perform: deleteItems)
