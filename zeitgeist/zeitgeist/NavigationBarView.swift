@@ -28,14 +28,18 @@ struct NavigationBarView: View {
              .tabItem {
                 Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
                 }
+            ReservationList()
+            .tabItem {
+               Image(systemName: "list.dash").font(Font.system(size: 30, weight: .regular))
+               }
             ProfileView()
                .tabItem {
                 Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
                 }
-            QrView()
-                .tabItem {
-                    Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
-            }
+//            QrView()
+//                .tabItem {
+//                    Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
+//            }
             EmployeeView()
                 .tabItem {
                     Image("zircle").resizable().frame(width: 30, height: 30)}

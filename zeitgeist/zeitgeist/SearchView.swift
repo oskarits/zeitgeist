@@ -98,8 +98,8 @@ struct SearchView: View {
                     alignment: .topLeading)
                     // Navigates to reservation list
                 .navigationBarItems( trailing:
-                        NavigationLink(destination: ReservationList()) {
-                            Text("Resevations")
+                        NavigationLink(destination: QrView()) {
+                            Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
                         }
                 )
                 .navigationBarTitle(Text("Search Items"), displayMode: .inline)
