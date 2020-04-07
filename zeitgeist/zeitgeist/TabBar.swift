@@ -9,15 +9,22 @@
 import SwiftUI
 
 struct TabBar: View {
+    @State private var selectedView = 0
+    var view = ["Search", "Reservations"]
+    
     var body: some View {
-        TabView {
-            SearchView()
-                .tabItem {
-                    Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
+        VStack(alignment: .leading) {
+            Picker(selection: $selectedView, label: Text("")) {
+                ForEach(0..<view.count) { index in
+                    Text(self.view[index]).tag(index)
+                }
+            }.pickerStyle(SegmentedPickerStyle())
+
+            if ( view[selectedView] == "Search") {
+                SearchView()
             }
-            ReservationList()
-                .tabItem {
-                    Image(systemName: "list.dash").font(Font.system(size: 30, weight: .regular))
+            if ( view[selectedView] == "Reservations") {
+                ReservationList()
             }
         }
     }
@@ -28,3 +35,16 @@ struct TabBar_Previews: PreviewProvider {
         TabBar()
     }
 }
+
+/*
+ TabView {
+     SearchView()
+         .tabItem {
+             Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
+     }
+     ReservationList()
+         .tabItem {
+             Image(systemName: "list.dash").font(Font.system(size: 30, weight: .regular))
+     }
+ }
+ */
