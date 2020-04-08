@@ -12,7 +12,6 @@ class LoginNode: NSManagedObject {
     @NSManaged var children: NSSet?
     @NSManaged var parent: LoginNode?
     @NSManaged var idString: String
-
     @NSManaged var isLoggedIn: Bool
 }
 

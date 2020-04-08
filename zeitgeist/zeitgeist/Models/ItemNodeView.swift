@@ -13,7 +13,7 @@ struct ItemNodeView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
-
+    
     //---
     @ObservedObject var shoppingHistory = ShoppingHistory()
     @ObservedObject var networkingManager = NetworkingManager()
@@ -32,43 +32,65 @@ struct ItemNodeView: View {
                 List {
                     ForEach(isLoggedInResults, id: \.self) { node in
                         HStack {
-                            VStack {
-                                Text("\(node.idString)").fontWeight(.medium)
-                            }
+                            
                             VStack {
                                 if (node.isLoggedIn) {
+                                    Text("\(node.idString)")
                                     Text("Logged in")
                                 }
                                 if (node.isLoggedIn == false) {
+                                    Text("Usernae: \(node.idString)")
                                     Text("Not logged in")
                                 }
-                                
-                                
+                                Button(action: {
+                                    self.isTrue(node: node)
+                                }) {
+                                    Text("Change signed in state")
+                                }
                             }
                             
                         }
+                        
                     }
                     .onDelete(perform: deleteItems)
                 }
                 Button(action: {
-                    self.addItem()
+                    self.isFalse()
                 }) {
                     Text("add false")
                 }
+                
+                
+                
+                
             }.navigationBarItems(trailing: EditButton())
-            .navigationBarTitle(Text("Reservations"), displayMode: .inline)
+                .navigationBarTitle(Text("Reservations"), displayMode: .inline)
         }
         
     }
-
+    
     // ---------FUNCTIONS--------
     
     //Adds item listing to CoreData
-    func addItem() {
+    func isFalse() {
         let node = LoginNode(context: managedObjectContext)
         node.isLoggedIn = false
         saveItems()
     }
+    
+    func isTrue(node: LoginNode) {
+        let isTrue = true
+        let isFalse = false
+        let node = node
+        if node.isLoggedIn == false {
+            node.isLoggedIn = isTrue
+        } else if (node.isLoggedIn) {
+            node.isLoggedIn = isFalse
+        }
+        managedObjectContext.performAndWait {
+    try? managedObjectContext.save()
+            }
+        }
     
     
     func deleteItems(indexSet: IndexSet) {
