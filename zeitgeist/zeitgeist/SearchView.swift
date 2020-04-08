@@ -98,8 +98,8 @@ struct SearchView: View {
                     alignment: .topLeading)
                     // Navigates to reservation list
                 .navigationBarItems( trailing:
-                        NavigationLink(destination: ReservationList()) {
-                            Text("Resevations")
+                        NavigationLink(destination: QrView()) {
+                            Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
                         }
                 )
                 .navigationBarTitle(Text("Search Items"), displayMode: .inline)
@@ -118,6 +118,8 @@ struct SearchView: View {
         node.size = size
         node.price = price
         node.image = image
+        node.isCollected = false
+        node.isReserved = true
         node.order = (fetchedResults.last?.order ?? 0) + 1
         print("Order of new item: \(node.order)")
         saveItems()
@@ -143,11 +145,6 @@ struct SearchView: View {
         //Toggles keyboard down
         UIApplication.shared.endEditing(true)
     }
-    
-//    func PopOverToggle() {
-//        self.showPopover.toggle()
-//        UIApplication.shared.endEditing(true)
-//    }
     
     func ShoppingCartMinus(index: String) {
         if self.shoppingList.count > 0 {
