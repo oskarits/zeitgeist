@@ -35,18 +35,24 @@ struct ItemNodeView: View {
                             
                             VStack {
                                 if (node.isLoggedIn) {
-                                    Text("\(node.idString)")
+                                    Text("Username: \(node.idString)")
                                     Text("Logged in")
                                 }
                                 if (node.isLoggedIn == false) {
-                                    Text("Usernae: \(node.idString)")
+                                    Text("Username: \(node.idString)")
                                     Text("Not logged in")
                                 }
-                                Button(action: {
-                                    self.isTrue(node: node)
-                                }) {
-                                    Text("Change signed in state")
+                                if (node.isLoggedIn) {
+                                    Image(systemName: "person.crop.circle.badge.checkmark.fill").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+                                        self.isTrue(node: node)
+                                    }
                                 }
+                                if (node.isLoggedIn == false) {
+                                    Image(systemName: "person.crop.circle.badge.xmark").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+                                        self.isTrue(node: node)
+                                    }
+                                }
+                                
                             }
                             
                         }
