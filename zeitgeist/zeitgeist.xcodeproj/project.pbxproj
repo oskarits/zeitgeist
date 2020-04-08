@@ -31,6 +31,9 @@
 		034EF8942423D99300741711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034EF8922423D99300741711 /* LaunchScreen.storyboard */; };
 		034EF89F2423D99400741711 /* zeitgeistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF89E2423D99400741711 /* zeitgeistTests.swift */; };
 		034EF8AA2423D99400741711 /* zeitgeistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8A92423D99400741711 /* zeitgeistUITests.swift */; };
+		035858C4243C92E1004C0266 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035858C3243C92E1004C0266 /* TabBar.swift */; };
+		035858C5243C92E1004C0266 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035858C3243C92E1004C0266 /* TabBar.swift */; };
+		035858C6243C92E1004C0266 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035858C3243C92E1004C0266 /* TabBar.swift */; };
 		035C56AE2429369800139C8E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56AD2429369800139C8E /* NavigationBarView.swift */; };
 		035C56AF2429369800139C8E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56AD2429369800139C8E /* NavigationBarView.swift */; };
 		035C56B02429369800139C8E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C56AD2429369800139C8E /* NavigationBarView.swift */; };
@@ -103,6 +106,9 @@
 		A74DC35E24375A32002062CA /* ShoppingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DC35D24375A32002062CA /* ShoppingHistory.swift */; };
 		A74DC35F243761DF002062CA /* ShoppingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DC35D24375A32002062CA /* ShoppingHistory.swift */; };
 		A74DC360243761E0002062CA /* ShoppingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DC35D24375A32002062CA /* ShoppingHistory.swift */; };
+		D13BB5CF24F496452D4049B1 /* Pods_zeitgeistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0664E61E186B91F2BC2497D /* Pods_zeitgeistTests.framework */; };
+		E14935584BFD839412383EE8 /* Pods_zeitgeist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118DED48A03BEC77A5EB463A /* Pods_zeitgeist.framework */; };
+		F7C6ED74511C5C93D6528D36 /* Pods_zeitgeist_zeitgeistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2460607B4DC3071256197A /* Pods_zeitgeist_zeitgeistUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +150,7 @@
 		034EF8A52423D99400741711 /* zeitgeistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zeitgeistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EF8A92423D99400741711 /* zeitgeistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zeitgeistUITests.swift; sourceTree = "<group>"; };
 		034EF8AB2423D99400741711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		035858C3243C92E1004C0266 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		035C56AD2429369800139C8E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		035C56B12429376E00139C8E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		035C56B5242937A900139C8E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -163,10 +170,22 @@
 		03F1DFA224311BAC00BD9E19 /* ImageViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewComponent.swift; sourceTree = "<group>"; };
 		03F1DFA524311BD000BD9E19 /* CampaignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignView.swift; sourceTree = "<group>"; };
 		03F1DFA824311CA600BD9E19 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		118DED48A03BEC77A5EB463A /* Pods_zeitgeist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeitgeist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2465675E24367352008BA359 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		24A65F862436641B00A5215D /* EmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeView.swift; sourceTree = "<group>"; };
+
 		A712EF27243CA66C009AE9E3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+
+		2DB84A8D2E983F0AE280AF33 /* Pods-zeitgeist-zeitgeistUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeitgeist-zeitgeistUITests.debug.xcconfig"; path = "Target Support Files/Pods-zeitgeist-zeitgeistUITests/Pods-zeitgeist-zeitgeistUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3E6F5BB75A33A0C6A0B4C550 /* Pods-zeitgeistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeitgeistTests.release.xcconfig"; path = "Target Support Files/Pods-zeitgeistTests/Pods-zeitgeistTests.release.xcconfig"; sourceTree = "<group>"; };
+		702F04314C32C5661FADE550 /* Pods-zeitgeist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeitgeist.debug.xcconfig"; path = "Target Support Files/Pods-zeitgeist/Pods-zeitgeist.debug.xcconfig"; sourceTree = "<group>"; };
+		A0664E61E186B91F2BC2497D /* Pods_zeitgeistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeitgeistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+
 		A74DC35D24375A32002062CA /* ShoppingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingHistory.swift; sourceTree = "<group>"; };
+		AA2460607B4DC3071256197A /* Pods_zeitgeist_zeitgeistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeitgeist_zeitgeistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D243636C44463D1D866255AF /* Pods-zeitgeist-zeitgeistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeitgeist-zeitgeistUITests.release.xcconfig"; path = "Target Support Files/Pods-zeitgeist-zeitgeistUITests/Pods-zeitgeist-zeitgeistUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D96CF841C2FFB9F5A2249BC4 /* Pods-zeitgeistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeitgeistTests.debug.xcconfig"; path = "Target Support Files/Pods-zeitgeistTests/Pods-zeitgeistTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E9F1D256BF2BFF90697EADF1 /* Pods-zeitgeist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeitgeist.release.xcconfig"; path = "Target Support Files/Pods-zeitgeist/Pods-zeitgeist.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E14935584BFD839412383EE8 /* Pods_zeitgeist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D13BB5CF24F496452D4049B1 /* Pods_zeitgeistTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C6ED74511C5C93D6528D36 /* Pods_zeitgeist_zeitgeistUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +223,8 @@
 				034EF89D2423D99400741711 /* zeitgeistTests */,
 				034EF8A82423D99400741711 /* zeitgeistUITests */,
 				034EF8822423D99200741711 /* Products */,
+				7165AF2AF606B40E8AC36B9F /* Pods */,
+				7B0177F2C535F3566C74FB78 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,6 +269,7 @@
 				03117F11243746EC00EB401E /* SingleItemView.swift */,
 				03117F152437471E00EB401E /* ListItem.swift */,
 				03CBCEE2243951540074EC12 /* ReservationList.swift */,
+				035858C3243C92E1004C0266 /* TabBar.swift */,
 			);
 			path = zeitgeist;
 			sourceTree = "<group>";
@@ -274,6 +299,30 @@
 				034EF8AB2423D99400741711 /* Info.plist */,
 			);
 			path = zeitgeistUITests;
+			sourceTree = "<group>";
+		};
+		7165AF2AF606B40E8AC36B9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				702F04314C32C5661FADE550 /* Pods-zeitgeist.debug.xcconfig */,
+				E9F1D256BF2BFF90697EADF1 /* Pods-zeitgeist.release.xcconfig */,
+				2DB84A8D2E983F0AE280AF33 /* Pods-zeitgeist-zeitgeistUITests.debug.xcconfig */,
+				D243636C44463D1D866255AF /* Pods-zeitgeist-zeitgeistUITests.release.xcconfig */,
+				D96CF841C2FFB9F5A2249BC4 /* Pods-zeitgeistTests.debug.xcconfig */,
+				3E6F5BB75A33A0C6A0B4C550 /* Pods-zeitgeistTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7B0177F2C535F3566C74FB78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				118DED48A03BEC77A5EB463A /* Pods_zeitgeist.framework */,
+				AA2460607B4DC3071256197A /* Pods_zeitgeist_zeitgeistUITests.framework */,
+				A0664E61E186B91F2BC2497D /* Pods_zeitgeistTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A70B29B4243114E900215457 /* URL Image Loader */ = {
@@ -315,9 +364,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 034EF8AE2423D99400741711 /* Build configuration list for PBXNativeTarget "zeitgeist" */;
 			buildPhases = (
+				730A985ECC89D982C9B8600B /* [CP] Check Pods Manifest.lock */,
 				034EF87D2423D99200741711 /* Sources */,
 				034EF87E2423D99200741711 /* Frameworks */,
 				034EF87F2423D99200741711 /* Resources */,
+				21766D5E874FC21634F1EF25 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -332,6 +383,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 034EF8B12423D99400741711 /* Build configuration list for PBXNativeTarget "zeitgeistTests" */;
 			buildPhases = (
+				DF0B8608BA7F591BCA7B021A /* [CP] Check Pods Manifest.lock */,
 				034EF8962423D99400741711 /* Sources */,
 				034EF8972423D99400741711 /* Frameworks */,
 				034EF8982423D99400741711 /* Resources */,
@@ -350,9 +402,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 034EF8B42423D99400741711 /* Build configuration list for PBXNativeTarget "zeitgeistUITests" */;
 			buildPhases = (
+				9A363DEC14D5D830E45CE6BF /* [CP] Check Pods Manifest.lock */,
 				034EF8A12423D99400741711 /* Sources */,
 				034EF8A22423D99400741711 /* Frameworks */,
 				034EF8A32423D99400741711 /* Resources */,
+				4F8E5C0DBBEF0DD2B9E17FDA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -434,6 +488,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21766D5E874FC21634F1EF25 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zeitgeist/Pods-zeitgeist-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zeitgeist/Pods-zeitgeist-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zeitgeist/Pods-zeitgeist-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F8E5C0DBBEF0DD2B9E17FDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zeitgeist-zeitgeistUITests/Pods-zeitgeist-zeitgeistUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zeitgeist-zeitgeistUITests/Pods-zeitgeist-zeitgeistUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zeitgeist-zeitgeistUITests/Pods-zeitgeist-zeitgeistUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		730A985ECC89D982C9B8600B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zeitgeist-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A363DEC14D5D830E45CE6BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zeitgeist-zeitgeistUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF0B8608BA7F591BCA7B021A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zeitgeistTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		034EF87D2423D99200741711 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -447,6 +604,7 @@
 				034EF8852423D99200741711 /* AppDelegate.swift in Sources */,
 				A712EF28243CA66C009AE9E3 /* SignInView.swift in Sources */,
 				034EF8872423D99200741711 /* SceneDelegate.swift in Sources */,
+				035858C4243C92E1004C0266 /* TabBar.swift in Sources */,
 				035C56BA242937C700139C8E /* ProfileView.swift in Sources */,
 				03F1DFA324311BAC00BD9E19 /* ImageViewComponent.swift in Sources */,
 				031947622434FACD003F021E /* ScannerViewController.swift in Sources */,
@@ -510,7 +668,11 @@
 				0398157A24328FCD00C168D8 /* SearchBar.swift in Sources */,
 				03F1DFAA24311CA600BD9E19 /* ImageLoader.swift in Sources */,
 				03E152DF2438BD1200B0CDA0 /* ItemNode.swift in Sources */,
+
 				A712EF29243CA66C009AE9E3 /* SignInView.swift in Sources */,
+
+				035858C5243C92E1004C0266 /* TabBar.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +689,7 @@
 				03CBCEE5243951540074EC12 /* ReservationList.swift in Sources */,
 				03E152E02438BD1200B0CDA0 /* ItemNode.swift in Sources */,
 				035C56B02429369800139C8E /* NavigationBarView.swift in Sources */,
+				035858C6243C92E1004C0266 /* TabBar.swift in Sources */,
 				03D2BC9524360B100098C66B /* CampaignView.swift in Sources */,
 				03D2BC8A24360AF60098C66B /* SearchBar.swift in Sources */,
 				034EF8AA2423D99400741711 /* zeitgeistUITests.swift in Sources */,
@@ -694,6 +857,7 @@
 		};
 		034EF8AF2423D99400741711 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 702F04314C32C5661FADE550 /* Pods-zeitgeist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -714,6 +878,7 @@
 		};
 		034EF8B02423D99400741711 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9F1D256BF2BFF90697EADF1 /* Pods-zeitgeist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -734,6 +899,7 @@
 		};
 		034EF8B22423D99400741711 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D96CF841C2FFB9F5A2249BC4 /* Pods-zeitgeistTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -755,6 +921,7 @@
 		};
 		034EF8B32423D99400741711 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E6F5BB75A33A0C6A0B4C550 /* Pods-zeitgeistTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -776,6 +943,7 @@
 		};
 		034EF8B52423D99400741711 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DB84A8D2E983F0AE280AF33 /* Pods-zeitgeist-zeitgeistUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -795,6 +963,7 @@
 		};
 		034EF8B62423D99400741711 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D243636C44463D1D866255AF /* Pods-zeitgeist-zeitgeistUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

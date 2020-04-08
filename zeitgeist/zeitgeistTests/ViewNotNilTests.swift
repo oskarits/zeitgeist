@@ -24,24 +24,6 @@ class ViewNotNilTests: XCTestCase {
         XCTAssertNotNil(body)
     }
     
-    func testNavigationBarView() {
-        let testableView = NavigationBarView()
-        let body = testableView.body
-        XCTAssertNotNil(body)
-    }
-    
-    func testProfileView() {
-        let testableView = ProfileView()
-        let body = testableView.body
-        XCTAssertNotNil(body)
-    }
-    
-    func testSearchView() {
-        let testableView = SearchView()
-        let body = testableView.body
-        XCTAssertNotNil(body)
-    }
-    
     func testHomeView() {
         let testableView = HomeView()
         let body = testableView.body

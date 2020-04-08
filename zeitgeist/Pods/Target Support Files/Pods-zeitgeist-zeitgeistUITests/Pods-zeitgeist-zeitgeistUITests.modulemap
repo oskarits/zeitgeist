@@ -1,0 +1,6 @@
+framework module Pods_zeitgeist_zeitgeistUITests {
+  umbrella header "Pods-zeitgeist-zeitgeistUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

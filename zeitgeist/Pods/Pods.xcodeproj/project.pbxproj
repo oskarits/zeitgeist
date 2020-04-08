@@ -1,0 +1,1000 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		036422066DC30CA444E5B3C41BC329EE /* Pods-zeitgeistTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7AC6639D3EA533F3418189C8C647CA /* Pods-zeitgeistTests-dummy.m */; };
+		04B990A67380A3D4D2B485B1CFFB6F79 /* Pods-zeitgeist-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D8822162FCCF24494A73326A6C5F71 /* Pods-zeitgeist-dummy.m */; };
+		0A3BBE2C81BD09A527006BDE90B6AADF /* Pods-zeitgeist-zeitgeistUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AF08A7E2A5C734FA3E55EFEA7913BFA7 /* Pods-zeitgeist-zeitgeistUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12F16581FDA4A66C99B5AA1AB917BCC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350750CC7B26F5D1183C0B0DF981C30E /* Foundation.framework */; };
+		1A32019C6CC72E0AF8F34CCF8B46ECFB /* Pods-zeitgeist-zeitgeistUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D51650ECE302A64F1395A526455722D8 /* Pods-zeitgeist-zeitgeistUITests-dummy.m */; };
+		25096B5658932384F66FE73CD783AFE3 /* PreferenceSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB536A30B10217BEF59539A5BBB8C936 /* PreferenceSetter.swift */; };
+		3FCA8F3AF6F93A437E9A048DC1633A00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350750CC7B26F5D1183C0B0DF981C30E /* Foundation.framework */; };
+		3FF881A38E8C4F2A9DF31BE23CF9C1B7 /* WaterfallGrid-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F935C34C039022B45114A53A7D0E7C /* WaterfallGrid-dummy.m */; };
+		402501A676EAC0C4D5D3D9078CDE0D04 /* WaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078AEA3B3AF000B09D1C89E9C8EC3B2 /* WaterfallGrid.swift */; };
+		4BAA867F5D7D971B66C80CB3B94DE18C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350750CC7B26F5D1183C0B0DF981C30E /* Foundation.framework */; };
+		5B907EB7A97EBA7FAB28EA5C983AE062 /* GridSyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C8A270210D959E18D7AE4E167F30C /* GridSyle.swift */; };
+		65B51ABAB72E1BAB30E03D477EFAE80C /* ScrollOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4888D797CB4971574A229372533D /* ScrollOptions.swift */; };
+		7420D51AEFBEDC25148B04536E02345D /* View+ScrollOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718E236AABB7A8B95B2FC5A45EB86C75 /* View+ScrollOptions.swift */; };
+		85509ACC182C25E0759CC512147CAA5A /* WaterfallGrid-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D527EBA41C9BDAC23E5EF6B7DA7E7B1F /* WaterfallGrid-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A38878E360CA83DAD2B858615823232F /* PositiveNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF4FD9C4EC76ACB06C11C0790282163 /* PositiveNumber.swift */; };
+		AC485823271E0D635896BDB9AEDDA46C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80E2909F464F1E009B5A0483107219A1 /* SwiftUI.framework */; };
+		AEEC968DC31F598C2CBB8E80E21A99B5 /* Pods-zeitgeist-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 148BBFB2B62E3AA35A3B3FD418241C61 /* Pods-zeitgeist-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D61482C4C2E27C73CCD84ED2E6B3EE86 /* View+GridStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A9BCB779F485261786BB6E25DA95FB /* View+GridStyle.swift */; };
+		DAC8A0D47F32186E426036C750172619 /* ElementPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A395344761DF1D08861516507C05A436 /* ElementPreference.swift */; };
+		EF786187248778F8B0A063A59BA0051F /* Pods-zeitgeistTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CE52D2510DB6C2FED9E688767641BC18 /* Pods-zeitgeistTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F729EBF3D6A325F8C0EE453A6FFCBF4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350750CC7B26F5D1183C0B0DF981C30E /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4723D227B386DFF04F5FB60C927D290B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16DB0A490A61C833A70BDE2217E0D5FD;
+			remoteInfo = WaterfallGrid;
+		};
+		BC186FA9356997F4C8A31F2AD992D0F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EA182976D3E185B4E1849322DEB7FF0;
+			remoteInfo = "Pods-zeitgeist";
+		};
+		F0568AB37C74F6854F094F472C9035E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16DB0A490A61C833A70BDE2217E0D5FD;
+			remoteInfo = WaterfallGrid;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		035F4ACA1CAE74213DED63981623671F /* Pods-zeitgeist-zeitgeistUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-zeitgeist-zeitgeistUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		079FEDDA8CF4DA43EC334D57238D7D4A /* Pods-zeitgeist-zeitgeistUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-zeitgeist-zeitgeistUITests-frameworks.sh"; sourceTree = "<group>"; };
+		0EF4FD9C4EC76ACB06C11C0790282163 /* PositiveNumber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PositiveNumber.swift; path = Sources/WaterfallGrid/Environment/PositiveNumber.swift; sourceTree = "<group>"; };
+		148BBFB2B62E3AA35A3B3FD418241C61 /* Pods-zeitgeist-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-zeitgeist-umbrella.h"; sourceTree = "<group>"; };
+		189920EB595A71B07919E397AB2DC665 /* Pods-zeitgeist-zeitgeistUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-zeitgeist-zeitgeistUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1B21C032F15E71A0C5ED5BFD59C67FF7 /* Pods-zeitgeist-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-zeitgeist-Info.plist"; sourceTree = "<group>"; };
+		1F09EE9A978F3F53AFD35F6B3D7C2D65 /* Pods-zeitgeistTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-zeitgeistTests.modulemap"; sourceTree = "<group>"; };
+		350750CC7B26F5D1183C0B0DF981C30E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3E421A38768805BCF146D8A3AEEC88B8 /* Pods-zeitgeistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-zeitgeistTests.debug.xcconfig"; sourceTree = "<group>"; };
+		421121A6A88DA597D0E85AB6AA4D2E49 /* WaterfallGrid.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WaterfallGrid.modulemap; sourceTree = "<group>"; };
+		46E5EFD2E64650DF7D5CF5442149B7C9 /* Pods-zeitgeistTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-zeitgeistTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5078AEA3B3AF000B09D1C89E9C8EC3B2 /* WaterfallGrid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WaterfallGrid.swift; path = Sources/WaterfallGrid/WaterfallGrid.swift; sourceTree = "<group>"; };
+		50903A350E1F30B631D28BE9DD9CA06D /* Pods-zeitgeist-zeitgeistUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-zeitgeist-zeitgeistUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		54C6EF551A1C1EBB973AAF2519448E5C /* Pods_zeitgeist_zeitgeistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_zeitgeist_zeitgeistUITests.framework; path = "Pods-zeitgeist-zeitgeistUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56189979C88DE13005CBD1A79200FCB9 /* Pods-zeitgeist-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-zeitgeist-acknowledgements.plist"; sourceTree = "<group>"; };
+		56F935C34C039022B45114A53A7D0E7C /* WaterfallGrid-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WaterfallGrid-dummy.m"; sourceTree = "<group>"; };
+		596D63923DAEE63CF3FAA20B02D9931C /* Pods-zeitgeist.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-zeitgeist.modulemap"; sourceTree = "<group>"; };
+		649F980DC100997D2D8B161343D4FFF3 /* Pods-zeitgeist-zeitgeistUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-zeitgeist-zeitgeistUITests-Info.plist"; sourceTree = "<group>"; };
+		66A844D8E38B1DFE903BF2FD49F6F983 /* Pods-zeitgeistTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-zeitgeistTests-Info.plist"; sourceTree = "<group>"; };
+		68D8822162FCCF24494A73326A6C5F71 /* Pods-zeitgeist-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-zeitgeist-dummy.m"; sourceTree = "<group>"; };
+		718E236AABB7A8B95B2FC5A45EB86C75 /* View+ScrollOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+ScrollOptions.swift"; path = "Sources/WaterfallGrid/View+ScrollOptions.swift"; sourceTree = "<group>"; };
+		80E2909F464F1E009B5A0483107219A1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
+		81263576C172E5ADAE06CAA3EC727AEA /* Pods-zeitgeist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-zeitgeist.release.xcconfig"; sourceTree = "<group>"; };
+		8726BD8D19CBC90B544DF1F5A0A4818C /* Pods-zeitgeist-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-zeitgeist-acknowledgements.markdown"; sourceTree = "<group>"; };
+		891F2B2423EB29859B9491C190054BA9 /* Pods-zeitgeist-zeitgeistUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-zeitgeist-zeitgeistUITests.modulemap"; sourceTree = "<group>"; };
+		9D077F8D102885BE94BAAE6C5EB8ABD9 /* Pods_zeitgeist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_zeitgeist.framework; path = "Pods-zeitgeist.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A395344761DF1D08861516507C05A436 /* ElementPreference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementPreference.swift; path = Sources/WaterfallGrid/Preference/ElementPreference.swift; sourceTree = "<group>"; };
+		A65F4888D797CB4971574A229372533D /* ScrollOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollOptions.swift; path = Sources/WaterfallGrid/Environment/ScrollOptions.swift; sourceTree = "<group>"; };
+		AA60D29D36976CAF3A7A85BFBC5EB5C1 /* Pods-zeitgeist-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-zeitgeist-frameworks.sh"; sourceTree = "<group>"; };
+		AC6C8A270210D959E18D7AE4E167F30C /* GridSyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GridSyle.swift; path = Sources/WaterfallGrid/Environment/GridSyle.swift; sourceTree = "<group>"; };
+		AF08A7E2A5C734FA3E55EFEA7913BFA7 /* Pods-zeitgeist-zeitgeistUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-zeitgeist-zeitgeistUITests-umbrella.h"; sourceTree = "<group>"; };
+		AF79EEA194095033033C3B85185E75B6 /* Pods-zeitgeist-zeitgeistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-zeitgeist-zeitgeistUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B5C453D43F2E02EA6680B42784E37900 /* Pods-zeitgeist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-zeitgeist.debug.xcconfig"; sourceTree = "<group>"; };
+		C873C8B3FB68B6F2230E5D5545E20D5F /* Pods_zeitgeistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_zeitgeistTests.framework; path = "Pods-zeitgeistTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCDC666209803BEDEFE3DBA3101D11D9 /* WaterfallGrid-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WaterfallGrid-Info.plist"; sourceTree = "<group>"; };
+		CE52D2510DB6C2FED9E688767641BC18 /* Pods-zeitgeistTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-zeitgeistTests-umbrella.h"; sourceTree = "<group>"; };
+		CEC05C8154000B802E2D4CBE771EF0DE /* WaterfallGrid.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WaterfallGrid.xcconfig; sourceTree = "<group>"; };
+		CF7AC6639D3EA533F3418189C8C647CA /* Pods-zeitgeistTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-zeitgeistTests-dummy.m"; sourceTree = "<group>"; };
+		D51650ECE302A64F1395A526455722D8 /* Pods-zeitgeist-zeitgeistUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-zeitgeist-zeitgeistUITests-dummy.m"; sourceTree = "<group>"; };
+		D527EBA41C9BDAC23E5EF6B7DA7E7B1F /* WaterfallGrid-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WaterfallGrid-umbrella.h"; sourceTree = "<group>"; };
+		E3A0609525C5B681751F703B88451CB1 /* WaterfallGrid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WaterfallGrid.framework; path = WaterfallGrid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A9BCB779F485261786BB6E25DA95FB /* View+GridStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+GridStyle.swift"; path = "Sources/WaterfallGrid/View+GridStyle.swift"; sourceTree = "<group>"; };
+		E6151EC59063ADCED274856B4024BDC3 /* Pods-zeitgeistTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-zeitgeistTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E7E216FAEA6E9402A6A120A54A52890C /* Pods-zeitgeistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-zeitgeistTests.release.xcconfig"; sourceTree = "<group>"; };
+		F5CCD495F3127A994A608C0192F54538 /* WaterfallGrid-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WaterfallGrid-prefix.pch"; sourceTree = "<group>"; };
+		FB536A30B10217BEF59539A5BBB8C936 /* PreferenceSetter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreferenceSetter.swift; path = Sources/WaterfallGrid/Preference/PreferenceSetter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2D7D028F5AA372152247DE96263E7906 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F729EBF3D6A325F8C0EE453A6FFCBF4C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E498AB56363C1D7E9891AD55380D2A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12F16581FDA4A66C99B5AA1AB917BCC0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64E1BE0F0B8E7CFB4B7C7C957FDE925B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BAA867F5D7D971B66C80CB3B94DE18C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AE8060489A8534B63545AC0E72AF66A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FCA8F3AF6F93A437E9A048DC1633A00 /* Foundation.framework in Frameworks */,
+				AC485823271E0D635896BDB9AEDDA46C /* SwiftUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B91ACD8FE8A01F0DAD4528EE70EBCC8 /* Pods-zeitgeistTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F09EE9A978F3F53AFD35F6B3D7C2D65 /* Pods-zeitgeistTests.modulemap */,
+				E6151EC59063ADCED274856B4024BDC3 /* Pods-zeitgeistTests-acknowledgements.markdown */,
+				46E5EFD2E64650DF7D5CF5442149B7C9 /* Pods-zeitgeistTests-acknowledgements.plist */,
+				CF7AC6639D3EA533F3418189C8C647CA /* Pods-zeitgeistTests-dummy.m */,
+				66A844D8E38B1DFE903BF2FD49F6F983 /* Pods-zeitgeistTests-Info.plist */,
+				CE52D2510DB6C2FED9E688767641BC18 /* Pods-zeitgeistTests-umbrella.h */,
+				3E421A38768805BCF146D8A3AEEC88B8 /* Pods-zeitgeistTests.debug.xcconfig */,
+				E7E216FAEA6E9402A6A120A54A52890C /* Pods-zeitgeistTests.release.xcconfig */,
+			);
+			name = "Pods-zeitgeistTests";
+			path = "Target Support Files/Pods-zeitgeistTests";
+			sourceTree = "<group>";
+		};
+		1309AF66AD1567703F20121842502278 /* Pods-zeitgeist */ = {
+			isa = PBXGroup;
+			children = (
+				596D63923DAEE63CF3FAA20B02D9931C /* Pods-zeitgeist.modulemap */,
+				8726BD8D19CBC90B544DF1F5A0A4818C /* Pods-zeitgeist-acknowledgements.markdown */,
+				56189979C88DE13005CBD1A79200FCB9 /* Pods-zeitgeist-acknowledgements.plist */,
+				68D8822162FCCF24494A73326A6C5F71 /* Pods-zeitgeist-dummy.m */,
+				AA60D29D36976CAF3A7A85BFBC5EB5C1 /* Pods-zeitgeist-frameworks.sh */,
+				1B21C032F15E71A0C5ED5BFD59C67FF7 /* Pods-zeitgeist-Info.plist */,
+				148BBFB2B62E3AA35A3B3FD418241C61 /* Pods-zeitgeist-umbrella.h */,
+				B5C453D43F2E02EA6680B42784E37900 /* Pods-zeitgeist.debug.xcconfig */,
+				81263576C172E5ADAE06CAA3EC727AEA /* Pods-zeitgeist.release.xcconfig */,
+			);
+			name = "Pods-zeitgeist";
+			path = "Target Support Files/Pods-zeitgeist";
+			sourceTree = "<group>";
+		};
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				832F4240090AEB9790F95E3D2B82BEBD /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D3128A33B33B75BEECBD43402807CB5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D077F8D102885BE94BAAE6C5EB8ABD9 /* Pods_zeitgeist.framework */,
+				54C6EF551A1C1EBB973AAF2519448E5C /* Pods_zeitgeist_zeitgeistUITests.framework */,
+				C873C8B3FB68B6F2230E5D5545E20D5F /* Pods_zeitgeistTests.framework */,
+				E3A0609525C5B681751F703B88451CB1 /* WaterfallGrid.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BAC7C2E1F9E5A78AEBBED6004F25AA8 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1309AF66AD1567703F20121842502278 /* Pods-zeitgeist */,
+				ABC48E0B88706F86E47DBE7896510A7A /* Pods-zeitgeist-zeitgeistUITests */,
+				0B91ACD8FE8A01F0DAD4528EE70EBCC8 /* Pods-zeitgeistTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6B9A8D4243AB27712BFF7B51E2FC3676 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE195BE891FB7F2A1783DE15C717A120 /* WaterfallGrid */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		832F4240090AEB9790F95E3D2B82BEBD /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				350750CC7B26F5D1183C0B0DF981C30E /* Foundation.framework */,
+				80E2909F464F1E009B5A0483107219A1 /* SwiftUI.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		ABC48E0B88706F86E47DBE7896510A7A /* Pods-zeitgeist-zeitgeistUITests */ = {
+			isa = PBXGroup;
+			children = (
+				891F2B2423EB29859B9491C190054BA9 /* Pods-zeitgeist-zeitgeistUITests.modulemap */,
+				189920EB595A71B07919E397AB2DC665 /* Pods-zeitgeist-zeitgeistUITests-acknowledgements.markdown */,
+				50903A350E1F30B631D28BE9DD9CA06D /* Pods-zeitgeist-zeitgeistUITests-acknowledgements.plist */,
+				D51650ECE302A64F1395A526455722D8 /* Pods-zeitgeist-zeitgeistUITests-dummy.m */,
+				079FEDDA8CF4DA43EC334D57238D7D4A /* Pods-zeitgeist-zeitgeistUITests-frameworks.sh */,
+				649F980DC100997D2D8B161343D4FFF3 /* Pods-zeitgeist-zeitgeistUITests-Info.plist */,
+				AF08A7E2A5C734FA3E55EFEA7913BFA7 /* Pods-zeitgeist-zeitgeistUITests-umbrella.h */,
+				035F4ACA1CAE74213DED63981623671F /* Pods-zeitgeist-zeitgeistUITests.debug.xcconfig */,
+				AF79EEA194095033033C3B85185E75B6 /* Pods-zeitgeist-zeitgeistUITests.release.xcconfig */,
+			);
+			name = "Pods-zeitgeist-zeitgeistUITests";
+			path = "Target Support Files/Pods-zeitgeist-zeitgeistUITests";
+			sourceTree = "<group>";
+		};
+		BE195BE891FB7F2A1783DE15C717A120 /* WaterfallGrid */ = {
+			isa = PBXGroup;
+			children = (
+				A395344761DF1D08861516507C05A436 /* ElementPreference.swift */,
+				AC6C8A270210D959E18D7AE4E167F30C /* GridSyle.swift */,
+				0EF4FD9C4EC76ACB06C11C0790282163 /* PositiveNumber.swift */,
+				FB536A30B10217BEF59539A5BBB8C936 /* PreferenceSetter.swift */,
+				A65F4888D797CB4971574A229372533D /* ScrollOptions.swift */,
+				E4A9BCB779F485261786BB6E25DA95FB /* View+GridStyle.swift */,
+				718E236AABB7A8B95B2FC5A45EB86C75 /* View+ScrollOptions.swift */,
+				5078AEA3B3AF000B09D1C89E9C8EC3B2 /* WaterfallGrid.swift */,
+				E24119818EC6009D704AFBC39302E360 /* Support Files */,
+			);
+			name = WaterfallGrid;
+			path = WaterfallGrid;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				6B9A8D4243AB27712BFF7B51E2FC3676 /* Pods */,
+				4D3128A33B33B75BEECBD43402807CB5 /* Products */,
+				5BAC7C2E1F9E5A78AEBBED6004F25AA8 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E24119818EC6009D704AFBC39302E360 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				421121A6A88DA597D0E85AB6AA4D2E49 /* WaterfallGrid.modulemap */,
+				CEC05C8154000B802E2D4CBE771EF0DE /* WaterfallGrid.xcconfig */,
+				56F935C34C039022B45114A53A7D0E7C /* WaterfallGrid-dummy.m */,
+				CCDC666209803BEDEFE3DBA3101D11D9 /* WaterfallGrid-Info.plist */,
+				F5CCD495F3127A994A608C0192F54538 /* WaterfallGrid-prefix.pch */,
+				D527EBA41C9BDAC23E5EF6B7DA7E7B1F /* WaterfallGrid-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/WaterfallGrid";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		377BE639FEC08695685EAF300E7D61B1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF786187248778F8B0A063A59BA0051F /* Pods-zeitgeistTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A589979B67B7575413CBA2DD1E3F06C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEEC968DC31F598C2CBB8E80E21A99B5 /* Pods-zeitgeist-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41864641715DF72533EB255E0FF15021 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A3BBE2C81BD09A527006BDE90B6AADF /* Pods-zeitgeist-zeitgeistUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7703D73ADDC74DBE043536A1CCC7E714 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85509ACC182C25E0759CC512147CAA5A /* WaterfallGrid-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		16DB0A490A61C833A70BDE2217E0D5FD /* WaterfallGrid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4D3FA81DA8B3CA5F0EDF3DB563015A3 /* Build configuration list for PBXNativeTarget "WaterfallGrid" */;
+			buildPhases = (
+				7703D73ADDC74DBE043536A1CCC7E714 /* Headers */,
+				32FA8DFEDEE5A356ACAA0E0953861FAC /* Sources */,
+				7AE8060489A8534B63545AC0E72AF66A /* Frameworks */,
+				BDA7E55F1AE232E431D594ADE07792B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WaterfallGrid;
+			productName = WaterfallGrid;
+			productReference = E3A0609525C5B681751F703B88451CB1 /* WaterfallGrid.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4C84C4E44DCEE9ECB9E88AC166ED9038 /* Pods-zeitgeistTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87374ACE33451778B900CDE7AAC81F08 /* Build configuration list for PBXNativeTarget "Pods-zeitgeistTests" */;
+			buildPhases = (
+				377BE639FEC08695685EAF300E7D61B1 /* Headers */,
+				2DA26488ED34CED4BE55EC04A7067BE5 /* Sources */,
+				64E1BE0F0B8E7CFB4B7C7C957FDE925B /* Frameworks */,
+				5191187CF9BC5F314C7B1A12698C9613 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6BA042F4F296829D2FCCDCCDD770513 /* PBXTargetDependency */,
+			);
+			name = "Pods-zeitgeistTests";
+			productName = "Pods-zeitgeistTests";
+			productReference = C873C8B3FB68B6F2230E5D5545E20D5F /* Pods_zeitgeistTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4EA182976D3E185B4E1849322DEB7FF0 /* Pods-zeitgeist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8ECE0A02F1F6B0E6B4F40C7BBF4EF8FF /* Build configuration list for PBXNativeTarget "Pods-zeitgeist" */;
+			buildPhases = (
+				3A589979B67B7575413CBA2DD1E3F06C /* Headers */,
+				DC464CD3D2962396960923D46E434FC5 /* Sources */,
+				3E498AB56363C1D7E9891AD55380D2A1 /* Frameworks */,
+				B0711C3322BDAF88083E018CCA16A59C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D105B80C227C0537B7B521D19E04CF5 /* PBXTargetDependency */,
+			);
+			name = "Pods-zeitgeist";
+			productName = "Pods-zeitgeist";
+			productReference = 9D077F8D102885BE94BAAE6C5EB8ABD9 /* Pods_zeitgeist.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B66E6562399449F91852AC1CB413EB63 /* Pods-zeitgeist-zeitgeistUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30943F63D298FD359B0A92AE07F21C12 /* Build configuration list for PBXNativeTarget "Pods-zeitgeist-zeitgeistUITests" */;
+			buildPhases = (
+				41864641715DF72533EB255E0FF15021 /* Headers */,
+				DF376AB20ACDE0D8829F69BADDCB2405 /* Sources */,
+				2D7D028F5AA372152247DE96263E7906 /* Frameworks */,
+				DA459E01028D660DBE001EC554697AC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D02C8CEB283DF120B99C7C29D18FF886 /* PBXTargetDependency */,
+			);
+			name = "Pods-zeitgeist-zeitgeistUITests";
+			productName = "Pods-zeitgeist-zeitgeistUITests";
+			productReference = 54C6EF551A1C1EBB973AAF2519448E5C /* Pods_zeitgeist_zeitgeistUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 4D3128A33B33B75BEECBD43402807CB5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4EA182976D3E185B4E1849322DEB7FF0 /* Pods-zeitgeist */,
+				B66E6562399449F91852AC1CB413EB63 /* Pods-zeitgeist-zeitgeistUITests */,
+				4C84C4E44DCEE9ECB9E88AC166ED9038 /* Pods-zeitgeistTests */,
+				16DB0A490A61C833A70BDE2217E0D5FD /* WaterfallGrid */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5191187CF9BC5F314C7B1A12698C9613 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0711C3322BDAF88083E018CCA16A59C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDA7E55F1AE232E431D594ADE07792B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA459E01028D660DBE001EC554697AC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2DA26488ED34CED4BE55EC04A7067BE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				036422066DC30CA444E5B3C41BC329EE /* Pods-zeitgeistTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32FA8DFEDEE5A356ACAA0E0953861FAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC8A0D47F32186E426036C750172619 /* ElementPreference.swift in Sources */,
+				5B907EB7A97EBA7FAB28EA5C983AE062 /* GridSyle.swift in Sources */,
+				A38878E360CA83DAD2B858615823232F /* PositiveNumber.swift in Sources */,
+				25096B5658932384F66FE73CD783AFE3 /* PreferenceSetter.swift in Sources */,
+				65B51ABAB72E1BAB30E03D477EFAE80C /* ScrollOptions.swift in Sources */,
+				D61482C4C2E27C73CCD84ED2E6B3EE86 /* View+GridStyle.swift in Sources */,
+				7420D51AEFBEDC25148B04536E02345D /* View+ScrollOptions.swift in Sources */,
+				3FF881A38E8C4F2A9DF31BE23CF9C1B7 /* WaterfallGrid-dummy.m in Sources */,
+				402501A676EAC0C4D5D3D9078CDE0D04 /* WaterfallGrid.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC464CD3D2962396960923D46E434FC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B990A67380A3D4D2B485B1CFFB6F79 /* Pods-zeitgeist-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF376AB20ACDE0D8829F69BADDCB2405 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A32019C6CC72E0AF8F34CCF8B46ECFB /* Pods-zeitgeist-zeitgeistUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2D105B80C227C0537B7B521D19E04CF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WaterfallGrid;
+			target = 16DB0A490A61C833A70BDE2217E0D5FD /* WaterfallGrid */;
+			targetProxy = F0568AB37C74F6854F094F472C9035E2 /* PBXContainerItemProxy */;
+		};
+		D02C8CEB283DF120B99C7C29D18FF886 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WaterfallGrid;
+			target = 16DB0A490A61C833A70BDE2217E0D5FD /* WaterfallGrid */;
+			targetProxy = 4723D227B386DFF04F5FB60C927D290B /* PBXContainerItemProxy */;
+		};
+		E6BA042F4F296829D2FCCDCCDD770513 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-zeitgeist";
+			target = 4EA182976D3E185B4E1849322DEB7FF0 /* Pods-zeitgeist */;
+			targetProxy = BC186FA9356997F4C8A31F2AD992D0F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1015B9AB520A57F2D8096708288FAB4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF79EEA194095033033C3B85185E75B6 /* Pods-zeitgeist-zeitgeistUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-zeitgeist-zeitgeistUITests/Pods-zeitgeist-zeitgeistUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-zeitgeist-zeitgeistUITests/Pods-zeitgeist-zeitgeistUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		16F045E5C08541B85C7A0655877041B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E421A38768805BCF146D8A3AEEC88B8 /* Pods-zeitgeistTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-zeitgeistTests/Pods-zeitgeistTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-zeitgeistTests/Pods-zeitgeistTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		31FC5FDDC91C6B5F16C417856EC6B0BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 035F4ACA1CAE74213DED63981623671F /* Pods-zeitgeist-zeitgeistUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-zeitgeist-zeitgeistUITests/Pods-zeitgeist-zeitgeistUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-zeitgeist-zeitgeistUITests/Pods-zeitgeist-zeitgeistUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8FA7FDFDF0DF87E7ED9B34F4FA508889 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEC05C8154000B802E2D4CBE771EF0DE /* WaterfallGrid.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WaterfallGrid/WaterfallGrid-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WaterfallGrid/WaterfallGrid-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/WaterfallGrid/WaterfallGrid.modulemap";
+				PRODUCT_MODULE_NAME = WaterfallGrid;
+				PRODUCT_NAME = WaterfallGrid;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CEB62557F1899CA0B1935C72AD10370F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81263576C172E5ADAE06CAA3EC727AEA /* Pods-zeitgeist.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-zeitgeist/Pods-zeitgeist-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-zeitgeist/Pods-zeitgeist.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ECB437504DF805BD96CAABF97400B526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		EEBDBFF2EB05AE1D9FA155DE9E06FD22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5C453D43F2E02EA6680B42784E37900 /* Pods-zeitgeist.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-zeitgeist/Pods-zeitgeist-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-zeitgeist/Pods-zeitgeist.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F946344929C57A3488DBE63CE1AC7B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEC05C8154000B802E2D4CBE771EF0DE /* WaterfallGrid.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WaterfallGrid/WaterfallGrid-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WaterfallGrid/WaterfallGrid-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/WaterfallGrid/WaterfallGrid.modulemap";
+				PRODUCT_MODULE_NAME = WaterfallGrid;
+				PRODUCT_NAME = WaterfallGrid;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FF42EEF43019D51A7E1BB3E6E75E599F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7E216FAEA6E9402A6A120A54A52890C /* Pods-zeitgeistTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-zeitgeistTests/Pods-zeitgeistTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-zeitgeistTests/Pods-zeitgeistTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30943F63D298FD359B0A92AE07F21C12 /* Build configuration list for PBXNativeTarget "Pods-zeitgeist-zeitgeistUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31FC5FDDC91C6B5F16C417856EC6B0BA /* Debug */,
+				1015B9AB520A57F2D8096708288FAB4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */,
+				ECB437504DF805BD96CAABF97400B526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87374ACE33451778B900CDE7AAC81F08 /* Build configuration list for PBXNativeTarget "Pods-zeitgeistTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16F045E5C08541B85C7A0655877041B2 /* Debug */,
+				FF42EEF43019D51A7E1BB3E6E75E599F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8ECE0A02F1F6B0E6B4F40C7BBF4EF8FF /* Build configuration list for PBXNativeTarget "Pods-zeitgeist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEBDBFF2EB05AE1D9FA155DE9E06FD22 /* Debug */,
+				CEB62557F1899CA0B1935C72AD10370F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4D3FA81DA8B3CA5F0EDF3DB563015A3 /* Build configuration list for PBXNativeTarget "WaterfallGrid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FA7FDFDF0DF87E7ED9B34F4FA508889 /* Debug */,
+				F946344929C57A3488DBE63CE1AC7B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
