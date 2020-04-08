@@ -16,7 +16,10 @@ struct SignInView: View {
     @State var password: String = ""
     @State var isLoggedIn = false
     
-    @State private var dividerColor = Color.black
+    @State private var ZColorUser = Color.black
+    @State private var ZColorPass = Color.black
+    @State private var ZColorEnvelope = Color.black
+    @State private var ZColorLock = Color.black
     
     
     var body: some View {
@@ -28,17 +31,21 @@ struct SignInView: View {
             
             HStack {
                 Image(systemName: "envelope")
+                    .foregroundColor(ZColorEnvelope)
                 VStack {
                     TextField("Email", text: $username, onEditingChanged: { (editingChanged) in
                         if editingChanged {
-                            self.dividerColor = Color.orange
+                            self.ZColorUser = Color.orange
+                            self.ZColorEnvelope = Color.orange
                         } else {
-                            self.dividerColor = Color.black
+                            self.ZColorUser = Color.black
+                            self.ZColorEnvelope = Color.white
                         }
                     })
-                        .padding()
+                        
+                        .foregroundColor(ZColorUser)
                     Divider()
-                        .background(dividerColor)
+                        .background(ZColorUser)
                 }
                 
                     
@@ -47,17 +54,21 @@ struct SignInView: View {
                 
             HStack {
                 Image(systemName: "lock")
+                    .foregroundColor(ZColorLock)
                 VStack {
                     TextField("Password", text: $password, onEditingChanged: { (editingChanged) in
                         if editingChanged {
-                            self.dividerColor = Color.orange
+                            self.ZColorPass = Color.orange
+                            self.ZColorLock = Color.orange
                         } else {
-                            self.dividerColor = Color.black
+                            self.ZColorPass = Color.black
+                            self.ZColorLock = Color.white
                         }
                     })
-                        .padding()
+                        
+                        .foregroundColor(ZColorPass)
                     Divider()
-                        .background(dividerColor)
+                        .background(ZColorLock)
                 }
                     
             }
