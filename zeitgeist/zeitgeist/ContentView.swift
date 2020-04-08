@@ -12,8 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         //ItemNodeView()
-//        NavigationBarView()
-        SignInView()
+        NavigationBarView()
     }
 }
 struct ContentView_Previews: PreviewProvider {
