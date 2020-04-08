@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-
+import CoreData
 
 
 struct SignInView: View {
@@ -20,6 +20,9 @@ struct SignInView: View {
     @State private var ZColorPass = Color.black
     @State private var ZColorEnvelope = Color.black
     @State private var ZColorLock = Color.black
+    
+    @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
     
     
     var body: some View {
@@ -74,12 +77,13 @@ struct SignInView: View {
             }
             .padding()
             
-           
-                
-
             Button(action: {
-                self.isLoggedIn = true
-                print("Logged in \(self.isLoggedIn)")
+                if (self.username.count > 0) {
+                    self.addProfile(name: self.username)
+                } else {
+                    print("username too short")
+                }
+                
             }) {
                 Text("Sign in")
                     .padding()
@@ -91,6 +95,42 @@ struct SignInView: View {
                 
             }.padding()
         }.padding()
+    }
+    
+    // ---------FUNCTIONS--------
+    
+    //Adds item listing to CoreData
+    func addProfile(name: String) {
+        let node = LoginNode(context: managedObjectContext)
+        node.idString = name
+        node.isLoggedIn = true //false
+        saveItems()
+        print("profile added")
+    }
+
+    func loggedIn(node: LoginNode) {
+        let isLoggedIn = true
+        let node = node
+        node.isLoggedIn = isLoggedIn
+        managedObjectContext.performAndWait {
+    try? managedObjectContext.save()
+            }
+        self.isLoggedIn = true
+        print("Logged in \(self.isLoggedIn)")
+        }
+    
+    func deleteItems(indexSet: IndexSet) {
+        let node = isLoggedInResults[indexSet.first!]
+        managedObjectContext.delete(node)
+        saveItems()
+    }
+    
+    func saveItems() {
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print(error)
+        }
     }
 }
 

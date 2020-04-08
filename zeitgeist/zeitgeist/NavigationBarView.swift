@@ -20,19 +20,21 @@ struct NavigationBarView: View {
     
     var body: some View {
         TabView {
+            //SignInView()
             HomeView()
-             .tabItem {
-                Image(systemName: "house").font(Font.system(size: 30, weight: .regular))
+                .tabItem {
+                    Image(systemName: "house").font(Font.system(size: 30, weight: .regular))
             }
-           //SearchView()
-                TabBar()
-             .tabItem {
-                Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
-                }
+            //SearchView()
+            TabBar()
+                .tabItem {
+                    Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
+            }
+            //ItemNodeView()
             ProfileView()
-               .tabItem {
-                Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
-                }
+                .tabItem {
+                    Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
+            }
             QrView()
                 .tabItem {
                     Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
@@ -40,12 +42,12 @@ struct NavigationBarView: View {
             EmployeeView()
                 .tabItem {
                     Image("zircle").resizable().frame(width: 30, height: 30)}
-            }
         }
     }
+}
 
 struct NavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
-           NavigationBarView()
+        NavigationBarView()
     }
 }

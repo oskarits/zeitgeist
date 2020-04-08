@@ -13,7 +13,14 @@
         <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemNode" inverseName="parent" inverseEntity="ItemNode"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemNode" inverseName="children" inverseEntity="ItemNode"/>
     </entity>
+    <entity name="LoginNode" representedClassName=".LoginNode" syncable="YES">
+        <attribute name="idString" optional="YES" attributeType="String"/>
+        <attribute name="isLoggedIn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LoginNode" inverseName="parent" inverseEntity="LoginNode"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LoginNode" inverseName="children" inverseEntity="LoginNode"/>
+    </entity>
     <elements>
         <element name="ItemNode" positionX="-63" positionY="-18" width="128" height="208"/>
+        <element name="LoginNode" positionX="-54" positionY="81" width="128" height="103"/>
     </elements>
 </model>
