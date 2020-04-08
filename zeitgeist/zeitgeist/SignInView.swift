@@ -39,7 +39,7 @@ struct SignInView: View {
                             self.ZColorEnvelope = Color.orange
                         } else {
                             self.ZColorUser = Color.black
-                            self.ZColorEnvelope = Color.white
+                            self.ZColorEnvelope = Color.black
                         }
                     })
                         
@@ -62,7 +62,7 @@ struct SignInView: View {
                             self.ZColorLock = Color.orange
                         } else {
                             self.ZColorPass = Color.black
-                            self.ZColorLock = Color.white
+                            self.ZColorLock = Color.black
                         }
                     })
                         
