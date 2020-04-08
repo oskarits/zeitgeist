@@ -29,7 +29,7 @@ struct NavigationBarView: View {
              .tabItem {
                 Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
                 }
-            ProfileView()
+            ItemNodeView()
                .tabItem {
                 Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
                 }

@@ -9,17 +9,17 @@
 import CoreData
 
 class LoginNode: NSManagedObject {
-    
-    
+    @NSManaged var children: NSSet?
+    @NSManaged var parent: LoginNode?
+    @NSManaged var idString: String
+
     @NSManaged var isLoggedIn: Bool
-    //    @NSManaged var condition: String
-    //    @NSManaged var description: String
 }
 
 extension LoginNode {
     static func getNodes() -> NSFetchRequest<LoginNode> {
         let request = LoginNode.fetchRequest() as! NSFetchRequest<LoginNode>
-        request.sortDescriptors = [NSSortDescriptor(key: "isLoggedIn", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "idString", ascending: true)]
         return request
     }
 }

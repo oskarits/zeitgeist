@@ -12,7 +12,8 @@ import CoreData
 struct ItemNodeView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
-    @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
+    @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
+
     //---
     @ObservedObject var shoppingHistory = ShoppingHistory()
     @ObservedObject var networkingManager = NetworkingManager()
@@ -26,113 +27,54 @@ struct ItemNodeView: View {
     //---
     
     var body: some View {
-        VStack {
+        NavigationView {
             VStack {
-                        List {
-                            ForEach(fetchedResults, id: \.self) { node in
-                                Text("\(node.idString)")
-                                //Text("\(node.id)")
-                                //Text("\(node.id)")
-                            }
-                        .onDelete(perform: deleteItems)
-                        }
-            //            Button(action: addItem) {
-            //                Text("add item")
-            //            }
-                    }
-                    .navigationBarItems(trailing: EditButton())
-            NavigationView{
-                VStack {
-                    SearchBar(text: $searchText, placeholder: "Search items")
-                    List {
-                        self.itemList
-                    }
-                }
-                .frame(
-                    minWidth: 0,
-                    maxWidth: .infinity,
-                    minHeight: 0,
-                    maxHeight: .infinity,
-                    alignment: .topLeading)
-                    .navigationBarItems( trailing:
-                        Button(action: {
-                            self.showPopover.toggle()
-                            UIApplication.shared.endEditing(true)
-                        }) {
-                            Image(systemName: "cart.fill")
-                                .font(Font.system(size: 30, weight: .regular))
-                        }
-                )
-                    .navigationBarTitle(Text("Search Items"))
-            }.toast(show: $showToast, text: selectedItem)
-        }
-    }
-    
-    var itemList: some View {
-       
-        ForEach(networkingManager.clothingList.items) { item in
-            if (self.searchText.isEmpty) {
-                NavigationLink(destination:
-                SingleItemView(item: item)) {
-                    VStack(alignment: .leading) {
+                List {
+                    ForEach(isLoggedInResults, id: \.self) { node in
                         HStack {
                             VStack {
-                                VStack {
-                                    ListItem(item: item)
+                                Text("\(node.idString)").fontWeight(.medium)
+                            }
+                            VStack {
+                                if (node.isLoggedIn) {
+                                    Text("Logged in")
                                 }
+                                if (node.isLoggedIn == false) {
+                                    Text("Not logged in")
+                                }
+                                
+                                
                             }
                             
-                            Spacer()
-                            if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-                                Image(systemName: "cart.fill.badge.minus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
-                                    //self.ShoppingCartMinus(index: "\(item.id)")
-                                    self.addItem(itemID: "\(item.id)")
-                                }
-                            }
-                            if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
-                                Image(systemName: "cart.badge.plus").font(Font.system(size: 30, weight: .regular)).onTapGesture {
-                                    self.addItem(itemID: "\(item.id)")
-                                    //self.ShoppingCartPlus(key: item.brand, value: "\(item.id)")
-
-                                }
-                            }
                         }
                     }
+                    .onDelete(perform: deleteItems)
                 }
-            }
-
+                Button(action: {
+                    self.addItem()
+                }) {
+                    Text("add false")
+                }
+            }.navigationBarItems(trailing: EditButton())
+            .navigationBarTitle(Text("Reservations"), displayMode: .inline)
         }
+        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     // ---------FUNCTIONS--------
     
-    
-    func addItem(itemID: String) {
-        let node = ItemNode(context: managedObjectContext)
-        node.idString = itemID
+    //Adds item listing to CoreData
+    func addItem() {
+        let node = LoginNode(context: managedObjectContext)
+        node.isLoggedIn = false
         saveItems()
     }
     
+    
     func deleteItems(indexSet: IndexSet) {
-        let node = fetchedResults[indexSet.first!]
+        let node = isLoggedInResults[indexSet.first!]
         managedObjectContext.delete(node)
         saveItems()
-        
     }
     
     func saveItems() {
@@ -145,10 +87,4 @@ struct ItemNodeView: View {
     
     
     
-}
-
-struct ItemNodeView_Previews: PreviewProvider {
-    static var previews: some View {
-        ItemNodeView()
-    }
 }
