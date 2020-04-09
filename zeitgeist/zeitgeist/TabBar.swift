@@ -35,16 +35,3 @@ struct TabBar_Previews: PreviewProvider {
         TabBar()
     }
 }
-
-/*
- TabView {
-     SearchView()
-         .tabItem {
-             Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
-     }
-     ReservationList()
-         .tabItem {
-             Image(systemName: "list.dash").font(Font.system(size: 30, weight: .regular))
-     }
- }
- */
