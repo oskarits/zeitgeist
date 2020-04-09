@@ -64,7 +64,6 @@ struct SearchNavigation: View {
         node.order = (fetchedResults.last?.order ?? 0) + 1
         print("Order of new item: \(node.order)")
         saveItems()
-        
     }
     
     //Saves the added items to core data
@@ -93,6 +92,5 @@ struct SearchNavigation: View {
             }
         }
         UIApplication.shared.endEditing(true)
-        
     }
 }
