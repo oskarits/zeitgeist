@@ -24,7 +24,12 @@ struct TabBar: View {
                 SearchView()
             }
             if ( view[selectedView] == "Reservations") {
-                ReservationList()
+                ReservationList().onDisappear(){
+                    print("reservation dissapeared")
+                    self.selectedView = 0
+                }.onAppear(){
+                    print("reservation apeared")
+                }
             }
         }
     }
