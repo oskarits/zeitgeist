@@ -13,6 +13,9 @@
 		03117F162437471E00EB401E /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03117F152437471E00EB401E /* ListItem.swift */; };
 		03117F172437471E00EB401E /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03117F152437471E00EB401E /* ListItem.swift */; };
 		03117F182437471E00EB401E /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03117F152437471E00EB401E /* ListItem.swift */; };
+		03183F43243F14BA00FE3B65 /* SearchNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03183F42243F14BA00FE3B65 /* SearchNavigation.swift */; };
+		03183F44243F14BA00FE3B65 /* SearchNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03183F42243F14BA00FE3B65 /* SearchNavigation.swift */; };
+		03183F45243F14BA00FE3B65 /* SearchNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03183F42243F14BA00FE3B65 /* SearchNavigation.swift */; };
 		0319474F2434B00E003F021E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319474E2434B00E003F021E /* Toast.swift */; };
 		031947502434B00E003F021E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319474E2434B00E003F021E /* Toast.swift */; };
 		0319475F2434FAAC003F021E /* QrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319475E2434FAAC003F021E /* QrView.swift */; };
@@ -134,6 +137,7 @@
 /* Begin PBXFileReference section */
 		03117F11243746EC00EB401E /* SingleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemView.swift; sourceTree = "<group>"; };
 		03117F152437471E00EB401E /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		03183F42243F14BA00FE3B65 /* SearchNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigation.swift; sourceTree = "<group>"; };
 		0319474E2434B00E003F021E /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		0319475E2434FAAC003F021E /* QrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrView.swift; sourceTree = "<group>"; };
 		031947612434FACD003F021E /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 				039815812432C70700C168D8 /* HideKeyboard.swift */,
 				0398157824328FCD00C168D8 /* SearchBar.swift */,
 				035C56B5242937A900139C8E /* SearchView.swift */,
+				03183F42243F14BA00FE3B65 /* SearchNavigation.swift */,
 				A74DC35D24375A32002062CA /* ShoppingHistory.swift */,
 				035C56B9242937C700139C8E /* ProfileView.swift */,
 				035C56AD2429369800139C8E /* NavigationBarView.swift */,
@@ -600,6 +605,7 @@
 				031AC78C24378A5000FEC6DA /* ImageView.swift in Sources */,
 				039815822432C70700C168D8 /* HideKeyboard.swift in Sources */,
 				A74DC35E24375A32002062CA /* ShoppingHistory.swift in Sources */,
+				03183F43243F14BA00FE3B65 /* SearchNavigation.swift in Sources */,
 				03E33E462438845A00FDDDF5 /* SearchImageViewComponent.swift in Sources */,
 				03F1DF9D24311AD900BD9E19 /* Course.swift in Sources */,
 				0386A639243DF81400CFBDD8 /* LoginNode.swift in Sources */,
@@ -665,6 +671,7 @@
 				034EF89F2423D99400741711 /* zeitgeistTests.swift in Sources */,
 				03E152E32438BE8E00B0CDA0 /* ItemNodeView.swift in Sources */,
 				031947602434FAAC003F021E /* QrView.swift in Sources */,
+				03183F44243F14BA00FE3B65 /* SearchNavigation.swift in Sources */,
 				03E33E472438845A00FDDDF5 /* SearchImageViewComponent.swift in Sources */,
 				031AC78D24378A5000FEC6DA /* ImageView.swift in Sources */,
 				0398157A24328FCD00C168D8 /* SearchBar.swift in Sources */,
@@ -689,6 +696,7 @@
 				03CBCEE5243951540074EC12 /* ReservationList.swift in Sources */,
 				03E152E02438BD1200B0CDA0 /* ItemNode.swift in Sources */,
 				035C56B02429369800139C8E /* NavigationBarView.swift in Sources */,
+				03183F45243F14BA00FE3B65 /* SearchNavigation.swift in Sources */,
 				0386A63B243DF81400CFBDD8 /* LoginNode.swift in Sources */,
 				035858C6243C92E1004C0266 /* TabBar.swift in Sources */,
 				03D2BC9524360B100098C66B /* CampaignView.swift in Sources */,
