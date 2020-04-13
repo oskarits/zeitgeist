@@ -18,11 +18,11 @@ struct EmployeeView: View {
                     NavigationLink(destination: ReservationView()) {
                         VStack {
                             Image(systemName: "pencil.and.outline")
-                            Text("Show\nReservations").padding(.horizontal)
+                            Text("showReservationsText").padding(.horizontal)
                         }
                         VStack {
                             Image(systemName: "barcode.viewfinder")
-                            Text("Scan\nQR").padding(.horizontal)
+                            Text("scanQRText").padding(.horizontal)
                         }
                     }.padding()
                 }
@@ -30,7 +30,7 @@ struct EmployeeView: View {
                 .multilineTextAlignment(.center)
                 
                 .cornerRadius(8)
-                .navigationBarTitle(Text("Employee View"), displayMode: .inline)
+                .navigationBarTitle(Text("employeeTitle"), displayMode: .inline)
             }
         }
     }

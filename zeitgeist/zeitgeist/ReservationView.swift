@@ -13,8 +13,8 @@ import CoreData
 struct ReservationView: View {
     @ObservedObject var networkingManager = NetworkingManager()
     var notification = Notification()
-    @State private var confirmRes = "Your reservation has been confirmed :)"
-    @State private var declineRes = "Your reservation has been declined :("
+    @State private var confirmRes = "reservationConfirmed"
+    @State private var declineRes = "reservationDeclined"
     
     @State private var number : Int = 0
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
@@ -34,23 +34,23 @@ struct ReservationView: View {
                                     
                                 }
                                 Text("\(node.brand)").fontWeight(.medium)
-                                Text("SIZE: \(node.size)").font(.system(size: 11))
+                                Text("sizeText \(node.size)").font(.system(size: 11))
                                 Text("\(node.price) €").font(.system(size: 11))
                                     .foregroundColor(Color.orange)
                                     .fontWeight(.regular)
                                 HStack {
-                                    Button(action: {self.notification.SendNotification(title: self.confirmRes, body: "Please pickup :)")
+                                    Button(action: {self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
                                         self.updateItemNode(node: node)
                                     }) {
 //                                        Image(systemName: "checkmark")
-                                        Text("Accept")}
+                                        Text("acceptText")}
                                             .background(Color.green)
                                             .padding()
                                             .foregroundColor(Color.white)
                                             .cornerRadius(10)
-                                    Button(action: {self.notification.SendNotification(title: self.declineRes, body: "We're sorry about that :(")}) {
+                                    Button(action: {self.notification.SendNotification(title: self.declineRes, body: "sorryText")}) {
 //                                        Image(systemName: "trash")
-                                        Text("Decline")}
+                                        Text("declineText")}
                                             .foregroundColor(Color.white)
                                             .padding()
                                             .background(Color.red)
@@ -60,7 +60,7 @@ struct ReservationView: View {
                         }) {
                             VStack {
                                 Text("\(node.brand)").fontWeight(.medium)
-                                Text("SIZE: \(node.size)").font(.system(size: 11))
+                                Text("sizeText \(node.size)").font(.system(size: 11))
                                 Text("\(node.price) €").font(.system(size: 11))
                                     .foregroundColor(Color.orange)
                                     .fontWeight(.regular)
@@ -71,7 +71,7 @@ struct ReservationView: View {
         //            .onDelete(perform: deleteItems)
                 }
             }
-        }.navigationBarTitle(Text("Reserved Items (Employee)"), displayMode: .inline)
+        }.navigationBarTitle(Text("reservedItemsTitle"), displayMode: .inline)
     }
     
     func numberToOrder(number: Int) {

@@ -18,7 +18,7 @@ struct SearchView: View {
 //    @State private var showPopover: Bool = false
     @State private var showToast = false
     @State private var selectedItem : String = ""
-    @State private var shoppingCartTitleText : String = "Reservations"
+    @State private var shoppingCartTitleText : String = "reservationsTitle"
     @State private var shoppingList: [(key: String, value: String)] = [:].sorted{$0.value < $1.value}
     
     // CoreData
@@ -85,7 +85,7 @@ struct SearchView: View {
         ZStack(alignment: .leading) {
             NavigationView {
                 VStack {
-                    SearchBar(text: $searchText, placeholder: "Search items")
+                    SearchBar(text: $searchText, placeholder: "searchItemsText")
                     List {
                         self.searchNavigation
                     }
@@ -102,7 +102,7 @@ struct SearchView: View {
                             Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
                         }
                 )
-                .navigationBarTitle(Text("Search Items"), displayMode: .inline)
+                .navigationBarTitle(Text("searchTitle"), displayMode: .inline)
             }.toast(show: $showToast, text: selectedItem)
         }.resignKeyboardOnDragGesture()
     }
