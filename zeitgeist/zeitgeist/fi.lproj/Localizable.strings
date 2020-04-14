@@ -1,0 +1,57 @@
+/*
+  Localizable.strings
+  zeitgeist
+
+  Created by Otto Söderlund on 9.4.2020.
+  Copyright © 2020 Z Team. All rights reserved.
+*/
+
+
+// MARK: HomeView
+"shareTitle1" = "Jaa sinun ";
+"shareTitle2" = "vaatekaappisi";
+
+// MARK: SearchView
+"reservationsTitle" = "Varaukset";
+"searchTitle" = "Etsi tuotteita";
+"searchItemsText" = "Hakusana";
+
+// MARK: ProfileView
+"profileTitle" = "Profiili";
+"profileReservations" = "Omat varauksesi";
+"profileDetail" = "Detal";
+"notificationBody" = "Test body for notification linkFINNISH";
+
+// MARK: Toast
+"item1" = "Tuote";
+"item2" = " on lisätty ostoskoriin!";
+
+// MARK: ReservationsView
+"reservationConfirmed" = "Varauksesi on hyväksytty :)";
+"reservationDeclined" = "Varauksesi on hylätty :(";
+"sizeText" = "KOKO:";
+"pickupText" = "Nouda tuote, ole hyvä :)";
+"acceptText" = "Hyväksy";
+"declineText" = "Hylkää";
+"sorryText" = "Olemme pahoillamme virheestä :(";
+"reservedItemsTitle" = "Varatut tuotteet (Työntekijä)";
+
+// MARK: TabBar
+// issue: view problem with localizable strings
+"tabBarReservationListTitle" = "Varaukset";
+"tabBarSearchTitle" = "Selaa tuotteita";
+
+// MARK: SignInView
+"signInTitle" = "Kirjaudu sisään";
+"emailHint" = "Sähköposti";
+"pswdHint" = "Salasana";
+
+// MARK: Notification
+"openText" = "Avaa";
+"cancelText" = "Peruuta";
+
+// MARK: EmployeeView
+
+"showReservationsText" = "Näytä\nVaraukset";
+"scanQRText" = "Skannaa\nQR";
+"employeeTitle" = "Työntekijänäkymä";

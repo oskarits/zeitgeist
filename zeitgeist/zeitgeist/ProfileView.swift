@@ -23,7 +23,7 @@ struct ProfileView: View {
 //                    Text("")
 //                }
                 NavigationLink(destination: ReservationList()) {
-                    Text("Check your reservations")
+                    Text("profileReservations")
                 }
 //                Button(action: {
 //                    self.notification.SendNotification(title: self.notificationTitle, body: self.notificationBody)
@@ -31,9 +31,9 @@ struct ProfileView: View {
 //                    Text("Send notification")
 //                }
             }
-                .navigationBarTitle(Text("Profile"), displayMode: .inline)
+                .navigationBarTitle(Text("profileTitle"), displayMode: .inline)
                 .onAppear {
-                    NotificationCenter.default.addObserver(forName: NSNotification.Name("Detail"), object: nil, queue: .main) { (_) in
+                    NotificationCenter.default.addObserver(forName: NSNotification.Name("profileDetail"), object: nil, queue: .main) { (_) in
                         self.show = true
                     }
                 }
@@ -46,7 +46,7 @@ struct ProfileView: View {
 struct Detail : View {
     @Binding var show : Bool
     var body: some View {
-        Text("Test body for notification link")
+        Text("notificationBody")
     }
 }
 

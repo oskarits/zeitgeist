@@ -24,9 +24,9 @@ class Notification {
         content.title = title
         content.body = body
         
-        let open = UNNotificationAction(identifier: "open", title: "Open", options: .foreground)
+        let open = UNNotificationAction(identifier: "open", title: "openText", options: .foreground)
         
-        let cancel = UNNotificationAction(identifier: "cancel", title: "Cancel", options: .destructive)
+        let cancel = UNNotificationAction(identifier: "cancel", title: "cancelText", options: .destructive)
         
         let categories = UNNotificationCategory(identifier: "action", actions: [open, cancel], intentIdentifiers: [])
         

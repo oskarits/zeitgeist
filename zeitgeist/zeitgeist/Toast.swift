@@ -21,12 +21,12 @@ struct ToastView<Content>: View where Content: View {
                 
                 if self.show {
                     HStack {
-                        Text("Tuote ").foregroundColor(Color.white)
+                        Text("item1").foregroundColor(Color.white)
                         Text(self.text)
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color.orange)
                         //.padding()
-                        Text(" on lisätty ostoskoriin").foregroundColor(Color.white)
+                        Text("item2").foregroundColor(Color.white)
                     }.padding()
                         .frame(width: geometry.size.width < geometry.size.height ? geometry.size.width * 0.85 : geometry.size.width * 0.65)
                         //.background(Color(UIColor.secondarySystemBackground))

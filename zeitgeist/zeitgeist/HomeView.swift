@@ -19,8 +19,8 @@ struct HomeView: View {
             NavigationView {
                 VStack(alignment: .center) {
                     HStack {
-                        Text("Share your")
-                        Text("wardrobe").foregroundColor(Color.orange)
+                        Text("shareTitle1")
+                        Text("shareTitle2").foregroundColor(Color.orange)
                     }
                     Image("qrCode")
                         .resizable()
