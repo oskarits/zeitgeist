@@ -70,7 +70,7 @@ struct ItemNodeView: View {
                 
                 
             }.navigationBarItems(trailing: EditButton())
-                .navigationBarTitle(Text("Reservations"), displayMode: .inline)
+                .navigationBarTitle(Text("reservationListTitle"), displayMode: .inline)
         }
         
     }

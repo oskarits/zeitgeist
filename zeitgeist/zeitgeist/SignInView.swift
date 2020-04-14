@@ -27,7 +27,7 @@ struct SignInView: View {
     
     var body: some View {
         VStack {
-            Text("Sign in")
+            Text("signInTitle")
                 .font(.largeTitle)
                 .foregroundColor(Color.orange)
                 .padding()
@@ -36,7 +36,7 @@ struct SignInView: View {
                 Image(systemName: "envelope")
                     .foregroundColor(ZColorEnvelope)
                 VStack {
-                    TextField("Email", text: $username, onEditingChanged: { (editingChanged) in
+                    TextField("emailHint", text: $username, onEditingChanged: { (editingChanged) in
                         if editingChanged {
                             self.ZColorUser = Color.orange
                             self.ZColorEnvelope = Color.orange
@@ -59,7 +59,7 @@ struct SignInView: View {
                 Image(systemName: "lock")
                     .foregroundColor(ZColorLock)
                 VStack {
-                    TextField("Password", text: $password, onEditingChanged: { (editingChanged) in
+                    TextField("pswdHint", text: $password, onEditingChanged: { (editingChanged) in
                         if editingChanged {
                             self.ZColorPass = Color.orange
                             self.ZColorLock = Color.orange

@@ -1,0 +1,55 @@
+/*
+  Localizable.strings
+  zeitgeist
+
+  Created by Otto Söderlund on 9.4.2020.
+  Copyright © 2020 Z Team. All rights reserved.
+*/
+
+
+// MARK: HomeView
+"shareTitle1" = "Share your ";
+"shareTitle2" = "wardrobe";
+
+// MARK: SearchView
+"reservationsTitle" = "Reservations";
+"searchTitle" = "Search items";
+"searchItemsText" = "Search items";
+
+// MARK: ProfileView
+"profileTitle" = "Profile";
+"profileReservations" = "Check your reservations";
+"profileDetail" = "Detail";
+"notificationBody" = "Test body for notification link";
+
+// MARK: Toast
+"item1" = "Item";
+"item2" = " has been added to shopping cart!";
+
+// MARK: ReservationsView
+"reservationConfirmed" = "Your reservation has been confirmed :)";
+"reservationDeclined" = "Your reservation has been declined :(";
+"sizeText" = "SIZE:";
+"pickupText" = "Please pickup :)";
+"acceptText" = "Accept";
+"declineText" = "Decline";
+"sorryText" = "We're sorry about that :(";
+"reservedItemsTitle" = "Reserved Items (Employee)";
+
+// MARK: ReservationList
+"reservationListTitle" = "Reservations";
+
+// MARK: SignInView
+"signInTitle" = "Sign in";
+"emailHint" = "Email";
+"pswdHint" = "Password";
+
+// MARK: Notification
+"openText" = "Open";
+"cancelText" = "Cancel";
+
+// MARK: EmployeeView
+
+"showReservationsText" = "Show\nReservations";
+"scanQRText" = "Scan\nQR";
+"employeeTitle" = "Employee View";
