@@ -31,7 +31,8 @@ struct NavigationBarView: View {
                     Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
             }
             //ItemNodeView()
-            ProfileView()
+            SignInView()
+            //ProfileView()
                 .tabItem {
                     Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
             }
