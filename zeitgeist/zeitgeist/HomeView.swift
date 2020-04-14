@@ -22,9 +22,7 @@ struct HomeView: View {
                         Text("Share your")
                         Text("wardrobe").foregroundColor(Color.orange)
                     }
-                    Image("qrCode")
-                        .resizable()
-                        .frame(width: 200, height: 200)
+                    QRMaker()
                     List(networkManager.courses) { course in
                         CampaignView(course: course)
                     }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03065ABB24459C6E00B6BB1E /* QRMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03065ABA24459C6E00B6BB1E /* QRMaker.swift */; };
+		03065ABC24459C6E00B6BB1E /* QRMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03065ABA24459C6E00B6BB1E /* QRMaker.swift */; };
+		03065ABD24459C6E00B6BB1E /* QRMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03065ABA24459C6E00B6BB1E /* QRMaker.swift */; };
 		03117F12243746EC00EB401E /* SingleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03117F11243746EC00EB401E /* SingleItemView.swift */; };
 		03117F13243746EC00EB401E /* SingleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03117F11243746EC00EB401E /* SingleItemView.swift */; };
 		03117F14243746EC00EB401E /* SingleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03117F11243746EC00EB401E /* SingleItemView.swift */; };
@@ -135,6 +138,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03065ABA24459C6E00B6BB1E /* QRMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRMaker.swift; sourceTree = "<group>"; };
 		03117F11243746EC00EB401E /* SingleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemView.swift; sourceTree = "<group>"; };
 		03117F152437471E00EB401E /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		03183F42243F14BA00FE3B65 /* SearchNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigation.swift; sourceTree = "<group>"; };
@@ -350,6 +354,7 @@
 				03E152DD2438BD1200B0CDA0 /* ItemNode.swift */,
 				03E152E12438BE8E00B0CDA0 /* ItemNodeView.swift */,
 				0386A638243DF81400CFBDD8 /* LoginNode.swift */,
+				03065ABA24459C6E00B6BB1E /* QRMaker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -607,6 +612,7 @@
 				A74DC35E24375A32002062CA /* ShoppingHistory.swift in Sources */,
 				03183F43243F14BA00FE3B65 /* SearchNavigation.swift in Sources */,
 				03E33E462438845A00FDDDF5 /* SearchImageViewComponent.swift in Sources */,
+				03065ABB24459C6E00B6BB1E /* QRMaker.swift in Sources */,
 				03F1DF9D24311AD900BD9E19 /* Course.swift in Sources */,
 				0386A639243DF81400CFBDD8 /* LoginNode.swift in Sources */,
 				034EF8852423D99200741711 /* AppDelegate.swift in Sources */,
@@ -665,6 +671,7 @@
 				240159462437379C00EECDEF /* EmployeeView.swift in Sources */,
 				03F1DF9B24311ABD00BD9E19 /* NetworkingManager.swift in Sources */,
 				A74DC35F243761DF002062CA /* ShoppingHistory.swift in Sources */,
+				03065ABC24459C6E00B6BB1E /* QRMaker.swift in Sources */,
 				03A2DD222431742D007A1387 /* Notification.swift in Sources */,
 				03F1DF9824311A8100BD9E19 /* SingleResult.swift in Sources */,
 				03117F172437471E00EB401E /* ListItem.swift in Sources */,
@@ -708,6 +715,7 @@
 				03117F182437471E00EB401E /* ListItem.swift in Sources */,
 				03D2BC8D24360AFD0098C66B /* Notification.swift in Sources */,
 				03D2BC8F24360B000098C66B /* ContentView.swift in Sources */,
+				03065ABD24459C6E00B6BB1E /* QRMaker.swift in Sources */,
 				240159472437379D00EECDEF /* EmployeeView.swift in Sources */,
 				03D2BC9224360B0B0098C66B /* CampaingNetworkManager.swift in Sources */,
 				03D2BC9424360B0F0098C66B /* ImageLoader.swift in Sources */,
