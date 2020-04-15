@@ -24,7 +24,12 @@ struct TabBar: View {
                 SearchView()
             }
             if ( view[selectedView] == "Reservations") {
-                ReservationList()
+                ReservationList().onDisappear(){
+                    print("reservation dissapeared")
+                    self.selectedView = 0
+                }.onAppear(){
+                    print("reservation apeared")
+                }
             }
         }
     }
@@ -35,16 +40,3 @@ struct TabBar_Previews: PreviewProvider {
         TabBar()
     }
 }
-
-/*
- TabView {
-     SearchView()
-         .tabItem {
-             Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
-     }
-     ReservationList()
-         .tabItem {
-             Image(systemName: "list.dash").font(Font.system(size: 30, weight: .regular))
-     }
- }
- */
