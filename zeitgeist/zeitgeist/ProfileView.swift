@@ -21,29 +21,6 @@ struct ProfileView: View {
                 ProfileInfo()
             }.navigationBarTitle(Text("profileTitle"), displayMode: .inline)
         }
-        
-//        NavigationView {
-//            ZStack {
-////                NavigationLink(destination: Detail(show: self.$show), isActive: self.$show) {
-////                    Text("")
-////                }
-//                NavigationLink(destination: ReservationList()) {
-//                    Text("profileReservations")
-//                }
-////                Button(action: {
-////                    self.notification.SendNotification(title: self.notificationTitle, body: self.notificationBody)
-////                }) {
-////                    Text("Send notification")
-////                }
-//            }
-//                .navigationBarTitle(Text("profileTitle"), displayMode: .inline)
-//                .onAppear {
-//                    NotificationCenter.default.addObserver(forName: NSNotification.Name("profileDetail"), object: nil, queue: .main) { (_) in
-//                        self.show = true
-//                    }
-//                }
-//        }
-            
     }
 }
 
