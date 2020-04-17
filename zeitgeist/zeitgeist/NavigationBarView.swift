@@ -7,8 +7,11 @@
 //
 
 import SwiftUI
-
+import CoreData
 struct NavigationBarView: View {
+    
+    @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
     
     init() {
         
@@ -31,11 +34,18 @@ struct NavigationBarView: View {
                     Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
             }
             //ItemNodeView()
-            SignInView()
-            //ProfileView()
-                .tabItem {
-                    Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
+            
+            if isLoggedInResults.isEmpty {
+                SignInView().tabItem {
+                        Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
+                }
+            } else {
+                ProfileView().tabItem {
+                        Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
+                }
             }
+                
+            
             ItemNodeView()
             //QrView()
                 .tabItem {
@@ -46,10 +56,11 @@ struct NavigationBarView: View {
                     Image("zircle").resizable().frame(width: 30, height: 30)}
         }
     }
-}
+
 
 struct NavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationBarView()
     }
+}
 }
