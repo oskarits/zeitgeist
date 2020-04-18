@@ -19,22 +19,18 @@ struct QRMaker: View {
     
     var body: some View {
         VStack {
-            List {
-                ForEach(isLoggedInResults, id: \.self) { node in
-                    VStack {
-                        if (node.isLoggedIn) {
-                            Image(uiImage: self.generateQRCode(from: node.idString))
-                            .interpolation(.none)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: .infinity, maxHeight: 200, alignment: .center)
-                        }
-                    }
+            VStack {
+                if (isLoggedInResults[0].isLoggedIn) {
+                    Image(uiImage: self.generateQRCode(from: isLoggedInResults[0].idString))
+                        .interpolation(.none)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: .infinity, maxHeight: 200, alignment: .center)
                 }
             }
         }
     }
-
+    
     func generateQRCode(from string: String) -> UIImage {
         let data = Data(string.utf8)
         filter.setValue(data, forKey: "inputMessage")
