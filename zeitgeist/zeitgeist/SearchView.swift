@@ -67,9 +67,10 @@ struct SearchView: View {
                     List {
                         ForEach(networkingManager.clothingList.items) { item in
                             //self.searchBy
-                            if (Int(self.searchByPrice) == 5) {
-                                SearchNavigation(item: item)
-                                Text("gggg")
+                            if (Int(self.searchByPrice) ?? 0 >= 5) {
+                                if (Int(item.price) ?? 99 <= Int(self.searchByPrice) ?? 0) {
+                                    SearchNavigation(item: item)
+                                }
                             }
                             if (self.searchBySize.count > 0) {
                                 if (item.size.contains(self.searchBySize)) {
@@ -125,7 +126,7 @@ struct SearchView: View {
                         self.priceFilterTitle = "Search by price: " + price
                         self.expand2.toggle()
                     }) {
-                        Text(price)
+                        Text("under" + price + "€")
                     }
                 }
             }
