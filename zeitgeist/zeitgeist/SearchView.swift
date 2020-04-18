@@ -16,33 +16,34 @@ struct SearchView: View {
     @State private var searchText : String = ""
     
     @State var expand = false
+    @State var searchBy = ""
     
     var dropDown: some View {
         VStack(spacing: 30) {
             HStack {
-                Text("text1")
+                Text("Search by: ")
                 Image(systemName: expand ? "chevron.up" : "chevron.down")
             }.onTapGesture {
                 self.expand.toggle()
             }
             if expand {
                 Button(action: {
-                    print("333")
+                    self.searchBy = "size"
                     self.expand.toggle()
                 }) {
-                    Text("aaa")
+                    Text("Size")
                 }
                 Button(action: {
-                    print("222")
+                    self.searchBy = "userSize"
                     self.expand.toggle()
                 }) {
-                    Text("bbb")
+                    Text("Your size")
                 }
                 Button(action: {
-                    print("111")
+                    self.searchBy = "price"
                     self.expand.toggle()
                 }) {
-                    Text("bbb")
+                    Text("Price €")
                 }
             }
         }
