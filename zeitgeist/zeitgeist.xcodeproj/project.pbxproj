@@ -71,6 +71,9 @@
 		03B73346244B57F40073AC0E /* PriceFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B73345244B57F40073AC0E /* PriceFilter.swift */; };
 		03B73347244B57F40073AC0E /* PriceFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B73345244B57F40073AC0E /* PriceFilter.swift */; };
 		03B73348244B57F40073AC0E /* PriceFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B73345244B57F40073AC0E /* PriceFilter.swift */; };
+		03B7334A244B5C1B0073AC0E /* SearchFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B73349244B5C1B0073AC0E /* SearchFilters.swift */; };
+		03B7334B244B5C1B0073AC0E /* SearchFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B73349244B5C1B0073AC0E /* SearchFilters.swift */; };
+		03B7334C244B5C1B0073AC0E /* SearchFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B73349244B5C1B0073AC0E /* SearchFilters.swift */; };
 		03CBCEE3243951540074EC12 /* ReservationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBCEE2243951540074EC12 /* ReservationList.swift */; };
 		03CBCEE4243951540074EC12 /* ReservationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBCEE2243951540074EC12 /* ReservationList.swift */; };
 		03CBCEE5243951540074EC12 /* ReservationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBCEE2243951540074EC12 /* ReservationList.swift */; };
@@ -183,6 +186,7 @@
 		03A2DD202431742D007A1387 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		03B73341244B56780073AC0E /* SizeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeFilter.swift; sourceTree = "<group>"; };
 		03B73345244B57F40073AC0E /* PriceFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFilter.swift; sourceTree = "<group>"; };
+		03B73349244B5C1B0073AC0E /* SearchFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilters.swift; sourceTree = "<group>"; };
 		03CBCEE2243951540074EC12 /* ReservationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationList.swift; sourceTree = "<group>"; };
 		03E152DD2438BD1200B0CDA0 /* ItemNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNode.swift; sourceTree = "<group>"; };
 		03E152E12438BE8E00B0CDA0 /* ItemNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNodeView.swift; sourceTree = "<group>"; };
@@ -299,6 +303,7 @@
 				035858C3243C92E1004C0266 /* TabBar.swift */,
 				03B73341244B56780073AC0E /* SizeFilter.swift */,
 				03B73345244B57F40073AC0E /* PriceFilter.swift */,
+				03B73349244B5C1B0073AC0E /* SearchFilters.swift */,
 			);
 			path = zeitgeist;
 			sourceTree = "<group>";
@@ -647,6 +652,7 @@
 				034EF8852423D99200741711 /* AppDelegate.swift in Sources */,
 				2465675F24367352008BA359 /* ReservationView.swift in Sources */,
 				034EF8872423D99200741711 /* SceneDelegate.swift in Sources */,
+				03B7334A244B5C1B0073AC0E /* SearchFilters.swift in Sources */,
 				035C56AE2429369800139C8E /* NavigationBarView.swift in Sources */,
 				03117F12243746EC00EB401E /* SingleItemView.swift in Sources */,
 				03F1DFA024311AFD00BD9E19 /* CampaingNetworkManager.swift in Sources */,
@@ -704,6 +710,7 @@
 				034EF89F2423D99400741711 /* zeitgeistTests.swift in Sources */,
 				03E152E32438BE8E00B0CDA0 /* ItemNodeView.swift in Sources */,
 				031947602434FAAC003F021E /* QrView.swift in Sources */,
+				03B7334B244B5C1B0073AC0E /* SearchFilters.swift in Sources */,
 				03183F44243F14BA00FE3B65 /* SearchNavigation.swift in Sources */,
 				03E33E472438845A00FDDDF5 /* SearchImageViewComponent.swift in Sources */,
 				03B73343244B56780073AC0E /* SizeFilter.swift in Sources */,
@@ -734,6 +741,7 @@
 				03183F45243F14BA00FE3B65 /* SearchNavigation.swift in Sources */,
 				0386A63B243DF81400CFBDD8 /* LoginNode.swift in Sources */,
 				035858C6243C92E1004C0266 /* TabBar.swift in Sources */,
+				03B7334C244B5C1B0073AC0E /* SearchFilters.swift in Sources */,
 				03D2BC9524360B100098C66B /* CampaignView.swift in Sources */,
 				03D2BC8A24360AF60098C66B /* SearchBar.swift in Sources */,
 				034EF8AA2423D99400741711 /* zeitgeistUITests.swift in Sources */,
