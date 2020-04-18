@@ -20,9 +20,8 @@ struct SearchView: View {
     @State var searchByPrice = ""
     @State var sizes = ["One Size", "32", "34", "36", "38", "40", "42", "44"]
     @State var prices = stride(from: 5, through: 80, by: 10).map(String.init)
-    //(1...10).map(String.init) //65
-    @State var sizeFilterTitle = "Search by size: "
-    @State var priceFilterTitle = "Search by price: "
+    @State var sizeFilterTitle = "Size: "
+    @State var priceFilterTitle = "Price: "
 
     
     var sizeFilter: some View {
@@ -36,16 +35,18 @@ struct SearchView: View {
                 }
                 Button(action: {
                     self.searchBySize = ""
-                    self.sizeFilterTitle = "Search by size: "
+                    self.sizeFilterTitle = "Size: "
                 }) {
-                    Image(systemName: "x.circle.fill").foregroundColor(.black)
+                    if (self.searchBySize.count > 0) {
+                        Image(systemName: "x.circle.fill").foregroundColor(.black)
+                    }
                 }
             }
             if expand {
                 ForEach(sizes, id: \.self) { size in
                     Button(action: {
                         self.searchBySize = size
-                        self.sizeFilterTitle = "Search by size: " + size
+                        self.sizeFilterTitle = "Size: \n" + size
                         self.expand.toggle()
                     }) {
                         Text(size)
@@ -60,9 +61,19 @@ struct SearchView: View {
             NavigationView {
                 VStack {
                     SearchBar(text: $searchText, placeholder: "searchItemsText")
-                    HStack {
-                        self.sizeFilter
-                        self.priceFilter
+                    VStack {
+                        HStack {
+                            Spacer()
+
+                            Text("Search by: ")//.padding(10)
+                            Spacer()
+
+                            self.sizeFilter//.padding(10)
+                            Spacer()
+
+                            self.priceFilter//.padding(10)
+                            Spacer()
+                        }
                     }
                     List {
                         ForEach(networkingManager.clothingList.items) { item in
@@ -77,10 +88,10 @@ struct SearchView: View {
                                     SearchNavigation(item: item)
                                 }
                             }
-                            if (self.searchText.isEmpty && self.searchBySize.count == 0) {
+                            if (self.searchText.isEmpty && self.searchBySize.count == 0 && self.searchByPrice.count == 0) {
                                 SearchNavigation(item: item)
                             }
-                            if (item.brand.lowercased().contains(self.searchText.lowercased()) && self.searchBySize.count == 0) {
+                            if (item.brand.lowercased().contains(self.searchText.lowercased()) && self.searchBySize.count == 0 && self.searchByPrice.count == 0) {
                                 SearchNavigation(item: item)
                             }
                         }
@@ -114,19 +125,20 @@ struct SearchView: View {
                 }
                 Button(action: {
                     self.searchByPrice = ""
-                    self.priceFilterTitle = "Search by price: "
+                    self.priceFilterTitle = "Price: "
                 }) {
-                    Image(systemName: "x.circle.fill").foregroundColor(.black)
-                }
+                    if (self.searchByPrice.count > 0) {
+                        Image(systemName: "x.circle.fill").foregroundColor(.black)
+                    }                }
             }
             if expand2 {
                 ForEach(prices, id: \.self) { price in
                     Button(action: {
                         self.searchByPrice = price
-                        self.priceFilterTitle = "Search by price: " + price
+                        self.priceFilterTitle = "Price: \n" + price + "€"
                         self.expand2.toggle()
                     }) {
-                        Text("under" + price + "€")
+                        Text("under " + price + "€")
                     }
                 }
             }
