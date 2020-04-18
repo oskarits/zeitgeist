@@ -63,6 +63,9 @@
 		0398157A24328FCD00C168D8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398157824328FCD00C168D8 /* SearchBar.swift */; };
 		039815822432C70700C168D8 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039815812432C70700C168D8 /* HideKeyboard.swift */; };
 		039815832432C70700C168D8 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039815812432C70700C168D8 /* HideKeyboard.swift */; };
+		039ED072244B81450014AB95 /* CheckoutNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039ED071244B81450014AB95 /* CheckoutNode.swift */; };
+		039ED073244B81450014AB95 /* CheckoutNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039ED071244B81450014AB95 /* CheckoutNode.swift */; };
+		039ED074244B81450014AB95 /* CheckoutNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039ED071244B81450014AB95 /* CheckoutNode.swift */; };
 		03A2DD212431742D007A1387 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2DD202431742D007A1387 /* Notification.swift */; };
 		03A2DD222431742D007A1387 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2DD202431742D007A1387 /* Notification.swift */; };
 		03B73342244B56780073AC0E /* SizeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B73341244B56780073AC0E /* SizeFilter.swift */; };
@@ -183,6 +186,7 @@
 		0386A638243DF81400CFBDD8 /* LoginNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNode.swift; sourceTree = "<group>"; };
 		0398157824328FCD00C168D8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		039815812432C70700C168D8 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
+		039ED071244B81450014AB95 /* CheckoutNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutNode.swift; sourceTree = "<group>"; };
 		03A2DD202431742D007A1387 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		03B73341244B56780073AC0E /* SizeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeFilter.swift; sourceTree = "<group>"; };
 		03B73345244B57F40073AC0E /* PriceFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFilter.swift; sourceTree = "<group>"; };
@@ -379,6 +383,7 @@
 				03E152E12438BE8E00B0CDA0 /* ItemNodeView.swift */,
 				0386A638243DF81400CFBDD8 /* LoginNode.swift */,
 				03065ABA24459C6E00B6BB1E /* QRMaker.swift */,
+				039ED071244B81450014AB95 /* CheckoutNode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -634,6 +639,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				031AC78C24378A5000FEC6DA /* ImageView.swift in Sources */,
+				039ED072244B81450014AB95 /* CheckoutNode.swift in Sources */,
 				039815822432C70700C168D8 /* HideKeyboard.swift in Sources */,
 				A74DC35E24375A32002062CA /* ShoppingHistory.swift in Sources */,
 				03183F43243F14BA00FE3B65 /* SearchNavigation.swift in Sources */,
@@ -699,6 +705,7 @@
 				035C56AF2429369800139C8E /* NavigationBarView.swift in Sources */,
 				03CBCEE4243951540074EC12 /* ReservationList.swift in Sources */,
 				240159462437379C00EECDEF /* EmployeeView.swift in Sources */,
+				039ED073244B81450014AB95 /* CheckoutNode.swift in Sources */,
 				03F1DF9B24311ABD00BD9E19 /* NetworkingManager.swift in Sources */,
 				A74DC35F243761DF002062CA /* ShoppingHistory.swift in Sources */,
 				03065ABC24459C6E00B6BB1E /* QRMaker.swift in Sources */,
@@ -747,6 +754,7 @@
 				034EF8AA2423D99400741711 /* zeitgeistUITests.swift in Sources */,
 				03B73344244B56780073AC0E /* SizeFilter.swift in Sources */,
 				03E33E482438845A00FDDDF5 /* SearchImageViewComponent.swift in Sources */,
+				039ED074244B81450014AB95 /* CheckoutNode.swift in Sources */,
 				03D2BC9024360B060098C66B /* Course.swift in Sources */,
 				03D2BC8C24360AFB0098C66B /* Toast.swift in Sources */,
 				03117F182437471E00EB401E /* ListItem.swift in Sources */,
