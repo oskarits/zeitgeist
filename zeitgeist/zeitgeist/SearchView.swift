@@ -11,7 +11,7 @@ import CoreData
 
 struct SearchView: View {
     
-    @ObservedObject var shoppingHistory = ShoppingHistory()
+//    @ObservedObject var shoppingHistory = ShoppingHistory()
     @ObservedObject var networkingManager = NetworkingManager()
     @State private var searchText : String = ""
     var body: some View {

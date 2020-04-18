@@ -15,7 +15,7 @@ struct ItemNodeView: View {
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
     
     //---
-    @ObservedObject var shoppingHistory = ShoppingHistory()
+//    @ObservedObject var shoppingHistory = ShoppingHistory()
     @ObservedObject var networkingManager = NetworkingManager()
     @State private var searchText : String = ""
     @State private var itemCart : [String] = []

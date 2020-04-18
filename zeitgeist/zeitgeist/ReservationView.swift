@@ -18,6 +18,7 @@ struct ReservationView: View {
     
     @State private var number : Int = 0
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
+    
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
 

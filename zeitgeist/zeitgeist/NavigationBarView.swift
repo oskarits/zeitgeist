@@ -46,8 +46,9 @@ struct NavigationBarView: View {
             }
                 
             
-            ItemNodeView()
+            //ItemNodeView()
             //QrView()
+            ShoppingHistory()
                 .tabItem {
                     Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
             }

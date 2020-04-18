@@ -117,6 +117,9 @@
 		A74DC35F243761DF002062CA /* ShoppingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DC35D24375A32002062CA /* ShoppingHistory.swift */; };
 		A74DC360243761E0002062CA /* ShoppingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DC35D24375A32002062CA /* ShoppingHistory.swift */; };
 		A7DC1D882449A1E10009F4FD /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DC1D872449A1E10009F4FD /* ProfileInfo.swift */; };
+		A7DC1D8A2449DD6A0009F4FD /* CheckoutNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DC1D892449DD6A0009F4FD /* CheckoutNode.swift */; };
+		A7DC1D8B244B37270009F4FD /* CheckoutNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DC1D892449DD6A0009F4FD /* CheckoutNode.swift */; };
+		A7DC1D8C244B37280009F4FD /* CheckoutNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DC1D892449DD6A0009F4FD /* CheckoutNode.swift */; };
 		D13BB5CF24F496452D4049B1 /* Pods_zeitgeistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0664E61E186B91F2BC2497D /* Pods_zeitgeistTests.framework */; };
 		E14935584BFD839412383EE8 /* Pods_zeitgeist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118DED48A03BEC77A5EB463A /* Pods_zeitgeist.framework */; };
 		F7C6ED74511C5C93D6528D36 /* Pods_zeitgeist_zeitgeistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2460607B4DC3071256197A /* Pods_zeitgeist_zeitgeistUITests.framework */; };
@@ -196,6 +199,7 @@
 		A712EF27243CA66C009AE9E3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		A74DC35D24375A32002062CA /* ShoppingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingHistory.swift; sourceTree = "<group>"; };
 		A7DC1D872449A1E10009F4FD /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
+		A7DC1D892449DD6A0009F4FD /* CheckoutNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutNode.swift; sourceTree = "<group>"; };
 		AA2460607B4DC3071256197A /* Pods_zeitgeist_zeitgeistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeitgeist_zeitgeistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D243636C44463D1D866255AF /* Pods-zeitgeist-zeitgeistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeitgeist-zeitgeistUITests.release.xcconfig"; path = "Target Support Files/Pods-zeitgeist-zeitgeistUITests/Pods-zeitgeist-zeitgeistUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D96CF841C2FFB9F5A2249BC4 /* Pods-zeitgeistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeitgeistTests.debug.xcconfig"; path = "Target Support Files/Pods-zeitgeistTests/Pods-zeitgeistTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -359,6 +363,7 @@
 				03F1DF9624311A8100BD9E19 /* SingleResult.swift */,
 				03F1DF9C24311AD900BD9E19 /* Course.swift */,
 				03E152DD2438BD1200B0CDA0 /* ItemNode.swift */,
+				A7DC1D892449DD6A0009F4FD /* CheckoutNode.swift */,
 				03E152E12438BE8E00B0CDA0 /* ItemNodeView.swift */,
 				0386A638243DF81400CFBDD8 /* LoginNode.swift */,
 				03065ABA24459C6E00B6BB1E /* QRMaker.swift */,
@@ -621,6 +626,7 @@
 				A74DC35E24375A32002062CA /* ShoppingHistory.swift in Sources */,
 				03183F43243F14BA00FE3B65 /* SearchNavigation.swift in Sources */,
 				03E33E462438845A00FDDDF5 /* SearchImageViewComponent.swift in Sources */,
+				A7DC1D8A2449DD6A0009F4FD /* CheckoutNode.swift in Sources */,
 				03065ABB24459C6E00B6BB1E /* QRMaker.swift in Sources */,
 				03F1DF9D24311AD900BD9E19 /* Course.swift in Sources */,
 				0386A639243DF81400CFBDD8 /* LoginNode.swift in Sources */,
@@ -663,6 +669,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03F1DFA724311BD000BD9E19 /* CampaignView.swift in Sources */,
+				A7DC1D8B244B37270009F4FD /* CheckoutNode.swift in Sources */,
 				03F1DF9E24311AD900BD9E19 /* Course.swift in Sources */,
 				0364AE84243279DE005AB2A4 /* ContentView.swift in Sources */,
 				03117F13243746EC00EB401E /* SingleItemView.swift in Sources */,
@@ -706,6 +713,7 @@
 			files = (
 				03D2BC9324360B0D0098C66B /* NetworkingManager.swift in Sources */,
 				03D2BC8924360AF00098C66B /* ScannerViewController.swift in Sources */,
+				A7DC1D8C244B37280009F4FD /* CheckoutNode.swift in Sources */,
 				035C56B8242937A900139C8E /* SearchView.swift in Sources */,
 				035C56B42429376E00139C8E /* HomeView.swift in Sources */,
 				031AC78E24378A5000FEC6DA /* ImageView.swift in Sources */,

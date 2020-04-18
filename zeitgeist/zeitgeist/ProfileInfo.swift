@@ -16,17 +16,21 @@ struct ProfileInfo: View {
     
     var body: some View {
         VStack {
-            Text("John Doe")
-                .font(.largeTitle)
-            Text(isLoggedInResults[0].idString)
-                .font(.subheadline)
-                .foregroundColor(.gray)
-            Divider()
-                ReservationView()
-         
-        }.padding()
-        
+            VStack {
+                Text("John Doe")
+                    .font(.largeTitle)
+                Text(isLoggedInResults[0].idString)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+                Divider()
+                    ReservationView()
+             
+            }.padding()
+            
+            Spacer()
+        }
     }
+    
 }
 
 struct ProfileInfo_Previews: PreviewProvider {
@@ -34,3 +38,6 @@ struct ProfileInfo_Previews: PreviewProvider {
         ProfileInfo()
     }
 }
+
+
+

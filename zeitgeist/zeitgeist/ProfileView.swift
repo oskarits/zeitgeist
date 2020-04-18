@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @ObservedObject var shoppingHistory = ShoppingHistory()
+//    @ObservedObject var shoppingHistory = ShoppingHistory()
     var notification = Notification()
     @State private var notificationTitle : String = "Title test"
     @State private var notificationBody : String = "Body test"
