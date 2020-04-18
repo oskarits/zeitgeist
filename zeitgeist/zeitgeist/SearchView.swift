@@ -22,10 +22,17 @@ struct SearchView: View {
     var dropDown: some View {
         VStack(spacing: 30) {
             HStack {
-                Text("Search by size: ")
-                Image(systemName: expand ? "chevron.up" : "chevron.down")
-            }.onTapGesture {
-                self.expand.toggle()
+                HStack {
+                    Text("Search by size: ")
+                    Image(systemName: expand ? "chevron.up" : "chevron.down")
+                }.onTapGesture {
+                    self.expand.toggle()
+                }
+                Button(action: {
+                    self.searchBy = ""
+                }) {
+                    Image(systemName: "x.circle.fill").foregroundColor(.black)
+                }
             }
             if expand {
                 ForEach(sizes, id: \.self) { size in
