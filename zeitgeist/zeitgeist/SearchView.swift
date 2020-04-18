@@ -79,7 +79,7 @@ struct SearchView: View {
                                     SearchNavigation(item: item)
                                 }
                             }
-                            if (self.searchBySize.count > 0 && (Int(self.searchByPrice) ?? 100 < 5)) {
+                            if (self.searchBySize.count > 0 && self.searchByPrice.count < 1) {
                                 if (item.size.contains(self.searchBySize)) {
                                     SearchNavigation(item: item)
                                 }
