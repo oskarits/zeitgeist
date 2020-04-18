@@ -17,6 +17,7 @@ struct SearchView: View {
     
     @State var expand = false
     @State var searchBy = ""
+    @State var sizes = ["One Size", "32", "34", "36", "38", "40", "42", "44"]
     
     var dropDown: some View {
         VStack(spacing: 30) {
@@ -27,43 +28,14 @@ struct SearchView: View {
                 self.expand.toggle()
             }
             if expand {
-                Button(action: {
-                    self.searchBy = "one"
-                    self.expand.toggle()
-                }) {
-                    Text("One size")
+                ForEach(sizes, id: \.self) { size in
+                    Button(action: {
+                        self.searchBy = size
+                        self.expand.toggle()
+                    }) {
+                        Text(size)
+                    }
                 }
-                Button(action: {
-                    self.searchBy = "32"
-                    self.expand.toggle()
-                }) {
-                    Text("32")
-                }
-                Button(action: {
-                    self.searchBy = "34"
-                    self.expand.toggle()
-                }) {
-                    Text("34")
-                }
-                Button(action: {
-                    self.searchBy = "36"
-                    self.expand.toggle()
-                }) {
-                    Text("36")
-                }
-                
-//                Button(action: {
-//                    self.searchBy = "userSize"
-//                    self.expand.toggle()
-//                }) {
-//                    Text("Your size")
-//                }
-//                Button(action: {
-//                    self.searchBy = "price"
-//                    self.expand.toggle()
-//                }) {
-//                    Text("Price €")
-//                }
             }
         }
     }
