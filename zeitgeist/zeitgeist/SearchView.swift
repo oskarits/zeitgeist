@@ -23,39 +23,6 @@ struct SearchView: View {
     @State var sizeFilterTitle = "Size: "
     @State var priceFilterTitle = "Price: "
     
-    
-    var sizeFilter: some View {
-        VStack(spacing: 30) {
-            HStack {
-                HStack {
-                    Text(sizeFilterTitle)
-                    Image(systemName: expand ? "chevron.up" : "chevron.down")
-                }.onTapGesture {
-                    self.expand.toggle()
-                }
-                Button(action: {
-                    self.searchBySize = ""
-                    self.sizeFilterTitle = "Size: "
-                }) {
-                    if (self.searchBySize.count > 0) {
-                        Image(systemName: "x.circle.fill").foregroundColor(.black)
-                    }
-                }
-            }
-            if expand {
-                ForEach(sizes, id: \.self) { size in
-                    Button(action: {
-                        self.searchBySize = size
-                        self.sizeFilterTitle = "Size: \n" + size
-                        self.expand.toggle()
-                    }) {
-                        Text(size)
-                    }
-                }
-            }
-        }
-    }
-    
     var body: some View {
         ZStack(alignment: .leading) {
             NavigationView {
@@ -66,7 +33,7 @@ struct SearchView: View {
                             Spacer()
                             Text("Search by: ")
                             Spacer()
-                            self.sizeFilter
+                            SizeFilter(searchBySize: $searchBySize, sizeFilterTitle: $sizeFilterTitle, expand: $expand, sizes: sizes)
                             Spacer()
                             self.priceFilter
                             Spacer()
@@ -161,6 +128,54 @@ struct SearchView: View {
         }
     }
 }
+
+struct Filter: View {
+    
+    @Binding var searchBySize: String
+    @Binding var sizeFilterTitle: String
+    @Binding var expand: Bool
+    @State var sizes = ["One Size", "32", "34", "36", "38", "40", "42", "44"]
+
+    var body: some View {
+        VStack(spacing: 30) {
+            HStack {
+                HStack {
+                    Text(sizeFilterTitle)
+                    Image(systemName: expand ? "chevron.up" : "chevron.down")
+                }.onTapGesture {
+                    self.expand.toggle()
+                }
+                Button(action: {
+                    self.searchBySize = ""
+                    self.sizeFilterTitle = "Size: "
+                }) {
+                    if (self.searchBySize.count > 0) {
+                        Image(systemName: "x.circle.fill").foregroundColor(.black)
+                    }
+                }
+            }
+            if expand {
+                ForEach(sizes, id: \.self) { size in
+                    Button(action: {
+                        self.searchBySize = size
+                        self.sizeFilterTitle = "Size: \n" + size
+                        self.expand.toggle()
+                    }) {
+                        Text(size)
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+
+
+
+
+
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
