@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SearchFilters: View {
-    @ObservedObject var shoppingHistory = ShoppingHistory()
+    //@ObservedObject var shoppingHistory = ShoppingHistory()
     @ObservedObject var networkingManager = NetworkingManager()
     @Binding var searchText : String
     @Binding var expand : Bool

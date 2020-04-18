@@ -13,10 +13,11 @@ class CheckoutNode: NSManagedObject {
     @NSManaged var idString: String
     @NSManaged var children: NSSet?
     @NSManaged var parent: CheckoutNode?
+    
     @NSManaged var brand: String
     @NSManaged var size: String
     @NSManaged var price: String
- //   @NSManaged var image: String
+
     @NSManaged var order: Int
     @NSManaged var isReserved: Bool
     @NSManaged var isCollected: Bool
