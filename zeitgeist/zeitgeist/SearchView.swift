@@ -22,7 +22,7 @@ struct SearchView: View {
     @State var prices = stride(from: 10, through: 80, by: 10).map(String.init)
     @State var sizeFilterTitle = "Size: "
     @State var priceFilterTitle = "Price: "
-
+    
     
     var sizeFilter: some View {
         VStack(spacing: 30) {
@@ -74,22 +74,34 @@ struct SearchView: View {
                     }
                     List {
                         ForEach(networkingManager.clothingList.items) { item in
-                                if (Int(item.price) ?? 99 <= Int(self.searchByPrice) ?? 0 && Int(item.price) ?? 99 >= (Int(self.searchByPrice) ?? 0) - 9) {
-
+                            if (Int(item.price) ?? 99 <= Int(self.searchByPrice) ?? 0 && Int(item.price) ?? 99 >= (Int(self.searchByPrice) ?? 0) - 9) {
+                                
+                                if (self.searchText.isEmpty) {
                                     if (Int(self.searchByPrice) ?? 0 >= 5 && item.size.lowercased().contains(self.searchBySize.lowercased())) {
                                         SearchNavigation(item: item)
+                                        
                                     }
-                                    if (item.size.contains(self.searchBySize) && self.searchByPrice.count > 0) {
+                                    if (Int(self.searchByPrice) ?? 0 >= 5 && self.searchBySize.count == 0) {
+                                        SearchNavigation(item: item)
+                                    }
+                                }
+                                if (item.brand.lowercased().contains(self.searchText.lowercased())) {
+                                    if (Int(self.searchByPrice) ?? 0 >= 5 && item.size.lowercased().contains(self.searchBySize.lowercased())) {
                                         SearchNavigation(item: item)
                                     }
                                     if (Int(self.searchByPrice) ?? 0 >= 5 && self.searchBySize.count == 0) {
                                         SearchNavigation(item: item)
                                     }
                                 }
-
+                            }
                             if (self.searchBySize.count > 0 && self.searchByPrice.count == 0) {
                                 if (item.size.lowercased().contains(self.searchBySize.lowercased())) {
-                                    SearchNavigation(item: item)
+                                    if (self.searchText.isEmpty) {
+                                        SearchNavigation(item: item)
+                                    }
+                                    if (item.brand.lowercased().contains(self.searchText.lowercased())) {
+                                        SearchNavigation(item: item)
+                                    }
                                 }
                             }
                             if (self.searchText.isEmpty && self.searchBySize.count == 0 && self.searchByPrice.count == 0) {
