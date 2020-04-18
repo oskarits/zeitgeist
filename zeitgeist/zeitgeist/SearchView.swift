@@ -18,18 +18,20 @@ struct SearchView: View {
     @State var expand = false
     @State var searchBy = ""
     @State var sizes = ["One Size", "32", "34", "36", "38", "40", "42", "44"]
+    @State var filterTitle = "Search by size: "
     
     var dropDown: some View {
         VStack(spacing: 30) {
             HStack {
                 HStack {
-                    Text("Search by size: ")
+                    Text(filterTitle)
                     Image(systemName: expand ? "chevron.up" : "chevron.down")
                 }.onTapGesture {
                     self.expand.toggle()
                 }
                 Button(action: {
                     self.searchBy = ""
+                    self.filterTitle = "Search by size: "
                 }) {
                     Image(systemName: "x.circle.fill").foregroundColor(.black)
                 }
@@ -38,6 +40,7 @@ struct SearchView: View {
                 ForEach(sizes, id: \.self) { size in
                     Button(action: {
                         self.searchBy = size
+                        self.filterTitle = "Search by size: " + size
                         self.expand.toggle()
                     }) {
                         Text(size)
