@@ -14,24 +14,29 @@ struct SearchView: View {
     @ObservedObject var shoppingHistory = ShoppingHistory()
     @ObservedObject var networkingManager = NetworkingManager()
     @State private var searchText : String = ""
-    
     @State var expand = false
-    @State var searchBy = ""
+    @State var expand2 = false
+    @State var searchBySize = ""
+    @State var searchByPrice = ""
     @State var sizes = ["One Size", "32", "34", "36", "38", "40", "42", "44"]
-    @State var filterTitle = "Search by size: "
+    @State var prices = stride(from: 5, through: 80, by: 10).map(String.init)
+    //(1...10).map(String.init) //65
+    @State var sizeFilterTitle = "Search by size: "
+    @State var priceFilterTitle = "Search by price: "
+
     
-    var dropDown: some View {
+    var sizeFilter: some View {
         VStack(spacing: 30) {
             HStack {
                 HStack {
-                    Text(filterTitle)
+                    Text(sizeFilterTitle)
                     Image(systemName: expand ? "chevron.up" : "chevron.down")
                 }.onTapGesture {
                     self.expand.toggle()
                 }
                 Button(action: {
-                    self.searchBy = ""
-                    self.filterTitle = "Search by size: "
+                    self.searchBySize = ""
+                    self.sizeFilterTitle = "Search by size: "
                 }) {
                     Image(systemName: "x.circle.fill").foregroundColor(.black)
                 }
@@ -39,8 +44,8 @@ struct SearchView: View {
             if expand {
                 ForEach(sizes, id: \.self) { size in
                     Button(action: {
-                        self.searchBy = size
-                        self.filterTitle = "Search by size: " + size
+                        self.searchBySize = size
+                        self.sizeFilterTitle = "Search by size: " + size
                         self.expand.toggle()
                     }) {
                         Text(size)
@@ -55,19 +60,26 @@ struct SearchView: View {
             NavigationView {
                 VStack {
                     SearchBar(text: $searchText, placeholder: "searchItemsText")
-                    self.dropDown
+                    HStack {
+                        self.sizeFilter
+                        self.priceFilter
+                    }
                     List {
                         ForEach(networkingManager.clothingList.items) { item in
                             //self.searchBy
-                            if (self.searchBy.count > 0) {
-                                if (item.size.contains(self.searchBy)) {
+                            if (Int(self.searchByPrice) == 5) {
+                                SearchNavigation(item: item)
+                                Text("gggg")
+                            }
+                            if (self.searchBySize.count > 0) {
+                                if (item.size.contains(self.searchBySize)) {
                                     SearchNavigation(item: item)
                                 }
                             }
-                            if (self.searchText.isEmpty && self.searchBy.count == 0) {
+                            if (self.searchText.isEmpty && self.searchBySize.count == 0) {
                                 SearchNavigation(item: item)
                             }
-                            if (item.brand.lowercased().contains(self.searchText.lowercased()) && self.searchBy.count == 0) {
+                            if (item.brand.lowercased().contains(self.searchText.lowercased()) && self.searchBySize.count == 0) {
                                 SearchNavigation(item: item)
                             }
                         }
@@ -88,6 +100,36 @@ struct SearchView: View {
                     .navigationBarTitle(Text("Search Items"), displayMode: .inline)
             }
         }.resignKeyboardOnDragGesture()
+    }
+    
+    var priceFilter: some View {
+        VStack(spacing: 30) {
+            HStack {
+                HStack {
+                    Text(priceFilterTitle)
+                    Image(systemName: expand2 ? "chevron.up" : "chevron.down")
+                }.onTapGesture {
+                    self.expand2.toggle()
+                }
+                Button(action: {
+                    self.searchByPrice = ""
+                    self.priceFilterTitle = "Search by price: "
+                }) {
+                    Image(systemName: "x.circle.fill").foregroundColor(.black)
+                }
+            }
+            if expand2 {
+                ForEach(prices, id: \.self) { price in
+                    Button(action: {
+                        self.searchByPrice = price
+                        self.priceFilterTitle = "Search by price: " + price
+                        self.expand2.toggle()
+                    }) {
+                        Text(price)
+                    }
+                }
+            }
+        }
     }
 }
 
