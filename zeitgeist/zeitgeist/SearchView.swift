@@ -19,7 +19,7 @@ struct SearchView: View {
     @State var searchBySize = ""
     @State var searchByPrice = ""
     @State var sizes = ["One Size", "32", "34", "36", "38", "40", "42", "44"]
-    @State var prices = stride(from: 5, through: 80, by: 10).map(String.init)
+    @State var prices = stride(from: 10, through: 80, by: 10).map(String.init)
     @State var sizeFilterTitle = "Size: "
     @State var priceFilterTitle = "Price: "
 
@@ -64,14 +64,11 @@ struct SearchView: View {
                     VStack {
                         HStack {
                             Spacer()
-
-                            Text("Search by: ")//.padding(10)
+                            Text("Search by: ")
                             Spacer()
-
-                            self.sizeFilter//.padding(10)
+                            self.sizeFilter
                             Spacer()
-
-                            self.priceFilter//.padding(10)
+                            self.priceFilter
                             Spacer()
                         }
                     }
@@ -79,7 +76,7 @@ struct SearchView: View {
                         ForEach(networkingManager.clothingList.items) { item in
                             //self.searchBy
                             if (Int(self.searchByPrice) ?? 0 >= 5) {
-                                if (Int(item.price) ?? 99 <= Int(self.searchByPrice) ?? 0) {
+                                if (Int(item.price) ?? 99 <= Int(self.searchByPrice) ?? 0 && Int(item.price) ?? 99 >= (Int(self.searchByPrice) ?? 0)-10) {
                                     SearchNavigation(item: item)
                                 }
                             }
@@ -138,7 +135,7 @@ struct SearchView: View {
                         self.priceFilterTitle = "Price: \n" + price + "€"
                         self.expand2.toggle()
                     }) {
-                        Text("under " + price + "€")
+                        Text( "under  " + price + "€")
                     }
                 }
             }
