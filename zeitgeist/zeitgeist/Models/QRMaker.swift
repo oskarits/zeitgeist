@@ -20,12 +20,14 @@ struct QRMaker: View {
     var body: some View {
         VStack {
             VStack {
-                if (isLoggedInResults[0].isLoggedIn) {
-                    Image(uiImage: self.generateQRCode(from: isLoggedInResults[0].idString))
-                        .interpolation(.none)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: .infinity, maxHeight: 200, alignment: .center)
+                if (isLoggedInResults.endIndex > 0) {
+                    if (isLoggedInResults[0].isLoggedIn) {
+                        Image(uiImage: self.generateQRCode(from: isLoggedInResults[0].idString))
+                            .interpolation(.none)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: .infinity, maxHeight: 200, alignment: .center)
+                    }
                 }
             }
         }
