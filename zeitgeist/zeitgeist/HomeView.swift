@@ -8,8 +8,12 @@
 
 import SwiftUI
 import Combine
+import CoreData
 
 struct HomeView: View {
+    
+    @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
     
     @ObservedObject var networkManager = CampaignNetworkManager()
 
@@ -23,8 +27,17 @@ struct HomeView: View {
                         Text("shareTitle2").foregroundColor(Color.orange)
                     }
                     QRMaker()
-                    List(networkManager.courses) { course in
-                        CampaignView(course: course)
+                    Spacer()
+                    VStack {
+                        if !isLoggedInResults.isEmpty {
+                            List(networkManager.courses) { course in
+                                CampaignView(course: course)
+                            }
+                        } else {
+                            guard let zBlurrred = UIImage(named: "zalandoCampaignBlurred") else { return }
+                            zBlurrred
+        
+                        }
                     }
                 }
             }
