@@ -86,7 +86,7 @@ struct SignInView: View {
                     HStack {
                         VStack(alignment: .leading, spacing: 20) {
                             Image(systemName: "scissors")
-                                .foregroundColor(ZColorLock)
+                                //.foregroundColor(ZColorLock)
                         }
                         Spacer()
                         VStack(alignment: .center) {
@@ -106,7 +106,7 @@ struct SignInView: View {
                                 self.size = size
                                 self.expand.toggle()
                             }) {
-                                Text(size)
+                                Text(size).padding(5)
                             }
                         }
                     }

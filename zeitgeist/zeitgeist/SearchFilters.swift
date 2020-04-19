@@ -16,7 +16,7 @@ struct SearchFilters: View {
     @Binding var expand2 : Bool
     @Binding var searchBySize : String
     @Binding var searchByPrice : String
-    @State var sizes = ["One Size", "32", "34", "36", "38", "40", "42", "44"]
+    @State var sizes = ["Your size", "One Size", "32", "34", "36", "38", "40", "42", "44"]
     @State var prices = stride(from: 10, through: 80, by: 10).map(String.init)
     @Binding var sizeFilterTitle : String
     @Binding var priceFilterTitle : String
