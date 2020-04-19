@@ -24,11 +24,9 @@ struct ProfileInfo: View {
             Divider()
                 ReservationView()
                 ShoppingHistoryView()
-         
         }.padding()
-        
     }
-}c
+}
 
 struct ProfileInfo_Previews: PreviewProvider {
     static var previews: some View {
