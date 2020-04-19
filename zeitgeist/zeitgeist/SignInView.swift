@@ -130,8 +130,8 @@ struct SignInView: View {
                     .background(Color.orange)
                     .cornerRadius(15.0)
                 
-            }.padding()
-        }.padding()
+            }
+        }.padding().resignKeyboardOnDragGesture()
     }
     
     // ---------FUNCTIONS--------
