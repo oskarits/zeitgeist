@@ -8,8 +8,12 @@
 
 import SwiftUI
 import Combine
+import CoreData
 
 struct HomeView: View {
+    
+    @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
     
     @ObservedObject var networkManager = CampaignNetworkManager()
 
@@ -17,14 +21,31 @@ struct HomeView: View {
         
         VStack {
             NavigationView {
-                VStack(alignment: .center) {
-                    HStack {
-                        Text("shareTitle1")
-                        Text("shareTitle2").foregroundColor(Color.orange)
+                if isLoggedInResults.isEmpty {
+                    VStack {
+                        HStack {
+                            Text("Sign in to share your")
+                                .fontWeight(.bold)
+                            Text("shareTitle2")
+                                .foregroundColor(.orange)
+                                .fontWeight(.bold)
+                        }.padding(50)
+                        Image("zalandoCampaignBlurred")
+                            .resizable()
+                            .frame(width: 380, height: 240)
                     }
-                    QRMaker()
-                    List(networkManager.courses) { course in
-                        CampaignView(course: course)
+                    
+                } else {
+                    VStack(alignment: .center) {
+                        HStack {
+                            Text("shareTitle1")
+                            Text("shareTitle2")
+                                .foregroundColor(.orange)
+                        }
+                        QRMaker()
+                        List(networkManager.courses) { course in
+                            CampaignView(course: course)
+                        }
                     }
                 }
             }
