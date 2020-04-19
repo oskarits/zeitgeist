@@ -18,8 +18,9 @@ struct SearchImageViewComponent: View {
          
         var body: some View {
             VStack {
-            Image(uiImage: ((imageLoader.data.count == 0) ? UIImage(named: "logoapple")! : UIImage(data: imageLoader.data)) ?? UIImage(systemName: "house")!).resizable()
-            .aspectRatio(1, contentMode: .fit)
+            Image(uiImage: ((imageLoader.data.count == 0) ? UIImage(named: "logoapple")! : UIImage(data: imageLoader.data)) ?? UIImage(systemName: "house")!)
+                .resizable()
+                .aspectRatio(1, contentMode: .fit)
             }.frame(width: 200, height: 200)
         }
         

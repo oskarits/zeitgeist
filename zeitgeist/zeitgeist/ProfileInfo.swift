@@ -16,7 +16,7 @@ struct ProfileInfo: View {
     
     var body: some View {
         VStack {
-            Text("John Doe")
+            Text("Jane Doe")
                 .font(.largeTitle)
             Text(isLoggedInResults[0].idString)
                 .font(.subheadline)

@@ -21,22 +21,30 @@ struct HomeView: View {
         
         VStack {
             NavigationView {
-                VStack(alignment: .center) {
-                    HStack {
-                        Text("shareTitle1")
-                        Text("shareTitle2").foregroundColor(Color.orange)
-                    }
-                    QRMaker()
-                    Spacer()
+                if isLoggedInResults.isEmpty {
                     VStack {
-                        if !isLoggedInResults.isEmpty {
-                            List(networkManager.courses) { course in
-                                CampaignView(course: course)
-                            }
-                        } else {
-                            guard let zBlurrred = UIImage(named: "zalandoCampaignBlurred") else { return }
-                            zBlurrred
-        
+                        HStack {
+                            Text("Sign in to share your")
+                                .fontWeight(.bold)
+                            Text("shareTitle2")
+                                .foregroundColor(.orange)
+                                .fontWeight(.bold)
+                        }.padding(50)
+                        Image("zalandoCampaignBlurred")
+                            .resizable()
+                            .frame(width: 380, height: 240)
+                    }
+                    
+                } else {
+                    VStack(alignment: .center) {
+                        HStack {
+                            Text("shareTitle1")
+                            Text("shareTitle2")
+                                .foregroundColor(.orange)
+                        }
+                        QRMaker()
+                        List(networkManager.courses) { course in
+                            CampaignView(course: course)
                         }
                     }
                 }

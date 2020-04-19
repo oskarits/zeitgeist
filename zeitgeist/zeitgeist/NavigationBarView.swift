@@ -8,6 +8,7 @@
 
 import SwiftUI
 import CoreData
+
 struct NavigationBarView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
