@@ -13,6 +13,7 @@ class LoginNode: NSManagedObject {
     @NSManaged var parent: LoginNode?
     @NSManaged var idString: String
     @NSManaged var isLoggedIn: Bool
+    @NSManaged var size: String
 }
 
 extension LoginNode {
