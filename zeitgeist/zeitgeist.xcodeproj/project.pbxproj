@@ -130,6 +130,7 @@
 		A74DC35E24375A32002062CA /* ShoppingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DC35D24375A32002062CA /* ShoppingHistory.swift */; };
 		A74DC35F243761DF002062CA /* ShoppingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DC35D24375A32002062CA /* ShoppingHistory.swift */; };
 		A74DC360243761E0002062CA /* ShoppingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DC35D24375A32002062CA /* ShoppingHistory.swift */; };
+		A7A4AB6D244C766E00F1F1C5 /* ShoppingHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4AB6C244C766E00F1F1C5 /* ShoppingHistoryView.swift */; };
 		A7DC1D882449A1E10009F4FD /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DC1D872449A1E10009F4FD /* ProfileInfo.swift */; };
 		D13BB5CF24F496452D4049B1 /* Pods_zeitgeistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0664E61E186B91F2BC2497D /* Pods_zeitgeistTests.framework */; };
 		E14935584BFD839412383EE8 /* Pods_zeitgeist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118DED48A03BEC77A5EB463A /* Pods_zeitgeist.framework */; };
@@ -213,6 +214,7 @@
 		A0664E61E186B91F2BC2497D /* Pods_zeitgeistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeitgeistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A712EF27243CA66C009AE9E3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		A74DC35D24375A32002062CA /* ShoppingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingHistory.swift; sourceTree = "<group>"; };
+		A7A4AB6C244C766E00F1F1C5 /* ShoppingHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingHistoryView.swift; sourceTree = "<group>"; };
 		A7DC1D872449A1E10009F4FD /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
 		AA2460607B4DC3071256197A /* Pods_zeitgeist_zeitgeistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeitgeist_zeitgeistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D243636C44463D1D866255AF /* Pods-zeitgeist-zeitgeistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeitgeist-zeitgeistUITests.release.xcconfig"; path = "Target Support Files/Pods-zeitgeist-zeitgeistUITests/Pods-zeitgeist-zeitgeistUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				035C56B5242937A900139C8E /* SearchView.swift */,
 				03183F42243F14BA00FE3B65 /* SearchNavigation.swift */,
 				A74DC35D24375A32002062CA /* ShoppingHistory.swift */,
+				A7A4AB6C244C766E00F1F1C5 /* ShoppingHistoryView.swift */,
 				035C56B9242937C700139C8E /* ProfileView.swift */,
 				A7DC1D872449A1E10009F4FD /* ProfileInfo.swift */,
 				035C56AD2429369800139C8E /* NavigationBarView.swift */,
@@ -671,6 +674,7 @@
 				03F1DF9724311A8100BD9E19 /* SingleResult.swift in Sources */,
 				03B73342244B56780073AC0E /* SizeFilter.swift in Sources */,
 				035C56B22429376E00139C8E /* HomeView.swift in Sources */,
+				A7A4AB6D244C766E00F1F1C5 /* ShoppingHistoryView.swift in Sources */,
 				03F1DFA924311CA600BD9E19 /* ImageLoader.swift in Sources */,
 				A7DC1D882449A1E10009F4FD /* ProfileInfo.swift in Sources */,
 				03A2DD212431742D007A1387 /* Notification.swift in Sources */,

@@ -23,11 +23,12 @@ struct ProfileInfo: View {
                 .foregroundColor(.gray)
             Divider()
                 ReservationView()
+                ShoppingHistoryView()
          
         }.padding()
         
     }
-}
+}c
 
 struct ProfileInfo_Previews: PreviewProvider {
     static var previews: some View {
