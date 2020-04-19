@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19E266" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CheckoutNode" representedClassName=".CheckoutNode" syncable="YES">
+        <attribute name="brand" optional="YES" attributeType="String"/>
+        <attribute name="idString" optional="YES" attributeType="String"/>
+        <attribute name="isCollected" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isReserved" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="price" optional="YES" attributeType="String"/>
+        <attribute name="size" optional="YES" attributeType="String"/>
+        <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CheckoutNode" inverseName="parent" inverseEntity="CheckoutNode"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CheckoutNode" inverseName="children" inverseEntity="CheckoutNode"/>
+    </entity>
     <entity name="ItemNode" representedClassName=".ItemNode" syncable="YES">
         <attribute name="brand" optional="YES" attributeType="String"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
@@ -22,5 +33,6 @@
     <elements>
         <element name="ItemNode" positionX="-63" positionY="-18" width="128" height="208"/>
         <element name="LoginNode" positionX="-54" positionY="81" width="128" height="103"/>
+        <element name="CheckoutNode" positionX="-45" positionY="81" width="128" height="28"/>
     </elements>
 </model>
