@@ -37,8 +37,10 @@ struct SearchFilters: View {
                             SearchNavigation(item: item)
                         }
                         if (self.searchBySize == "Your size") {
-                            if (item.size.lowercased().contains(self.isLoggedInResults[0].size)) {
-                                SearchNavigation(item: item)
+                            if (self.isLoggedInResults.endIndex > 0) {
+                                if (item.size.lowercased().contains(self.isLoggedInResults[0].size)) {
+                                    SearchNavigation(item: item)
+                                }
                             }
                         }
                     }
@@ -51,14 +53,18 @@ struct SearchFilters: View {
                         }
                     }
                     if (item.brand.lowercased().contains(self.searchText.lowercased()) && self.searchBySize == "Your size") {
-                        if (item.size.lowercased().contains(self.isLoggedInResults[0].size)) {
-                            SearchNavigation(item: item)
+                        if (self.isLoggedInResults.endIndex > 0) {
+                            if (item.size.lowercased().contains(self.isLoggedInResults[0].size)) {
+                                SearchNavigation(item: item)
+                            }
                         }
                     }
                 }
                 if (item.brand.lowercased().contains(self.searchText.lowercased()) && self.searchBySize == "Your size" && self.searchByPrice.count < 1) {
-                    if (item.size.lowercased().contains(self.isLoggedInResults[0].size)) {
-                        SearchNavigation(item: item)
+                    if (self.isLoggedInResults.endIndex > 0) {
+                        if (item.size.lowercased().contains(self.isLoggedInResults[0].size)) {
+                            SearchNavigation(item: item)
+                        }
                     }
                 }
                 if (self.searchBySize.count > 0 && self.searchByPrice.count == 0) {
@@ -71,8 +77,10 @@ struct SearchFilters: View {
                         }
                     }
                     if (self.searchBySize == "Your size" && self.searchText.isEmpty) {
-                        if (item.size.lowercased().contains(self.isLoggedInResults[0].size)) {
-                            SearchNavigation(item: item)
+                        if (self.isLoggedInResults.endIndex > 0) {
+                            if (item.size.lowercased().contains(self.isLoggedInResults[0].size)) {
+                                SearchNavigation(item: item)
+                            }
                         }
                     }
                 }
