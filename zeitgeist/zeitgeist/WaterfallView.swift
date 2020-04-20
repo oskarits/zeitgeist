@@ -23,10 +23,3 @@ struct WaterfallView: View {
         }
     }
 }
-/*
-VStack{
-    WaterfallGrid(self.networkingManager.clothingList.items) {item in
-        SearchNavigation(item: item)
-    }
-}
-*/
