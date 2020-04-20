@@ -21,14 +21,15 @@ struct ProfileInfo: View {
             Text(isLoggedInResults[0].idString)
                 .font(.subheadline)
                 .foregroundColor(.gray)
+            Text("Size: " + isLoggedInResults[0].size)
+                .font(.subheadline)
+                .foregroundColor(.gray)
             Divider()
-                ReservationView()
-                ShoppingHistoryView()
-         
+            ReservationView()
+            ShoppingHistoryView()
         }.padding()
-        
     }
-}c
+}
 
 struct ProfileInfo_Previews: PreviewProvider {
     static var previews: some View {
