@@ -468,7 +468,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Z Team";
 				TargetAttributes = {
 					034EF8802423D99200741711 = {
@@ -658,9 +658,7 @@
 				03F1DFA324311BAC00BD9E19 /* ImageViewComponent.swift in Sources */,
 				031947622434FACD003F021E /* ScannerViewController.swift in Sources */,
 				03117F162437471E00EB401E /* ListItem.swift in Sources */,
-				034EF8852423D99200741711 /* AppDelegate.swift in Sources */,
 				2465675F24367352008BA359 /* ReservationView.swift in Sources */,
-				034EF8872423D99200741711 /* SceneDelegate.swift in Sources */,
 				03B7334A244B5C1B0073AC0E /* SearchFilters.swift in Sources */,
 				035C56AE2429369800139C8E /* NavigationBarView.swift in Sources */,
 				03117F12243746EC00EB401E /* SingleItemView.swift in Sources */,

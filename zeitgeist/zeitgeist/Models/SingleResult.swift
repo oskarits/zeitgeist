@@ -14,7 +14,7 @@ struct ClothingList: Decodable {
     var items: [ClothingListEntry]
 }
 
-struct ClothingListEntry: Decodable, Identifiable {
+struct ClothingListEntry: Decodable, Identifiable, Hashable {
     var id = UUID()
     var brand: String
     var size: String
@@ -23,5 +23,11 @@ struct ClothingListEntry: Decodable, Identifiable {
     var description: String
     var created: Int
     var images: [String]
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
+
+
 

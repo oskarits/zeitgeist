@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import WaterfallGrid
 
 struct SearchFilters: View {
     //@ObservedObject var shoppingHistory = ShoppingHistory()
@@ -20,12 +21,12 @@ struct SearchFilters: View {
     @State var prices = stride(from: 10, through: 80, by: 10).map(String.init)
     @Binding var sizeFilterTitle : String
     @Binding var priceFilterTitle : String
+    var item :  ClothingListEntry
     
     var body: some View {
-        List {
-            ForEach(networkingManager.clothingList.items) { item in
-                
-                if (Int(item.price) ?? 99 <= Int(self.searchByPrice) ?? 0 && Int(item.price) ?? 99 >= (Int(self.searchByPrice) ?? 0) - 9) {
+//        let wfGrid = WaterfallGrid((networkingManager.clothingList.items), id: \.self) { item in
+        let wfGrid = WaterfallGrid((networkingManager.clothingList.items), id: \.self) { item in
+            if (Int(item.price) ?? 99 <= Int(self.searchByPrice) ?? 0 && Int(item.price) ?? 99 >= (Int(self.searchByPrice) ?? 0) - 9) {
                     
                     if (self.searchText.isEmpty) {
                         if (Int(self.searchByPrice) ?? 0 >= 5 && item.size.lowercased().contains(self.searchBySize.lowercased())) {
@@ -62,7 +63,49 @@ struct SearchFilters: View {
                     SearchNavigation(item: item)
                 }
             }
+            return wfGrid
         }
-        
-    }
+//        List {
+//            ForEach(networkingManager.clothingList.items) { item in
+//
+//                if (Int(item.price) ?? 99 <= Int(self.searchByPrice) ?? 0 && Int(item.price) ?? 99 >= (Int(self.searchByPrice) ?? 0) - 9) {
+//
+//                    if (self.searchText.isEmpty) {
+//                        if (Int(self.searchByPrice) ?? 0 >= 5 && item.size.lowercased().contains(self.searchBySize.lowercased())) {
+//                            SearchNavigation(item: item)
+//
+//                        }
+//                        if (Int(self.searchByPrice) ?? 0 >= 5 && self.searchBySize.count == 0) {
+//                            SearchNavigation(item: item)
+//                        }
+//                    }
+//                    if (item.brand.lowercased().contains(self.searchText.lowercased())) {
+//                        if (Int(self.searchByPrice) ?? 0 >= 5 && item.size.lowercased().contains(self.searchBySize.lowercased())) {
+//                            SearchNavigation(item: item)
+//                        }
+//                        if (Int(self.searchByPrice) ?? 0 >= 5 && self.searchBySize.count == 0) {
+//                            SearchNavigation(item: item)
+//                        }
+//                    }
+//                }
+//                if (self.searchBySize.count > 0 && self.searchByPrice.count == 0) {
+//                    if (item.size.lowercased().contains(self.searchBySize.lowercased())) {
+//                        if (self.searchText.isEmpty) {
+//                            SearchNavigation(item: item)
+//                        }
+//                        if (item.brand.lowercased().contains(self.searchText.lowercased())) {
+//                            SearchNavigation(item: item)
+//                        }
+//                    }
+//                }
+//                if (self.searchText.isEmpty && self.searchBySize.count == 0 && self.searchByPrice.count == 0) {
+//                    SearchNavigation(item: item)
+//                }
+//                if (item.brand.lowercased().contains(self.searchText.lowercased()) && self.searchBySize.count == 0 && self.searchByPrice.count == 0) {
+//                    SearchNavigation(item: item)
+//                }
+//            }
+//        }
+//
+//    }
 }
