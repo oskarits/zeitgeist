@@ -24,7 +24,6 @@ struct SearchFilters: View {
     var item :  ClothingListEntry
     
     var body: some View {
-//        let wfGrid = WaterfallGrid((networkingManager.clothingList.items), id: \.self) { item in
         let wfGrid = WaterfallGrid((networkingManager.clothingList.items), id: \.self) { item in
             if (Int(item.price) ?? 99 <= Int(self.searchByPrice) ?? 0 && Int(item.price) ?? 99 >= (Int(self.searchByPrice) ?? 0) - 9) {
                     
@@ -63,7 +62,7 @@ struct SearchFilters: View {
                     SearchNavigation(item: item)
                 }
             }
-            return wfGrid
+            return AnyView(wfGrid)
         }
 //        List {
 //            ForEach(networkingManager.clothingList.items) { item in
