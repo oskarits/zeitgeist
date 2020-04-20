@@ -38,6 +38,10 @@ class zeitgeistUITests: XCTestCase {
         sizeButton.tap()
         priceButton.tap()
 
+        // Toggle keyboard up & down
+        let searchText = app.staticTexts["Cancel"]
+        searchText.tap()
+        searchText.tap()
         
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

@@ -29,7 +29,8 @@ struct PriceFilter: View {
                 }) {
                     if (self.searchByPrice.count > 0) {
                         Image(systemName: "x.circle.fill").foregroundColor(.black)
-                    }                }
+                    }
+                }
             }
             if expand2 {
                 ForEach(prices, id: \.self) { price in
