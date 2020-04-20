@@ -19,7 +19,7 @@ struct PriceFilter: View {
             HStack {
                 HStack {
                     Text(priceFilterTitle)
-                    Image(systemName: expand2 ? "chevron.up" : "chevron.down")
+                    Image(systemName: expand2 ? "chevron.up" : "chevron.down").accessibility(identifier: "priceFilter")
                 }.onTapGesture {
                     self.expand2.toggle()
                 }

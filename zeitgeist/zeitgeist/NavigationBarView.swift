@@ -25,7 +25,8 @@ struct NavigationBarView: View {
     var body: some View {
         TabView {
             //SignInView()
-            HomeView()
+            //HomeView()
+            TabBar()
                 .tabItem {
                     Image(systemName: "house").font(Font.system(size: 30, weight: .regular))
             }

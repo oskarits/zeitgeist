@@ -20,7 +20,7 @@ struct SizeFilter: View {
             HStack {
                 HStack {
                     Text(sizeFilterTitle)
-                    Image(systemName: expand ? "chevron.up" : "chevron.down")
+                    Image(systemName: expand ? "chevron.up" : "chevron.down").accessibility(identifier: "sizeFilter")
                 }.onTapGesture {
                     self.expand.toggle()
                 }

@@ -16,6 +16,7 @@ struct SearchNavigation: View {
     // CoreData
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
+    @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
     var item : ClothingListEntry
     
     var body: some View {
@@ -29,19 +30,21 @@ struct SearchNavigation: View {
                             }
                         }
                         Spacer()
-                        VStack {
-                            if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-                                Image(systemName: "minus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
-                                    self.ShoppingCartMinus(index: "\(self.item.id)")
+                        if (self.isLoggedInResults.endIndex > 0) {
+                            VStack {
+                                if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
+                                    Image(systemName: "minus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+                                        self.ShoppingCartMinus(index: "\(self.item.id)")
+                                    }
+                                }
+                                if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
+                                    Image(systemName: "plus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+                                        self.ShoppingCartPlus(key: self.item.brand, value: "\(self.item.id)")
+                                        self.addItem(itemID: "\(self.item.id)", brand: self.item.brand, size: self.item.size, price: self.item.price, image: "\(self.item.images[0])")
+                                    }
                                 }
                             }
-                            if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
-                                Image(systemName: "plus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
-                                    self.ShoppingCartPlus(key: self.item.brand, value: "\(self.item.id)")
-                                    self.addItem(itemID: "\(self.item.id)", brand: self.item.brand, size: self.item.size, price: self.item.price, image: "\(self.item.images[0])")
-                                }
-                            }
-                        }
+                        }                        
                     }
                 }
             }
