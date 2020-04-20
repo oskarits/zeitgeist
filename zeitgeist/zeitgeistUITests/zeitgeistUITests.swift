@@ -31,7 +31,7 @@ class zeitgeistUITests: XCTestCase {
         // Open search filter tabs
         let sizeButton = app.images["sizeFilter"]
         sizeButton.tap()
-        
+
 
         
         // Use recording to get started writing UI tests.
