@@ -41,6 +41,9 @@
 		034EF8942423D99300741711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034EF8922423D99300741711 /* LaunchScreen.storyboard */; };
 		034EF89F2423D99400741711 /* zeitgeistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF89E2423D99400741711 /* zeitgeistTests.swift */; };
 		034EF8AA2423D99400741711 /* zeitgeistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8A92423D99400741711 /* zeitgeistUITests.swift */; };
+		0353AC76244DC77D004AE1B5 /* WaterfallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353AC75244DC77D004AE1B5 /* WaterfallView.swift */; };
+		0353AC77244DC77D004AE1B5 /* WaterfallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353AC75244DC77D004AE1B5 /* WaterfallView.swift */; };
+		0353AC78244DC77D004AE1B5 /* WaterfallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353AC75244DC77D004AE1B5 /* WaterfallView.swift */; };
 		035858C4243C92E1004C0266 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035858C3243C92E1004C0266 /* TabBar.swift */; };
 		035858C5243C92E1004C0266 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035858C3243C92E1004C0266 /* TabBar.swift */; };
 		035858C6243C92E1004C0266 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035858C3243C92E1004C0266 /* TabBar.swift */; };
@@ -180,6 +183,7 @@
 		034EF8A52423D99400741711 /* zeitgeistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zeitgeistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EF8A92423D99400741711 /* zeitgeistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zeitgeistUITests.swift; sourceTree = "<group>"; };
 		034EF8AB2423D99400741711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0353AC75244DC77D004AE1B5 /* WaterfallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallView.swift; sourceTree = "<group>"; };
 		035858C3243C92E1004C0266 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		035C56AD2429369800139C8E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		035C56B12429376E00139C8E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -313,6 +317,7 @@
 				03B73341244B56780073AC0E /* SizeFilter.swift */,
 				03B73345244B57F40073AC0E /* PriceFilter.swift */,
 				03B73349244B5C1B0073AC0E /* SearchFilters.swift */,
+				0353AC75244DC77D004AE1B5 /* WaterfallView.swift */,
 			);
 			path = zeitgeist;
 			sourceTree = "<group>";
@@ -667,6 +672,7 @@
 				035C56AE2429369800139C8E /* NavigationBarView.swift in Sources */,
 				03117F12243746EC00EB401E /* SingleItemView.swift in Sources */,
 				03F1DFA024311AFD00BD9E19 /* CampaingNetworkManager.swift in Sources */,
+				0353AC76244DC77D004AE1B5 /* WaterfallView.swift in Sources */,
 				0319475F2434FAAC003F021E /* QrView.swift in Sources */,
 				035C56B6242937A900139C8E /* SearchView.swift in Sources */,
 				03CBCEE3243951540074EC12 /* ReservationList.swift in Sources */,
@@ -721,6 +727,7 @@
 				03B73347244B57F40073AC0E /* PriceFilter.swift in Sources */,
 				03117F172437471E00EB401E /* ListItem.swift in Sources */,
 				034EF89F2423D99400741711 /* zeitgeistTests.swift in Sources */,
+				0353AC77244DC77D004AE1B5 /* WaterfallView.swift in Sources */,
 				03E152E32438BE8E00B0CDA0 /* ItemNodeView.swift in Sources */,
 				031947602434FAAC003F021E /* QrView.swift in Sources */,
 				03B7334B244B5C1B0073AC0E /* SearchFilters.swift in Sources */,
@@ -749,6 +756,7 @@
 				035C56B42429376E00139C8E /* HomeView.swift in Sources */,
 				031AC78E24378A5000FEC6DA /* ImageView.swift in Sources */,
 				035C56BC242937C700139C8E /* ProfileView.swift in Sources */,
+				0353AC78244DC77D004AE1B5 /* WaterfallView.swift in Sources */,
 				03CBCEE5243951540074EC12 /* ReservationList.swift in Sources */,
 				03E152E02438BD1200B0CDA0 /* ItemNode.swift in Sources */,
 				034A4A7E244C9E000037BA6C /* ShoppingHistoryView.swift in Sources */,

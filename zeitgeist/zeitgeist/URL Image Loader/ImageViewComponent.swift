@@ -20,7 +20,7 @@ struct ImageViewComponent: View {
     var body: some View {
         Image(uiImage: ((imageLoader.data.count == 0) ? UIImage(named: "logoapple")! : UIImage(data: imageLoader.data)) ?? UIImage(systemName: "house")!)
             .resizable()
-            .frame(width: 380, height: 240)
+            .frame(maxWidth: 300, maxHeight: 200)
     }
     
 }

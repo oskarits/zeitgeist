@@ -8,7 +8,7 @@
 
 import SwiftUI
 import CoreData
-
+import WaterfallGrid
 struct SearchFilters: View {
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
@@ -24,6 +24,22 @@ struct SearchFilters: View {
     @Binding var priceFilterTitle : String
     
     var body: some View {
+        WaterfallGrid(self.networkingManager.clothingList.items) {item in
+//            VStack {
+//                ImageView(item: item)
+//                SearchNavigation(item: item)
+//            }
+            VStack {
+            if (self.searchText.isEmpty && self.searchBySize.count == 0 && self.searchByPrice.count == 0) {
+                VStack {
+                    ImageView(item: item)
+                    SearchNavigation(item: item)
+                }
+            }
+            }.padding()
+        }
+        
+        /*
         List {
             ForEach(networkingManager.clothingList.items) { item in
                 
@@ -85,6 +101,7 @@ struct SearchFilters: View {
                     }
                 }
                 if (self.searchText.isEmpty && self.searchBySize.count == 0 && self.searchByPrice.count == 0) {
+                    //WaterfallView()
                     SearchNavigation(item: item)
                 }
                 if (item.brand.lowercased().contains(self.searchText.lowercased()) && self.searchBySize.count == 0 && self.searchByPrice.count == 0) {
@@ -92,5 +109,7 @@ struct SearchFilters: View {
                 }
             }
         }
+        */
+        
     }
 }
