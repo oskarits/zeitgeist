@@ -13,7 +13,7 @@ struct SizeFilter: View {
     @Binding var searchBySize: String
     @Binding var sizeFilterTitle: String
     @Binding var expand: Bool
-    @State var sizes = ["One Size", "32", "34", "36", "38", "40", "42", "44"]
+    @State var sizes = ["Your size", "One Size", "32", "34", "36", "38", "40", "42", "44"]
 
     var body: some View {
         VStack(spacing: 30) {

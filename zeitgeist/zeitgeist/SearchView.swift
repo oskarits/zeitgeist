@@ -18,7 +18,7 @@ struct SearchView: View {
     @State var expand2 = false
     @State var searchBySize = ""
     @State var searchByPrice = ""
-    @State var sizes = ["One Size", "32", "34", "36", "38", "40", "42", "44"]
+    @State var sizes = ["Your size", "One Size", "32", "34", "36", "38", "40", "42", "44"]
     @State var prices = stride(from: 10, through: 80, by: 10).map(String.init)
     @State var sizeFilterTitle = "Size: "
     @State var priceFilterTitle = "Price: "

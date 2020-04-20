@@ -27,12 +27,13 @@
     <entity name="LoginNode" representedClassName=".LoginNode" syncable="YES">
         <attribute name="idString" optional="YES" attributeType="String"/>
         <attribute name="isLoggedIn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="size" optional="YES" attributeType="String"/>
         <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LoginNode" inverseName="parent" inverseEntity="LoginNode"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LoginNode" inverseName="children" inverseEntity="LoginNode"/>
     </entity>
     <elements>
-        <element name="ItemNode" positionX="-63" positionY="-18" width="128" height="208"/>
-        <element name="LoginNode" positionX="-54" positionY="81" width="128" height="103"/>
         <element name="CheckoutNode" positionX="-45" positionY="81" width="128" height="28"/>
+        <element name="ItemNode" positionX="-63" positionY="-18" width="128" height="208"/>
+        <element name="LoginNode" positionX="-54" positionY="81" width="128" height="118"/>
     </elements>
 </model>

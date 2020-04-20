@@ -30,6 +30,8 @@
 		031AC78E24378A5000FEC6DA /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031AC78B24378A5000FEC6DA /* ImageView.swift */; };
 		0347BA2F244B0A83008F6663 /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DC1D872449A1E10009F4FD /* ProfileInfo.swift */; };
 		0347BA30244B0A84008F6663 /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DC1D872449A1E10009F4FD /* ProfileInfo.swift */; };
+		034A4A7D244C9DFE0037BA6C /* ShoppingHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4AB6C244C766E00F1F1C5 /* ShoppingHistoryView.swift */; };
+		034A4A7E244C9E000037BA6C /* ShoppingHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4AB6C244C766E00F1F1C5 /* ShoppingHistoryView.swift */; };
 		034EF8852423D99200741711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8842423D99200741711 /* AppDelegate.swift */; };
 		034EF8872423D99200741711 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8862423D99200741711 /* SceneDelegate.swift */; };
 		034EF88A2423D99200741711 /* zeitgeist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 034EF8882423D99200741711 /* zeitgeist.xcdatamodeld */; };
@@ -732,6 +734,7 @@
 				03E152DF2438BD1200B0CDA0 /* ItemNode.swift in Sources */,
 				A712EF29243CA66C009AE9E3 /* SignInView.swift in Sources */,
 				035858C5243C92E1004C0266 /* TabBar.swift in Sources */,
+				034A4A7D244C9DFE0037BA6C /* ShoppingHistoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,6 +751,7 @@
 				035C56BC242937C700139C8E /* ProfileView.swift in Sources */,
 				03CBCEE5243951540074EC12 /* ReservationList.swift in Sources */,
 				03E152E02438BD1200B0CDA0 /* ItemNode.swift in Sources */,
+				034A4A7E244C9E000037BA6C /* ShoppingHistoryView.swift in Sources */,
 				035C56B02429369800139C8E /* NavigationBarView.swift in Sources */,
 				03183F45243F14BA00FE3B65 /* SearchNavigation.swift in Sources */,
 				0386A63B243DF81400CFBDD8 /* LoginNode.swift in Sources */,
