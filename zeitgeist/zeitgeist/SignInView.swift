@@ -125,7 +125,7 @@ struct SignInView: View {
                 Text("Sign in")
                     .padding()
                     .foregroundColor(Color.white)
-                    .font(.headline)
+                    .font(.title)
                     .frame(width: 300, height: 80)
                     .background(Color.orange)
                     .cornerRadius(15.0)
