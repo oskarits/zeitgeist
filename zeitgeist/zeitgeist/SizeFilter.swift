@@ -29,10 +29,10 @@ struct SizeFilter: View {
                     self.sizeFilterTitle = "Size: "
                 }) {
                     if (self.searchBySize.count > 0) {
-                        Image(systemName: "x.circle.fill").foregroundColor(.black)
-                            .accessibility(identifier: "removeSizeFilter")
+                        Image(systemName: "x.circle.fill")
+                            .foregroundColor(.black)
                     }
-                }
+                }.accessibility(identifier: "removeSizeFilter")
             }
             if expand {
                 ForEach(sizes, id: \.self) { size in

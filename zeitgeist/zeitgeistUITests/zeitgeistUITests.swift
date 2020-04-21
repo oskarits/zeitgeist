@@ -72,7 +72,7 @@ class zeitgeistUITests: XCTestCase {
         size44.tap()
 
         // Clear size filter
-        let removeSizeFilter = app.images["removeSizeFilter"]
+        let removeSizeFilter = app.buttons["removeSizeFilter"]
         removeSizeFilter.tap()
         
         // Toggle keyboard up
