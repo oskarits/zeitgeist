@@ -33,7 +33,7 @@ struct HomeView: View {
                         .resizable()
                         .frame(width: 380, height: 240)
                 }.frame(alignment: .topLeading)
-                    .background(Color.red)
+                Spacer()
             } else {
                 VStack(alignment: .center) {
                     HStack {
