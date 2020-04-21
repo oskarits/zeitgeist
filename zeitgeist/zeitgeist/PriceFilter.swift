@@ -30,7 +30,7 @@ struct PriceFilter: View {
                     if (self.searchByPrice.count > 0) {
                         Image(systemName: "x.circle.fill").foregroundColor(.black)
                     }
-                }
+                }.accessibility(identifier: "removePriceFilter")
             }
             if expand2 {
                 ForEach(prices, id: \.self) { price in
@@ -40,7 +40,7 @@ struct PriceFilter: View {
                         self.expand2.toggle()
                     }) {
                         Text("< " + price + "€")
-                    }
+                    }.accessibility(identifier: "< \(price)€")
                 }
             }
         }

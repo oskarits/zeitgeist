@@ -38,9 +38,6 @@ class zeitgeistUITests: XCTestCase {
         let priceButton = app.images["priceFilter"]
         priceButton.tap()
         
-        // Close price filter
-        priceButton.tap()
-        
         // Size options
         let sizeYourSize = app.buttons["Your size"]
         let sizeOneSize = app.buttons["One Size"]
@@ -74,6 +71,37 @@ class zeitgeistUITests: XCTestCase {
         // Clear size filter
         let removeSizeFilter = app.buttons["removeSizeFilter"]
         removeSizeFilter.tap()
+                
+        // Price options
+        let price10 = app.buttons["< 10€"]
+        let price20 = app.buttons["< 20€"]
+        let price30 = app.buttons["< 30€"]
+        let price40 = app.buttons["< 40€"]
+        let price50 = app.buttons["< 50€"]
+        let price60 = app.buttons["< 60€"]
+        let price70 = app.buttons["< 70€"]
+        let price80 = app.buttons["< 80€"]
+        
+        // Select all prices
+        price10.tap()
+        priceButton.tap()
+        price20.tap()
+        priceButton.tap()
+        price30.tap()
+        priceButton.tap()
+        price40.tap()
+        priceButton.tap()
+        price50.tap()
+        priceButton.tap()
+        price60.tap()
+        priceButton.tap()
+        price70.tap()
+        priceButton.tap()
+        price80.tap()
+        
+        // Clear price filter
+        let removePriceFilter = app.buttons["removePriceFilter"]
+        removePriceFilter.tap()
         
         // Toggle keyboard up
         let searchText = app.staticTexts["Cancel"]
