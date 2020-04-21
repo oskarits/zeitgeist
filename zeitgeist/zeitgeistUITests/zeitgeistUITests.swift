@@ -32,11 +32,9 @@ class zeitgeistUITests: XCTestCase {
         let searchTab = app.tabBars.firstMatch
         searchTab.tap()
 
-        // Open search filter tabs
+        // Open size filter
         let sizeButton = app.images["sizeFilter"]
         sizeButton.tap()
-        let priceButton = app.images["priceFilter"]
-        priceButton.tap()
         
         // Size options
         let sizeYourSize = app.buttons["Your size"]
@@ -71,7 +69,11 @@ class zeitgeistUITests: XCTestCase {
         // Clear size filter
         let removeSizeFilter = app.buttons["removeSizeFilter"]
         removeSizeFilter.tap()
-                
+             
+        // Open price filter
+        let priceButton = app.images["priceFilter"]
+        priceButton.tap()
+        
         // Price options
         let price10 = app.buttons["< 10€"]
         let price20 = app.buttons["< 20€"]

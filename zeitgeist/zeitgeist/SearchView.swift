@@ -11,7 +11,6 @@ import CoreData
 
 struct SearchView: View {
     
-    //@ObservedObject var shoppingHistory = ShoppingHistory()
     @ObservedObject var networkingManager = NetworkingManager()
     @State private var searchText : String = ""
     @State var expand = false
@@ -28,8 +27,8 @@ struct SearchView: View {
             NavigationView {
                 VStack {
                     SearchBar(text: $searchText, placeholder: "Search by brand: ")
-                    VStack {
-                        HStack {
+                    VStack(alignment: .leading) {
+                        HStack (alignment: .top){
                             Spacer()
                             Text("Search by: ")
                             Spacer()
