@@ -21,7 +21,7 @@ struct ListItem: View {
                 .font(.system(size: 11))
                 //.foregroundColor(Color.gray)
             //.fontWeight(.light)
-            Text("\(item.price) €").foregroundColor(Color.black)
+            Text("\(item.price) €")
                 .font(.system(size: 11))
                 .foregroundColor(Color.orange)
                 .fontWeight(.regular)
