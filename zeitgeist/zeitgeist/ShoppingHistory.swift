@@ -15,14 +15,29 @@ struct ShoppingHistory: View {
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: CheckoutNode.getNodes()) var checkoutResults: FetchedResults<CheckoutNode>
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
+    
     var body: some View {
         VStack {
+            Spacer()
+            Image("wolfShirt")
+                    .frame(width: 150, height: 50)
+            Spacer()
+            Text("Wolfie")
+            Text("L/XL")
+            Text("9000€")
+            Spacer()
             if isLoggedInResults.count > 0 {
                 Button(action: {
-                    self.addItem(itemID: "123", brand: "Gucci", size: "38/S", price: "50€")
+                    self.addItem(itemID: "123", brand: "Wolfie", size: "L/XL", price: "50€")
                     print(self.checkoutResults)
                 }) {
-                    Text("Buy this product")
+                    Text("Apple Pay")
+                        .padding()
+                        .font(.title)
+                        .background(Color.black)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(15)
+                        .frame(width: 200, height: 80)
                 }
             }
             else {
@@ -56,5 +71,11 @@ struct ShoppingHistory: View {
         } catch {
             print(error)
         }
+    }
+}
+
+struct ShoppingHistory_Previews: PreviewProvider {
+    static var previews: some View {
+        ShoppingHistory()
     }
 }
