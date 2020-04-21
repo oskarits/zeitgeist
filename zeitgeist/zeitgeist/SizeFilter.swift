@@ -9,12 +9,12 @@
 import SwiftUI
 
 struct SizeFilter: View {
-        
+    
     @Binding var searchBySize: String
     @Binding var sizeFilterTitle: String
     @Binding var expand: Bool
     @State var sizes = ["Your size", "One Size", "32", "34", "36", "38", "40", "42", "44"]
-
+    
     var body: some View {
         VStack(spacing: 30) {
             HStack {
@@ -30,6 +30,7 @@ struct SizeFilter: View {
                 }) {
                     if (self.searchBySize.count > 0) {
                         Image(systemName: "x.circle.fill").foregroundColor(.black)
+                            .accessibility(identifier: "removeSizeFilter")
                     }
                 }
             }
@@ -41,7 +42,7 @@ struct SizeFilter: View {
                         self.expand.toggle()
                     }) {
                         Text(size)
-                    }
+                    }.accessibility(identifier: "\(size)")
                 }
             }
         }

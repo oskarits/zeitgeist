@@ -23,7 +23,7 @@ class zeitgeistUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testExample() {
+    func testSearch() {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
@@ -37,11 +37,44 @@ class zeitgeistUITests: XCTestCase {
         sizeButton.tap()
         let priceButton = app.images["priceFilter"]
         priceButton.tap()
-
-        // Close search filter tabs
-        sizeButton.tap()
+        
+        // Close price filter
         priceButton.tap()
+        
+        // Size options
+        let sizeYourSize = app.buttons["Your size"]
+        let sizeOneSize = app.buttons["One Size"]
+        let size32 = app.buttons["32"]
+        let size34 = app.buttons["34"]
+        let size36 = app.buttons["36"]
+        let size38 = app.buttons["38"]
+        let size40 = app.buttons["40"]
+        let size42 = app.buttons["42"]
+        let size44 = app.buttons["44"]
+        
+        // Select all sizes
+        sizeYourSize.tap()
+        sizeButton.tap()
+        sizeOneSize.tap()
+        sizeButton.tap()
+        size32.tap()
+        sizeButton.tap()
+        size34.tap()
+        sizeButton.tap()
+        size36.tap()
+        sizeButton.tap()
+        size38.tap()
+        sizeButton.tap()
+        size40.tap()
+        sizeButton.tap()
+        size42.tap()
+        sizeButton.tap()
+        size44.tap()
 
+        // Clear size filter
+        let removeSizeFilter = app.images["removeSizeFilter"]
+        removeSizeFilter.tap()
+        
         // Toggle keyboard up
         let searchText = app.staticTexts["Cancel"]
         searchText.tap()
