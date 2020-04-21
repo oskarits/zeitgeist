@@ -24,32 +24,24 @@ struct NavigationBarView: View {
     
     var body: some View {
         TabView {
-            //SignInView()
             HomeView()
                 .tabItem {
                     Image(systemName: "house").font(Font.system(size: 30, weight: .regular))
             }
-            //SearchView()
+            if isLoggedInResults.isEmpty {
+                SignInView().tabItem {
+                    Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
+                }
+            } else {
+                ProfileView().tabItem {
+                    Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
+                }
+            }
             TabBar()
                 .tabItem {
                     Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
             }
-            //ItemNodeView()
-            
-            if isLoggedInResults.isEmpty {
-                SignInView().tabItem {
-                        Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
-                }
-            } else {
-                ProfileView().tabItem {
-                        Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
-                }
-            }
-                
-            
-            //ItemNodeView()
             ShoppingHistory()
-            //QrView()
                 .tabItem {
                     Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
             }
@@ -58,11 +50,11 @@ struct NavigationBarView: View {
                     Image("zircle").resizable().frame(width: 30, height: 30)}
         }
     }
-
-
-struct NavigationBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationBarView()
+    
+    
+    struct NavigationBarView_Previews: PreviewProvider {
+        static var previews: some View {
+            NavigationBarView()
+        }
     }
-}
 }

@@ -19,7 +19,7 @@ struct PriceFilter: View {
             HStack {
                 HStack {
                     Text(priceFilterTitle)
-                    Image(systemName: expand2 ? "chevron.up" : "chevron.down")
+                    Image(systemName: expand2 ? "chevron.up" : "chevron.down").accessibility(identifier: "priceFilter")
                 }.onTapGesture {
                     self.expand2.toggle()
                 }
@@ -29,7 +29,8 @@ struct PriceFilter: View {
                 }) {
                     if (self.searchByPrice.count > 0) {
                         Image(systemName: "x.circle.fill").foregroundColor(.black)
-                    }                }
+                    }
+                }.accessibility(identifier: "removePriceFilter")
             }
             if expand2 {
                 ForEach(prices, id: \.self) { price in
@@ -39,7 +40,7 @@ struct PriceFilter: View {
                         self.expand2.toggle()
                     }) {
                         Text("< " + price + "€")
-                    }
+                    }.accessibility(identifier: "< \(price)€")
                 }
             }
         }

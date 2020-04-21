@@ -16,35 +16,37 @@ struct HomeView: View {
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
     
     @ObservedObject var networkManager = CampaignNetworkManager()
-
+    
     var body: some View {
         
-        VStack {
-            NavigationView {
-                if isLoggedInResults.isEmpty {
-                    VStack {
-                        HStack {
-                            Text("Sign in to share your")
-                                .fontWeight(.bold)
-                            Text("shareTitle2")
-                                .foregroundColor(.orange)
-                                .fontWeight(.bold)
-                        }.padding(50)
-                        Image("zalandoCampaignBlurred")
-                            .resizable()
-                            .frame(width: 380, height: 240)
+        VStack(alignment: .leading) {
+            if isLoggedInResults.isEmpty {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("Sign in to share your")
+                            .fontWeight(.bold)
+                        Text("shareTitle2")
+                            .foregroundColor(.orange)
+                            .fontWeight(.bold)
+                    }.padding(50)
+                    Image("zalandoCampaignBlurred")
+                        .resizable()
+                        .frame(width: 380, height: 240)
+                }.frame(alignment: .topLeading)
+                Spacer()
+            } else {
+                VStack(alignment: .center) {
+                    HStack {
+                        Text("shareTitle1")
+                        Text("shareTitle2")
+                            .foregroundColor(.orange)
                     }
-                    
-                } else {
-                    VStack(alignment: .center) {
+                    QRMaker()
+                    List(networkManager.courses) { course in
                         HStack {
-                            Text("shareTitle1")
-                            Text("shareTitle2")
-                                .foregroundColor(.orange)
-                        }
-                        QRMaker()
-                        List(networkManager.courses) { course in
+                            Spacer()
                             CampaignView(course: course)
+                            Spacer()
                         }
                     }
                 }
@@ -52,6 +54,7 @@ struct HomeView: View {
         }
     }
 }
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

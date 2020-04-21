@@ -12,14 +12,12 @@ import CoreData
 
 
 struct ShoppingHistory: View {
-    
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: CheckoutNode.getNodes()) var checkoutResults: FetchedResults<CheckoutNode>
-    
-//    var item: ClothingListEntry
-    
-   var body: some View {
-            VStack {
+    @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
+    var body: some View {
+        VStack {
+            if isLoggedInResults.count > 0 {
                 Button(action: {
                     self.addItem(itemID: "123", brand: "Gucci", size: "38/S", price: "50€")
                     print(self.checkoutResults)
@@ -27,6 +25,10 @@ struct ShoppingHistory: View {
                     Text("Buy this product")
                 }
             }
+            else {
+                Text("You need to sign in to see shopping history")
+            }
+        }
     }
     
     //---FUNCTIONS---
@@ -39,7 +41,7 @@ struct ShoppingHistory: View {
         node.brand = brand
         node.size = size
         node.price = price
-       // node.image = image
+        // node.image = image
         node.isCollected = false
         node.isReserved = true
         node.order = (checkoutResults.last?.order ?? 0) + 1
@@ -55,23 +57,4 @@ struct ShoppingHistory: View {
             print(error)
         }
     }
-    
-//    //Function when shopping cart icon is pressed
-//    func ShoppingCartPlus(key: String, value: String) {
-//        //Adds item info to dictionary
-//        self.shoppingList.insert((key: key, value: value), at: self.shoppingList.count)
-//        //Toggles keyboard down
-//        UIApplication.shared.endEditing(true)
-//    }
-//
-//    func ShoppingCartMinus(index: String) {
-//        if self.shoppingList.count > 0 {
-//            let indx = self.shoppingList.firstIndex(where: {$0.value == index})
-//            print(indx ?? "nothing")
-//            if indx != nil {
-//                self.shoppingList.remove(at: indx ?? 0)
-//            }
-//        }
-//        UIApplication.shared.endEditing(true)
-//    }
 }

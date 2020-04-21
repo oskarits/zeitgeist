@@ -14,7 +14,7 @@ struct ListItem: View {
     var body: some View {
         
         VStack(alignment: .leading) {
-            ImageView(item: item)
+            //ImageView(item: item)
             Text(item.brand)
                 .fontWeight(.medium)
             Text("SIZE: \(item.size)")
