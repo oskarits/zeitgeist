@@ -18,26 +18,28 @@ struct ShoppingHistory: View {
     
     var body: some View {
         VStack {
-            Spacer()
-            Image("wolfShirt")
-                    .frame(width: 150, height: 50)
-            Spacer()
-            Text("Wolfie")
-            Text("L/XL")
-            Text("9000€")
-            Spacer()
             if isLoggedInResults.count > 0 {
-                Button(action: {
-                    self.addItem(itemID: "123", brand: "Wolfie", size: "L/XL", price: "50€")
-                    print(self.checkoutResults)
-                }) {
-                    Text("Apple Pay")
-                        .padding()
-                        .font(.title)
-                        .background(Color.black)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(15)
-                        .frame(width: 200, height: 80)
+                VStack {
+                    Spacer()
+                    Image("wolfShirt")
+                            .frame(width: 150, height: 50)
+                    Spacer()
+                    Text("Wolfie")
+                    Text("L/XL")
+                    Text("9000€")
+                    Spacer()
+                    Button(action: {
+                        self.addItem(itemID: "123", brand: "Wolfie", size: "L/XL", price: "50€")
+                        print(self.checkoutResults)
+                    }) {
+                        Text("Apple Pay")
+                            .padding()
+                            .font(.title)
+                            .background(Color.black)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(15)
+                            .frame(width: 200, height: 80)
+                    }
                 }
             }
             else {

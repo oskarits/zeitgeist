@@ -15,9 +15,9 @@ struct ListItem: View {
         
         VStack(alignment: .leading) {
             //ImageView(item: item)
-            Text(item.brand)
+            Text(item.brand).foregroundColor(Color.black)
                 .fontWeight(.medium)
-            Text("SIZE: \(item.size)")
+            Text("SIZE: \(item.size)").foregroundColor(Color.black)
                 .font(.system(size: 11))
                 //.foregroundColor(Color.gray)
             //.fontWeight(.light)
@@ -26,6 +26,6 @@ struct ListItem: View {
                 .foregroundColor(Color.orange)
                 .fontWeight(.regular)
             //Text(item.images[0])
-        }
+        }.padding(5)
     }
 }
