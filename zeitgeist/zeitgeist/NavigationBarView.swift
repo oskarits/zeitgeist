@@ -25,18 +25,11 @@ struct NavigationBarView: View {
     var body: some View {
         TabView {
             //SignInView()
-            //HomeView()
-            TabBar()
+            HomeView()
+            //TabBar()
                 .tabItem {
                     Image(systemName: "house").font(Font.system(size: 30, weight: .regular))
             }
-            //SearchView()
-            TabBar()
-                .tabItem {
-                    Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
-            }
-            //ItemNodeView()
-            
             if isLoggedInResults.isEmpty {
                 SignInView().tabItem {
                         Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
@@ -46,6 +39,14 @@ struct NavigationBarView: View {
                         Image(systemName: "person").font(Font.system(size: 30, weight: .regular))
                 }
             }
+            //SearchView()
+            TabBar()
+                .tabItem {
+                    Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
+            }
+            //ItemNodeView()
+            
+            
                 
             
             //ItemNodeView()

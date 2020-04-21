@@ -16,35 +16,37 @@ struct HomeView: View {
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
     
     @ObservedObject var networkManager = CampaignNetworkManager()
-
+    
     var body: some View {
         
-        VStack {
+        VStack(alignment: .leading) {
             NavigationView {
-                if isLoggedInResults.isEmpty {
-                    VStack {
-                        HStack {
-                            Text("Sign in to share your")
-                                .fontWeight(.bold)
-                            Text("shareTitle2")
-                                .foregroundColor(.orange)
-                                .fontWeight(.bold)
-                        }.padding(50)
-                        Image("zalandoCampaignBlurred")
-                            .resizable()
-                            .frame(width: 380, height: 240)
-                    }
-                    
-                } else {
-                    VStack(alignment: .center) {
-                        HStack {
-                            Text("shareTitle1")
-                            Text("shareTitle2")
-                                .foregroundColor(.orange)
-                        }
-                        QRMaker()
-                        List(networkManager.courses) { course in
-                            CampaignView(course: course)
+                VStack(alignment: .leading) {
+                    if isLoggedInResults.isEmpty {
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text("Sign in to share your")
+                                    .fontWeight(.bold)
+                                Text("shareTitle2")
+                                    .foregroundColor(.orange)
+                                    .fontWeight(.bold)
+                            }.padding(50)
+                            Image("zalandoCampaignBlurred")
+                                .resizable()
+                                .frame(width: 380, height: 240)
+                        }.frame(alignment: .topLeading)
+                            .background(Color.red)
+                    } else {
+                        VStack(alignment: .center) {
+                            HStack {
+                                Text("shareTitle1")
+                                Text("shareTitle2")
+                                    .foregroundColor(.orange)
+                            }
+                            QRMaker()
+                            List(networkManager.courses) { course in
+                                CampaignView(course: course)
+                            }
                         }
                     }
                 }

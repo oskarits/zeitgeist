@@ -28,12 +28,16 @@ class zeitgeistUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
+        // Selects middle tabView
+        let searchTab = app.tabBars.firstMatch
+        searchTab.tap()
+
         // Open search filter tabs
         let sizeButton = app.images["sizeFilter"]
         sizeButton.tap()
         let priceButton = app.images["priceFilter"]
         priceButton.tap()
-        
+
         // Close search filter tabs
         sizeButton.tap()
         priceButton.tap()
@@ -41,17 +45,16 @@ class zeitgeistUITests: XCTestCase {
         // Toggle keyboard up
         let searchText = app.staticTexts["Cancel"]
         searchText.tap()
-        
+
         // Type with keyboard
         app.keys["t"].tap()
         app.keys["e"].tap()
         app.keys["s"].tap()
         app.keys["t"].tap()
         app.keys["i"].tap()
-        
+
         // Toggle keyboard down
         searchText.tap()
-
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
