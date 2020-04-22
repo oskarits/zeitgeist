@@ -15,6 +15,6 @@ struct ImageView: View {
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
     
     var body: some View {
-        SearchImageViewComponent(url: "\(url)" + "\(item.images[0])")
+        SearchImageViewComponent(url: "\(url)" + "\(item.images[0])").background(Color.black)
     }
 }
