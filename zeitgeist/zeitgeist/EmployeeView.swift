@@ -19,8 +19,11 @@ struct EmployeeView: View {
         VStack {
             NavigationView {
                 VStack {
-                    Text("Welcome to the employee view. Here You can view current reservations and scan the customer's wardrobe code.")
-                        .font(.headline)
+                    Text("Welcome to the employee view.")
+                        .font(.title)
+                        .padding()
+                    Text("Check current reservations and scan the customer's Wardrobe code")
+                        .font(.title)
                         .padding()
                     NavigationLink(destination: ReservationView()) {
                         VStack {
@@ -32,10 +35,6 @@ struct EmployeeView: View {
                             .background(Color.white)
                             .border(Color.black, width: 2)
                             .frame(width: 300, height: 300)
-                            .cornerRadius(19)
-
-                                
-                        
                     }
                 }
                 .multilineTextAlignment(.center)
