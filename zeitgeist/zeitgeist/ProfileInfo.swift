@@ -28,7 +28,11 @@ struct ProfileInfo: View {
             Text("Reservations:")
                 .fontWeight(.bold)
                 .font(.title)
-            ReservationView()
+            NavigationLink(destination: ReservationList()) {
+                VStack {
+                    ReservationView()
+                }
+            }
             Text("Previous purhcases:")
                 .fontWeight(.bold)
                 .font(.title)
