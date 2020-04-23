@@ -25,8 +25,15 @@ struct ProfileInfo: View {
                 .font(.subheadline)
                 .foregroundColor(.gray)
             Divider()
+            Text("Reservations:")
+                .fontWeight(.bold)
+                .font(.title)
             ReservationView()
+            Text("Previous purhcases:")
+                .fontWeight(.bold)
+                .font(.title)
             ShoppingHistoryView()
+                
         }.padding()
     }
 }
