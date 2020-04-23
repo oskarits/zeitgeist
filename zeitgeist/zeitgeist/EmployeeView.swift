@@ -8,8 +8,12 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
 struct EmployeeView: View {
+    
+    @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
     
     var body: some View {
         VStack {
@@ -20,7 +24,7 @@ struct EmployeeView: View {
                         .padding()
                     NavigationLink(destination: ReservationView()) {
                         
-                            Text("showReservationsText")
+                        Text("showReservationsText")
                                 .font(.title)
                                 .padding()
                                 .background(Color.white)
