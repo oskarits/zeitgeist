@@ -21,6 +21,7 @@ struct EmployeeView: View {
                 VStack {
                     Text("Welcome to the employee view.")
                         .font(.title)
+                        .fontWeight(.bold)
                         .padding()
                     Text("Check current reservations and scan the customer's Wardrobe code")
                         .font(.title)
@@ -28,11 +29,13 @@ struct EmployeeView: View {
                     NavigationLink(destination: ReservationView()) {
                         VStack {
                             Text("showReservationsText")
+                                .fontWeight(.bold)
                             Text("(\(fetchedResults.count))")
                         }
                             .font(.title)
                             .padding()
                             .background(Color.white)
+                            .foregroundColor(.black)
                             .border(Color.black, width: 2)
                             .frame(width: 300, height: 300)
                     }
