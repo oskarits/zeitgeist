@@ -23,14 +23,17 @@ struct EmployeeView: View {
                         .font(.headline)
                         .padding()
                     NavigationLink(destination: ReservationView()) {
-                        
-                        Text("showReservationsText")
-                                .font(.title)
-                                .padding()
-                                .background(Color.white)
-                                .border(Color.black, width: 2)
-                                .frame(width: 300, height: 300)
-                                .cornerRadius(19)
+                        VStack {
+                            Text("showReservationsText")
+                            Text("(\(fetchedResults.count))")
+                        }
+                            .font(.title)
+                            .padding()
+                            .background(Color.white)
+                            .border(Color.black, width: 2)
+                            .frame(width: 300, height: 300)
+                            .cornerRadius(19)
+
                                 
                         
                     }
