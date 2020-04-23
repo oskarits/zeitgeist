@@ -15,22 +15,29 @@ struct EmployeeView: View {
         VStack {
             NavigationView {
                 VStack {
+                    Text("Welcome to the employee view. Here You can view current reservations and scan the customer's wardrobe code.")
+                        .font(.headline)
+                        .padding()
                     NavigationLink(destination: ReservationView()) {
-                        VStack {
-                            Image(systemName: "pencil.and.outline")
-                            Text("showReservationsText").padding(.horizontal)
-                        }
-                        VStack {
-                            Image(systemName: "barcode.viewfinder")
-                            Text("scanQRText").padding(.horizontal)
-                        }
-                    }.padding()
+                        
+                            Text("showReservationsText")
+                                .font(.title)
+                                .padding()
+                                .background(Color.white)
+                                .border(Color.black, width: 2)
+                                .frame(width: 300, height: 300)
+                                .cornerRadius(19)
+                                
+                        
+                    }
                 }
-                .font(.title)
                 .multilineTextAlignment(.center)
-                
-                .cornerRadius(8)
                 .navigationBarTitle(Text("employeeTitle"), displayMode: .inline)
+                .navigationBarItems(trailing:
+                    NavigationLink(destination: QrView()) {
+                        Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
+                    }
+                )
             }
         }
     }
