@@ -12,18 +12,42 @@ struct SingleItemView: View {
     var item : ClothingListEntry
     
     var body: some View {
-            VStack(alignment: .leading) {
-                ImageView(item: item)
-                Text(item.brand).font(.largeTitle)
-                Text(item.size)
-                Text(item.images[0])
-                Text(item.condition)
-                Text(item.description)
-                Text("\(item.price) €")
-                    .font(.system(size: 20))
-                    .foregroundColor(Color.orange)
-            }.onAppear {
+        
+        ScrollView {
+            VStack {
+                SingleItemImageView(item: item)
+                VStack {
+                    HStack/*(alignment: .top)*/ {
+                        VStack(alignment: .leading) {
+                            Text(item.brand).font(.largeTitle)
+                            HStack {
+                                Text("SIZE: ")
+                                Text(item.size)
+                            }
+                        }
+                        Spacer()
+                        Text("\(item.price) €")
+                            .font(.system(size: 25))
+                            .foregroundColor(Color.orange)
+                    }
+                }.padding()
+                VStack {
+                    HStack(alignment: .top) {
+                        Text("Condition: ")
+                        Text(item.condition)
+                        Spacer()
+                    }
+                    Text("")
+                    HStack(alignment: .top) {
+                        Text("Description: ")
+                        Text(item.description)
+                        Spacer()
+                    }
+                }.padding()
+            }
+            .onAppear {
                 UIApplication.shared.endEditing(true)
+            }
         }
     }
 }

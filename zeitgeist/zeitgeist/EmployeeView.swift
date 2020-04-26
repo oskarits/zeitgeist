@@ -8,29 +8,45 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
 struct EmployeeView: View {
+    
+    @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
     
     var body: some View {
         VStack {
             NavigationView {
                 VStack {
+                    Text("Welcome to the employee view.")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding()
+                    Text("Check current reservations and scan the customer's Wardrobe code")
+                        .font(.title)
+                        .padding()
                     NavigationLink(destination: ReservationView()) {
                         VStack {
-                            Image(systemName: "pencil.and.outline")
-                            Text("showReservationsText").padding(.horizontal)
+                            Text("showReservationsText")
+                                .fontWeight(.bold)
+                            Text("(\(fetchedResults.count))")
                         }
-                        VStack {
-                            Image(systemName: "barcode.viewfinder")
-                            Text("scanQRText").padding(.horizontal)
-                        }
-                    }.padding()
+                            .font(.title)
+                            .padding()
+                            .background(Color.white)
+                            .foregroundColor(.black)
+                            .border(Color.black, width: 2)
+                            .frame(width: 300, height: 300)
+                    }
                 }
-                .font(.title)
                 .multilineTextAlignment(.center)
-                
-                .cornerRadius(8)
                 .navigationBarTitle(Text("employeeTitle"), displayMode: .inline)
+                .navigationBarItems(trailing:
+                    NavigationLink(destination: QrView()) {
+                        Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
+                    }
+                )
             }
         }
     }

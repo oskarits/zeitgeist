@@ -25,8 +25,19 @@ struct ProfileInfo: View {
                 .font(.subheadline)
                 .foregroundColor(.gray)
             Divider()
-            ReservationView()
+            Text("Reservations:")
+                .fontWeight(.bold)
+                .font(.title)
+            NavigationLink(destination: ReservationList()) {
+                VStack {
+                    ReservationView()
+                }
+            }
+            Text("Previous purhcases:")
+                .fontWeight(.bold)
+                .font(.title)
             ShoppingHistoryView()
+                
         }.padding()
     }
 }
