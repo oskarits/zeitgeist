@@ -64,6 +64,9 @@
 		036ACA7824562071002D6F80 /* SingleItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ACA7724562071002D6F80 /* SingleItemImageView.swift */; };
 		036ACA7924562071002D6F80 /* SingleItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ACA7724562071002D6F80 /* SingleItemImageView.swift */; };
 		036ACA7A24562071002D6F80 /* SingleItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ACA7724562071002D6F80 /* SingleItemImageView.swift */; };
+		036ACA7C245627AE002D6F80 /* FilteredItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ACA7B245627AE002D6F80 /* FilteredItemImageView.swift */; };
+		036ACA7D245627AE002D6F80 /* FilteredItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ACA7B245627AE002D6F80 /* FilteredItemImageView.swift */; };
+		036ACA7E245627AE002D6F80 /* FilteredItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ACA7B245627AE002D6F80 /* FilteredItemImageView.swift */; };
 		0386A639243DF81400CFBDD8 /* LoginNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0386A638243DF81400CFBDD8 /* LoginNode.swift */; };
 		0386A63A243DF81400CFBDD8 /* LoginNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0386A638243DF81400CFBDD8 /* LoginNode.swift */; };
 		0386A63B243DF81400CFBDD8 /* LoginNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0386A638243DF81400CFBDD8 /* LoginNode.swift */; };
@@ -194,6 +197,7 @@
 		035C56B9242937C700139C8E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0363CA1D2433428500876BDD /* ViewNotNilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNotNilTests.swift; sourceTree = "<group>"; };
 		036ACA7724562071002D6F80 /* SingleItemImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemImageView.swift; sourceTree = "<group>"; };
+		036ACA7B245627AE002D6F80 /* FilteredItemImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredItemImageView.swift; sourceTree = "<group>"; };
 		0386A638243DF81400CFBDD8 /* LoginNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNode.swift; sourceTree = "<group>"; };
 		0398157824328FCD00C168D8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		039815812432C70700C168D8 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
@@ -385,6 +389,7 @@
 				031AC78B24378A5000FEC6DA /* ImageView.swift */,
 				03F1DFA824311CA600BD9E19 /* ImageLoader.swift */,
 				036ACA7724562071002D6F80 /* SingleItemImageView.swift */,
+				036ACA7B245627AE002D6F80 /* FilteredItemImageView.swift */,
 			);
 			path = "URL Image Loader";
 			sourceTree = "<group>";
@@ -687,6 +692,7 @@
 				03F1DFA624311BD000BD9E19 /* CampaignView.swift in Sources */,
 				03F1DF9724311A8100BD9E19 /* SingleResult.swift in Sources */,
 				03B73342244B56780073AC0E /* SizeFilter.swift in Sources */,
+				036ACA7C245627AE002D6F80 /* FilteredItemImageView.swift in Sources */,
 				035C56B22429376E00139C8E /* HomeView.swift in Sources */,
 				A7A4AB6D244C766E00F1F1C5 /* ShoppingHistoryView.swift in Sources */,
 				03F1DFA924311CA600BD9E19 /* ImageLoader.swift in Sources */,
@@ -744,6 +750,7 @@
 				031AC78D24378A5000FEC6DA /* ImageView.swift in Sources */,
 				0398157A24328FCD00C168D8 /* SearchBar.swift in Sources */,
 				03F1DFAA24311CA600BD9E19 /* ImageLoader.swift in Sources */,
+				036ACA7D245627AE002D6F80 /* FilteredItemImageView.swift in Sources */,
 				0386A63A243DF81400CFBDD8 /* LoginNode.swift in Sources */,
 				03E152DF2438BD1200B0CDA0 /* ItemNode.swift in Sources */,
 				A712EF29243CA66C009AE9E3 /* SignInView.swift in Sources */,
@@ -797,6 +804,7 @@
 				03D2BC9124360B080098C66B /* SingleResult.swift in Sources */,
 				03D2BC8B24360AF80098C66B /* HideKeyboard.swift in Sources */,
 				03E152E42438BE8E00B0CDA0 /* ItemNodeView.swift in Sources */,
+				036ACA7E245627AE002D6F80 /* FilteredItemImageView.swift in Sources */,
 				03D2BC8824360AEE0098C66B /* QrView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

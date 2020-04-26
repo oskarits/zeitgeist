@@ -21,7 +21,7 @@ struct SearchImageViewComponent: View {
             Image(uiImage: ((imageLoader.data.count == 0) ? UIImage(named: "logoapple")! : UIImage(data: imageLoader.data)) ?? UIImage(systemName: "house")!)
                 .resizable().scaledToFit()
                 //.aspectRatio(1, contentMode: .fit)
-            }.frame(maxWidth: 250, maxHeight: 300)
+            }.frame(minWidth: 150, maxWidth: 175, minHeight: 150, maxHeight: 250)
         }
         
     }
