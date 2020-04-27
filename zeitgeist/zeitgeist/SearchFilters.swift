@@ -47,13 +47,13 @@ struct SearchFilters: View {
                                     VStack {
                                         FilteredItemImageView(item: item)
                                         SearchNavigation(item: item)
-                                    }
+                                    }.frame(minWidth: 300, maxWidth: 375, minHeight: 400, maxHeight: 500)
                                 }
                                 if (Int(self.searchByPrice) ?? 0 >= 5 && self.searchBySize.count == 0) {
                                     VStack {
                                         FilteredItemImageView(item: item)
                                         SearchNavigation(item: item)
-                                    }
+                                    }.frame(minWidth: 300, maxWidth: 375, minHeight: 400, maxHeight: 500)
                                 }
                                 if (self.searchBySize == "Your size") {
                                     if (self.isLoggedInResults.endIndex > 0) {
@@ -61,7 +61,7 @@ struct SearchFilters: View {
                                             VStack {
                                                 FilteredItemImageView(item: item)
                                                 SearchNavigation(item: item)
-                                            }
+                                            }.frame(minWidth: 300, maxWidth: 375, minHeight: 400, maxHeight: 500)
                                         }
                                     }
                                 }
@@ -71,13 +71,13 @@ struct SearchFilters: View {
                                     VStack {
                                         FilteredItemImageView(item: item)
                                         SearchNavigation(item: item)
-                                    }
+                                    }.frame(minWidth: 300, maxWidth: 375, minHeight: 400, maxHeight: 500)
                                 }
                                 if (Int(self.searchByPrice) ?? 0 >= 5 && self.searchBySize.count == 0) {
                                     VStack {
                                         FilteredItemImageView(item: item)
                                         SearchNavigation(item: item)
-                                    }
+                                    }.frame(minWidth: 300, maxWidth: 375, minHeight: 400, maxHeight: 500)
                                 }
                             }
                             if (item.brand.lowercased().contains(self.searchText.lowercased()) && self.searchBySize == "Your size") {
@@ -86,7 +86,7 @@ struct SearchFilters: View {
                                         VStack {
                                             FilteredItemImageView(item: item)
                                             SearchNavigation(item: item)
-                                        }
+                                        }.frame(minWidth: 300, maxWidth: 375, minHeight: 400, maxHeight: 500)
                                     }
                                 }
                             }
@@ -97,7 +97,7 @@ struct SearchFilters: View {
                                     VStack {
                                         FilteredItemImageView(item: item)
                                         SearchNavigation(item: item)
-                                    }
+                                    }.frame(minWidth: 300, maxWidth: 375, minHeight: 400, maxHeight: 500)
                                 }
                             }
                         }
@@ -107,13 +107,13 @@ struct SearchFilters: View {
                                     VStack {
                                         FilteredItemImageView(item: item)
                                         SearchNavigation(item: item)
-                                    }
+                                    }.frame(minWidth: 300, maxWidth: 375, minHeight: 400, maxHeight: 500)
                                 }
                                 if (item.brand.lowercased().contains(self.searchText.lowercased())) {
                                     VStack {
                                         FilteredItemImageView(item: item)
                                         SearchNavigation(item: item)
-                                    }
+                                    }.frame(minWidth: 300, maxWidth: 375, minHeight: 400, maxHeight: 500)
                                 }
                             }
                             if (self.searchBySize == "Your size" && self.searchText.isEmpty) {
@@ -122,7 +122,7 @@ struct SearchFilters: View {
                                         VStack {
                                             FilteredItemImageView(item: item)
                                             SearchNavigation(item: item)
-                                        }
+                                        }.frame(minWidth: 300, maxWidth: 375, minHeight: 400, maxHeight: 500)
                                     }
                                 }
                             }
@@ -131,7 +131,7 @@ struct SearchFilters: View {
                             VStack {
                                 FilteredItemImageView(item: item)
                                 SearchNavigation(item: item)
-                            }
+                            }.frame(minWidth: 300, maxWidth: 375, minHeight: 400, maxHeight: 500)
                         }
                     }
                 }
