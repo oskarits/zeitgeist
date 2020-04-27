@@ -19,9 +19,9 @@ struct ImageViewComponent: View {
      
     var body: some View {
         Image(uiImage: ((imageLoader.data.count == 0) ? UIImage(named: "logoapple")! : UIImage(data: imageLoader.data)) ?? UIImage(systemName: "house")!)
-            //.resizable()
-            //.aspectRatio(1, contentMode: .fit)
-            //.frame(maxWidth: 300, maxHeight: 400)
+            .resizable()
+            .aspectRatio(1, contentMode: .fit)
+            .frame(maxWidth: 300, maxHeight: 400)
     }
     
 }
