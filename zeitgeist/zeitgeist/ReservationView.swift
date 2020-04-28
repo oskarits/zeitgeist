@@ -15,12 +15,14 @@ struct ReservationView: View {
     var notification = Notification()
     @State private var confirmRes = "reservationConfirmed"
     @State private var declineRes = "reservationDeclined"
-    
     @State private var number : Int = 0
+    @State private var updater = true
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
-
+    @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
+    @FetchRequest(fetchRequest: CheckoutNode.getNodes()) var checkoutResults: FetchedResults<CheckoutNode>
+    
     var body: some View {
         VStack {
             NavigationView {
@@ -30,65 +32,147 @@ struct ReservationView: View {
                             VStack {
                                 SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
                                     self.numberToOrder(number: node.order)
-            //                        self.deleteCore()
+                                    //                        self.deleteCore()
                                     
                                 }
-                                Text("\(node.brand)").fontWeight(.medium)
-                                Text("sizeText \(node.size)").font(.system(size: 11))
-                                Text("\(node.price) €").font(.system(size: 11))
-                                    .foregroundColor(Color.orange)
-                                    .fontWeight(.regular)
+                                VStack(alignment: .leading) {
+                                    HStack {
+                                        Text("BRAND: ").font(.system(size: 18))
+                                        Text("\(node.brand)").font(.system(size: 18))
+                                    }
+                                    HStack {
+                                        Text("sizeText").font(.system(size: 18))
+                                        Text("\(node.size)").font(.system(size: 18))
+                                    }
+                                    HStack {
+                                        Text("PRICE: ").font(.system(size: 18))
+                                        Text("\(node.price) €").font(.system(size: 18))
+                                    }
+                                    Text("Reservation request by:\n \(self.isLoggedInResults[0].idString)").font(.system(size: 18)).fontWeight(.light).foregroundColor(Color.gray)
+                                }
+                                if node.isReserved {
                                 HStack {
-                                    Button(action: {self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
+                                    Button(action: {
+                                        self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
                                         self.updateItemNode(node: node)
+                                        //self.addItem(itemID: node.description, brand: node.brand, size: node.size, price: node.price)
+                                        //self.numberToOrder(number: node.order)
+                                        //self.deleteCore()
+                                        self.updater.toggle()
+
                                     }) {
-//                                        Image(systemName: "checkmark")
+                                        Image(systemName: "checkmark")
                                         Text("acceptText")}
-                                            .background(Color.green)
-                                            .padding()
-                                            .foregroundColor(Color.white)
-                                            .cornerRadius(10)
-                                    Button(action: {self.notification.SendNotification(title: self.declineRes, body: "sorryText")}) {
-//                                        Image(systemName: "trash")
+                                        .foregroundColor(Color.white)
+                                        .padding(12)
+                                        .background(Color.green)
+                                        .cornerRadius(30)
+                                    Button(action: {
+                                        self.notification.SendNotification(title: self.declineRes, body: "sorryText")
+                                        self.numberToOrder(number: node.order)
+                                        self.deleteCore()
+                                        self.updater.toggle()
+
+                                    }) {
+                                        Image(systemName: "xmark")
                                         Text("declineText")}
-                                            .foregroundColor(Color.white)
-                                            .padding()
-                                            .background(Color.red)
-                                            .cornerRadius(10)
+                                        .foregroundColor(Color.white)
+                                        .padding(12)
+                                        .background(Color.red)
+                                        .cornerRadius(30)
                                 }.padding()
                                     .font(.title)
+                                }
                         }) {
-                            VStack {
-                                Text("\(node.brand)").fontWeight(.medium)
-                                Text("sizeText \(node.size)").font(.system(size: 11))
-                                Text("\(node.price) €").font(.system(size: 11))
-                                    .foregroundColor(Color.orange)
-                                    .fontWeight(.regular)
-                                
+                            HStack {
+                                ReservationListImage(url: "\(self.url)" + "\(node.image)")
+                                VStack(alignment: .leading) {
+                                    Text("\(node.brand)").fontWeight(.medium)
+                                    HStack {
+                                        Text("sizeText").font(.system(size: 11))
+                                        Text("\(node.size)").font(.system(size: 11))
+                                    }
+                                    Text("\(node.price) €").font(.system(size: 11))
+                                        .foregroundColor(Color.orange)
+                                        .fontWeight(.regular)
+                                }
+                                if (node.isCollected) {
+                                    Text("Collected")
+                                }
+                                if (node.isCollected == false) {
+                                    Text("Pending \nreservation").font(.system(size: 11)).foregroundColor(Color.gray)
+                                }
                             }
                         }
                     }
-        //            .onDelete(perform: deleteItems)
+                    //            .onDelete(perform: deleteItems)
                 }
             }
         }.navigationBarTitle(Text("reservedItemsTitle"), displayMode: .inline)
     }
     
     func numberToOrder(number: Int) {
-               self.number = (number - 1)
-               print("---------")
-               print("Current order: \(number)")
- 
+        self.number = (number - 1)
+        print("---------")
+        print("Current order: \(number)")
+        
     }
     
     func updateItemNode(node: ItemNode) {
         let isCollected = true
         let node = node
         node.isCollected = isCollected
+        node.isReserved = false
         managedObjectContext.performAndWait {
-    try? managedObjectContext.save()
-            }
+            try? managedObjectContext.save()
         }
+    }
+    
+    func addItem(itemID: String, brand: String, size: String, price: String) {
+        let node = CheckoutNode(context: managedObjectContext)
+        node.idString = itemID
+        node.size = size
+        node.brand = brand
+        node.size = size
+        node.price = price
+        // node.image = image
+        node.isCollected = true
+        node.isReserved = true
+        node.order = (checkoutResults.last?.order ?? 0) + 1
+        print("Order of new item: \(node.order)")
+        saveItems()
+    }
+    func saveItems() {
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print(error)
+        }
+    }
+    func deleteCore() {
+        let currentOrderString: String = String(self.number + 1)
+        var orderArray = ["empty"]
+        for i in fetchedResults {
+            orderArray.append("\(i.self.order)")
+        }
+        let filterIndex = orderArray.enumerated().filter { $0.element == currentOrderString }.map { $0.offset }
+        print("all orders ", orderArray)
+        print("index of the selected order: ", filterIndex)
+        if (fetchedResults.count == (orderArray.count - 1) && filterIndex.count > 0) {
+            let nodeIndexInt = filterIndex.compactMap { $0 }
+            let orderIndex : Int = nodeIndexInt[0] - 1
+            let nodeIndex: Int = orderIndex
+            print(nodeIndex)
+            let node = fetchedResults[nodeIndex]
+            managedObjectContext.delete(node)
+            print("item deleted")
+            if filterIndex.count > 0 {
+                saveItems()
+                print("list saved")
+            }
+        } else {
+            print("optional fail")}
+    }
 }
 
 

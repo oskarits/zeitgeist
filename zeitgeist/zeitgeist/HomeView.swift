@@ -43,7 +43,7 @@ struct HomeView: View {
                     }
                     QRMaker()
                     List(networkManager.courses) { course in
-                        HStack {
+                        HStack(alignment: .center) {
                             Spacer()
                             CampaignView(course: course)
                             Spacer()
@@ -54,6 +54,7 @@ struct HomeView: View {
         }
     }
 }
+
 
 
 struct HomeView_Previews: PreviewProvider {
