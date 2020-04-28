@@ -16,6 +16,7 @@ struct ReservationView: View {
     @State private var confirmRes = "reservationConfirmed"
     @State private var declineRes = "reservationDeclined"
     @State private var number : Int = 0
+    @State private var updater = true
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
@@ -49,6 +50,7 @@ struct ReservationView: View {
                                     }
                                     Text("Reservation request by:\n \(self.isLoggedInResults[0].idString)").font(.system(size: 18)).fontWeight(.light).foregroundColor(Color.gray)
                                 }
+                                if node.isReserved {
                                 HStack {
                                     Button(action: {
                                         self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
@@ -56,6 +58,8 @@ struct ReservationView: View {
                                         //self.addItem(itemID: node.description, brand: node.brand, size: node.size, price: node.price)
                                         //self.numberToOrder(number: node.order)
                                         //self.deleteCore()
+                                        self.updater.toggle()
+
                                     }) {
                                         Image(systemName: "checkmark")
                                         Text("acceptText")}
@@ -67,6 +71,8 @@ struct ReservationView: View {
                                         self.notification.SendNotification(title: self.declineRes, body: "sorryText")
                                         self.numberToOrder(number: node.order)
                                         self.deleteCore()
+                                        self.updater.toggle()
+
                                     }) {
                                         Image(systemName: "xmark")
                                         Text("declineText")}
@@ -76,6 +82,7 @@ struct ReservationView: View {
                                         .cornerRadius(30)
                                 }.padding()
                                     .font(.title)
+                                }
                         }) {
                             HStack {
                                 ReservationListImage(url: "\(self.url)" + "\(node.image)")
@@ -115,6 +122,7 @@ struct ReservationView: View {
         let isCollected = true
         let node = node
         node.isCollected = isCollected
+        node.isReserved = false
         managedObjectContext.performAndWait {
             try? managedObjectContext.save()
         }
