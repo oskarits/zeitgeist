@@ -10,7 +10,8 @@ import SwiftUI
 import CoreData
 
 struct ProfileInfo: View {
-    
+    @State private var selectedView = 0
+    var view = ["Reservation", "Purhcases"]
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
     
@@ -25,22 +26,35 @@ struct ProfileInfo: View {
                 .font(.subheadline)
                 .foregroundColor(.gray)
             Divider()
-            Text("Reservations:")
-                .fontWeight(.bold)
-                .font(.title)
-            NavigationLink(destination: ReservationList()) {
+            Picker(selection: $selectedView, label: Text("")) {
+                ForEach(0..<view.count) { index in
+                    Text(self.view[index]).tag(index)
+                }
+            }.pickerStyle(SegmentedPickerStyle())
+            if ( view[selectedView] == "Reservation") {
                 VStack {
-                    ReservationView()
+                    Text("Reservations:")
+                        .fontWeight(.bold)
+                        .font(.title)
+                    NavigationLink(destination: ReservationList()) {
+                        VStack {
+                            ReservationView()
+                        }
+                    }
                 }
             }
-            Text("Previous purhcases:")
-                .fontWeight(.bold)
-                .font(.title)
-            ShoppingHistoryView()
-                
-        }.padding()
+            if ( view[selectedView] == "Purhcases") {
+                Text("Previous purhcases:")
+                    .fontWeight(.bold)
+                    .font(.title)
+                ShoppingHistoryView().onDisappear(){
+                    self.selectedView = 0
+                }
+            }
+        }
     }
 }
+
 
 struct ProfileInfo_Previews: PreviewProvider {
     static var previews: some View {
