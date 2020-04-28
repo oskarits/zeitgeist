@@ -19,6 +19,7 @@ struct ShoppingCart: View {
     @FetchRequest(fetchRequest: CheckoutNode.getNodes()) var checkoutResults: FetchedResults<CheckoutNode>
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
     @State private var number : Int = 0
+    @State private var updater = false
     var body: some View {
         NavigationView {
             VStack {
@@ -101,6 +102,7 @@ struct ShoppingCart: View {
         } catch {
             print(error)
         }
+        self.updater.toggle()
     }
     func deleteCore() {
         let currentOrderString: String = String(self.number + 1)
