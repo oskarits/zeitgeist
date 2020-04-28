@@ -16,12 +16,11 @@ struct ImageViewComponent: View {
     init(url: String) {
         imageLoader = ImageLoader(url: url)
     }
-     
-    var body: some View {
-        Image(uiImage: ((imageLoader.data.count == 0) ? UIImage(named: "logoapple")! : UIImage(data: imageLoader.data)) ?? UIImage(systemName: "house")!)
-            .resizable()
-            .aspectRatio(1, contentMode: .fit)
-            .frame(maxWidth: 300, maxHeight: 400)
-    }
     
+    var body: some View {
+        VStack {
+            Image(uiImage: ((imageLoader.data.count == 0) ? UIImage(named: "logoapple")! : UIImage(data: imageLoader.data)) ?? UIImage(systemName: "house")!)
+                .resizable().scaledToFit()
+        }.frame(minWidth: 350, maxWidth: 375, minHeight: 350, maxHeight: 650)
+    }
 }

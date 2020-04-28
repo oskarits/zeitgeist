@@ -18,7 +18,7 @@ struct ProfileView: View {
         NavigationView {
             VStack {
                 ProfileInfo()
-            }.navigationBarTitle(Text("profileTitle"), displayMode: .inline)
+            }.navigationBarTitle(Text("profileTitle"), displayMode: .inline).foregroundColor(Color.black)
         }
     }
 }
