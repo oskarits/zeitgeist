@@ -39,6 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 //    }
     // Url is com.zeitgeist://
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+//        let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        
         print(url)
         return true
     }
