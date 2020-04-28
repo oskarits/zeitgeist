@@ -10,8 +10,8 @@
 // MARK: HomeView
 "shareTitle1" = "Share your ";
 "shareTitle2" = "wardrobe";
-"notificationTextTitle" = "🚩 Shipping times 🚩";
-"notificationText" = "Due to corona-virus, shipping time can be delayed for 3-5 days. We are sorry for the inconvenience.";
+"notificationTextTitle" = "🚩 COVID-19 🚩";
+"notificationText" = "Due to corona-virus, there are some changes to Zircle's opening times. We are sorry for the inconvenience.";
 
 // MARK: SearchView
 "reservationsTitle" = "Reservations";
