@@ -25,8 +25,9 @@ struct QRMaker: View {
                         Image(uiImage: self.generateQRCode(from: isLoggedInResults[0].idString))
                             .interpolation(.none)
                             .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: .infinity, maxHeight: 200, alignment: .center)
+                            .aspectRatio(contentMode: .fill)
+                            .frame(maxWidth: 200)
+                        Divider()
                     }
                 }
             }
