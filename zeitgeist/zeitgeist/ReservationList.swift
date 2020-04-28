@@ -36,12 +36,6 @@ struct ReservationList: View {
                                     .fontWeight(.regular)
                             }
                             VStack {
-                                if (node.isReserved) {
-                                    Text("Reserved")
-                                }
-                                if (node.isReserved == false) {
-                                    Text("Not reserved")
-                                }
                                 if (node.isCollected) {
                                     Text("Collected")
                                 }
