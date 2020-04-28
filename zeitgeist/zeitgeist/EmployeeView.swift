@@ -19,10 +19,16 @@ struct EmployeeView: View {
         VStack {
             NavigationView {
                 VStack {
-                    Text("Welcome to the employee view.")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding()
+                    VStack {
+                        Text("Welcome ")
+                            .fontWeight(.bold)
+                            .font(.title)
+                            .foregroundColor(.orange)
+                        Text("to the employee view.")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding()
+                    }
                     Text("Check current reservations and scan the customer's Wardrobe code")
                         .font(.title)
                         .padding()
@@ -38,6 +44,7 @@ struct EmployeeView: View {
                             .foregroundColor(.black)
                             .border(Color.black, width: 2)
                             .frame(width: 300, height: 300)
+                            .shadow(radius: 3)
                     }
                 }
                 .multilineTextAlignment(.center)
