@@ -20,7 +20,7 @@ struct ReservationView: View {
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
-
+    
     var body: some View {
         VStack {
             NavigationView {
@@ -30,7 +30,7 @@ struct ReservationView: View {
                             VStack {
                                 SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
                                     self.numberToOrder(number: node.order)
-            //                        self.deleteCore()
+                                    //                        self.deleteCore()
                                     
                                 }
                                 Text("\(node.brand)").fontWeight(.medium)
@@ -42,19 +42,19 @@ struct ReservationView: View {
                                     Button(action: {self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
                                         self.updateItemNode(node: node)
                                     }) {
-//                                        Image(systemName: "checkmark")
+                                        Image(systemName: "checkmark")
                                         Text("acceptText")}
-                                            .background(Color.green)
-                                            .padding()
-                                            .foregroundColor(Color.white)
-                                            .cornerRadius(10)
+                                        .foregroundColor(Color.white)
+                                        .padding(12)
+                                        .background(Color.green)
+                                        .cornerRadius(30)
                                     Button(action: {self.notification.SendNotification(title: self.declineRes, body: "sorryText")}) {
-//                                        Image(systemName: "trash")
-                                        Text("declineText")}
+                                            Image(systemName: "xmark")
+                                            Text("declineText")}
                                             .foregroundColor(Color.white)
-                                            .padding()
+                                            .padding(12)
                                             .background(Color.red)
-                                            .cornerRadius(10)
+                                            .cornerRadius(30)
                                 }.padding()
                                     .font(.title)
                         }) {
@@ -68,17 +68,17 @@ struct ReservationView: View {
                             }
                         }
                     }
-        //            .onDelete(perform: deleteItems)
+                    //            .onDelete(perform: deleteItems)
                 }
             }
         }.navigationBarTitle(Text("reservedItemsTitle"), displayMode: .inline)
     }
     
     func numberToOrder(number: Int) {
-               self.number = (number - 1)
-               print("---------")
-               print("Current order: \(number)")
- 
+        self.number = (number - 1)
+        print("---------")
+        print("Current order: \(number)")
+        
     }
     
     func updateItemNode(node: ItemNode) {
@@ -86,9 +86,9 @@ struct ReservationView: View {
         let node = node
         node.isCollected = isCollected
         managedObjectContext.performAndWait {
-    try? managedObjectContext.save()
-            }
+            try? managedObjectContext.save()
         }
+    }
 }
 
 
