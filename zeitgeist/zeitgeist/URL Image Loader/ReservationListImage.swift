@@ -18,7 +18,7 @@ struct ReservationListImage: View {
          
         var body: some View {
             VStack {
-            Image(uiImage: ((imageLoader.data.count == 0) ? UIImage(named: "logoapple")! : UIImage(data: imageLoader.data)) ?? UIImage(systemName: "house")!)
+            Image(uiImage: ((imageLoader.data.count == 0) ? UIImage(named: "logoapple")! : UIImage(data: imageLoader.data)) ?? UIImage(systemName: "house")!).renderingMode(.original)
                 .resizable().scaledToFit()
                 //.aspectRatio(1, contentMode: .fit)
             }.frame(minWidth: 50, maxWidth: 100, minHeight: 50, maxHeight: 100)
