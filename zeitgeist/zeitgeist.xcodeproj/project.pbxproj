@@ -114,6 +114,9 @@
 		03E33E462438845A00FDDDF5 /* SearchImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E33E452438845A00FDDDF5 /* SearchImageViewComponent.swift */; };
 		03E33E472438845A00FDDDF5 /* SearchImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E33E452438845A00FDDDF5 /* SearchImageViewComponent.swift */; };
 		03E33E482438845A00FDDDF5 /* SearchImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E33E452438845A00FDDDF5 /* SearchImageViewComponent.swift */; };
+		03E5424C2458000600AAB02C /* ReservationListImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5424B2458000600AAB02C /* ReservationListImage.swift */; };
+		03E5424D2458000600AAB02C /* ReservationListImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5424B2458000600AAB02C /* ReservationListImage.swift */; };
+		03E5424E2458000600AAB02C /* ReservationListImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5424B2458000600AAB02C /* ReservationListImage.swift */; };
 		03F1DF9724311A8100BD9E19 /* SingleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DF9624311A8100BD9E19 /* SingleResult.swift */; };
 		03F1DF9824311A8100BD9E19 /* SingleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DF9624311A8100BD9E19 /* SingleResult.swift */; };
 		03F1DF9A24311ABD00BD9E19 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1DF9924311ABD00BD9E19 /* NetworkingManager.swift */; };
@@ -210,6 +213,7 @@
 		03E152DD2438BD1200B0CDA0 /* ItemNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNode.swift; sourceTree = "<group>"; };
 		03E152E12438BE8E00B0CDA0 /* ItemNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNodeView.swift; sourceTree = "<group>"; };
 		03E33E452438845A00FDDDF5 /* SearchImageViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageViewComponent.swift; sourceTree = "<group>"; };
+		03E5424B2458000600AAB02C /* ReservationListImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListImage.swift; sourceTree = "<group>"; };
 		03F1DF9624311A8100BD9E19 /* SingleResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleResult.swift; sourceTree = "<group>"; };
 		03F1DF9924311ABD00BD9E19 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		03F1DF9C24311AD900BD9E19 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -390,6 +394,7 @@
 				03F1DFA824311CA600BD9E19 /* ImageLoader.swift */,
 				036ACA7724562071002D6F80 /* SingleItemImageView.swift */,
 				036ACA7B245627AE002D6F80 /* FilteredItemImageView.swift */,
+				03E5424B2458000600AAB02C /* ReservationListImage.swift */,
 			);
 			path = "URL Image Loader";
 			sourceTree = "<group>";
@@ -680,6 +685,7 @@
 				034EF8872423D99200741711 /* SceneDelegate.swift in Sources */,
 				03B7334A244B5C1B0073AC0E /* SearchFilters.swift in Sources */,
 				035C56AE2429369800139C8E /* NavigationBarView.swift in Sources */,
+				03E5424C2458000600AAB02C /* ReservationListImage.swift in Sources */,
 				03117F12243746EC00EB401E /* SingleItemView.swift in Sources */,
 				03F1DFA024311AFD00BD9E19 /* CampaingNetworkManager.swift in Sources */,
 				0353AC76244DC77D004AE1B5 /* WaterfallView.swift in Sources */,
@@ -719,6 +725,7 @@
 				240159452437379600EECDEF /* ReservationView.swift in Sources */,
 				031947502434B00E003F021E /* Toast.swift in Sources */,
 				035C56B7242937A900139C8E /* SearchView.swift in Sources */,
+				03E5424D2458000600AAB02C /* ReservationListImage.swift in Sources */,
 				0363CA1E2433428500876BDD /* ViewNotNilTests.swift in Sources */,
 				035C56B32429376E00139C8E /* HomeView.swift in Sources */,
 				031947632434FACD003F021E /* ScannerViewController.swift in Sources */,
@@ -769,6 +776,7 @@
 				035C56B8242937A900139C8E /* SearchView.swift in Sources */,
 				035C56B42429376E00139C8E /* HomeView.swift in Sources */,
 				031AC78E24378A5000FEC6DA /* ImageView.swift in Sources */,
+				03E5424E2458000600AAB02C /* ReservationListImage.swift in Sources */,
 				035C56BC242937C700139C8E /* ProfileView.swift in Sources */,
 				0353AC78244DC77D004AE1B5 /* WaterfallView.swift in Sources */,
 				03CBCEE5243951540074EC12 /* ReservationList.swift in Sources */,

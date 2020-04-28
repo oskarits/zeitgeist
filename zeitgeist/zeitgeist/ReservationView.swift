@@ -68,13 +68,18 @@ struct ReservationView: View {
                                 }.padding()
                                     .font(.title)
                         }) {
-                            VStack {
-                                Text("\(node.brand)").fontWeight(.medium)
-                                Text("sizeText \(node.size)").font(.system(size: 11))
-                                Text("\(node.price) €").font(.system(size: 11))
-                                    .foregroundColor(Color.orange)
-                                    .fontWeight(.regular)
-                                
+                            HStack {
+                                ReservationListImage(url: "\(self.url)" + "\(node.image)")
+                                VStack(alignment: .leading) {
+                                    Text("\(node.brand)").fontWeight(.medium)
+                                    HStack {
+                                        Text("sizeText").font(.system(size: 11))
+                                        Text("\(node.size)").font(.system(size: 11))
+                                    }
+                                    Text("\(node.price) €").font(.system(size: 11))
+                                        .foregroundColor(Color.orange)
+                                        .fontWeight(.regular)
+                                }
                             }
                         }
                     }
