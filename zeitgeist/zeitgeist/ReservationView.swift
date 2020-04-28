@@ -15,11 +15,11 @@ struct ReservationView: View {
     var notification = Notification()
     @State private var confirmRes = "reservationConfirmed"
     @State private var declineRes = "reservationDeclined"
-    
     @State private var number : Int = 0
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
+    @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
     
     var body: some View {
         VStack {
@@ -33,11 +33,21 @@ struct ReservationView: View {
                                     //                        self.deleteCore()
                                     
                                 }
-                                Text("\(node.brand)").fontWeight(.medium)
-                                Text("sizeText \(node.size)").font(.system(size: 11))
-                                Text("\(node.price) €").font(.system(size: 11))
-                                    .foregroundColor(Color.orange)
-                                    .fontWeight(.regular)
+                                VStack(alignment: .leading) {
+                                    HStack {
+                                        Text("BRAND: ").font(.system(size: 18))
+                                        Text("\(node.brand)").font(.system(size: 18))
+                                    }
+                                    HStack {
+                                        Text("sizeText").font(.system(size: 18))
+                                        Text("\(node.size)").font(.system(size: 18))
+                                    }
+                                    HStack {
+                                        Text("PRICE: ").font(.system(size: 18))
+                                        Text("\(node.price) €").font(.system(size: 18))
+                                    }
+                                    Text("Reservation request by:\n \(self.isLoggedInResults[0].idString)").font(.system(size: 18)).fontWeight(.light).foregroundColor(Color.gray)
+                                }
                                 HStack {
                                     Button(action: {self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
                                         self.updateItemNode(node: node)
