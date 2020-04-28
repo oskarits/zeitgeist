@@ -11,10 +11,12 @@ import CoreData
 
 struct ProfileInfo: View {
     @State private var selectedView = 0
-    var view = ["Reservation", "Purhcases"]
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
-    
+    @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
+    @FetchRequest(fetchRequest: CheckoutNode.getNodes()) var checkoutResults: FetchedResults<CheckoutNode>
+    var view = ["Reservations", "Purhcases"]
+
     var body: some View {
         VStack {
             Text("Jane Doe")
@@ -31,9 +33,9 @@ struct ProfileInfo: View {
                     Text(self.view[index]).tag(index)
                 }
             }.pickerStyle(SegmentedPickerStyle())
-            if ( view[selectedView] == "Reservation") {
+            if ( view[selectedView] == "Reservations") {
                 VStack {
-                    Text("Reservations:")
+                    Text("Reservations: (\(fetchedResults.count))")
                         .fontWeight(.bold)
                         .font(.title)
                     NavigationLink(destination: ReservationList()) {
@@ -44,7 +46,7 @@ struct ProfileInfo: View {
                 }
             }
             if ( view[selectedView] == "Purhcases") {
-                Text("Previous purhcases:")
+                Text("Previous purhcases: (\(checkoutResults.count))")
                     .fontWeight(.bold)
                     .font(.title)
                 ShoppingHistoryView().onDisappear(){
@@ -54,6 +56,7 @@ struct ProfileInfo: View {
         }
     }
 }
+
 
 
 struct ProfileInfo_Previews: PreviewProvider {

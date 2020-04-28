@@ -20,6 +20,7 @@ struct ReservationView: View {
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
+    @FetchRequest(fetchRequest: CheckoutNode.getNodes()) var checkoutResults: FetchedResults<CheckoutNode>
     
     var body: some View {
         VStack {
@@ -49,8 +50,12 @@ struct ReservationView: View {
                                     Text("Reservation request by:\n \(self.isLoggedInResults[0].idString)").font(.system(size: 18)).fontWeight(.light).foregroundColor(Color.gray)
                                 }
                                 HStack {
-                                    Button(action: {self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
+                                    Button(action: {
+                                        self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
                                         self.updateItemNode(node: node)
+                                        //self.addItem(itemID: node.description, brand: node.brand, size: node.size, price: node.price)
+                                        //self.numberToOrder(number: node.order)
+                                        //self.deleteCore()
                                     }) {
                                         Image(systemName: "checkmark")
                                         Text("acceptText")}
@@ -58,13 +63,17 @@ struct ReservationView: View {
                                         .padding(12)
                                         .background(Color.green)
                                         .cornerRadius(30)
-                                    Button(action: {self.notification.SendNotification(title: self.declineRes, body: "sorryText")}) {
-                                            Image(systemName: "xmark")
-                                            Text("declineText")}
-                                            .foregroundColor(Color.white)
-                                            .padding(12)
-                                            .background(Color.red)
-                                            .cornerRadius(30)
+                                    Button(action: {
+                                        self.notification.SendNotification(title: self.declineRes, body: "sorryText")
+                                        self.numberToOrder(number: node.order)
+                                        self.deleteCore()
+                                    }) {
+                                        Image(systemName: "xmark")
+                                        Text("declineText")}
+                                        .foregroundColor(Color.white)
+                                        .padding(12)
+                                        .background(Color.red)
+                                        .cornerRadius(30)
                                 }.padding()
                                     .font(.title)
                         }) {
@@ -79,6 +88,12 @@ struct ReservationView: View {
                                     Text("\(node.price) €").font(.system(size: 11))
                                         .foregroundColor(Color.orange)
                                         .fontWeight(.regular)
+                                }
+                                if (node.isCollected) {
+                                    Text("Collected")
+                                }
+                                if (node.isCollected == false) {
+                                    Text("Pending \nreservation").font(.system(size: 11)).foregroundColor(Color.gray)
                                 }
                             }
                         }
@@ -103,6 +118,52 @@ struct ReservationView: View {
         managedObjectContext.performAndWait {
             try? managedObjectContext.save()
         }
+    }
+    
+    func addItem(itemID: String, brand: String, size: String, price: String) {
+        let node = CheckoutNode(context: managedObjectContext)
+        node.idString = itemID
+        node.size = size
+        node.brand = brand
+        node.size = size
+        node.price = price
+        // node.image = image
+        node.isCollected = true
+        node.isReserved = true
+        node.order = (checkoutResults.last?.order ?? 0) + 1
+        print("Order of new item: \(node.order)")
+        saveItems()
+    }
+    func saveItems() {
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print(error)
+        }
+    }
+    func deleteCore() {
+        let currentOrderString: String = String(self.number + 1)
+        var orderArray = ["empty"]
+        for i in fetchedResults {
+            orderArray.append("\(i.self.order)")
+        }
+        let filterIndex = orderArray.enumerated().filter { $0.element == currentOrderString }.map { $0.offset }
+        print("all orders ", orderArray)
+        print("index of the selected order: ", filterIndex)
+        if (fetchedResults.count == (orderArray.count - 1) && filterIndex.count > 0) {
+            let nodeIndexInt = filterIndex.compactMap { $0 }
+            let orderIndex : Int = nodeIndexInt[0] - 1
+            let nodeIndex: Int = orderIndex
+            print(nodeIndex)
+            let node = fetchedResults[nodeIndex]
+            managedObjectContext.delete(node)
+            print("item deleted")
+            if filterIndex.count > 0 {
+                saveItems()
+                print("list saved")
+            }
+        } else {
+            print("optional fail")}
     }
 }
 
