@@ -53,34 +53,38 @@ struct HomeView: View {
                 Spacer()
             } else {
                 VStack(alignment: .center) {
-                    Divider()
-                    Text("notificationTextTitle")
-                        .fontWeight(.bold)
-                        .foregroundColor(.red)
-                    Text("notificationText")
-                        .multilineTextAlignment(.center)
-                        .padding()
-                    Divider()
-                    HStack {
-                        
-                        Text("shareTitle1")
-                            .font(.title)
-                        Text("shareTitle2")
-                            .font(.title)
+                    Spacer()
+                    VStack {
+                        Text("notificationTextTitle")
                             .fontWeight(.bold)
-                            .foregroundColor(.orange)
-                    }
-                    QRMaker()
-                    Image("zalandoDiscount")
-                    .resizable()
-                    .frame(width: 300, height: 400)
-                    .padding()
-                    List(networkManager.courses) { course in
-                        HStack(alignment: .center) {
-                            Spacer()
+                            .foregroundColor(.red)
+                        Text("notificationText")
+                        }.padding(.top).padding()
+
+                    VStack {
+                        HStack {
                             
-                            CampaignView(course: course)
-                            Spacer()
+                            Text("shareTitle1")
+                                .font(.title)
+                            Text("shareTitle2")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.orange)
+                        }
+                        QRMaker()
+                        Image("zalandoDiscount")
+                        .resizable()
+                        .frame(width: 300, height: 400)
+                        .padding()
+                    }
+                    VStack {
+                        List(networkManager.courses) { course in
+                            HStack(alignment: .center) {
+                                Spacer()
+                                
+                                CampaignView(course: course)
+                                Spacer()
+                            }
                         }
                     }
                 }
