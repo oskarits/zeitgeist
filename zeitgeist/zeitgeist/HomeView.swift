@@ -71,16 +71,9 @@ struct HomeView: View {
                             .foregroundColor(.orange)
                     }
                     QRMaker()
-//                    Image("zalandoDiscount")
-//                    .resizable()
-//                    .frame(width: 300, height: 400)
-//                    .padding()
                     List(networkManager.courses) { course in
                         HStack(alignment: .center) {
-                            Spacer()
-                            
                             CampaignView(course: course)
-                            Spacer()
                         }
                     }
                 }
