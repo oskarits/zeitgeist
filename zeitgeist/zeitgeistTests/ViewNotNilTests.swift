@@ -18,17 +18,17 @@ class ViewNotNilTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testContentView() {
-        let testableView = ContentView()
-        let body = testableView.body
-        XCTAssertNotNil(body)
-    }
-    
-    func testHomeView() {
-        let testableView = HomeView()
-        let body = testableView.body
-        XCTAssertNotNil(body)
-    }
+//    func testContentView() {
+//        let testableView = ContentView()
+//        let body = testableView.body
+//        XCTAssertNotNil(body)
+//    }
+//    
+//    func testHomeView() {
+//        let testableView = HomeView()
+//        let body = testableView.body
+//        XCTAssertNotNil(body)
+//    }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
