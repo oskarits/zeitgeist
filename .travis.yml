@@ -9,4 +9,4 @@ before_install:
     - pod install --project-directory=zeitgeist
 script:
   - set -o pipefail 
-  - travis_retry xcodebuild test -workspace zeitgeist.xcworkspace -scheme zeitgeist -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.2.2'
+  - travis_retry xcodebuild test -workspace zeitgeist.xcworkspace -scheme zeitgeist/zeitgeist -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.2.2'
