@@ -10,3 +10,4 @@ before_install:
 script:
   - set -o pipefail 
   - travis_retry xcodebuild test -workspace zeitgeist/zeitgeist.xcworkspace -scheme zeitgeist -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.2.2'
+
