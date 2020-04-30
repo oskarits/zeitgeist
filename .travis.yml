@@ -8,4 +8,5 @@ before_install:
     - gem install cocoapods
     - pod install --project-directory=zeitgeist
 script:
-set -o pipefail && xcodebuild -project zeitgeist/zeitgeist.xcodeproj -scheme zeitgeist/zeitgeist -destination platform\=iOS\ Simulator,OS\=13.2.2,name\=iPhone\ 11 build test | xcpretty
+    - set -o pipefail && xcodebuild -project zeitgeist/zeitgeist.xcodeproj
+    -scheme zeitgeist/zeitgeist -destination platform\=iOS\ Simulator,OS\=13.2.2,name\=iPhone\ 11 build test | xcpretty
