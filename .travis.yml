@@ -5,4 +5,4 @@ xcode_scheme: zeitgeist/zeitgeist
 xcode_destination: platform=iOS Simulator,OS=13.2.2,name=iPhone 11
 podfile: zeitgeist/Podfile
 script:
-  - xcodebuild test -destination 'name=iPhone 11' -scheme 'zeitgeist'
+  - xcodebuild test -destination 'name=iPhone 11' -scheme 'zeitgeist/zeitgeist'
