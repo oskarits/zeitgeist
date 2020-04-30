@@ -58,7 +58,6 @@ struct ReservationView: View {
                                         //self.addItem(itemID: node.description, brand: node.brand, size: node.size, price: node.price)
                                         //self.numberToOrder(number: node.order)
                                         //self.deleteCore()
-                                        self.updater.toggle()
 
                                     }) {
                                         Image(systemName: "checkmark")
@@ -71,7 +70,6 @@ struct ReservationView: View {
                                         self.notification.SendNotification(title: self.declineRes, body: "sorryText")
                                         self.numberToOrder(number: node.order)
                                         self.deleteCore()
-                                        self.updater.toggle()
 
                                     }) {
                                         Image(systemName: "xmark")
@@ -148,6 +146,7 @@ struct ReservationView: View {
         } catch {
             print(error)
         }
+        self.updater.toggle()
     }
     func deleteCore() {
         let currentOrderString: String = String(self.number + 1)
