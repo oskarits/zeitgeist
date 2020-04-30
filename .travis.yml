@@ -1,6 +1,6 @@
 language: swift
 osx_image: xcode11.2
-xcode_project: zeitgeist/zeitgeist.xcodeproj # path to your xcodeproj folder
+xcode_project: zeitgeist/zeitgeist.xcworkspace # path to your xcodeproj folder
 xcode_scheme: zeitgeist
 xcode_destination: platform=iOS Simulator,OS=13.2.2,name=iPhone 11
 podfile: zeitgeist/Podfile
