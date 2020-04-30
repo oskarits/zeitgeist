@@ -1,9 +1,9 @@
 language: swift
+cache: cocoapods
 osx_image: xcode11.2
 xcode_project: zeitgeist/zeitgeist.xcworkspace # path to your xcodeproj folder
 xcode_scheme: zeitgeist
 xcode_destination: platform=iOS Simulator,OS=13.2.2,name=iPhone 11
 podfile: zeitgeist/Podfile
-before_install:
-    - gem install cocoapods
-    - cd zeitgeist && pod install
+script:
+  - xcodebuild test -destination 'name=iPhone 11' -scheme 'zeitgeist'
