@@ -54,7 +54,7 @@ struct ReservationList: View {
                                     .cornerRadius(18)
                                 }
                                 
-                            }
+                            }.padding()
                         }
                     }
                     .onDelete(perform: deleteItems)
