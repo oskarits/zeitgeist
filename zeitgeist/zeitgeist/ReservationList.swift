@@ -27,22 +27,27 @@ struct ReservationList: View {
                                 SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
                                     self.numberToOrder(number: node.order)
                                     self.deleteCore()
-                                    
                                 }
-                                Text("\(node.brand)").fontWeight(.medium)
-                                Text("SIZE: \(node.size)").font(.system(size: 11))
-                                Text("\(node.price) €").font(.system(size: 11))
-                                    .foregroundColor(Color.orange)
-                                    .fontWeight(.regular)
                             }
                             VStack {
-                                if (node.isCollected) {
-                                    Text("Collected")
+                                VStack(alignment: .leading) {
+                                    Text("\(node.brand)").fontWeight(.medium)
+                                    Text("SIZE: \(node.size)").font(.system(size: 11))
+                                    Text("\(node.price) €").font(.system(size: 11))
+                                        .foregroundColor(Color.orange)
+                                        .fontWeight(.medium)
+                                    Text("")
+                                    if (node.isCollected) {
+                                        VStack(alignment: .leading) {
+                                            Text("Collected").font(.system(size: 15)).fontWeight(.medium).foregroundColor(Color.orange)
+                                        }
+                                    }
+                                    if (node.isCollected == false) {
+                                        VStack(alignment: .leading) {
+                                            Text("Not Collected").font(.system(size: 15)).foregroundColor(Color.gray)
+                                        }
+                                    }
                                 }
-                                if (node.isCollected == false) {
-                                    Text("Not Collected")
-                                }
-                                
                             }
                         }
                     }
