@@ -21,7 +21,6 @@ struct ReservationListImage: View {
             Image(uiImage: ((imageLoader.data.count == 0) ? UIImage(named: "logoapple")! : UIImage(data: imageLoader.data)) ?? UIImage(systemName: "house")!).renderingMode(.original)
                 .resizable().scaledToFit()
                 //.aspectRatio(1, contentMode: .fit)
-            }.frame(minWidth: 50, maxWidth: 100, minHeight: 50, maxHeight: 100)
+            }.frame(minWidth: 100, maxWidth: 200, minHeight: 100, maxHeight: 200)
         }
-        
     }
