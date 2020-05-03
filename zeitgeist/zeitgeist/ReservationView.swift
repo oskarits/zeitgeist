@@ -16,8 +16,7 @@ struct ReservationView: View {
     @State private var confirmRes = "reservationConfirmed"
     @State private var declineRes = "reservationDeclined"
     @State private var number : Int = 0
-//    @State private var updater = true
-    @State private var shouldHide = false
+    @State private var updater = true
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
@@ -64,34 +63,35 @@ struct ReservationView: View {
                                     Button(action: {
                                         self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
                                         self.updateItemNode(node: node)
-                                        self.shouldHide = true
                                         
-                                        //self.addItem(itemID: node.description, brand: node.brand, size: node.size, price: node.price)
-                                        //self.numberToOrder(number: node.order)
-                                        //self.deleteCore()
 
                                     }) {
                                         Image(systemName: "checkmark")
-                                        Text("acceptText")}
+                                        Text("acceptText")
+                                            
+                                    }
                                             .foregroundColor(Color.white)
                                             .padding(12)
                                             .background(Color.green)
                                             .cornerRadius(30)
-                                            .opacity(self.shouldHide ? 0 : 1)
+                                            
                                     Button(action: {
+                                        
                                         self.notification.SendNotification(title: self.declineRes, body: "sorryText")
+                                        
                                         self.numberToOrder(number: node.order)
                                         self.deleteCore()
                                         
                                         
                                     }) {
                                         Image(systemName: "xmark")
-                                        Text("declineText")}
+                                        Text("declineText")
+                                    }
                                             .foregroundColor(Color.white)
                                             .padding(12)
                                             .background(Color.red)
                                             .cornerRadius(30)
-                                            .opacity(self.shouldHide ? 0 : 1)
+                                            
                                 }
                                     .padding()
                                     .font(.title)

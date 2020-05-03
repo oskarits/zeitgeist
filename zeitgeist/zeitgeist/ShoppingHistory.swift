@@ -47,7 +47,6 @@ struct ShoppingHistory: View {
                         print(self.checkoutResults)
                         self.showingAlert = true
                         self.shouldHide = true
-                        
                     }) {
                         Text("Apple Pay")
                             .padding()
