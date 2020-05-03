@@ -29,9 +29,7 @@ struct ReservationList: View {
                                 SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
                                     self.numberToOrder(number: node.order)
                                     self.deleteCore()
-                                    
                                 }
-                                
                             }
                             VStack(alignment: .center) {
                                 VStack {
@@ -41,9 +39,7 @@ struct ReservationList: View {
                                         .foregroundColor(Color.orange)
                                         .fontWeight(.regular)
                                 }.padding()
-                                
                                 Spacer()
-                                
                                 if (node.isCollected) {
                                     Text("Collected")
                                     .padding(10)
@@ -61,7 +57,6 @@ struct ReservationList: View {
                                     .opacity(0.5)
                                     .cornerRadius(18)
                                 }
-                                
                             }.padding()
                         }
                     }
@@ -70,7 +65,6 @@ struct ReservationList: View {
             }.navigationBarItems(trailing: EditButton())
                 .navigationBarTitle(Text("reservationListTitle"), displayMode: .inline)
         }
-        
     }
     
     // ---------FUNCTIONS--------

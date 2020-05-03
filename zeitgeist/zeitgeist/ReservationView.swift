@@ -32,7 +32,6 @@ struct ReservationView: View {
                             VStack {
                                 SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
                                     self.numberToOrder(number: node.order)
-                                    
                                 }
                                 VStack(alignment: .leading) {
                                     HStack {
@@ -66,26 +65,18 @@ struct ReservationView: View {
                                         Button(action: {
                                             self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
                                             self.updateItemNode(node: node)
-                                            
-                                            
                                         }) {
                                             Image(systemName: "checkmark")
                                             Text("acceptText")
-                                            
                                         }
                                         .foregroundColor(Color.white)
                                         .padding(12)
                                         .background(Color.green)
                                         .cornerRadius(30)
-                                        
                                         Button(action: {
-                                            
                                             self.notification.SendNotification(title: self.declineRes, body: "sorryText")
-                                            
                                             self.numberToOrder(number: node.order)
                                             self.deleteCore()
-                                            
-                                            
                                         }) {
                                             Image(systemName: "xmark")
                                             Text("declineText")
@@ -94,11 +85,9 @@ struct ReservationView: View {
                                         .padding(12)
                                         .background(Color.red)
                                         .cornerRadius(30)
-                                        
                                     }
                                     .padding()
                                     .font(.title)
-                                    
                                 }
                         }) {
                             HStack {
@@ -111,18 +100,17 @@ struct ReservationView: View {
                                             .fontWeight(.medium)
                                         HStack {
                                             Text("sizeText")
-                                                .font(.system(size: 11))
+                                                .font(.system(size: 13))
                                             Text("\(node.size)")
-                                                .font(.system(size: 11))
+                                                .font(.system(size: 13))
                                         }
                                         Text("\(node.price) €")
-                                            .font(.system(size: 11))
+                                            .font(.system(size: 13))
                                             .foregroundColor(Color.orange)
-                                            .fontWeight(.regular)
+                                            .fontWeight(.medium)
                                     }
                                 }
                                 VStack(alignment: .leading) {
-                                    
                                     if node.isCollected {
                                         Text("Collected")
                                             .padding(10)
