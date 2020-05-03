@@ -139,11 +139,11 @@ struct ReservationView: View {
                                             if node.isCollected {
                                                 HStack {
                                                     Text("Collected")
-                                                    .padding(10)
-                                                    .font(.system(size: 14))
-                                                    .foregroundColor(.white)
-                                                    .background(Color.green)
-                                                    .cornerRadius(18)
+                                                        .padding(10)
+                                                        .font(.system(size: 14))
+                                                        .foregroundColor(.white)
+                                                        .background(Color.green)
+                                                        .cornerRadius(18)
                                                     Spacer()
                                                 }
                                             }
@@ -151,12 +151,12 @@ struct ReservationView: View {
                                             if !node.isCollected {
                                                 HStack{
                                                     Text("Pending collection")
-                                                    .padding(10)
-                                                    .font(.system(size: 14))
-                                                    .foregroundColor(Color.black)
-                                                    .background(Color.gray)
-                                                    .opacity(0.5)
-                                                    .cornerRadius(18)
+                                                        .padding(10)
+                                                        .font(.system(size: 14))
+                                                        .foregroundColor(Color.black)
+                                                        .background(Color.gray)
+                                                        .opacity(0.5)
+                                                        .cornerRadius(18)
                                                     Spacer()
                                                 }
                                             }
@@ -172,12 +172,12 @@ struct ReservationView: View {
             }
         }.navigationBarTitle(Text("reservedItemsTitle"), displayMode: .inline)
     }
-
+    // Places item index number to variable
     func numberToOrder(number: Int) {
         self.number = (number - 1)
         print("Current order: \(number)")
     }
-    
+    // Updates core data that item is collected
     func updateItemNode(node: ItemNode) {
         let isCollected = true
         let node = node
@@ -187,7 +187,7 @@ struct ReservationView: View {
             try? managedObjectContext.save()
         }
     }
-    
+    // Function for adding item to core data
     func addItem(itemID: String, brand: String, size: String, price: String) {
         let node = CheckoutNode(context: managedObjectContext)
         node.idString = itemID
@@ -201,14 +201,16 @@ struct ReservationView: View {
         print("Order of new item: \(node.order)")
         saveItems()
     }
+    // Function to save NSManagedObject to core data
     func saveItems() {
         do {
             try managedObjectContext.save()
+            print("saved")
         } catch {
             print(error)
         }
-        //        self.updater.toggle()
     }
+    // Deletes item from core data
     func deleteCore() {
         let currentOrderString: String = String(self.number + 1)
         var orderArray = ["empty"]
@@ -216,8 +218,6 @@ struct ReservationView: View {
             orderArray.append("\(i.self.order)")
         }
         let filterIndex = orderArray.enumerated().filter { $0.element == currentOrderString }.map { $0.offset }
-        print("all orders ", orderArray)
-        print("index of the selected order: ", filterIndex)
         if (fetchedResults.count == (orderArray.count - 1) && filterIndex.count > 0) {
             let nodeIndexInt = filterIndex.compactMap { $0 }
             let orderIndex : Int = nodeIndexInt[0] - 1
@@ -228,7 +228,6 @@ struct ReservationView: View {
             print("item deleted")
             if filterIndex.count > 0 {
                 saveItems()
-                print("list saved")
             }
         } else {
             print("optional fail")}
