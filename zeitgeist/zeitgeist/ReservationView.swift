@@ -37,13 +37,15 @@ struct ReservationView: View {
     var body: some View {
         VStack {
             NavigationView {
-                List {
+                List { // Lists each item in ItemNode core data
                     ForEach(fetchedResults, id: \.self) { node in
                         NavigationLink(destination:
                             VStack {
+                                // Displays the image of the fetched item
                                 SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
                                     self.numberToOrder(number: node.order)
                                 }
+                                // Item info and styling
                                 VStack(alignment: .leading) {
                                     HStack {
                                         Text("BRAND: ")
@@ -71,10 +73,13 @@ struct ReservationView: View {
                                         .fontWeight(.light)
                                         .foregroundColor(Color.gray)
                                 }
+                                // If item is reserved
                                 if node.isReserved {
                                     HStack {
                                         Button(action: {
+                                            // Sends notification item is collected
                                             self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
+                                            // Updates core data that item is collected
                                             self.updateItemNode(node: node)
                                         }) {
                                             Image(systemName: "checkmark")
@@ -85,8 +90,11 @@ struct ReservationView: View {
                                         .background(Color.green)
                                         .cornerRadius(30)
                                         Button(action: {
+                                            // Send notification item is declined
                                             self.notification.SendNotification(title: self.declineRes, body: "sorryText")
+                                            // Places item index number to variable
                                             self.numberToOrder(number: node.order)
+                                            // Deletes item from core data
                                             self.deleteCore()
                                         }) {
                                             Image(systemName: "xmark")
@@ -105,10 +113,12 @@ struct ReservationView: View {
                                 HStack {
                                     VStack(alignment: .leading) {
                                         VStack(alignment: .leading) {
+                                            // Displays the image of the fetched item
                                             ReservationListImage(url: "\(self.url)" + "\(node.image)")
                                         }
                                     }
                                     VStack(alignment: .leading) {
+                                        // Item info and styling
                                         VStack(alignment: .leading) {
                                             Text("\(node.brand)")
                                                 .fontWeight(.medium)
@@ -123,7 +133,9 @@ struct ReservationView: View {
                                                 .foregroundColor(Color.orange)
                                                 .fontWeight(.medium)
                                         }.padding(.bottom)
+                                        // Items collected status
                                         VStack(alignment: .leading) {
+                                            // Item is collected
                                             if node.isCollected {
                                                 HStack {
                                                     Text("Collected")
@@ -135,6 +147,7 @@ struct ReservationView: View {
                                                     Spacer()
                                                 }
                                             }
+                                            // Item is not collected
                                             if !node.isCollected {
                                                 HStack{
                                                     Text("Pending collection")
@@ -159,12 +172,10 @@ struct ReservationView: View {
             }
         }.navigationBarTitle(Text("reservedItemsTitle"), displayMode: .inline)
     }
-    
+
     func numberToOrder(number: Int) {
         self.number = (number - 1)
-        print("---------")
         print("Current order: \(number)")
-        
     }
     
     func updateItemNode(node: ItemNode) {
