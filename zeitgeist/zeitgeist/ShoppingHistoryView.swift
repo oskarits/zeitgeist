@@ -32,8 +32,10 @@ struct ShoppingHistoryView: View {
                 }
                 .padding()
                 HStack {
-                    Text("")
+                    Text("Purchase date: ")
+                        .fontWeight(.medium)
                     Text("\(formatingDate)")
+                        .fontWeight(.medium)
                 }
             }
         }
