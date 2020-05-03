@@ -90,44 +90,56 @@ struct ReservationView: View {
                                     .font(.title)
                                 }
                         }) {
-                            HStack {
-                                VStack {
+                            VStack(alignment: .leading) {
+                                HStack {
                                     VStack(alignment: .leading) {
-                                        ReservationListImage(url: "\(self.url)" + "\(node.image)")
-                                    }
-                                    VStack(alignment: .leading) {
-                                        Text("\(node.brand)")
-                                            .fontWeight(.medium)
-                                        HStack {
-                                            Text("sizeText")
-                                                .font(.system(size: 13))
-                                            Text("\(node.size)")
-                                                .font(.system(size: 13))
+                                        VStack(alignment: .leading) {
+                                            ReservationListImage(url: "\(self.url)" + "\(node.image)")
                                         }
-                                        Text("\(node.price) €")
-                                            .font(.system(size: 13))
-                                            .foregroundColor(Color.orange)
-                                            .fontWeight(.medium)
                                     }
-                                }
-                                VStack(alignment: .leading) {
-                                    if node.isCollected {
-                                        Text("Collected")
-                                            .padding(10)
-                                            .font(.system(size: 14))
-                                            .foregroundColor(.white)
-                                            .background(Color.green)
-                                            .cornerRadius(18)
+                                    VStack(alignment: .leading) {
+                                        VStack(alignment: .leading) {
+                                            Text("\(node.brand)")
+                                                .fontWeight(.medium)
+                                            HStack {
+                                                Text("sizeText")
+                                                    .font(.system(size: 13))
+                                                Text("\(node.size)")
+                                                    .font(.system(size: 13))
+                                            }
+                                            Text("\(node.price) €")
+                                                .font(.system(size: 13))
+                                                .foregroundColor(Color.orange)
+                                                .fontWeight(.medium)
+                                        }.padding(.bottom)
+                                        VStack(alignment: .leading) {
+                                            if node.isCollected {
+                                                HStack {
+                                                    Text("Collected")
+                                                    .padding(10)
+                                                    .font(.system(size: 14))
+                                                    .foregroundColor(.white)
+                                                    .background(Color.green)
+                                                    .cornerRadius(18)
+                                                    Spacer()
+                                                }
+                                            }
+                                            if !node.isCollected {
+                                                HStack{
+                                                    Text("Pending collection")
+                                                    .padding(10)
+                                                    .font(.system(size: 14))
+                                                    .foregroundColor(Color.black)
+                                                    .background(Color.gray)
+                                                    .opacity(0.5)
+                                                    .cornerRadius(18)
+                                                    Spacer()
+                                                }
+                                            }
+                                        }
+                                        Spacer()
                                     }
-                                    if !node.isCollected {
-                                        Text("Pending collection")
-                                            .padding(10)
-                                            .font(.system(size: 14))
-                                            .foregroundColor(Color.black)
-                                            .background(Color.gray)
-                                            .opacity(0.5)
-                                            .cornerRadius(18)
-                                    }
+                                    Spacer()
                                 }
                             }
                         }
