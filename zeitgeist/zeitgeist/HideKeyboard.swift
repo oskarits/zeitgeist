@@ -9,6 +9,7 @@
 import SwiftUI
 
 extension UIApplication {
+    // Hide keyboard
     func endEditing(_ force: Bool) {
         self.windows
             .filter{$0.isKeyWindow}
@@ -16,7 +17,7 @@ extension UIApplication {
             .endEditing(force)
     }
 }
-
+// Hide keyboard when dragged
 struct ResignKeyboardOnDragGesture: ViewModifier {
     var gesture = DragGesture().onChanged{_ in
         UIApplication.shared.endEditing(true)
@@ -25,20 +26,20 @@ struct ResignKeyboardOnDragGesture: ViewModifier {
         content.gesture(gesture)
     }
 }
-
+// Hide keyboard when dragged extension
 extension View {
     func resignKeyboardOnDragGesture() -> some View {
         modifier(ResignKeyboardOnDragGesture())
     }
 }
-// Put this piece of code anywhere you like
+// Called when hiding keyboard
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-    
+    // Hides keyboard
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
