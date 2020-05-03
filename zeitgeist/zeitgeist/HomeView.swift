@@ -53,27 +53,36 @@ struct HomeView: View {
                 Spacer()
             } else {
                 VStack(alignment: .center) {
-                    Divider()
-                    Text("notificationTextTitle")
-                        .fontWeight(.bold)
-                        .foregroundColor(.red)
-                    Text("notificationText")
-                        .multilineTextAlignment(.center)
-                        .padding()
-                    Divider()
-                    HStack {
-                        
-                        Text("shareTitle1")
-                            .font(.title)
-                        Text("shareTitle2")
-                            .font(.title)
+                    Spacer()
+                    VStack {
+                        Text("notificationTextTitle")
                             .fontWeight(.bold)
-                            .foregroundColor(.orange)
+
+                            .foregroundColor(.red)
+                        Text("notificationText")
+                        }.padding(.top).padding()
+
+                    VStack {
+                        HStack {
+                            
+                            Text("shareTitle1")
+                                .font(.title)
+                            Text("shareTitle2")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.orange)
+                        }
+                        QRMaker()
                     }
-                    QRMaker()
-                    List(networkManager.courses) { course in
-                        HStack(alignment: .center) {
-                            CampaignView(course: course)
+                    VStack {
+                        List(networkManager.courses) { course in
+                            HStack(alignment: .center) {
+                                Spacer()
+                                
+                                CampaignView(course: course)
+                                Spacer()
+                            }
+
                         }
                     }
                 }
