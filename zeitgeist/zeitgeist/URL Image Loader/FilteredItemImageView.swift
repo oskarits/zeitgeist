@@ -31,7 +31,6 @@ struct FilteredItemImageViewComponent: View {
         VStack {
         Image(uiImage: ((imageLoader.data.count == 0) ? UIImage(named: "logoapple")! : UIImage(data: imageLoader.data)) ?? UIImage(systemName: "house")!)
             .resizable().scaledToFit()
-            //.aspectRatio(1, contentMode: .fit)
         }.frame(maxWidth: 300, maxHeight: 375)
     }
     
