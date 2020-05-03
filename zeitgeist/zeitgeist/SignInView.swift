@@ -42,12 +42,15 @@ struct SignInView: View {
                 .font(.largeTitle)
                 .foregroundColor(Color.orange)
                 .padding()
-            
             HStack {
+                // Image icon for email
                 Image(systemName: "envelope")
                     .foregroundColor(ZColorEnvelope)
                 VStack {
-                    TextField("emailHint", text: $username, onEditingChanged: { (editingChanged) in
+                    // Textfield for email
+                    TextField("emailHint", text: $username, onEditingChanged: {
+                        // icon color change to indicate selected textfield
+                        (editingChanged) in
                         if editingChanged {
                             self.ZColorUser = Color.orange
                             self.ZColorEnvelope = Color.orange
@@ -56,20 +59,18 @@ struct SignInView: View {
                             self.ZColorEnvelope = Color.black
                         }
                     })
-                        
                         .foregroundColor(ZColorUser)
                     Divider()
                         .background(ZColorUser)
                 }
-                
-                
             }
             .padding()
-            
             HStack {
+                // Image icon for password
                 Image(systemName: "lock")
                     .foregroundColor(ZColorLock)
                 VStack {
+                    // Textfield for password
                     TextField("pswdHint", text: $password, onEditingChanged: { (editingChanged) in
                         if editingChanged {
                             self.ZColorPass = Color.orange
@@ -79,38 +80,37 @@ struct SignInView: View {
                             self.ZColorLock = Color.black
                         }
                     })
-                        
                         .foregroundColor(ZColorPass)
                     Divider()
                         .background(ZColorLock)
                 }
-                
             }
             .padding()
-            
             HStack {
                 VStack {
                     HStack {
                         VStack(alignment: .leading, spacing: 20) {
+                            // image icon for user size
                             Image(systemName: "scissors")
-                                //.foregroundColor(ZColorLock)
                         }
                         Spacer()
                         VStack(alignment: .center) {
                             HStack(alignment: .center) {
-                                
                                 Text(size.isEmpty ? "Select size: " : "Size: \(size)")
                                 Image(systemName: expand ? "chevron.up" : "chevron.down")
                             }.onTapGesture {
+                                // Toggling list of selectable sizes
                                 self.expand.toggle()
                             }
                         }
                         Spacer()
                     }
-                    if expand {
+                    if expand { // Shows selectable user sizes
                         ForEach(sizes, id: \.self) { size in
                             Button(action: {
+                                // Selects size
                                 self.size = size
+                                // Toggling list of selectable sizes away
                                 self.expand.toggle()
                             }) {
                                 Text(size).padding(5)
@@ -119,15 +119,15 @@ struct SignInView: View {
                     }
                 }.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
             }
-                
             .padding()
             Button(action: {
+                // Checks that forms are filled correctly
                 if (self.username.count > 0 && self.size.count == 2) {
+                    // Adds inputs to core data
                     self.addProfile(name: self.username, size: self.size)
-                } else {
+                } else { // If form inputs are incorrect
                     print("username too short")
                 }
-                
             }) {
                 Text("Sign in")
                     .padding()
@@ -136,13 +136,9 @@ struct SignInView: View {
                     .frame(width: 300, height: 80)
                     .background(Color.orange)
                     .cornerRadius(15.0)
-                
             }
-        }.padding().resignKeyboardOnDragGesture()
+        }.padding().resignKeyboardOnDragGesture() // Removes keyboard from screen
     }
-    
-    // ---------FUNCTIONS--------
-    
     //Adds item listing to CoreData
     func addProfile(name: String, size: String) {
         let node = LoginNode(context: managedObjectContext)
@@ -152,7 +148,7 @@ struct SignInView: View {
         saveItems()
         print("profile added")
     }
-    
+    // Changes user profile core data value to logged in
     func loggedIn(node: LoginNode) {
         let isLoggedIn = true
         let node = node
@@ -163,13 +159,13 @@ struct SignInView: View {
         self.isLoggedIn = true
         print("Logged in \(self.isLoggedIn)")
     }
-    
+    // Deletes core data node
     func deleteItems(indexSet: IndexSet) {
         let node = isLoggedInResults[indexSet.first!]
         managedObjectContext.delete(node)
         saveItems()
     }
-    
+    // Saves profile to core data
     func saveItems() {
         do {
             try managedObjectContext.save()
@@ -178,7 +174,7 @@ struct SignInView: View {
         }
     }
 }
-
+// For canvas preview
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
         SignInView()
