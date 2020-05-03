@@ -9,10 +9,13 @@
 import SwiftUI
 
 struct SizeFilter: View {
-    
+    // Binding value for string value of searched size
     @Binding var searchBySize: String
+    // Binding value for string value of searched size used in Text()
     @Binding var sizeFilterTitle: String
+    // Binding value for expanding size filter
     @Binding var expand: Bool
+    // Selectable sizes to filter
     @State var sizes = ["Your size", "One Size", "32", "34", "36", "38", "40", "42", "44"]
     
     var body: some View {
