@@ -10,8 +10,9 @@ import SwiftUI
 import Combine
 
 struct SingleItemImageView: View {
-
+    // Placeholder for decodable variables
     let item : ClothingListEntry
+    // URL for image fetching
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
     
     var body: some View {
@@ -20,19 +21,18 @@ struct SingleItemImageView: View {
 }
 
 struct SingleSearchImageViewComponent: View {
-    
+    // Placeholder for ObservableObject ImageLoader
     @ObservedObject var imageLoader: ImageLoader
-    
+    // Initialising item image URL
     init(url: String) {
         imageLoader = ImageLoader(url: url)
     }
-     
+    
     var body: some View {
-        VStack {
-        Image(uiImage: ((imageLoader.data.count == 0) ? UIImage(named: "logoapple")! : UIImage(data: imageLoader.data)) ?? UIImage(systemName: "house")!)
-            .resizable().scaledToFit()
-            //.aspectRatio(1, contentMode: .fit)
-        }.frame(maxWidth: 400, maxHeight: 500)
+        VStack { // Place image from URL and nil guards
+            Image(uiImage: ((imageLoader.data.count == 0) ? UIImage(named: "logoapple")! : UIImage(data: imageLoader.data)) ?? UIImage(systemName: "house")!)
+                .resizable().scaledToFit()
+        }.frame(maxWidth: 400, maxHeight: 500) // Size for image frame
     }
     
 }

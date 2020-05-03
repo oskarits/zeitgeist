@@ -10,16 +10,18 @@ import Foundation
 import SwiftUI
 import CoreData
 
+// For employees only
 struct EmployeeView: View {
-    
+    // Allows the use of core data
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    // Fetches core data using ItemNode NSManagedObject class
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
     
     var body: some View {
         VStack {
             NavigationView {
                 VStack {
-                    VStack {
+                    VStack { // Employee greeting
                         Text("Welcome ")
                             .fontWeight(.bold)
                             .font(.title)
@@ -29,27 +31,29 @@ struct EmployeeView: View {
                             .fontWeight(.bold)
                             .padding()
                     }
+                    // Employee instruction
                     Text("Check current reservations and scan the customer's Wardrobe code")
                         .font(.title)
                         .padding()
+                    // Navigation link to ReservationView()
                     NavigationLink(destination: ReservationView()) {
                         VStack {
                             Text("showReservationsText")
                                 .fontWeight(.bold)
+                            // Show the amount of reservations
                             Text("(\(fetchedResults.count))")
                         }
-                            .font(.title)
                             .padding()
-                            .background(Color.white)
-                            .foregroundColor(.black)
-                            .border(Color.black, width: 2)
-                            .frame(width: 300, height: 300)
-                            .shadow(radius: 3)
+                            .foregroundColor(Color.white)
+                            .font(.title)
+                            .background(Color.orange)
+                            .cornerRadius(15.0)
                     }
                 }
                 .multilineTextAlignment(.center)
                 .navigationBarTitle(Text("employeeTitle"), displayMode: .inline)
                 .navigationBarItems(trailing:
+                    // Navigation link to QR scanner
                     NavigationLink(destination: QrView()) {
                         Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
                     }
@@ -59,7 +63,7 @@ struct EmployeeView: View {
     }
 }
 
-
+// For canvas preview
 struct EployeeView_Previews: PreviewProvider {
     static var previews: some View {
         EmployeeView()

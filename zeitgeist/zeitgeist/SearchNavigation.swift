@@ -10,17 +10,22 @@ import SwiftUI
 import CoreData
 
 struct SearchNavigation: View {
-    
+    // Fetches data from URL in NetworkingManager ObservableObject class
     @ObservedObject var networkingManager = NetworkingManager()
+    // Local list of items for indexing item for +/- icon
     @State private var shoppingList: [(key: String, value: String)] = [:].sorted{$0.value < $1.value}
-    // CoreData
+    // Allows the use of core data
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    // Fetches core data using ItemNode NSManagedObject class
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
+    // Fetches core data using LoginNode NSManagedObject class
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
+    // Placeholder for decodable variables
     var item : ClothingListEntry
     
     var body: some View {
             NavigationLink(destination:
+                // Navigation destination
             SingleItemView(item: item)) {
                 VStack(alignment: .leading) {
                     HStack {
@@ -30,16 +35,22 @@ struct SearchNavigation: View {
                             }
                         }
                         Spacer()
+                        // If user is logged in
                         if (self.isLoggedInResults.endIndex > 0) {
                             VStack {
+                                // Filters item by id, if item is in list shows +
                                 if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
                                     Image(systemName: "minus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+                                        // Remove item from shoppingList
                                         self.ShoppingCartMinus(index: "\(self.item.id)")
                                     }
                                 }
+                                // Filters item by id, if item is not in list shows -
                                 if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
                                     Image(systemName: "plus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+                                        // Add item to shoppingList
                                         self.ShoppingCartPlus(key: self.item.brand, value: "\(self.item.id)")
+                                        // Add item to core data
                                         self.addItem(itemID: "\(self.item.id)", brand: self.item.brand, size: self.item.size, price: self.item.price, image: "\(self.item.images[0])")
                                     }
                                 }
@@ -49,11 +60,7 @@ struct SearchNavigation: View {
                 }
             }
         }
-    
-    
-    //---FUNCTIONS---
-    
-    //Adds item listing to CoreData
+    // Adds item listing to CoreData
     func addItem(itemID: String, brand: String, size: String, price: String, image: String) {
         let node = ItemNode(context: managedObjectContext)
         node.idString = itemID
@@ -69,31 +76,34 @@ struct SearchNavigation: View {
         saveItems()
     }
     
-    //Saves the added items to core data
+    // Saves the added items to core data
     func saveItems() {
         do {
             try managedObjectContext.save()
+            print("saved")
         } catch {
             print(error)
         }
     }
     
-    //Function when shopping cart icon is pressed
+    // Function when + icon is pressed
     func ShoppingCartPlus(key: String, value: String) {
-        //Adds item info to dictionary
+        // Adds item info to dictionary
         self.shoppingList.insert((key: key, value: value), at: self.shoppingList.count)
-        //Toggles keyboard down
+        // Toggles keyboard down
         UIApplication.shared.endEditing(true)
     }
-    
+    // Function when - icon is pressed
     func ShoppingCartMinus(index: String) {
         if self.shoppingList.count > 0 {
             let indx = self.shoppingList.firstIndex(where: {$0.value == index})
             print(indx ?? "nothing")
             if indx != nil {
+                // Removes item info to dictionary
                 self.shoppingList.remove(at: indx ?? 0)
             }
         }
+        // Toggles keyboard down
         UIApplication.shared.endEditing(true)
     }
 }

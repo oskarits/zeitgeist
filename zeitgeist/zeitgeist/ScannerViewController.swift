@@ -8,11 +8,15 @@
 
 import AVFoundation
 import UIKit
+import SwiftUI
 
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     var delegate: QRCodeScannerDelegate?
+    
+    
+    public var didScan = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +58,10 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         view.layer.addSublayer(previewLayer)
 
         captureSession.startRunning()
+        
+       
+        
+        
     }
 
     func failed() {
@@ -86,6 +94,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             guard let stringValue = readableObject.stringValue else { return }
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             found(code: stringValue)
+            addHistoryView()
         }
 
         dismiss(animated: true)
@@ -93,7 +102,25 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
 
     func found(code: String) {
         self.delegate?.codeDidFind(code)
+     
     }
+    
+    func addHistoryView() {
+        let shoppingHistory = ShoppingHistory()
+        let controller = UIHostingController(rootView: shoppingHistory)
+        addChild(controller)
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(controller.view)
+        controller.didMove(toParent: self)
+        
+        NSLayoutConstraint.activate([
+            controller.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1),
+            controller.view.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1),
+            controller.view.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            controller.view.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+
     
 
     override var prefersStatusBarHidden: Bool {
@@ -108,3 +135,5 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
 protocol QRCodeScannerDelegate {
     func codeDidFind(_ code: String)
 }
+
+

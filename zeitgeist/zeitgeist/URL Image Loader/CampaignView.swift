@@ -10,10 +10,8 @@ import SwiftUI
 import Combine
 
 struct CampaignView: View {
-    
     let course: Course
-    
     var body: some View {
-            ImageViewComponent(url: course.url)
+        ImageViewComponent(url: course.url)
     }
 }

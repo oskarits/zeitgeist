@@ -11,24 +11,32 @@ import SwiftUI
 import CoreData
 
 struct ShoppingCart: View {
-    
+    // Fetches data from URL in NetworkingManager ObservableObject class
     @ObservedObject var networkingManager = NetworkingManager()
+    // Allows the use of core data
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    // Fetches core data using ItemNode NSManagedObject class
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
+    // Fetches core data using LoginNode NSManagedObject class
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
+    // Fetches core data using CheckoutNode NSManagedObject class
     @FetchRequest(fetchRequest: CheckoutNode.getNodes()) var checkoutResults: FetchedResults<CheckoutNode>
+    // URL for image fetching
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
+    // Number value to save items to core data with index number
     @State private var number : Int = 0
+    // Toggle value for updating view
     @State private var updater = false
     var body: some View {
         NavigationView {
             VStack {
-                List {
+                List { // Lists each item in ItemNode core data
                     ForEach(fetchedResults, id: \.self) { node in
                         VStack {
                             if( node.isCollected == true) {
                                 HStack {
                                     VStack {
+                                        // Displays the image of the fetched item
                                         SearchImageViewComponent(url: "\(self.url)" + "\(node.image)")
                                         Text("\(node.brand)").fontWeight(.medium)
                                         Text("SIZE: \(node.size)").font(.system(size: 11))
@@ -38,10 +46,15 @@ struct ShoppingCart: View {
                                     }
                                     
                                     Button(action: {
+                                        // Prints checkout results
                                         print(self.checkoutResults)
+                                        // Adds item to core data
                                         self.addItem(itemID: node.description, brand: node.brand, size: node.size, price: node.price)
+                                        // Places item index number to variable
                                         self.numberToOrder(number: node.order)
+                                        // Updates core data that item is collected
                                         self.updateItemNode(node: node)
+                                        // Deletes item from core data
                                         self.deleteCore()
                                     }) {
                                         Text("Apple Pay")
@@ -63,16 +76,12 @@ struct ShoppingCart: View {
         }
         
     }
-    
-    // ---------FUNCTIONS--------
-    
+    // Places item index number to variable
     func numberToOrder(number: Int) {
         self.number = (number - 1)
-        print("---------")
         print("Current order: \(number)")
-        
     }
-    
+    // Updates core data that item is collected
     func updateItemNode(node: ItemNode) {
         let isCollected = false
         let node = node
@@ -81,7 +90,7 @@ struct ShoppingCart: View {
             try? managedObjectContext.save()
         }
     }
-    
+    // Function for adding item to core data
     func addItem(itemID: String, brand: String, size: String, price: String) {
         let node = CheckoutNode(context: managedObjectContext)
         node.idString = itemID
@@ -96,14 +105,17 @@ struct ShoppingCart: View {
         print("Order of new item: \(node.order)")
         saveItems()
     }
+    // Function to save NSManagedObject to core data
     func saveItems() {
         do {
             try managedObjectContext.save()
+            print("saved")
         } catch {
             print(error)
         }
         self.updater.toggle()
     }
+    // Deletes item from core data
     func deleteCore() {
         let currentOrderString: String = String(self.number + 1)
         var orderArray = ["empty"]
@@ -111,8 +123,6 @@ struct ShoppingCart: View {
             orderArray.append("\(i.self.order)")
         }
         let filterIndex = orderArray.enumerated().filter { $0.element == currentOrderString }.map { $0.offset }
-        print("all orders ", orderArray)
-        print("index of the selected order: ", filterIndex)
         if (fetchedResults.count == (orderArray.count - 1) && filterIndex.count > 0) {
             let nodeIndexInt = filterIndex.compactMap { $0 }
             let orderIndex : Int = nodeIndexInt[0] - 1
@@ -123,13 +133,13 @@ struct ShoppingCart: View {
             print("item deleted")
             if filterIndex.count > 0 {
                 saveItems()
-                print("list saved")
             }
         } else {
             print("optional fail")}
     }
 }
 
+// For canvas preview
 struct ShoppingCart_Previews: PreviewProvider {
     static var previews: some View {
         ShoppingCart()

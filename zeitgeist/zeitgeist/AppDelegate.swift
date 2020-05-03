@@ -7,13 +7,14 @@
 //
 
 import UIKit
+// Adds core data
 import CoreData
+// Adds notifications
 import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-    
-    
+    // UNUserNotificationCenterDelegate allows app to send notifications
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -46,8 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
 
+    // Notifications handler
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
+        // Notification action identifier
         if response.actionIdentifier != "cancel" {
             NotificationCenter.default.post(name: NSNotification.Name("Detail"), object: nil)
         }

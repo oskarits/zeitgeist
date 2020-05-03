@@ -15,14 +15,3 @@ struct Course: Identifiable, Decodable {
     var name: String
     var url: String
 }
-
-
-//struct CampaignList: Decodable {
-//    var items: [CampaignListItem]
-//}
-//
-//struct CampaignListItem: Decodable, Identifiable {
-//    var id = UUID()
-//    var name: String
-//    var url: String
-//}
