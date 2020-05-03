@@ -38,18 +38,21 @@ struct ReservationView: View {
                                     HStack {
                                         Text("BRAND: ")
                                             .font(.system(size: 18))
+                                            .fontWeight(.bold)
                                         Text("\(node.brand)")
                                             .font(.system(size: 18))
                                     }
                                     HStack {
                                         Text("sizeText")
                                             .font(.system(size: 18))
+                                            .fontWeight(.bold)
                                         Text("\(node.size)")
                                             .font(.system(size: 18))
                                     }
                                     HStack {
                                         Text("PRICE: ")
                                             .font(.system(size: 18))
+                                            .fontWeight(.bold)
                                         Text("\(node.price) €")
                                             .font(.system(size: 18))
                                     }

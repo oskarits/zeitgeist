@@ -17,6 +17,8 @@ struct ReservationList: View {
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
     @State private var number : Int = 0
+    
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -29,13 +31,19 @@ struct ReservationList: View {
                                     self.deleteCore()
                                     
                                 }
-                                Text("\(node.brand)").fontWeight(.medium)
-                                Text("SIZE: \(node.size)").font(.system(size: 11))
-                                Text("\(node.price) €").font(.system(size: 11))
-                                    .foregroundColor(Color.orange)
-                                    .fontWeight(.regular)
+                                
                             }
-                            VStack {
+                            VStack(alignment: .center) {
+                                VStack {
+                                    Text("\(node.brand)").fontWeight(.medium)
+                                    Text("SIZE: \(node.size)").font(.system(size: 11))
+                                    Text("\(node.price) €").font(.system(size: 11))
+                                        .foregroundColor(Color.orange)
+                                        .fontWeight(.regular)
+                                }.padding()
+                                
+                                Spacer()
+                                
                                 if (node.isCollected) {
                                     Text("Collected")
                                     .padding(10)
