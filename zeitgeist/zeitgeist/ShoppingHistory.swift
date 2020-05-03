@@ -12,22 +12,24 @@ import CoreData
 
 
 struct ShoppingHistory: View {
+    // Allows the use of core data
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    // Fetches core data using CheckoutNode NSManagedObject class
     @FetchRequest(fetchRequest: CheckoutNode.getNodes()) var checkoutResults: FetchedResults<CheckoutNode>
+    // Fetches core data using LoginNode NSManagedObject class
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
+    // Fetches core data using ItemNode NSManagedObject class
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
-    
+    // Variable for showing alert
     @State private var showingAlert = false
+    // Variable for hiding alert
     @State private var shouldHide = false
-    
 
     var body: some View {
         VStack {
+            // If logged in
             if isLoggedInResults.count > 0 {
-//                VStack {
-//                    ShoppingCart()
-//                }
-              
+                // Default item for sale
                 VStack {
                     Spacer()
                     Image("wolfShirt")
@@ -42,10 +44,15 @@ struct ShoppingHistory: View {
                         .foregroundColor(.orange)
                         .font(.subheadline)
                     Spacer()
+                    // Button to buy item
                     Button(action: {
+                        // Adds item to core data
                         self.addItem(itemID: "123", brand: "Wolfie", size: "L/XL", price: "50€")
+                        // Prints checkout results
                         print(self.checkoutResults)
+                        // Shows alert
                         self.showingAlert = true
+                        // Hides alert
                         self.shouldHide = true
                     }) {
                         Text("Apple Pay")
@@ -61,14 +68,11 @@ struct ShoppingHistory: View {
                             .opacity(shouldHide ? 0 : 1)
                 }
             }
-            else {
+            else { // If not signed in
                 Text("You need to sign in to see shopping history")
             }
         }
     }
-    
-    //---FUNCTIONS---
-    
     //Adds item listing to CoreData
     func addItem(itemID: String, brand: String, size: String, price: String) {
         let node = CheckoutNode(context: managedObjectContext)
@@ -89,12 +93,13 @@ struct ShoppingHistory: View {
     func saveItems() {
         do {
             try managedObjectContext.save()
+            print("saved")
         } catch {
             print(error)
         }
     }
 }
-
+// For canvas preview
 struct ShoppingHistory_Previews: PreviewProvider {
     static var previews: some View {
         ShoppingHistory()
