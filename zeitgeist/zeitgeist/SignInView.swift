@@ -11,23 +11,30 @@ import CoreData
 
 
 struct SignInView: View {
-    
+    // Variable for username
     @State var username: String = ""
+    // Variable for password
     @State var password: String = ""
+    // Variable for user sign in
     @State var isLoggedIn = false
+    // Variable for user's size
     @State var size: String = ""
+    // List of selectable sizes
     @State var sizes = ["32", "34", "36", "38", "40", "42", "44"]
+    // Variable to toggle list of sizes
     @State var expand = false
-    
-    
+    // Color for user icon
     @State private var ZColorUser = Color.black
+    // Color for password icon
     @State private var ZColorPass = Color.black
+    // Color for letter(email) icon
     @State private var ZColorEnvelope = Color.black
+    // Color for lock(password) icon
     @State private var ZColorLock = Color.black
-    
+    // Allows the use of core data
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    // Fetches core data using LoginNode NSManagedObject class
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
-    
     
     var body: some View {
         VStack {
