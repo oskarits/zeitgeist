@@ -41,7 +41,7 @@ struct NavigationBarView: View {
                 .tabItem {
                     Image(systemName: "magnifyingglass").font(Font.system(size: 30, weight: .regular))
             }
-            ShoppingHistory()
+           QrView()
                 .tabItem {
                     Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
             }

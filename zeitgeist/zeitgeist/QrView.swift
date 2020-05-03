@@ -11,6 +11,8 @@ import SwiftUI
 
 struct QrView: UIViewControllerRepresentable {
     
+   
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
@@ -26,9 +28,11 @@ struct QrView: UIViewControllerRepresentable {
 
     class Coordinator: NSObject, QRCodeScannerDelegate {
         
-        //
+        public var state: Bool = false
+        
         func codeDidFind(_ code: String) {
             print(code)
+            
         }
         
         var parent: QrView
