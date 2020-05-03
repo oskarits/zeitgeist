@@ -10,11 +10,12 @@ import SwiftUI
 import Combine
 
 struct ImageView: View {
-
+    // Placeholder for decodable variables
     let item : ClothingListEntry
+    // URL for image fetching
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
     
-    var body: some View {
+    var body: some View { // Place image from URL
         SearchImageViewComponent(url: "\(url)" + "\(item.images[0])").background(Color.white)
     }
 }

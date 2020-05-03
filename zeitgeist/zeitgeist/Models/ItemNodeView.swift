@@ -10,13 +10,13 @@ import SwiftUI
 import CoreData
 
 struct ItemNodeView: View {
-    
+    // Allows the use of core data
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    // Fetches core data using LoginNode NSManagedObject class
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
-    
-    //---
-    //@ObservedObject var shoppingHistory = ShoppingHistory()
+    // Fetches data from URL in NetworkingManager ObservableObject class
     @ObservedObject var networkingManager = NetworkingManager()
+    // String for search bar input
     @State private var searchText : String = ""
     @State private var itemCart : [String] = []
     @State private var showPopover: Bool = false
@@ -24,7 +24,6 @@ struct ItemNodeView: View {
     @State private var selectedItem : String = ""
     @State private var shoppingCartTitleText : String = "Shopping cart"
     @State private var shoppingList: [(key: String, value: String)] = [:].sorted{$0.value < $1.value}
-    //---
     
     var body: some View {
         NavigationView {

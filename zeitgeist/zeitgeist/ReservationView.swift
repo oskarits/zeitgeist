@@ -11,28 +11,41 @@ import SwiftUI
 import CoreData
 
 struct ReservationView: View {
+    // Fetches data from URL in NetworkingManager ObservableObject class
     @ObservedObject var networkingManager = NetworkingManager()
+    // Variable for notification call function
     var notification = Notification()
+    // Variable for notification(comfirmed reservation)
     @State private var confirmRes = "reservationConfirmed"
+    // Variable for notification(declined reservation)
     @State private var declineRes = "reservationDeclined"
+    // Number value to save items to core data with index number
     @State private var number : Int = 0
+    // Toggle value for updating view
     @State private var updater = true
+    // URL for image fetching
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
+    // Allows the use of core data
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    // Fetches core data using ItemNode NSManagedObject class
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
+    // Fetches core data using LoginNode NSManagedObject class
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
+    // Fetches core data using CheckoutNode NSManagedObject class
     @FetchRequest(fetchRequest: CheckoutNode.getNodes()) var checkoutResults: FetchedResults<CheckoutNode>
     
     var body: some View {
         VStack {
             NavigationView {
-                List {
+                List { // Lists each item in ItemNode core data
                     ForEach(fetchedResults, id: \.self) { node in
                         NavigationLink(destination:
                             VStack {
+                                // Displays the image of the fetched item
                                 SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
                                     self.numberToOrder(number: node.order)
                                 }
+                                // Item info and styling
                                 VStack(alignment: .leading) {
                                     HStack {
                                         Text("BRAND: ")
@@ -60,10 +73,13 @@ struct ReservationView: View {
                                         .fontWeight(.light)
                                         .foregroundColor(Color.gray)
                                 }
+                                // If item is reserved
                                 if node.isReserved {
                                     HStack {
                                         Button(action: {
+                                            // Sends notification item is collected
                                             self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
+                                            // Updates core data that item is collected
                                             self.updateItemNode(node: node)
                                         }) {
                                             Image(systemName: "checkmark")
@@ -74,8 +90,11 @@ struct ReservationView: View {
                                         .background(Color.green)
                                         .cornerRadius(30)
                                         Button(action: {
+                                            // Send notification item is declined
                                             self.notification.SendNotification(title: self.declineRes, body: "sorryText")
+                                            // Places item index number to variable
                                             self.numberToOrder(number: node.order)
+                                            // Deletes item from core data
                                             self.deleteCore()
                                         }) {
                                             Image(systemName: "xmark")
@@ -94,10 +113,12 @@ struct ReservationView: View {
                                 HStack {
                                     VStack(alignment: .leading) {
                                         VStack(alignment: .leading) {
+                                            // Displays the image of the fetched item
                                             ReservationListImage(url: "\(self.url)" + "\(node.image)")
                                         }
                                     }
                                     VStack(alignment: .leading) {
+                                        // Item info and styling
                                         VStack(alignment: .leading) {
                                             Text("\(node.brand)")
                                                 .fontWeight(.medium)
@@ -112,27 +133,30 @@ struct ReservationView: View {
                                                 .foregroundColor(Color.orange)
                                                 .fontWeight(.medium)
                                         }.padding(.bottom)
+                                        // Items collected status
                                         VStack(alignment: .leading) {
+                                            // Item is collected
                                             if node.isCollected {
                                                 HStack {
                                                     Text("Collected")
-                                                    .padding(10)
-                                                    .font(.system(size: 14))
-                                                    .foregroundColor(.white)
-                                                    .background(Color.green)
-                                                    .cornerRadius(18)
+                                                        .padding(10)
+                                                        .font(.system(size: 14))
+                                                        .foregroundColor(.white)
+                                                        .background(Color.green)
+                                                        .cornerRadius(18)
                                                     Spacer()
                                                 }
                                             }
+                                            // Item is not collected
                                             if !node.isCollected {
                                                 HStack{
                                                     Text("Pending collection")
-                                                    .padding(10)
-                                                    .font(.system(size: 14))
-                                                    .foregroundColor(Color.black)
-                                                    .background(Color.gray)
-                                                    .opacity(0.5)
-                                                    .cornerRadius(18)
+                                                        .padding(10)
+                                                        .font(.system(size: 14))
+                                                        .foregroundColor(Color.black)
+                                                        .background(Color.gray)
+                                                        .opacity(0.5)
+                                                        .cornerRadius(18)
                                                     Spacer()
                                                 }
                                             }
@@ -148,14 +172,12 @@ struct ReservationView: View {
             }
         }.navigationBarTitle(Text("reservedItemsTitle"), displayMode: .inline)
     }
-    
+    // Places item index number to variable
     func numberToOrder(number: Int) {
         self.number = (number - 1)
-        print("---------")
         print("Current order: \(number)")
-        
     }
-    
+    // Updates core data that item is collected
     func updateItemNode(node: ItemNode) {
         let isCollected = true
         let node = node
@@ -165,7 +187,7 @@ struct ReservationView: View {
             try? managedObjectContext.save()
         }
     }
-    
+    // Function for adding item to core data
     func addItem(itemID: String, brand: String, size: String, price: String) {
         let node = CheckoutNode(context: managedObjectContext)
         node.idString = itemID
@@ -179,14 +201,16 @@ struct ReservationView: View {
         print("Order of new item: \(node.order)")
         saveItems()
     }
+    // Function to save NSManagedObject to core data
     func saveItems() {
         do {
             try managedObjectContext.save()
+            print("saved")
         } catch {
             print(error)
         }
-        //        self.updater.toggle()
     }
+    // Deletes item from core data
     func deleteCore() {
         let currentOrderString: String = String(self.number + 1)
         var orderArray = ["empty"]
@@ -194,8 +218,6 @@ struct ReservationView: View {
             orderArray.append("\(i.self.order)")
         }
         let filterIndex = orderArray.enumerated().filter { $0.element == currentOrderString }.map { $0.offset }
-        print("all orders ", orderArray)
-        print("index of the selected order: ", filterIndex)
         if (fetchedResults.count == (orderArray.count - 1) && filterIndex.count > 0) {
             let nodeIndexInt = filterIndex.compactMap { $0 }
             let orderIndex : Int = nodeIndexInt[0] - 1
@@ -206,7 +228,6 @@ struct ReservationView: View {
             print("item deleted")
             if filterIndex.count > 0 {
                 saveItems()
-                print("list saved")
             }
         } else {
             print("optional fail")}
