@@ -57,6 +57,7 @@ struct HomeView: View {
                     VStack {
                         Text("notificationTextTitle")
                             .fontWeight(.bold)
+
                             .foregroundColor(.red)
                         Text("notificationText")
                         }.padding(.top).padding()
@@ -72,10 +73,6 @@ struct HomeView: View {
                                 .foregroundColor(.orange)
                         }
                         QRMaker()
-                        Image("zalandoDiscount")
-                        .resizable()
-                        .frame(width: 300, height: 400)
-                        .padding()
                     }
                     VStack {
                         List(networkManager.courses) { course in
@@ -85,6 +82,7 @@ struct HomeView: View {
                                 CampaignView(course: course)
                                 Spacer()
                             }
+
                         }
                     }
                 }
