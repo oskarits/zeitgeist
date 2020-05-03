@@ -36,19 +36,23 @@ struct PriceFilter: View {
                     }
                 }.accessibility(identifier: "removePriceFilter")
             }
+            // If price filter choises button is toggled open
             if expand2 {
+                // Lists selectable prices
                 ForEach(prices, id: \.self) { price in
                     Button(action: {
+                        // Selects price for filter
                         self.searchByPrice = price
+                        // Places selected price to title text
                         self.priceFilterTitle = "Price: \n" + price + "€"
+                        // Closes the list of prices
                         self.expand2.toggle()
                     }) {
+                        // Title text with selected price
                         Text("< " + price + "€")
-                    }.accessibility(identifier: "< \(price)€")
+                    }.accessibility(identifier: "< \(price)€") // For UI testing
                 }
             }
-        }
-        
-    }
-
+        }// VStack
+    }// body
 }
