@@ -17,6 +17,9 @@ struct ShoppingHistory: View {
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
     
+    @State private var showingAlert = false
+    @State private var shouldHide = false
+    
 
     var body: some View {
         VStack {
@@ -31,12 +34,19 @@ struct ShoppingHistory: View {
                             .frame(width: 150, height: 50)
                     Spacer()
                     Text("Wolfie")
+                        .fontWeight(.bold)
+                        .font(.headline)
                     Text("L/XL")
+                        .font(.subheadline)
                     Text("9000€")
+                        .foregroundColor(.orange)
+                        .font(.subheadline)
                     Spacer()
                     Button(action: {
                         self.addItem(itemID: "123", brand: "Wolfie", size: "L/XL", price: "50€")
                         print(self.checkoutResults)
+                        self.showingAlert = true
+                        self.shouldHide = true
                     }) {
                         Text("Apple Pay")
                             .padding()
@@ -45,7 +55,10 @@ struct ShoppingHistory: View {
                             .foregroundColor(Color.white)
                             .cornerRadius(15)
                             .frame(width: 250, height: 80)
-                    }
+                            .alert(isPresented: $showingAlert) {
+                                Alert(title: Text("Purchace confirmation"), message: Text("Thank you for using self-checkout. \n You can see your previous purchases in the Profile tab. "), dismissButton: .default(Text("OK")))                                }
+                                }
+                            .opacity(shouldHide ? 0 : 1)
                 }
             }
             else {

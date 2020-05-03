@@ -43,11 +43,11 @@ struct HomeView: View {
                         .padding()
                     Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                         Text("Store Locator")
-                        .foregroundColor(Color.white)
-                                         .font(.title)
-                                         .frame(width: 300, height: 80)
-                                         .background(Color.orange)
-                                         .cornerRadius(15.0)
+                            .foregroundColor(Color.white)
+                             .font(.title)
+                             .frame(width: 300, height: 80)
+                             .background(Color.orange)
+                             .cornerRadius(15.0)
                     }
                 }.frame(alignment: .topLeading)
                 Spacer()
