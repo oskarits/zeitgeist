@@ -23,10 +23,11 @@ struct PriceFilter: View {
             HStack {
                 HStack {
                     Text(priceFilterTitle)
-                    Image(systemName: expand2 ? "chevron.up" : "chevron.down").accessibility(identifier: "priceFilter")
-                }.onTapGesture {
+                    Image(systemName: expand2 ? "chevron.up" : "chevron.down").accessibility(identifier: "priceFilter") // For UI testing
+                }.onTapGesture { // Opens selectable list of prices
                     self.expand2.toggle()
                 }
+                // Button to remove price filter
                 Button(action: {
                     self.searchByPrice = ""
                     self.priceFilterTitle = "Price: "
@@ -34,7 +35,7 @@ struct PriceFilter: View {
                     if (self.searchByPrice.count > 0) {
                         Image(systemName: "x.circle.fill").foregroundColor(.black)
                     }
-                }.accessibility(identifier: "removePriceFilter")
+                }.accessibility(identifier: "removePriceFilter") // For UI testing
             }
             // If price filter choises button is toggled open
             if expand2 {

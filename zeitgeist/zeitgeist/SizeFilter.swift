@@ -23,10 +23,11 @@ struct SizeFilter: View {
             HStack {
                 HStack {
                     Text(sizeFilterTitle)
-                    Image(systemName: expand ? "chevron.up" : "chevron.down").accessibility(identifier: "sizeFilter")
-                }.onTapGesture {
+                    Image(systemName: expand ? "chevron.up" : "chevron.down").accessibility(identifier: "sizeFilter") // For UI testing
+                }.onTapGesture {// Opens selectable list of sizes
                     self.expand.toggle()
                 }
+                // Button to remove size filter
                 Button(action: {
                     self.searchBySize = ""
                     self.sizeFilterTitle = "Size: "
@@ -35,20 +36,25 @@ struct SizeFilter: View {
                         Image(systemName: "x.circle.fill")
                             .foregroundColor(.black)
                     }
-                }.accessibility(identifier: "removeSizeFilter")
+                }.accessibility(identifier: "removeSizeFilter") // For UI testing
             }
+            // If size filter choises button is toggled open
             if expand {
+                // Lists selectable sizes
                 ForEach(sizes, id: \.self) { size in
                     Button(action: {
+                        // Selects size for filter
                         self.searchBySize = size
+                        // Places selected size to title text
                         self.sizeFilterTitle = "Size: \n" + size
+                        // Closes the list of sizes
                         self.expand.toggle()
                     }) {
+                        // Title text with selected size
                         Text(size)
-                    }.accessibility(identifier: "\(size)")
+                    }.accessibility(identifier: "\(size)") // For UI testing
                 }
             }
-        }
-        
-    }
+        }// VStack
+    }// body
 }
