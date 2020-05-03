@@ -9,9 +9,13 @@
 import SwiftUI
 
 struct PriceFilter: View {
+    // Binding value for string value of searched price
     @Binding var searchByPrice: String
+    // Binding value for string value of searched price used in Text()
     @Binding var priceFilterTitle: String
+    // Binding value for expanding price filter
     @Binding var expand2: Bool
+    // Selectable prices to filter
     @State var prices = stride(from: 10, through: 80, by: 10).map(String.init)
 
     var body: some View {
