@@ -66,7 +66,7 @@ struct ReservationList: View {
                                             Spacer()
                                         }
                                     }
-                                }//.padding()
+                                }
                                 Spacer()
                             }.padding()
                         }
