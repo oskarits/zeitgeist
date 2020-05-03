@@ -16,7 +16,7 @@ struct ReservationView: View {
     @State private var confirmRes = "reservationConfirmed"
     @State private var declineRes = "reservationDeclined"
     @State private var number : Int = 0
-    @State private var updater = true
+//    @State private var updater = true
     @State private var shouldHide = false
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
@@ -54,12 +54,14 @@ struct ReservationView: View {
                                         Text("\(node.price) €")
                                             .font(.system(size: 18))
                                     }
-                                    Text("Reservation request by:\n \(self.isLoggedInResults[0].idString)").font(.system(size: 18)).fontWeight(.light).foregroundColor(Color.gray)
+                                    Text("Reservation request by:\n \(self.isLoggedInResults[0].idString)")
+                                        .font(.system(size: 18))
+                                        .fontWeight(.light)
+                                        .foregroundColor(Color.gray)
                                 }
                                 if node.isReserved {
                                 HStack {
                                     Button(action: {
-                                        
                                         self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
                                         self.updateItemNode(node: node)
                                         self.shouldHide = true
@@ -75,12 +77,12 @@ struct ReservationView: View {
                                             .padding(12)
                                             .background(Color.green)
                                             .cornerRadius(30)
+                                            .opacity(self.shouldHide ? 0 : 1)
                                     Button(action: {
-                                        self.shouldHide = true
-                                        print("STATE OF OPACITY \(self.shouldHide)")
                                         self.notification.SendNotification(title: self.declineRes, body: "sorryText")
                                         self.numberToOrder(number: node.order)
                                         self.deleteCore()
+                                        
                                         
                                     }) {
                                         Image(systemName: "xmark")
@@ -89,21 +91,26 @@ struct ReservationView: View {
                                             .padding(12)
                                             .background(Color.red)
                                             .cornerRadius(30)
+                                            .opacity(self.shouldHide ? 0 : 1)
                                 }
                                     .padding()
                                     .font(.title)
-                                    .opacity(self.shouldHide ? 0 : 1)
+                                    
                                 }
                         }) {
                             HStack {
                                 ReservationListImage(url: "\(self.url)" + "\(node.image)")
                                 VStack(alignment: .leading) {
-                                    Text("\(node.brand)").fontWeight(.medium)
+                                    Text("\(node.brand)")
+                                        .fontWeight(.medium)
                                     HStack {
-                                        Text("sizeText").font(.system(size: 11))
-                                        Text("\(node.size)").font(.system(size: 11))
+                                        Text("sizeText")
+                                            .font(.system(size: 11))
+                                        Text("\(node.size)")
+                                            .font(.system(size: 11))
                                     }
-                                    Text("\(node.price) €").font(.system(size: 11))
+                                    Text("\(node.price) €")
+                                        .font(.system(size: 11))
                                         .foregroundColor(Color.orange)
                                         .fontWeight(.regular)
                                 }
@@ -169,7 +176,7 @@ struct ReservationView: View {
         } catch {
             print(error)
         }
-        self.updater.toggle()
+//        self.updater.toggle()
     }
     func deleteCore() {
         let currentOrderString: String = String(self.number + 1)

@@ -38,13 +38,12 @@ struct EmployeeView: View {
                                 .fontWeight(.bold)
                             Text("(\(fetchedResults.count))")
                         }
-                            .font(.title)
                             .padding()
-                            .background(Color.white)
-                            .foregroundColor(.black)
-                            .border(Color.black, width: 2)
-                            .frame(width: 300, height: 300)
-                            .shadow(radius: 3)
+                            .foregroundColor(Color.white)
+                            .font(.title)
+//                            .frame(width: 300, height: 80)
+                            .background(Color.orange)
+                            .cornerRadius(15.0)
                     }
                 }
                 .multilineTextAlignment(.center)
