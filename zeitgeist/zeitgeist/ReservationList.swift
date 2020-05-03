@@ -17,6 +17,8 @@ struct ReservationList: View {
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
     @State private var number : Int = 0
+    
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -27,28 +29,40 @@ struct ReservationList: View {
                                 SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
                                     self.numberToOrder(number: node.order)
                                     self.deleteCore()
+                                    
                                 }
+                                
                             }
-                            VStack {
-                                VStack(alignment: .leading) {
+                            VStack(alignment: .center) {
+                                VStack {
                                     Text("\(node.brand)").fontWeight(.medium)
                                     Text("SIZE: \(node.size)").font(.system(size: 11))
                                     Text("\(node.price) €").font(.system(size: 11))
                                         .foregroundColor(Color.orange)
-                                        .fontWeight(.medium)
-                                    Text("")
-                                    if (node.isCollected) {
-                                        VStack(alignment: .leading) {
-                                            Text("Collected").font(.system(size: 15)).fontWeight(.medium).foregroundColor(Color.orange)
-                                        }
-                                    }
-                                    if (node.isCollected == false) {
-                                        VStack(alignment: .leading) {
-                                            Text("Not Collected").font(.system(size: 15)).foregroundColor(Color.gray)
-                                        }
-                                    }
+                                        .fontWeight(.regular)
+                                }.padding()
+                                
+                                Spacer()
+                                
+                                if (node.isCollected) {
+                                    Text("Collected")
+                                    .padding(10)
+                                    .font(.system(size: 14))
+                                    .foregroundColor(.white)
+                                    .background(Color.green)
+                                    .cornerRadius(18)
                                 }
-                            }
+                                if (node.isCollected == false) {
+                                    Text("Pending collection")
+                                    .padding(10)
+                                    .font(.system(size: 14))
+                                    .foregroundColor(Color.white)
+                                    .background(Color.gray)
+                                    .opacity(0.5)
+                                    .cornerRadius(18)
+                                }
+                                
+                            }.padding()
                         }
                     }
                     .onDelete(perform: deleteItems)

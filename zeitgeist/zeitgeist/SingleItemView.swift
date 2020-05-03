@@ -22,6 +22,7 @@ struct SingleItemView: View {
                             Text(item.brand).font(.largeTitle)
                             HStack {
                                 Text("SIZE: ")
+                                    .fontWeight(.bold)
                                 Text(item.size)
                             }
                         }
@@ -29,17 +30,20 @@ struct SingleItemView: View {
                         Text("\(item.price) €")
                             .font(.system(size: 25))
                             .foregroundColor(Color.orange)
+                            .fontWeight(.bold)
                     }
                 }.padding()
                 VStack {
                     HStack(alignment: .top) {
                         Text("Condition: ")
+                            .fontWeight(.bold)
                         Text(item.condition)
                         Spacer()
                     }
                     Text("")
                     HStack(alignment: .top) {
                         Text("Description: ")
+                            .fontWeight(.bold)
                         Text(item.description)
                         Spacer()
                     }
