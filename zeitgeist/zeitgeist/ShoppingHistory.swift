@@ -34,8 +34,13 @@ struct ShoppingHistory: View {
                             .frame(width: 150, height: 50)
                     Spacer()
                     Text("Wolfie")
+                        .fontWeight(.bold)
+                        .font(.headline)
                     Text("L/XL")
+                        .font(.subheadline)
                     Text("9000€")
+                        .foregroundColor(.orange)
+                        .font(.subheadline)
                     Spacer()
                     Button(action: {
                         self.addItem(itemID: "123", brand: "Wolfie", size: "L/XL", price: "50€")

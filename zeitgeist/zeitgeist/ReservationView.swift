@@ -17,6 +17,7 @@ struct ReservationView: View {
     @State private var declineRes = "reservationDeclined"
     @State private var number : Int = 0
     @State private var updater = true
+    @State private var shouldHide = false
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
@@ -32,29 +33,37 @@ struct ReservationView: View {
                             VStack {
                                 SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
                                     self.numberToOrder(number: node.order)
-                                    //                        self.deleteCore()
                                     
                                 }
                                 VStack(alignment: .leading) {
                                     HStack {
-                                        Text("BRAND: ").font(.system(size: 18))
-                                        Text("\(node.brand)").font(.system(size: 18))
+                                        Text("BRAND: ")
+                                            .font(.system(size: 18))
+                                        Text("\(node.brand)")
+                                            .font(.system(size: 18))
                                     }
                                     HStack {
-                                        Text("sizeText").font(.system(size: 18))
-                                        Text("\(node.size)").font(.system(size: 18))
+                                        Text("sizeText")
+                                            .font(.system(size: 18))
+                                        Text("\(node.size)")
+                                            .font(.system(size: 18))
                                     }
                                     HStack {
-                                        Text("PRICE: ").font(.system(size: 18))
-                                        Text("\(node.price) €").font(.system(size: 18))
+                                        Text("PRICE: ")
+                                            .font(.system(size: 18))
+                                        Text("\(node.price) €")
+                                            .font(.system(size: 18))
                                     }
                                     Text("Reservation request by:\n \(self.isLoggedInResults[0].idString)").font(.system(size: 18)).fontWeight(.light).foregroundColor(Color.gray)
                                 }
                                 if node.isReserved {
                                 HStack {
                                     Button(action: {
+                                        
                                         self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
                                         self.updateItemNode(node: node)
+                                        self.shouldHide = true
+                                        
                                         //self.addItem(itemID: node.description, brand: node.brand, size: node.size, price: node.price)
                                         //self.numberToOrder(number: node.order)
                                         //self.deleteCore()
@@ -62,24 +71,28 @@ struct ReservationView: View {
                                     }) {
                                         Image(systemName: "checkmark")
                                         Text("acceptText")}
-                                        .foregroundColor(Color.white)
-                                        .padding(12)
-                                        .background(Color.green)
-                                        .cornerRadius(30)
+                                            .foregroundColor(Color.white)
+                                            .padding(12)
+                                            .background(Color.green)
+                                            .cornerRadius(30)
                                     Button(action: {
+                                        self.shouldHide = true
+                                        print("STATE OF OPACITY \(self.shouldHide)")
                                         self.notification.SendNotification(title: self.declineRes, body: "sorryText")
                                         self.numberToOrder(number: node.order)
                                         self.deleteCore()
-
+                                        
                                     }) {
                                         Image(systemName: "xmark")
                                         Text("declineText")}
-                                        .foregroundColor(Color.white)
-                                        .padding(12)
-                                        .background(Color.red)
-                                        .cornerRadius(30)
-                                }.padding()
+                                            .foregroundColor(Color.white)
+                                            .padding(12)
+                                            .background(Color.red)
+                                            .cornerRadius(30)
+                                }
+                                    .padding()
                                     .font(.title)
+                                    .opacity(self.shouldHide ? 0 : 1)
                                 }
                         }) {
                             HStack {
@@ -94,16 +107,27 @@ struct ReservationView: View {
                                         .foregroundColor(Color.orange)
                                         .fontWeight(.regular)
                                 }
-                                if (node.isCollected) {
+                                if node.isCollected {
                                     Text("Collected")
+                                        .padding(10)
+                                        .font(.system(size: 14))
+                                        .foregroundColor(.white)
+                                        .background(Color.green)
+                                        .cornerRadius(18)
                                 }
-                                if (node.isCollected == false) {
-                                    Text("Pending \nreservation").font(.system(size: 11)).foregroundColor(Color.gray)
+                                if !node.isCollected {
+                                    Text("Pending collection")
+                                        .padding(10)
+                                        .font(.system(size: 14))
+                                        .foregroundColor(Color.white)
+                                        .background(Color.gray)
+                                        .opacity(0.5)
+                                        .cornerRadius(18)
+                                    
                                 }
                             }
                         }
                     }
-                    //            .onDelete(perform: deleteItems)
                 }
             }
         }.navigationBarTitle(Text("reservedItemsTitle"), displayMode: .inline)
@@ -133,7 +157,6 @@ struct ReservationView: View {
         node.brand = brand
         node.size = size
         node.price = price
-        // node.image = image
         node.isCollected = true
         node.isReserved = true
         node.order = (checkoutResults.last?.order ?? 0) + 1

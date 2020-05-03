@@ -40,7 +40,13 @@ struct ReservationList: View {
                                     Text("Collected")
                                 }
                                 if (node.isCollected == false) {
-                                    Text("Not Collected")
+                                    Text("Pending collection")
+                                    .padding(10)
+                                    .font(.system(size: 14))
+                                    .foregroundColor(Color.white)
+                                    .background(Color.gray)
+                                    .opacity(0.5)
+                                    .cornerRadius(18)
                                 }
                                 
                             }
