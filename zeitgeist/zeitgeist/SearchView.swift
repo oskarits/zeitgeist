@@ -10,16 +10,25 @@ import SwiftUI
 import CoreData
 
 struct SearchView: View {
-    
+    // Fetches data from URL in NetworkingManager ObservableObject class
     @ObservedObject var networkingManager = NetworkingManager()
+    // String for search bar input
     @State private var searchText : String = ""
+    // Variable for expanding size filter
     @State var expand = false
+    // Variable for expanding price filter
     @State var expand2 = false
+    // Variable string for searched price
     @State var searchBySize = ""
+    // Variable string for searched price
     @State var searchByPrice = ""
+    // Selectable sizes to filter
     @State var sizes = ["Your size", "One Size", "32", "34", "36", "38", "40", "42", "44"]
+    // Selectable prices to filter
     @State var prices = stride(from: 10, through: 80, by: 10).map(String.init)
+    // Variable string for searched size used in Text()
     @State var sizeFilterTitle = "Size: "
+    // Variable string for searched price used in Text()
     @State var priceFilterTitle = "Price: "
     
     var body: some View {
