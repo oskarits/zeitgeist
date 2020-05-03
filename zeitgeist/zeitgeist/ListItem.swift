@@ -9,17 +9,20 @@
 import SwiftUI
 
 struct ListItem: View {
+    // Placeholder for decodable variables
     var item : ClothingListEntry
     
     var body: some View {
-        
         VStack(alignment: .leading) {
+            // Item brand name
             Text(item.brand).foregroundColor(Color.black)
                 .font(.system(size: 18))
                 .fontWeight(.medium)
                 .lineLimit(1)
+            // Item size
             Text("SIZE: \(item.size)").foregroundColor(Color.black)
                 .font(.system(size: 12))
+            // Item price
             Text("\(item.price) €")
                 .font(.system(size: 12))
                 .foregroundColor(Color.orange)
