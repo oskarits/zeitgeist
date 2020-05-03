@@ -26,15 +26,17 @@ struct ReservationList: View {
     var body: some View {
         NavigationView {
             VStack {
-                List {
+                List { // Lists each item in ItemNode core data
                     ForEach(fetchedResults, id: \.self) { node in
                         HStack {
                             VStack {
+                                // Displays the image of the fetched item
                                 SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
                                     self.numberToOrder(number: node.order)
                                     self.deleteCore()
                                 }
                             }
+                            // Item info and styling
                             VStack(alignment: .center) {
                                 HStack {
                                     VStack(alignment: .leading) {
@@ -47,6 +49,7 @@ struct ReservationList: View {
                                     Spacer()
                                 }
                                 VStack(alignment: .leading) {
+                                    // If item is collected
                                     if (node.isCollected) {
                                         HStack {
                                             Text("Collected")
@@ -58,6 +61,7 @@ struct ReservationList: View {
                                             Spacer()
                                         }
                                     }
+                                    // If item is collected
                                     if (node.isCollected == false) {
                                         HStack{
                                             Text("Pending collection")
@@ -81,29 +85,25 @@ struct ReservationList: View {
                 .navigationBarTitle(Text("reservationListTitle"), displayMode: .inline)
         }
     }
-    
-    // ---------FUNCTIONS--------
-    
+    // Places item index number to variable
     func numberToOrder(number: Int) {
         self.number = (number - 1)
-        print("---------")
         print("Current order: \(number)")
     }
-    
+    // Function for adding item to core data
     func addItem(itemID: String) {
         let node = ItemNode(context: managedObjectContext)
         node.idString = itemID
         saveItems()
     }
-    
+    // Deletes item from core data
     func deleteItems(indexSet: IndexSet) {
         let node = fetchedResults[indexSet.first!]
         managedObjectContext.delete(node)
         saveItems()
-        
     }
     
-    // Programmatically deletes item
+    // Programmatically deletes item from core data
     func deleteCore() {
         let currentOrderString: String = String(self.number + 1)
         var orderArray = ["empty"]
@@ -111,8 +111,6 @@ struct ReservationList: View {
             orderArray.append("\(i.self.order)")
         }
         let filterIndex = orderArray.enumerated().filter { $0.element == currentOrderString }.map { $0.offset }
-        print("all orders ", orderArray)
-        print("index of the selected order: ", filterIndex)
         if (fetchedResults.count == (orderArray.count - 1) && filterIndex.count > 0) {
             let nodeIndexInt = filterIndex.compactMap { $0 }
             let orderIndex : Int = nodeIndexInt[0] - 1
@@ -122,7 +120,6 @@ struct ReservationList: View {
             managedObjectContext.delete(node)
             print("item deleted")
             saveItems()
-            print("list saved")
         } else {
             print("optional fail")}
     }
@@ -130,6 +127,7 @@ struct ReservationList: View {
     func saveItems() {
         do {
             try managedObjectContext.save()
+            print("saved")
         } catch {
             print(error)
         }
