@@ -11,16 +11,27 @@ import SwiftUI
 import CoreData
 
 struct ReservationView: View {
+    // Fetches data from URL in NetworkingManager ObservableObject class
     @ObservedObject var networkingManager = NetworkingManager()
+    // Variable for notification call function
     var notification = Notification()
+    // Variable for notification(comfirmed reservation)
     @State private var confirmRes = "reservationConfirmed"
+    // Variable for notification(declined reservation)
     @State private var declineRes = "reservationDeclined"
+    // Number value to save items to core data with index number
     @State private var number : Int = 0
+    // Toggle value for updating view
     @State private var updater = true
+    // URL for image fetching
     let url : String = "https://www.zalando-wardrobe.de/api/images/"
+    // Allows the use of core data
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
+    // Fetches core data using ItemNode NSManagedObject class
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
+    // Fetches core data using LoginNode NSManagedObject class
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
+    // Fetches core data using CheckoutNode NSManagedObject class
     @FetchRequest(fetchRequest: CheckoutNode.getNodes()) var checkoutResults: FetchedResults<CheckoutNode>
     
     var body: some View {
