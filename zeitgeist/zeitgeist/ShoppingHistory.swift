@@ -44,7 +44,7 @@ struct ShoppingHistory: View {
                             .background(Color.black)
                             .foregroundColor(Color.white)
                             .cornerRadius(15)
-                            .frame(width: 200, height: 80)
+                            .frame(width: 250, height: 80)
                     }
                 }
             }
