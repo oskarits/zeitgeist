@@ -32,8 +32,6 @@ struct ReservationView: View {
                             VStack {
                                 SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
                                     self.numberToOrder(number: node.order)
-                                    //                        self.deleteCore()
-                                    
                                 }
                                 VStack(alignment: .leading) {
                                     HStack {
@@ -55,10 +53,6 @@ struct ReservationView: View {
                                     Button(action: {
                                         self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
                                         self.updateItemNode(node: node)
-                                        //self.addItem(itemID: node.description, brand: node.brand, size: node.size, price: node.price)
-                                        //self.numberToOrder(number: node.order)
-                                        //self.deleteCore()
-
                                     }) {
                                         Image(systemName: "checkmark")
                                         Text("acceptText")}
@@ -70,7 +64,6 @@ struct ReservationView: View {
                                         self.notification.SendNotification(title: self.declineRes, body: "sorryText")
                                         self.numberToOrder(number: node.order)
                                         self.deleteCore()
-
                                     }) {
                                         Image(systemName: "xmark")
                                         Text("declineText")}
@@ -95,15 +88,22 @@ struct ReservationView: View {
                                         .fontWeight(.regular)
                                 }
                                 if (node.isCollected) {
-                                    Text("Collected")
+                                    HStack {
+                                        Spacer()
+                                        Text("Collected").font(.system(size: 12)).fontWeight(.medium).foregroundColor(Color.orange)
+                                        Spacer()
+                                    }
                                 }
                                 if (node.isCollected == false) {
-                                    Text("Pending \nreservation").font(.system(size: 11)).foregroundColor(Color.gray)
+                                    HStack {
+                                        Spacer()
+                                        Text("Pending \nreservation").font(.system(size: 12)).foregroundColor(Color.gray)
+                                        Spacer()
+                                    }
                                 }
                             }
                         }
                     }
-                    //            .onDelete(perform: deleteItems)
                 }
             }
         }.navigationBarTitle(Text("reservedItemsTitle"), displayMode: .inline)
