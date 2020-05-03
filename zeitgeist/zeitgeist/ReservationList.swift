@@ -29,39 +29,45 @@ struct ReservationList: View {
                                 SearchImageViewComponent(url: "\(self.url)" + "\(node.image)").onTapGesture {
                                     self.numberToOrder(number: node.order)
                                     self.deleteCore()
-                                    
                                 }
-                                
                             }
                             VStack(alignment: .center) {
-                                VStack {
-                                    Text("\(node.brand)").fontWeight(.medium)
-                                    Text("SIZE: \(node.size)").font(.system(size: 11))
-                                    Text("\(node.price) €").font(.system(size: 11))
-                                        .foregroundColor(Color.orange)
-                                        .fontWeight(.regular)
-                                }.padding()
-                                
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text("\(node.brand)").fontWeight(.medium)
+                                        Text("SIZE: \(node.size)").font(.system(size: 13))
+                                        Text("\(node.price) €").font(.system(size: 13))
+                                            .foregroundColor(Color.orange)
+                                            .fontWeight(.regular)
+                                    }.padding(.bottom)
+                                    Spacer()
+                                }
+                                VStack(alignment: .leading) {
+                                    if (node.isCollected) {
+                                        HStack {
+                                            Text("Collected")
+                                                .padding(10)
+                                                .font(.system(size: 14))
+                                                .foregroundColor(.white)
+                                                .background(Color.green)
+                                                .cornerRadius(18)
+                                            Spacer()
+                                        }
+                                    }
+                                    if (node.isCollected == false) {
+                                        HStack{
+                                            Text("Pending collection")
+                                                .padding(10)
+                                                .font(.system(size: 14))
+                                                .foregroundColor(Color.black)
+                                                .background(Color.gray)
+                                                .opacity(0.5)
+                                                .cornerRadius(18)
+                                            Spacer()
+                                        }
+                                    }
+                                }
                                 Spacer()
-                                
-                                if (node.isCollected) {
-                                    Text("Collected")
-                                    .padding(10)
-                                    .font(.system(size: 14))
-                                    .foregroundColor(.white)
-                                    .background(Color.green)
-                                    .cornerRadius(18)
-                                }
-                                if (node.isCollected == false) {
-                                    Text("Pending collection")
-                                    .padding(10)
-                                    .font(.system(size: 14))
-                                    .foregroundColor(Color.white)
-                                    .background(Color.gray)
-                                    .opacity(0.5)
-                                    .cornerRadius(18)
-                                }
-                                
                             }.padding()
                         }
                     }
@@ -70,7 +76,6 @@ struct ReservationList: View {
             }.navigationBarItems(trailing: EditButton())
                 .navigationBarTitle(Text("reservationListTitle"), displayMode: .inline)
         }
-        
     }
     
     // ---------FUNCTIONS--------
