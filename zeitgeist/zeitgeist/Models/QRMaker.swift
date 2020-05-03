@@ -30,8 +30,8 @@ struct QRMaker: View {
                         Divider()
                     }
                 }
-            }
-        }
+            }.frame(maxWidth: 200)
+        }.frame(maxWidth: 200)
     }
     
     func generateQRCode(from string: String) -> UIImage {
