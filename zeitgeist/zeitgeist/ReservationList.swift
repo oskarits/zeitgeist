@@ -38,6 +38,11 @@ struct ReservationList: View {
                             VStack {
                                 if (node.isCollected) {
                                     Text("Collected")
+                                    .padding(10)
+                                    .font(.system(size: 14))
+                                    .foregroundColor(.white)
+                                    .background(Color.green)
+                                    .cornerRadius(18)
                                 }
                                 if (node.isCollected == false) {
                                     Text("Pending collection")
