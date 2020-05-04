@@ -10,6 +10,9 @@
 // MARK: HomeView
 "shareTitle1" = "Jaa sinun ";
 "shareTitle2" = "vaatekaappisi";
+"notificationTextTitle" = "🚩 COVID-19 🚩";
+"notificationText" = "Poikkeustilanteesta johtuen Zircle-myymälöiden aukioloajoissa on muutoksia.";
+
 
 // MARK: SearchView
 "reservationsTitle" = "Varaukset";
@@ -21,6 +24,8 @@
 "profileReservations" = "Omat varauksesi";
 "profileDetail" = "Detal";
 "notificationBody" = "Test body for notification linkFINNISH";
+"userName" = "Maija Virtanen";
+"sizeTitle" = "Koko:";
 
 // MARK: Toast
 "item1" = "Tuote";

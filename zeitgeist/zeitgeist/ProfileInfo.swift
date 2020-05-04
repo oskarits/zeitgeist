@@ -26,16 +26,19 @@ struct ProfileInfo: View {
     var body: some View {
         VStack {
             // Default name
-            Text("Jane Doe")
+            Text("userName")
                 .font(.largeTitle)
             // Fetches user idString(email)
             Text(isLoggedInResults[0].idString)
                 .font(.subheadline)
                 .foregroundColor(.gray)
             // Fetches user size
-            Text("Size: " + isLoggedInResults[0].size)
-                .font(.subheadline)
-                .foregroundColor(.gray)
+            HStack {
+                Text("sizeTitle")
+                Text(isLoggedInResults[0].size)
+            }
+            .font(.subheadline)
+            .foregroundColor(.gray)
             Divider()
             // Selects view from tab
             Picker(selection: $selectedView, label: Text("")) {

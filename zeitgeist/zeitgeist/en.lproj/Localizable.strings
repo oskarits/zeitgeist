@@ -23,6 +23,8 @@
 "profileReservations" = "Check your reservations";
 "profileDetail" = "Detail";
 "notificationBody" = "Test body for notification link";
+"userName" = "Jane Doe";
+"sizeTitle" = "Size:";
 
 // MARK: Toast
 "item1" = "Item";
