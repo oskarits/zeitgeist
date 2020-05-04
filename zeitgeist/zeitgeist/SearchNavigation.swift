@@ -40,18 +40,42 @@ struct SearchNavigation: View {
                             VStack {
                                 // Filters item by id, if item is in list shows +
                                 if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-                                    Image(systemName: "minus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+//                                    Image(systemName: "minus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+//                                        // Remove item from shoppingList
+//                                        self.ShoppingCartMinus(index: "\(self.item.id)")
+//                                    }
+                                    Button(action: {
                                         // Remove item from shoppingList
                                         self.ShoppingCartMinus(index: "\(self.item.id)")
+                                    }){
+                                        Text("RESERVED")
+                                            .padding()
+                                            .background(Color.green)
+                                            .cornerRadius(18)
+                                            .foregroundColor(.white)
+                                            .font(.system(size: 11))
                                     }
                                 }
                                 // Filters item by id, if item is not in list shows -
                                 if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
-                                    Image(systemName: "plus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+//                                    Image(systemName: "plus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
+//                                        // Add item to shoppingList
+//                                        self.ShoppingCartPlus(key: self.item.brand, value: "\(self.item.id)")
+//                                        // Add item to core data
+//                                        self.addItem(itemID: "\(self.item.id)", brand: self.item.brand, size: self.item.size, price: self.item.price, image: "\(self.item.images[0])")
+//                                    }
+                                    Button(action: {
                                         // Add item to shoppingList
                                         self.ShoppingCartPlus(key: self.item.brand, value: "\(self.item.id)")
                                         // Add item to core data
                                         self.addItem(itemID: "\(self.item.id)", brand: self.item.brand, size: self.item.size, price: self.item.price, image: "\(self.item.images[0])")
+                                    }){
+                                        Text("RESERVE")
+                                            .padding()
+                                            .background(Color.orange)
+                                            .cornerRadius(18)
+                                            .foregroundColor(.white)
+                                            .font(.system(size: 11))
                                     }
                                 }
                             }
