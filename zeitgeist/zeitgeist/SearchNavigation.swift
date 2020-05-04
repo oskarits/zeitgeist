@@ -51,7 +51,7 @@ struct SearchNavigation: View {
                                             .background(Color.green)
                                             .cornerRadius(18)
                                             .foregroundColor(.white)
-                                            .font(.system(size: 11))
+                                            .font(.system(size: 10))
                                     }
                                 }
                                 // Filters item by id, if item is not in list shows Reserved
@@ -68,14 +68,14 @@ struct SearchNavigation: View {
                                             .background(Color.orange)
                                             .cornerRadius(18)
                                             .foregroundColor(.white)
-                                            .font(.system(size: 11))
+                                            .font(.system(size: 10))
                                     }
                                 }
                             }
                         }                        
                     }
                 }
-        }.overlay(Text("hello"))
+        }
         }
     // Adds item listing to CoreData
     func addItem(itemID: String, brand: String, size: String, price: String, image: String) {

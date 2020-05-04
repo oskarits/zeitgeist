@@ -22,6 +22,8 @@ struct SingleItemView: View {
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
     // Placeholder for decodable variables
     var item : ClothingListEntry
+    // State for info popup
+    @State var popupOpen = false
     
     var body: some View {
         ScrollView {
@@ -52,7 +54,7 @@ struct SingleItemView: View {
                                     .background(Color.green)
                                     .cornerRadius(18)
                                     .foregroundColor(.white)
-                                    .font(.system(size: 11))
+                                    .font(.system(size: 10))
                             }
                         }
                         // Filters item by id, if item is not in list shows -
@@ -69,24 +71,30 @@ struct SingleItemView: View {
                                     .background(Color.orange)
                                     .cornerRadius(18)
                                     .foregroundColor(.white)
-                                    .font(.system(size: 11))
+                                    .font(.system(size: 10))
                             }
                         }
                             Image(systemName: "info.circle")
+                                .onTapGesture {
+                                    self.popupOpen = !self.popupOpen
+                                }
                                 .background(Color.white)
-//                                .overlay(
-//                                    VStack {
-//                                        Text("Reserve to your closes Zircle store \nand pickup within 3 days")
-//                                    }
-//                                    .padding()
-//                                    .frame(width: 100, height: 150, alignment: .center)
-//                                    .font(.system(size: 11))
-//                                    .background(Color.white)
-//                                    .foregroundColor(.black)
-//                                    .cornerRadius(10)
-//                                    .shadow(color: Color.black.opacity(0.1), radius: 20, x: 0, y: 0)
-//                                    .offset(x: 100, y: 70) // Move the view above the button
-//                                )
+                                .overlay(
+                                    VStack {
+                                        VStack {
+                                            Text("Reserve to your closes Zircle store \nand pickup within 3 days")
+                                        }.padding()
+                                        .frame(width: 120, height: 150, alignment: .center)
+                                        
+                                        .font(.system(size: 11))
+                                        .background(Color.white)
+                                        .foregroundColor(.black)
+                                        .cornerRadius(10)
+                                        .shadow(color: Color.black.opacity(0.1), radius: 20, x: 0, y: 0)
+                                        .offset(x: 0, y: -100) // Move the view above the button
+                                    }.opacity(popupOpen ? 1 : 0)
+                                    
+                                )
                         Spacer()
                         // Item price
                         Text("\(item.price) €")
