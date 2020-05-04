@@ -57,12 +57,14 @@ struct HomeView: View {
                     VStack(alignment: .center) {
                         Spacer()
                         VStack {
+                            Divider()
                             // In app notification title
                             Text("notificationTextTitle")
                                 .fontWeight(.bold)
                                 .foregroundColor(.red)
                             // In app notification text
                             Text("notificationText")
+                            Divider()
                         }.padding(.top).padding()
                         VStack {
                             // Slogan
