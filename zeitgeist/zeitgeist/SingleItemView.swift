@@ -72,7 +72,7 @@ struct SingleItemView: View {
                                     .font(.system(size: 11))
                             }
                         }
-                        
+                        Spacer()
                         // Item price
                         Text("\(item.price) €")
                             .font(.system(size: 25))
