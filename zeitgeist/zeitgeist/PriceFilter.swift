@@ -46,6 +46,7 @@ struct PriceFilter: View {
                         self.searchByPrice = price
                         //self.searchByPrice = String(price.suffix(2))
                         print(self.searchByPrice.suffix(2))
+                        print(price)
                         // Places selected price to title text
                         self.priceFilterTitle = "Price: \n" + price + "€"
                         // Closes the list of prices
