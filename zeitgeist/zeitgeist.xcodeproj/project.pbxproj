@@ -140,6 +140,9 @@
 		240159472437379D00EECDEF /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A65F862436641B00A5215D /* EmployeeView.swift */; };
 		2465675F24367352008BA359 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465675E24367352008BA359 /* ReservationView.swift */; };
 		24A65F872436641B00A5215D /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A65F862436641B00A5215D /* EmployeeView.swift */; };
+		24BD441D2460A96300ED60D0 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD441C2460A96300ED60D0 /* ShareSheet.swift */; };
+		24BD441E2460A96300ED60D0 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD441C2460A96300ED60D0 /* ShareSheet.swift */; };
+		24BD441F2460A96300ED60D0 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD441C2460A96300ED60D0 /* ShareSheet.swift */; };
 		6C83FC56243EF18300B54FCB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C83FC58243EF18300B54FCB /* Localizable.strings */; };
 		A712EF28243CA66C009AE9E3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A712EF27243CA66C009AE9E3 /* SignInView.swift */; };
 		A712EF29243CA66C009AE9E3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A712EF27243CA66C009AE9E3 /* SignInView.swift */; };
@@ -243,6 +246,7 @@
 		118DED48A03BEC77A5EB463A /* Pods_zeitgeist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeitgeist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2465675E24367352008BA359 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		24A65F862436641B00A5215D /* EmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeView.swift; sourceTree = "<group>"; };
+		24BD441C2460A96300ED60D0 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		2DB84A8D2E983F0AE280AF33 /* Pods-zeitgeist-zeitgeistUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeitgeist-zeitgeistUITests.debug.xcconfig"; path = "Target Support Files/Pods-zeitgeist-zeitgeistUITests/Pods-zeitgeist-zeitgeistUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E6F5BB75A33A0C6A0B4C550 /* Pods-zeitgeistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeitgeistTests.release.xcconfig"; path = "Target Support Files/Pods-zeitgeistTests/Pods-zeitgeistTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C83FC57243EF18300B54FCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -350,6 +354,7 @@
 				03B73345244B57F40073AC0E /* PriceFilter.swift */,
 				03B73349244B5C1B0073AC0E /* SearchFilters.swift */,
 				0353AC75244DC77D004AE1B5 /* WaterfallView.swift */,
+				24BD441C2460A96300ED60D0 /* ShareSheet.swift */,
 			);
 			path = zeitgeist;
 			sourceTree = "<group>";
@@ -695,6 +700,7 @@
 				03F1DF9D24311AD900BD9E19 /* Course.swift in Sources */,
 				0386A639243DF81400CFBDD8 /* LoginNode.swift in Sources */,
 				034EF8852423D99200741711 /* AppDelegate.swift in Sources */,
+				24BD441D2460A96300ED60D0 /* ShareSheet.swift in Sources */,
 				A712EF28243CA66C009AE9E3 /* SignInView.swift in Sources */,
 				034EF8872423D99200741711 /* SceneDelegate.swift in Sources */,
 				035858C4243C92E1004C0266 /* TabBar.swift in Sources */,
@@ -762,6 +768,7 @@
 				240159462437379C00EECDEF /* EmployeeView.swift in Sources */,
 				039ED073244B81450014AB95 /* CheckoutNode.swift in Sources */,
 				03F1DF9B24311ABD00BD9E19 /* NetworkingManager.swift in Sources */,
+				24BD441E2460A96300ED60D0 /* ShareSheet.swift in Sources */,
 				A74DC35F243761DF002062CA /* ShoppingHistory.swift in Sources */,
 				03065ABC24459C6E00B6BB1E /* QRMaker.swift in Sources */,
 				03A2DD222431742D007A1387 /* Notification.swift in Sources */,
@@ -836,6 +843,7 @@
 				03D2BC9124360B080098C66B /* SingleResult.swift in Sources */,
 				03D2BC8B24360AF80098C66B /* HideKeyboard.swift in Sources */,
 				03E152E42438BE8E00B0CDA0 /* ItemNodeView.swift in Sources */,
+				24BD441F2460A96300ED60D0 /* ShareSheet.swift in Sources */,
 				036ACA7E245627AE002D6F80 /* FilteredItemImageView.swift in Sources */,
 				03D2BC8824360AEE0098C66B /* QrView.swift in Sources */,
 			);
