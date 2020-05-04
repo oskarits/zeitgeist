@@ -16,8 +16,7 @@ struct PriceFilter: View {
     // Binding value for expanding price filter
     @Binding var expand2: Bool
     // Selectable prices to filter
-    @State var prices = stride(from: 10, through: 80, by: 10).map(String.init)
-
+    @State var prices = ["0 - 10", "10 - 20", "20 - 30", "30 - 40", "40 - 50", "50 -60"]
     var body: some View {
         VStack(spacing: 30) {
             HStack {
@@ -43,7 +42,8 @@ struct PriceFilter: View {
                 ForEach(prices, id: \.self) { price in
                     Button(action: {
                         // Selects price for filter
-                        self.searchByPrice = price
+                        self.searchByPrice = String(price.suffix(2))
+                        print(self.searchByPrice.suffix(2))
                         // Places selected price to title text
                         self.priceFilterTitle = "Price: \n" + price + "€"
                         // Closes the list of prices

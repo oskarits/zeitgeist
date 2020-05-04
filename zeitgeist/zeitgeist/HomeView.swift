@@ -22,9 +22,8 @@ struct HomeView: View {
         
         VStack(alignment: .leading) {
             ScrollView{ // If user is not logged in
-                if isLoggedInResults.isEmpty {
                     VStack() {
-                        Divider()
+                        
                         Text("notificationTextTitle")
                             .fontWeight(.bold)
                             .foregroundColor(.red)
@@ -32,6 +31,9 @@ struct HomeView: View {
                             .multilineTextAlignment(.center)
                             .padding()
                         Divider()
+                        if isLoggedInResults.isEmpty {
+                        VStack {
+
                         HStack {
                             Text("Sign in to share your")
                                 .fontWeight(.bold)
@@ -39,11 +41,9 @@ struct HomeView: View {
                                 .foregroundColor(.orange)
                                 .fontWeight(.bold)
                         }.padding(50)
-                        Image("zalandoCampaignBlurred")
-                            .resizable()
-                            .frame(width: 380, height: 240)
-                            .padding()
-                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) { // Button to locate store(not in use)
+                        
+                        // Button to locate store(static)
+                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                             Text("Store Locator")
                                 .foregroundColor(Color.white)
                                 .font(.title)
@@ -55,17 +55,6 @@ struct HomeView: View {
                     Spacer()
                 } else { // If user is logged in
                     VStack(alignment: .center) {
-                        Spacer()
-                        VStack {
-                            Divider()
-                            // In app notification title
-                            Text("notificationTextTitle")
-                                .fontWeight(.bold)
-                                .foregroundColor(.red)
-                            // In app notification text
-                            Text("notificationText")
-                            Divider()
-                        }.padding(.top).padding()
                         VStack {
                             // Slogan
                             HStack {
@@ -81,14 +70,15 @@ struct HomeView: View {
                                 QRMaker()
                             }.frame(maxWidth: 200, maxHeight: 200)
                         }
-                        VStack { // List of campaing images
-                            ForEach(networkManager.courses) { course in
-                                HStack(alignment: .center) {
-                                    Spacer()
-                                    CampaignView(course: course)
-                                    Spacer()
-                                }
-                            }
+                        
+                    }
+                }
+                VStack { // List of campaing images
+                    ForEach(networkManager.courses) { course in
+                        HStack(alignment: .center) {
+                            Spacer()
+                            CampaignView(course: course)
+                            Spacer()
                         }
                     }
                 }
@@ -102,4 +92,5 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }
+}
 }

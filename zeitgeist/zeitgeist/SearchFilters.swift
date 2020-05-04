@@ -8,7 +8,7 @@
 
 import SwiftUI
 import CoreData
-import WaterfallGrid
+import WaterfallGrid //&& Int(self.searchByPrice.suffix(2)) == 10)
 
 struct SearchFilters: View {
     // Allows the use of core data
@@ -30,7 +30,7 @@ struct SearchFilters: View {
     // Selectable sizes to filter
     @State var sizes = ["Your size", "One Size", "32", "34", "36", "38", "40", "42", "44"]
     // Selectable prices to filter
-    @State var prices = stride(from: 10, through: 80, by: 10).map(String.init)
+    @State var prices = ["0 - 10", "10 - 20", "20 - 30", "30 - 40", "40 - 50", "50 -60"]
     // Binding value for string value of searched size used in Text()
     @Binding var sizeFilterTitle : String
     // Binding value for string value of searched price used in Text()
@@ -61,7 +61,7 @@ struct SearchFilters: View {
                             // Filter by price and not by brand
                             if (self.searchText.isEmpty) {
                                 // Filter by price and size but not by brand name
-                                if (Int(self.searchByPrice) ?? 0 >= 5 && item.size.lowercased().contains(self.searchBySize.lowercased())) {
+                                if (Int(self.searchByPrice) ?? 0 <= 5 && item.size.lowercased().contains(self.searchBySize.lowercased())) {
                                     VStack {
                                         FilteredItemImageView(item: item)
                                         SearchNavigation(item: item)
