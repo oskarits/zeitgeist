@@ -16,7 +16,7 @@ struct PriceFilter: View {
     // Binding value for expanding price filter
     @Binding var expand2: Bool
     // Selectable prices to filter
-    @State var prices = ["0 - 10", "10 - 20", "20 - 30", "30 - 40", "40 - 50", "50 -60"]
+    @State var prices = ["0 - 10", "10 - 20", "20 - 30", "30 - 40", "40 - 50", "50 - 60", "60 - 70", "70 - 80", "80 - 90"]
     var body: some View {
         VStack(spacing: 30) {
             HStack {
@@ -40,9 +40,11 @@ struct PriceFilter: View {
             if expand2 {
                 // Lists selectable prices
                 ForEach(prices, id: \.self) { price in
+                    // VStack(alignment: .leading, spacing: 0) {
                     Button(action: {
                         // Selects price for filter
-                        self.searchByPrice = String(price.suffix(2))
+                        self.searchByPrice = price
+                        //self.searchByPrice = String(price.suffix(2))
                         print(self.searchByPrice.suffix(2))
                         // Places selected price to title text
                         self.priceFilterTitle = "Price: \n" + price + "€"
@@ -50,8 +52,14 @@ struct PriceFilter: View {
                         self.expand2.toggle()
                     }) {
                         // Title text with selected price
-                        Text("< " + price + "€")
-                    }.accessibility(identifier: "< \(price)€") // For UI testing
+                        HStack {
+                            Text(price)
+                                .foregroundColor(Color.black)
+                            Text("€")
+                                .foregroundColor(Color.orange)
+                                .fontWeight(.medium)
+                        }
+                    }.frame(maxHeight: 10).accessibility(identifier: "\(price)") // For UI testing                    
                 }
             }
         }// VStack

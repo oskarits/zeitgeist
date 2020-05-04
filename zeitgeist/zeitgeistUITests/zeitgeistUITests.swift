@@ -69,7 +69,7 @@ class zeitgeistUITests: XCTestCase {
         // Clear size filter
         let removeSizeFilter = app.buttons["removeSizeFilter"]
         removeSizeFilter.tap()
-             
+         /*
         // Open price filter
         let priceButton = app.images["priceFilter"]
         priceButton.tap()
@@ -103,7 +103,7 @@ class zeitgeistUITests: XCTestCase {
         
         // Clear price filter
         let removePriceFilter = app.buttons["removePriceFilter"]
-        removePriceFilter.tap()
+        removePriceFilter.tap() */
         
         // Toggle keyboard up
         let searchText = app.staticTexts["Cancel"]
