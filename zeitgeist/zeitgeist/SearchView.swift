@@ -30,6 +30,8 @@ struct SearchView: View {
     @State var sizeFilterTitle = "Size: "
     // Variable string for searched price used in Text()
     @State var priceFilterTitle = "Price: "
+    // State for info overlay
+    @State private var popupOpen = false
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -62,10 +64,29 @@ struct SearchView: View {
                     alignment: .topLeading)
                     // Navigates to reservation list
                     .navigationBarItems( trailing:
-                        // Navigation link to scan QR
-                        NavigationLink(destination: QrView()) {
-                            Image(systemName: "barcode").font(Font.system(size: 30, weight: .regular))
+                        // Info button with overlay
+                        Image(systemName: "info.circle")
+                        .onTapGesture {
+                            self.popupOpen = !self.popupOpen
                         }
+                        .background(Color.white)
+                        .overlay(
+                            VStack {
+                                VStack {
+                                    Text("Reserve to your closes Zircle store \nand pickup within 3 days")
+                                }.padding()
+                                .frame(width: 120, height: 150, alignment: .center)
+                                
+                                .font(.system(size: 11))
+                                .background(Color.white)
+                                .foregroundColor(.black)
+                                .cornerRadius(10)
+                                .shadow(color: Color.black.opacity(0.1), radius: 20, x: 0, y: 0)
+                                .offset(x: -50, y: 90) // Move the view above the button
+                                
+                            }.opacity(popupOpen ? 1 : 0)
+                            
+                        )
                 )
                     .navigationBarTitle(Text("Search Items"), displayMode: .inline)
             }
