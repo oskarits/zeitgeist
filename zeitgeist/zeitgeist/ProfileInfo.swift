@@ -20,6 +20,8 @@ struct ProfileInfo: View {
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
     // Fetches core data using CheckoutNode NSManagedObject class
     @FetchRequest(fetchRequest: CheckoutNode.getNodes()) var checkoutResults: FetchedResults<CheckoutNode>
+    // ShareSheet variable to hide and show it
+    @State private var showShareSheet = false
     // Selectable tab name
     var view = ["Reservations", "Purhcases"]
 
@@ -65,6 +67,17 @@ struct ProfileInfo: View {
                 ShoppingHistoryView().onDisappear(){
                     self.selectedView = 0
                 }
+            }
+            VStack() {
+                Text("Hello World")
+                Button(action: {
+                    self.showShareSheet = true
+                }) {
+                    Text("Share Me").bold()
+                }
+            }
+            .sheet(isPresented: $showShareSheet) {
+                ShareSheet(activityItems: ["Hello World"])
             }
         }
     }
