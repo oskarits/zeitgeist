@@ -49,7 +49,7 @@ struct SearchNavigation: View {
                                         self.ShoppingCartMinus(index: "\(self.item.id)")
                                     }){
                                         Text("RESERVED")
-                                            .padding()
+                                            .padding(10)
                                             .background(Color.green)
                                             .cornerRadius(18)
                                             .foregroundColor(.white)
@@ -71,7 +71,7 @@ struct SearchNavigation: View {
                                         self.addItem(itemID: "\(self.item.id)", brand: self.item.brand, size: self.item.size, price: self.item.price, image: "\(self.item.images[0])")
                                     }){
                                         Text("RESERVE")
-                                            .padding()
+                                            .padding(10)
                                             .background(Color.orange)
                                             .cornerRadius(18)
                                             .foregroundColor(.white)
