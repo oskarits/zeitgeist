@@ -28,6 +28,7 @@ struct SearchNavigation: View {
                 // Navigation destination
             SingleItemView(item: item)) {
                 VStack(alignment: .leading) {
+                    
                     HStack {
                         VStack {
                             VStack {
@@ -70,23 +71,11 @@ struct SearchNavigation: View {
                                             .font(.system(size: 11))
                                     }
                                 }
-                            }.overlay(
-                                VStack {
-                                    Text("Reserve to your closes Zircle store \nand pickup within 3 days")
-                                }
-                                .padding()
-                                .frame(width: 100, height: 150, alignment: .center)
-                                .font(.system(size: 11))
-                                .background(Color.white)
-                                .foregroundColor(.black)
-                                .cornerRadius(10)
-                                .shadow(color: Color.black.opacity(0.1), radius: 20, x: 0, y: 0)
-                                .offset(x: 0, y: -70) // Move the view above the button
-                            )
+                            }
                         }                        
                     }
                 }
-            }
+        }.overlay(Text("hello"))
         }
     // Adds item listing to CoreData
     func addItem(itemID: String, brand: String, size: String, price: String, image: String) {

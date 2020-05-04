@@ -32,7 +32,7 @@ struct SingleSearchImageViewComponent: View {
         VStack { // Place image from URL and nil guards
             Image(uiImage: ((imageLoader.data.count == 0) ? UIImage(named: "logoapple")! : UIImage(data: imageLoader.data)) ?? UIImage(systemName: "house")!)
                 .resizable().scaledToFit()
-        }.frame(maxWidth: 400, maxHeight: 500) // Size for image frame
+        }.frame(maxWidth: 400, maxHeight: 500) // Size for image fram
     }
     
 }
