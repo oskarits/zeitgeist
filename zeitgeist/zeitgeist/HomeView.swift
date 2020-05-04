@@ -39,10 +39,7 @@ struct HomeView: View {
                                 .foregroundColor(.orange)
                                 .fontWeight(.bold)
                         }.padding(50)
-                        Image("zalandoCampaignBlurred")
-                            .resizable()
-                            .frame(width: 380, height: 240)
-                            .padding()
+                        
                         Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) { // Button to locate store(not in use)
                             Text("Store Locator")
                                 .foregroundColor(Color.white)
