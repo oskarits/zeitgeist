@@ -55,3 +55,5 @@
 "showReservationsText" = "Näytä\nVaraukset";
 "scanQRText" = "Skannaa\nQR";
 "employeeTitle" = "Työntekijänäkymä";
+"sorryText" = "Valitettavasti tilauksesi ei voitu varata";
+"pickupText" = "Tuotteesi on valmiina noudettavaksi valitsemastasi Zircle-liikkeestäsi";
