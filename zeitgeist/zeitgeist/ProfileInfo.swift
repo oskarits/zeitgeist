@@ -21,7 +21,7 @@ struct ProfileInfo: View {
     // Fetches core data using CheckoutNode NSManagedObject class
     @FetchRequest(fetchRequest: CheckoutNode.getNodes()) var checkoutResults: FetchedResults<CheckoutNode>
     // Selectable tab name
-    var view = ["Reservations", "Purhcases"]
+    var view = ["Reservations", "Purchases"]
 
     var body: some View {
         VStack {
@@ -58,8 +58,8 @@ struct ProfileInfo: View {
                 }
             }
             // Shows ShoppingHistoryView when purhcases tab is selected
-            if ( view[selectedView] == "Purhcases") {
-                Text("Previous purhcases: (\(checkoutResults.count))")
+            if ( view[selectedView] == "Purchases") {
+                Text("Previous purchases: (\(checkoutResults.count))")
                     .fontWeight(.bold)
                     .font(.title)
                 ShoppingHistoryView().onDisappear(){
