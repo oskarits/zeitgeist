@@ -38,12 +38,9 @@ struct SearchNavigation: View {
                         // If user is logged in
                         if (self.isLoggedInResults.endIndex > 0) {
                             VStack {
-                                // Filters item by id, if item is in list shows +
+                                // Filters item by id, if item is in list shows Reserve
                                 if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
-//                                    Image(systemName: "minus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
-//                                        // Remove item from shoppingList
-//                                        self.ShoppingCartMinus(index: "\(self.item.id)")
-//                                    }
+
                                     Button(action: {
                                         // Remove item from shoppingList
                                         self.ShoppingCartMinus(index: "\(self.item.id)")
@@ -56,14 +53,9 @@ struct SearchNavigation: View {
                                             .font(.system(size: 11))
                                     }
                                 }
-                                // Filters item by id, if item is not in list shows -
+                                // Filters item by id, if item is not in list shows Reserved
                                 if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) == nil) {
-//                                    Image(systemName: "plus.circle").font(Font.system(size: 30, weight: .regular)).onTapGesture {
-//                                        // Add item to shoppingList
-//                                        self.ShoppingCartPlus(key: self.item.brand, value: "\(self.item.id)")
-//                                        // Add item to core data
-//                                        self.addItem(itemID: "\(self.item.id)", brand: self.item.brand, size: self.item.size, price: self.item.price, image: "\(self.item.images[0])")
-//                                    }
+//                                    
                                     Button(action: {
                                         // Add item to shoppingList
                                         self.ShoppingCartPlus(key: self.item.brand, value: "\(self.item.id)")
