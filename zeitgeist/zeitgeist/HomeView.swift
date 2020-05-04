@@ -40,7 +40,8 @@ struct HomeView: View {
                                 .fontWeight(.bold)
                         }.padding(50)
                         
-                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) { // Button to locate store(not in use)
+                        // Button to locate store(static)
+                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                             Text("Store Locator")
                                 .foregroundColor(Color.white)
                                 .font(.title)
