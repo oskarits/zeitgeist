@@ -22,31 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
-//    func application(_ application : UIApplication,
-//                     open url:  URL,
-//                     options: [UIApplication.OpenURLOptionsKey : Any] = [:] ) -> Bool {
-//        if let scheme = url.scheme,
-//            scheme.localizedCaseInsensitiveCompare("zeitgeist") == .orderedSame,
-//            let view = url.host {
-//
-//            var parameters: [String: String] = [:]
-//            URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.forEach {
-//                parameters[$0.name] = $0.value
-//            }
-//
-//            redirect(to: view, with: parameters)
-//        }
-//        return true
-//    }
-    // Url is com.zeitgeist://
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        
-//        let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
-        
-        print(url)
-        return true
-    }
-
     // Notifications handler
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // Notification action identifier
