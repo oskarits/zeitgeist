@@ -23,6 +23,7 @@ struct SearchNavigation: View {
     // Placeholder for decodable variables
     var item : ClothingListEntry
     
+    
     var body: some View {
             NavigationLink(destination:
                 // Navigation destination
