@@ -25,6 +25,7 @@
 "notificationBody" = "Test body for notification link";
 "userName" = "Jane Doe";
 "sizeTitle" = "Size:";
+"reservTitle" = "Reservations:";
 
 // MARK: Toast
 "item1" = "Item";

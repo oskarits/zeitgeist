@@ -50,9 +50,15 @@ struct ProfileInfo: View {
             // Shows ReservationView()/ReservationList() when reservations tab is selected (default)
             if ( view[selectedView] == "Reservations") {
                 VStack {
-                    Text("Reservations: (\(fetchedResults.count))")
+                    HStack {
+                        Text("reservTitle")
                         .fontWeight(.bold)
                         .font(.title)
+                        Text("(\(fetchedResults.count))")
+                        .fontWeight(.bold)
+                        .font(.title)
+                    }
+                    
                     NavigationLink(destination: ReservationList()) {
                         VStack {
                             ReservationView()
