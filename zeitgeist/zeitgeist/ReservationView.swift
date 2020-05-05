@@ -16,9 +16,9 @@ struct ReservationView: View {
     // Variable for notification call function
     var notification = Notification()
     // Variable for notification(comfirmed reservation)
-    @State private var confirmRes = "reservationConfirmed"
+    @State private var confirmRes = "Reservation confirmation"
     // Variable for notification(declined reservation)
-    @State private var declineRes = "reservationDeclined"
+    @State private var declineRes = "Reservation declined"
     // Number value to save items to core data with index number
     @State private var number : Int = 0
     // Toggle value for updating view
@@ -85,7 +85,7 @@ struct ReservationView: View {
                                     HStack {
                                         Button(action: {
                                             // Sends notification item is collected
-                                            self.notification.SendNotification(title: self.confirmRes, body: "pickupText")
+                                            self.notification.SendNotification(title: self.confirmRes, body: "Your reservation is ready to be picked up!")
                                             // Updates core data that item is collected
                                             self.updateItemNode(node: node)
                                         }) {
@@ -98,7 +98,7 @@ struct ReservationView: View {
                                         .cornerRadius(30)
                                         Button(action: {
                                             // Send notification item is declined
-                                            self.notification.SendNotification(title: self.declineRes, body: "sorryText")
+                                            self.notification.SendNotification(title: self.declineRes, body: "Unfortunately it was not possible to reserve your product")
                                             // Places item index number to variable
                                             self.numberToOrder(number: node.order)
                                             // Deletes item from core data

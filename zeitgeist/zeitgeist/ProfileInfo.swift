@@ -21,7 +21,7 @@ struct ProfileInfo: View {
     // Fetches core data using CheckoutNode NSManagedObject class
     @FetchRequest(fetchRequest: CheckoutNode.getNodes()) var checkoutResults: FetchedResults<CheckoutNode>
     // Selectable tab name
-    var view = ["Reservations", "Purhcases"]
+    var view = ["Reservations", "Purchases"]
 
     var body: some View {
         VStack {

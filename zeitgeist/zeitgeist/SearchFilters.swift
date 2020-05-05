@@ -8,7 +8,7 @@
 
 import SwiftUI
 import CoreData
-import WaterfallGrid
+import WaterfallGrid //&& Int(self.searchByPrice.suffix(2)) == 10)
 
 struct SearchFilters: View {
     // Allows the use of core data
@@ -30,7 +30,7 @@ struct SearchFilters: View {
     // Selectable sizes to filter
     @State var sizes = ["Your size", "One Size", "32", "34", "36", "38", "40", "42", "44"]
     // Selectable prices to filter
-    @State var prices = stride(from: 10, through: 80, by: 10).map(String.init)
+    @State var prices = ["0 - 10", "10 - 20", "20 - 30", "30 - 40", "40 - 50", "50 - 60", "60 - 70", "70 - 80", "80 - 90"]
     // Binding value for string value of searched size used in Text()
     @Binding var sizeFilterTitle : String
     // Binding value for string value of searched price used in Text()
@@ -56,19 +56,19 @@ struct SearchFilters: View {
                 // Lists items one by one instead of a grid
                 List {
                     ForEach(networkingManager.clothingList.items) { item in
-                        // Filters items by price 0€-10€, 11€-20€, 21€-30€ etc.
-                        if (Int(item.price) ?? 99 <= Int(self.searchByPrice) ?? 0 && Int(item.price) ?? 99 >= (Int(self.searchByPrice) ?? 0) - 9) {
+                        // Filters items by price € (0 - 10, 10 - 20, 20 -30 etc.)
+                        if (Int(item.price) ?? 99 <= Int(self.searchByPrice.suffix(2)) ?? 0 && Int(item.price) ?? 99 >= (Int(self.searchByPrice.prefix(2)) ?? 0)) {
                             // Filter by price and not by brand
                             if (self.searchText.isEmpty) {
                                 // Filter by price and size but not by brand name
-                                if (Int(self.searchByPrice) ?? 0 >= 5 && item.size.lowercased().contains(self.searchBySize.lowercased())) {
+                                if (item.size.lowercased().contains(self.searchBySize.lowercased())) {
                                     VStack {
                                         FilteredItemImageView(item: item)
                                         SearchNavigation(item: item)
                                     }.frame(minWidth: 300, maxWidth: 375, minHeight: 400, maxHeight: 500)
                                 }
                                 // Filter by price but NOT by brand or size
-                                if (Int(self.searchByPrice) ?? 0 >= 5 && self.searchBySize.count == 0) {
+                                if (self.searchBySize.count == 0) {
                                     VStack {
                                         FilteredItemImageView(item: item)
                                         SearchNavigation(item: item)
@@ -91,14 +91,14 @@ struct SearchFilters: View {
                             // Filter by brand name but not by user's size
                             if (item.brand.lowercased().contains(self.searchText.lowercased()) && self.searchBySize != "Your size") {
                                 // Filter by brand name, size and price but not by user's size
-                                if (Int(self.searchByPrice) ?? 0 >= 5 && item.size.lowercased().contains(self.searchBySize.lowercased())) {
+                                if (item.size.lowercased().contains(self.searchBySize.lowercased())) {
                                     VStack {
                                         FilteredItemImageView(item: item)
                                         SearchNavigation(item: item)
                                     }.frame(minWidth: 300, maxWidth: 375, minHeight: 400, maxHeight: 500)
                                 }
                                 // Filter by brand name and price but not by size
-                                if (Int(self.searchByPrice) ?? 0 >= 5 && self.searchBySize.count == 0) {
+                                if (self.searchBySize.count == 0) {
                                     VStack {
                                         FilteredItemImageView(item: item)
                                         SearchNavigation(item: item)

@@ -25,7 +25,7 @@ struct SearchView: View {
     // Selectable sizes to filter
     @State var sizes = ["Your size", "One Size", "32", "34", "36", "38", "40", "42", "44"]
     // Selectable prices to filter
-    @State var prices = stride(from: 10, through: 80, by: 10).map(String.init)
+    @State var prices = ["0 - 10", "10 - 20", "20 - 30", "30 - 40", "40 - 50", "50 - 60", "60 - 70", "70 - 80", "80 - 90"]
     // Variable string for searched size used in Text()
     @State var sizeFilterTitle = "Size: "
     // Variable string for searched price used in Text()

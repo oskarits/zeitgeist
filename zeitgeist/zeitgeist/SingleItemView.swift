@@ -20,6 +20,8 @@ struct SingleItemView: View {
     @FetchRequest(fetchRequest: ItemNode.getNodes()) var fetchedResults: FetchedResults<ItemNode>
     // Fetches core data using LoginNode NSManagedObject class
     @FetchRequest(fetchRequest: LoginNode.getNodes()) var isLoggedInResults: FetchedResults<LoginNode>
+    // ShareSheet variable to hide and show it
+    @State private var showShareSheet = false
     // Placeholder for decodable variables
     var item : ClothingListEntry
     // State for info popup
@@ -128,6 +130,16 @@ struct SingleItemView: View {
             .onAppear { // Toggles keyboard down
                 UIApplication.shared.endEditing(true)
             }
+            VStack() {
+                Button(action: {
+                    self.showShareSheet = true
+                }) {
+                    Image(systemName: "square.and.arrow.up").padding()
+                }
+            }
+            .sheet(isPresented: $showShareSheet) {
+                ShareSheet(activityItems: ["Check this out on  zeitgeist:// "])
+            }
         }
     }
     
@@ -176,5 +188,11 @@ struct SingleItemView: View {
         }
         // Toggles keyboard down
         UIApplication.shared.endEditing(true)
+    }
+}
+
+struct SingleItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

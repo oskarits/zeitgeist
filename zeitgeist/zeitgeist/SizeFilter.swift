@@ -51,8 +51,8 @@ struct SizeFilter: View {
                         self.expand.toggle()
                     }) {
                         // Title text with selected size
-                        Text(size)
-                    }.accessibility(identifier: "\(size)") // For UI testing
+                        Text(size).foregroundColor(Color.black)
+                    }.frame(maxHeight: 10).accessibility(identifier: "\(size)") // For UI testing
                 }
             }
         }// VStack
