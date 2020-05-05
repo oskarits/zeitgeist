@@ -25,8 +25,8 @@
 "profileDetail" = "Detal";
 "notificationBody" = "Test body for notification linkFINNISH";
 "userName" = "Maija Virtanen";
-"sizeTitle" = "Koko:";
 "reservTitle" = "Varaukset: ";
+"shoppingHistoryTitle" = "Edelliset ostokset:";
 
 // MARK: Toast
 "item1" = "Tuote";
@@ -35,7 +35,6 @@
 // MARK: ReservationsView
 "reservationConfirmed" = "Varauksesi on hyväksytty :)";
 "reservationDeclined" = "Varauksesi on hylätty :(";
-"sizeText" = "KOKO:";
 "pickupText" = "Nouda tuote, ole hyvä :)";
 "acceptText" = "Hyväksy";
 "declineText" = "Hylkää";
@@ -58,6 +57,19 @@
 
 // MARK: EmployeeView
 
-"showReservationsText" = "Näytä\nVaraukset";
-"scanQRText" = "Skannaa\nQR";
+"welcomeText" = "Tervetuloa";
+"welcomeText2" = "työntekijänäkymään"
 "employeeTitle" = "Työntekijänäkymä";
+"employeeBody" = "Tarkista ja hallitse varauksia ja scannaa asiakkaan Wardrobe QR-koodi";
+
+
+// MARK: Global
+
+"sizeText" = "Koko:";
+"readyCollection" = "Noudettavissa";
+"pendingCollection" = "Odottaa vahvistusta";
+"infoText" = "Varaa tuote lähimpään Zircle-myymälään ja noude 3 päivän kuluessa";
+"reserveButton" = "VARAA";
+"reservedButton" = "VARATTU";
+"conditionText" = "Kunto:";
+"descriptionText" = "Kuvaus:";

@@ -138,7 +138,7 @@ struct ReservationView: View {
                                             // Item is collected
                                             if node.isCollected {
                                                 HStack {
-                                                    Text("Collected")
+                                                    Text("readyCollection")
                                                         .padding(10)
                                                         .font(.system(size: 14))
                                                         .foregroundColor(.white)
@@ -150,7 +150,7 @@ struct ReservationView: View {
                                             // Item is not collected
                                             if !node.isCollected {
                                                 HStack{
-                                                    Text("Pending collection")
+                                                    Text("pendingCollection")
                                                         .padding(10)
                                                         .font(.system(size: 14))
                                                         .foregroundColor(Color.black)

@@ -73,7 +73,7 @@ struct SearchView: View {
                         .overlay(
                             VStack {
                                 VStack {
-                                    Text("Reserve to your closes Zircle store \nand pickup within 3 days")
+                                    Text("infoText")
                                 }.padding()
                                 .frame(width: 120, height: 150, alignment: .center)
                                 
@@ -88,7 +88,7 @@ struct SearchView: View {
                             
                         )
                 )
-                    .navigationBarTitle(Text("Search Items"), displayMode: .inline)
+                    .navigationBarTitle(Text("searchTitle"), displayMode: .inline)
             }
             // Remove keyboard by dragging down
         }.resignKeyboardOnDragGesture()

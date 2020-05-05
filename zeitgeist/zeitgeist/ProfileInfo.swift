@@ -34,7 +34,7 @@ struct ProfileInfo: View {
                 .foregroundColor(.gray)
             // Fetches user size
             HStack {
-                Text("sizeTitle")
+                Text("sizeText")
                 Text(isLoggedInResults[0].size)
             }
             .font(.subheadline)
@@ -52,11 +52,11 @@ struct ProfileInfo: View {
                 VStack {
                     HStack {
                         Text("reservTitle")
-                        .fontWeight(.bold)
-                        .font(.title)
+                            .fontWeight(.bold)
+                            .font(.title)
                         Text("(\(fetchedResults.count))")
-                        .fontWeight(.bold)
-                        .font(.title)
+                            .fontWeight(.bold)
+                            .font(.title)
                     }
                     
                     NavigationLink(destination: ReservationList()) {
@@ -68,9 +68,14 @@ struct ProfileInfo: View {
             }
             // Shows ShoppingHistoryView when purhcases tab is selected
             if ( view[selectedView] == "Purhcases") {
-                Text("Previous purhcases: (\(checkoutResults.count))")
-                    .fontWeight(.bold)
-                    .font(.title)
+                HStack {
+                    Text("shoppingHistoryTitle")
+                        .fontWeight(.bold)
+                        .font(.title)
+                    Text("(\(checkoutResults.count))")
+                        .fontWeight(.bold)
+                        .font(.title)
+                }
                 ShoppingHistoryView().onDisappear(){
                     self.selectedView = 0
                 }

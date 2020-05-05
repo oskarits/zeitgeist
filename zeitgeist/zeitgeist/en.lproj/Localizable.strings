@@ -24,8 +24,8 @@
 "profileDetail" = "Detail";
 "notificationBody" = "Test body for notification link";
 "userName" = "Jane Doe";
-"sizeTitle" = "Size:";
 "reservTitle" = "Reservations:";
+"shoppingHistoryTitle" = "Previous purchases:";
 
 // MARK: Toast
 "item1" = "Item";
@@ -34,7 +34,7 @@
 // MARK: ReservationsView
 "reservationConfirmed" = "Your reservation has been confirmed :)";
 "reservationDeclined" = "Your reservation has been declined :(";
-"sizeText" = "SIZE:";
+"sizeText" = "Size:";
 "pickupText" = "Please pickup :)";
 "acceptText" = "Accept";
 "declineText" = "Decline";
@@ -55,8 +55,20 @@
 
 // MARK: EmployeeView
 
-"showReservationsText" = "Show\nReservations";
-"scanQRText" = "Scan\nQR";
+"welcomeText" = "Welcome";
+"welcomeText2" = "to the employee view"
 "employeeTitle" = "Employee View";
 "sorryText" = "Unfortunately it was not possible to reserve your product";
 "pickupText" = "Your reservation is ready to be picked up!";
+"employeeBody" = "Check current reservations and scan the customer's Wardrobe code";
+
+// MARK: Global
+
+"sizeText" = "Size:";
+"readyCollection" = "Ready for pickup";
+"pendingCollection" = "Pending collection";
+"infoText" = "Reserve to your closest Zircle store and pickup within 3 days";
+"reserveButton" = "RESERVE";
+"reservedButton" = "RESERVED";
+"conditionText" = "Condition:";
+"descriptionText" = "Description:";

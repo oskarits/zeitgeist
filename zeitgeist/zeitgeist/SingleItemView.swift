@@ -49,7 +49,7 @@ struct SingleItemView: View {
                                 // Remove item from shoppingList
                                 self.ShoppingCartMinus(index: "\(self.item.id)")
                             }){
-                                Text("RESERVED")
+                                Text("reservedButton")
                                     .padding(10)
                                     .background(Color.green)
                                     .cornerRadius(18)
@@ -66,7 +66,7 @@ struct SingleItemView: View {
                                 // Add item to core data
                                 self.addItem(itemID: "\(self.item.id)", brand: self.item.brand, size: self.item.size, price: self.item.price, image: "\(self.item.images[0])")
                             }){
-                                Text("RESERVE")
+                                Text("reserveButton")
                                     .padding(10)
                                     .background(Color.orange)
                                     .cornerRadius(18)
@@ -82,7 +82,7 @@ struct SingleItemView: View {
                                 .overlay(
                                     VStack {
                                         VStack {
-                                            Text("Reserve to your closes Zircle store \nand pickup within 3 days")
+                                            Text("infoText")
                                         }.padding()
                                         .frame(width: 120, height: 150, alignment: .center)
                                         
@@ -105,7 +105,7 @@ struct SingleItemView: View {
                 }.padding()
                 VStack {
                     HStack(alignment: .top) {
-                        Text("Condition: ")
+                        Text("conditionText")
                             .fontWeight(.bold)
                         // Item condition
                         Text(item.condition)
@@ -113,7 +113,7 @@ struct SingleItemView: View {
                     }
                     Text("")
                     HStack(alignment: .top) {
-                        Text("Description: ")
+                        Text("decscriptionText")
                             .fontWeight(.bold)
                         // Item description
                         Text(item.description)
