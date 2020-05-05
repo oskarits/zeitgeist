@@ -67,17 +67,20 @@ struct ProfileInfo: View {
                 }
             }
             // Shows ShoppingHistoryView when purhcases tab is selected
-            if ( view[selectedView] == "Purhcases") {
-                HStack {
-                    Text("shoppingHistoryTitle")
-                        .fontWeight(.bold)
-                        .font(.title)
-                    Text("(\(checkoutResults.count))")
-                        .fontWeight(.bold)
-                        .font(.title)
-                }
-                ShoppingHistoryView().onDisappear(){
-                    self.selectedView = 0
+            if ( view[selectedView] == "Purchases") {
+                VStack {
+                    HStack {
+                        Text("shoppingHistoryTitle")
+                            .fontWeight(.bold)
+                            .font(.title)
+                        Text("(\(checkoutResults.count))")
+                            .fontWeight(.bold)
+                            .font(.title)
+                    }
+                    
+                    ShoppingHistoryView().onDisappear(){
+                        self.selectedView = 0
+                    }
                 }
             }
         }

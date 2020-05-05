@@ -40,7 +40,7 @@ struct ShoppingHistory: View {
                         .font(.headline)
                     Text("L/XL")
                         .font(.subheadline)
-                    Text("9000€")
+                    Text("50€")
                         .foregroundColor(.orange)
                         .font(.subheadline)
                     Spacer()
