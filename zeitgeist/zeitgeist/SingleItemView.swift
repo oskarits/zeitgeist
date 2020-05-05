@@ -36,7 +36,7 @@ struct SingleItemView: View {
                             // Item brand name
                             Text(item.brand).font(.largeTitle)
                             HStack {
-                                Text("SIZE: ")
+                                Text("sizeText")
                                     .fontWeight(.bold)
                                 // Item size
                                 Text(item.size)
