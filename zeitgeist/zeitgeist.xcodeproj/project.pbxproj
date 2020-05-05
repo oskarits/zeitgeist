@@ -88,9 +88,9 @@
 		03B7334A244B5C1B0073AC0E /* SearchFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B73349244B5C1B0073AC0E /* SearchFilters.swift */; };
 		03B7334B244B5C1B0073AC0E /* SearchFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B73349244B5C1B0073AC0E /* SearchFilters.swift */; };
 		03B7334C244B5C1B0073AC0E /* SearchFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B73349244B5C1B0073AC0E /* SearchFilters.swift */; };
-		03CBCEE3243951540074EC12 /* re.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBCEE2243951540074EC12 /* re.swift */; };
-		03CBCEE4243951540074EC12 /* re.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBCEE2243951540074EC12 /* re.swift */; };
-		03CBCEE5243951540074EC12 /* re.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBCEE2243951540074EC12 /* re.swift */; };
+		03CBCEE3243951540074EC12 /* ReservationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBCEE2243951540074EC12 /* ReservationList.swift */; };
+		03CBCEE4243951540074EC12 /* ReservationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBCEE2243951540074EC12 /* ReservationList.swift */; };
+		03CBCEE5243951540074EC12 /* ReservationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBCEE2243951540074EC12 /* ReservationList.swift */; };
 		03D2BC8824360AEE0098C66B /* QrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319475E2434FAAC003F021E /* QrView.swift */; };
 		03D2BC8924360AF00098C66B /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031947612434FACD003F021E /* ScannerViewController.swift */; };
 		03D2BC8A24360AF60098C66B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398157824328FCD00C168D8 /* SearchBar.swift */; };
@@ -230,7 +230,7 @@
 		03B73341244B56780073AC0E /* SizeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeFilter.swift; sourceTree = "<group>"; };
 		03B73345244B57F40073AC0E /* PriceFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFilter.swift; sourceTree = "<group>"; };
 		03B73349244B5C1B0073AC0E /* SearchFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilters.swift; sourceTree = "<group>"; };
-		03CBCEE2243951540074EC12 /* re.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = re.swift; sourceTree = "<group>"; };
+		03CBCEE2243951540074EC12 /* ReservationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationList.swift; sourceTree = "<group>"; };
 		03E152DD2438BD1200B0CDA0 /* ItemNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNode.swift; sourceTree = "<group>"; };
 		03E152E12438BE8E00B0CDA0 /* ItemNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNodeView.swift; sourceTree = "<group>"; };
 		03E33E452438845A00FDDDF5 /* SearchImageViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageViewComponent.swift; sourceTree = "<group>"; };
@@ -347,7 +347,7 @@
 				031947612434FACD003F021E /* ScannerViewController.swift */,
 				03117F11243746EC00EB401E /* SingleItemView.swift */,
 				03117F152437471E00EB401E /* ListItem.swift */,
-				03CBCEE2243951540074EC12 /* re.swift */,
+				03CBCEE2243951540074EC12 /* ReservationList.swift */,
 				2465675E24367352008BA359 /* ReservationView.swift */,
 				035858C3243C92E1004C0266 /* TabBar.swift */,
 				03B73341244B56780073AC0E /* SizeFilter.swift */,
@@ -720,7 +720,7 @@
 				036ACA7824562071002D6F80 /* SingleItemImageView.swift in Sources */,
 				0319475F2434FAAC003F021E /* QrView.swift in Sources */,
 				035C56B6242937A900139C8E /* SearchView.swift in Sources */,
-				03CBCEE3243951540074EC12 /* re.swift in Sources */,
+				03CBCEE3243951540074EC12 /* ReservationList.swift in Sources */,
 				03E152E22438BE8E00B0CDA0 /* ItemNodeView.swift in Sources */,
 				03B73346244B57F40073AC0E /* PriceFilter.swift in Sources */,
 				03F1DFA624311BD000BD9E19 /* CampaignView.swift in Sources */,
@@ -764,7 +764,7 @@
 				035C56BB242937C700139C8E /* ProfileView.swift in Sources */,
 				035C56AF2429369800139C8E /* NavigationBarView.swift in Sources */,
 				036ACA7924562071002D6F80 /* SingleItemImageView.swift in Sources */,
-				03CBCEE4243951540074EC12 /* re.swift in Sources */,
+				03CBCEE4243951540074EC12 /* ReservationList.swift in Sources */,
 				240159462437379C00EECDEF /* EmployeeView.swift in Sources */,
 				039ED073244B81450014AB95 /* CheckoutNode.swift in Sources */,
 				03F1DF9B24311ABD00BD9E19 /* NetworkingManager.swift in Sources */,
@@ -809,7 +809,7 @@
 				03E5424E2458000600AAB02C /* ReservationListImage.swift in Sources */,
 				035C56BC242937C700139C8E /* ProfileView.swift in Sources */,
 				0353AC78244DC77D004AE1B5 /* WaterfallView.swift in Sources */,
-				03CBCEE5243951540074EC12 /* re.swift in Sources */,
+				03CBCEE5243951540074EC12 /* ReservationList.swift in Sources */,
 				03E152E02438BD1200B0CDA0 /* ItemNode.swift in Sources */,
 				034A4A7E244C9E000037BA6C /* ShoppingHistoryView.swift in Sources */,
 				036ACA7A24562071002D6F80 /* SingleItemImageView.swift in Sources */,

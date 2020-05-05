@@ -51,7 +51,7 @@ struct HomeView: View {
                                 .background(Color.orange)
                                 .cornerRadius(15.0)
                         }
-                    }.frame(alignment: .topLeading)
+                            }.frame(alignment: .topLeading).padding()
                     Spacer()
                 } else { // If user is logged in
                     VStack(alignment: .center) {
