@@ -22,17 +22,17 @@ struct EmployeeView: View {
             NavigationView {
                 VStack {
                     VStack { // Employee greeting
-                        Text("Welcome ")
+                        Text("welcomeText")
                             .fontWeight(.bold)
                             .font(.title)
                             .foregroundColor(.orange)
-                        Text("to the employee view.")
+                        Text("welcomeText2")
                             .font(.title)
                             .fontWeight(.bold)
                             .padding()
                     }
                     // Employee instruction
-                    Text("Check current reservations and scan the customer's Wardrobe code")
+                    Text("employeeBody")
                         .font(.title)
                         .padding()
                     // Navigation link to ReservationView()

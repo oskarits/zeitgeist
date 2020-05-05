@@ -47,7 +47,7 @@ struct SearchNavigation: View {
                                         // Remove item from shoppingList
                                         self.ShoppingCartMinus(index: "\(self.item.id)")
                                     }){
-                                        Text("RESERVED")
+                                        Text("reservedButton")
                                             .padding(10)
                                             .background(Color.green)
                                             .cornerRadius(18)
@@ -64,7 +64,7 @@ struct SearchNavigation: View {
                                         // Add item to core data
                                         self.addItem(itemID: "\(self.item.id)", brand: self.item.brand, size: self.item.size, price: self.item.price, image: "\(self.item.images[0])")
                                     }){
-                                        Text("RESERVE")
+                                        Text("reserveButton")
                                             .padding(10)
                                             .background(Color.orange)
                                             .cornerRadius(18)

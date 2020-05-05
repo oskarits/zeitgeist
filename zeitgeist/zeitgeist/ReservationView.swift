@@ -48,7 +48,7 @@ struct ReservationView: View {
                                 // Item info and styling
                                 VStack(alignment: .leading) {
                                     HStack {
-                                        Text("BRAND: ")
+                                        Text("brandText")
                                             .font(.system(size: 18))
                                             .fontWeight(.bold)
                                         Text("\(node.brand)")
@@ -62,16 +62,23 @@ struct ReservationView: View {
                                             .font(.system(size: 18))
                                     }
                                     HStack {
-                                        Text("PRICE: ")
+                                        Text("priceText")
                                             .font(.system(size: 18))
                                             .fontWeight(.bold)
                                         Text("\(node.price) €")
                                             .font(.system(size: 18))
                                     }
-                                    Text("Reservation request by:\n \(self.isLoggedInResults[0].idString)")
-                                        .font(.system(size: 18))
-                                        .fontWeight(.light)
-                                        .foregroundColor(Color.gray)
+                                    HStack {
+                                        Text("requestText")
+                                            .font(.system(size: 18))
+                                           .fontWeight(.light)
+                                           .foregroundColor(Color.gray)
+                                        Text("\(self.isLoggedInResults[0].idString)")
+                                            .font(.system(size: 18))
+                                           .fontWeight(.light)
+                                           .foregroundColor(Color.gray)
+                                    }
+                                       
                                 }
                                 // If item is reserved
                                 if node.isReserved {
@@ -138,7 +145,7 @@ struct ReservationView: View {
                                             // Item is collected
                                             if node.isCollected {
                                                 HStack {
-                                                    Text("Collected")
+                                                    Text("readyCollection")
                                                         .padding(10)
                                                         .font(.system(size: 14))
                                                         .foregroundColor(.white)
@@ -150,7 +157,7 @@ struct ReservationView: View {
                                             // Item is not collected
                                             if !node.isCollected {
                                                 HStack{
-                                                    Text("Pending collection")
+                                                    Text("pendingCollection")
                                                         .padding(10)
                                                         .font(.system(size: 14))
                                                         .foregroundColor(Color.black)

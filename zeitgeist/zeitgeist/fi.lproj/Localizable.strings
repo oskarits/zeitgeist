@@ -10,6 +10,9 @@
 // MARK: HomeView
 "shareTitle1" = "Jaa sinun ";
 "shareTitle2" = "vaatekaappisi";
+"notificationTextTitle" = "🚩 COVID-19 🚩";
+"notificationText" = "Poikkeustilanteesta johtuen Zircle-myymälöiden aukioloajoissa on muutoksia.";
+
 
 // MARK: SearchView
 "reservationsTitle" = "Varaukset";
@@ -21,6 +24,9 @@
 "profileReservations" = "Omat varauksesi";
 "profileDetail" = "Detal";
 "notificationBody" = "Test body for notification linkFINNISH";
+"userName" = "Maija Virtanen";
+"reservTitle" = "Varaukset: ";
+"shoppingHistoryTitle" = "Edelliset ostokset:";
 
 // MARK: Toast
 "item1" = "Tuote";
@@ -29,12 +35,12 @@
 // MARK: ReservationsView
 "reservationConfirmed" = "Varauksesi on hyväksytty :)";
 "reservationDeclined" = "Varauksesi on hylätty :(";
-"sizeText" = "KOKO:";
 "pickupText" = "Nouda tuote, ole hyvä :)";
 "acceptText" = "Hyväksy";
 "declineText" = "Hylkää";
 "sorryText" = "Olemme pahoillamme virheestä :(";
 "reservedItemsTitle" = "Varatut tuotteet (Työntekijä)";
+"requestText" = "Varaajan nimi:";
 
 // MARK: TabBar
 // issue: view problem with localizable strings
@@ -52,8 +58,24 @@
 
 // MARK: EmployeeView
 
-"showReservationsText" = "Näytä\nVaraukset";
-"scanQRText" = "Skannaa\nQR";
+"welcomeText" = "Tervetuloa";
+"welcomeText2" = "työntekijänäkymään";
 "employeeTitle" = "Työntekijänäkymä";
+"employeeBody" = "Tarkista ja hallitse varauksia ja scannaa asiakkaan Wardrobe QR-koodi";
+"showReservationsText" = "Näytä varaukset";
+
+
+// MARK: Global
+
+"sizeText" = "Koko:";
+"brandText" = "Merkki:";
+"priceText" = "Hinta:";
+"readyCollection" = "Noudettavissa";
+"pendingCollection" = "Odottaa vahvistusta";
+"infoText" = "Varaa tuote lähimpään Zircle-myymälään ja noude 3 päivän kuluessa";
+"reserveButton" = "VARAA";
+"reservedButton" = "VARATTU";
+"conditionText" = "Kunto:";
+"descriptionText" = "Kuvaus:";
 "sorryText" = "Valitettavasti tilauksesi ei voitu varata";
 "pickupText" = "Tuotteesi on valmiina noudettavaksi valitsemastasi Zircle-liikkeestäsi";

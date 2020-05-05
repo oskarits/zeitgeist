@@ -36,22 +36,26 @@ struct SingleItemView: View {
                     HStack {
                         VStack(alignment: .leading) {
                             // Item brand name
-                            Text(item.brand).font(.largeTitle)
+                            Text(item.brand)
+                                .padding()
+                                .font(.largeTitle)
+                                
                             HStack {
-                                Text("SIZE: ")
+                                Text("sizeText")
                                     .fontWeight(.bold)
+                                    
                                 // Item size
                                 Text(item.size)
-                            }
+                            }.padding()
                         }
-                        Spacer()
+                        
                         if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
                  
                             Button(action: {
                                 // Remove item from shoppingList
                                 self.ShoppingCartMinus(index: "\(self.item.id)")
                             }){
-                                Text("RESERVED")
+                                Text("reservedButton")
                                     .padding(10)
                                     .background(Color.green)
                                     .cornerRadius(18)
@@ -68,7 +72,7 @@ struct SingleItemView: View {
                                 // Add item to core data
                                 self.addItem(itemID: "\(self.item.id)", brand: self.item.brand, size: self.item.size, price: self.item.price, image: "\(self.item.images[0])")
                             }){
-                                Text("RESERVE")
+                                Text("reserveButton")
                                     .padding(10)
                                     .background(Color.orange)
                                     .cornerRadius(18)
@@ -84,7 +88,7 @@ struct SingleItemView: View {
                                 .overlay(
                                     VStack {
                                         VStack {
-                                            Text("Reserve to your closes Zircle store \nand pickup within 3 days")
+                                            Text("infoText")
                                         }.padding()
                                         .frame(width: 120, height: 150, alignment: .center)
                                         
@@ -107,20 +111,20 @@ struct SingleItemView: View {
                 }.padding()
                 VStack {
                     HStack(alignment: .top) {
-                        Text("Condition: ")
+                        Text("conditionText")
                             .fontWeight(.bold)
                         // Item condition
                         Text(item.condition)
                         Spacer()
-                    }
+                    }.padding()
                     Text("")
                     HStack(alignment: .top) {
-                        Text("Description: ")
+                        Text("descriptionText")
                             .fontWeight(.bold)
                         // Item description
                         Text(item.description)
                         Spacer()
-                    }
+                    }.padding()
                 }.padding()
             }
             .onAppear { // Toggles keyboard down
@@ -130,11 +134,13 @@ struct SingleItemView: View {
                 Button(action: {
                     self.showShareSheet = true
                 }) {
-                    Image(systemName: "square.and.arrow.up").padding()
+                    Image(systemName: "square.and.arrow.up")
+                        .padding()
+                        .font(.system(size: 30))
                 }
             }
             .sheet(isPresented: $showShareSheet) {
-                ShareSheet(activityItems: ["Check this out on  zeitgeist:// "])
+                ShareSheet(activityItems: ["Check this out on zeitgeist://"])
             }
         }
     }

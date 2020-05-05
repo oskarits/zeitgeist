@@ -26,16 +26,19 @@ struct ProfileInfo: View {
     var body: some View {
         VStack {
             // Default name
-            Text("Jane Doe")
+            Text("userName")
                 .font(.largeTitle)
             // Fetches user idString(email)
             Text(isLoggedInResults[0].idString)
                 .font(.subheadline)
                 .foregroundColor(.gray)
             // Fetches user size
-            Text("Size: " + isLoggedInResults[0].size)
-                .font(.subheadline)
-                .foregroundColor(.gray)
+            HStack {
+                Text("sizeText")
+                Text(isLoggedInResults[0].size)
+            }
+            .font(.subheadline)
+            .foregroundColor(.gray)
             Divider()
             // Selects view from tab
             Picker(selection: $selectedView, label: Text("")) {
@@ -47,9 +50,15 @@ struct ProfileInfo: View {
             // Shows ReservationView()/ReservationList() when reservations tab is selected (default)
             if ( view[selectedView] == "Reservations") {
                 VStack {
-                    Text("Reservations: (\(fetchedResults.count))")
-                        .fontWeight(.bold)
-                        .font(.title)
+                    HStack {
+                        Text("reservTitle")
+                            .fontWeight(.bold)
+                            .font(.title)
+                        Text("(\(fetchedResults.count))")
+                            .fontWeight(.bold)
+                            .font(.title)
+                    }
+                    
                     NavigationLink(destination: ReservationList()) {
                         VStack {
                             ReservationView()
@@ -58,10 +67,15 @@ struct ProfileInfo: View {
                 }
             }
             // Shows ShoppingHistoryView when purhcases tab is selected
-            if ( view[selectedView] == "Purchases") {
-                Text("Previous purchases: (\(checkoutResults.count))")
-                    .fontWeight(.bold)
-                    .font(.title)
+            if ( view[selectedView] == "Purhcases") {
+                HStack {
+                    Text("shoppingHistoryTitle")
+                        .fontWeight(.bold)
+                        .font(.title)
+                    Text("(\(checkoutResults.count))")
+                        .fontWeight(.bold)
+                        .font(.title)
+                }
                 ShoppingHistoryView().onDisappear(){
                     self.selectedView = 0
                 }
