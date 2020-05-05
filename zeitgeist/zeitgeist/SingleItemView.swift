@@ -130,11 +130,11 @@ struct SingleItemView: View {
                 Button(action: {
                     self.showShareSheet = true
                 }) {
-                    Image(systemName: "square.and.arrow.up")
+                    Image(systemName: "square.and.arrow.up").padding()
                 }
             }
             .sheet(isPresented: $showShareSheet) {
-                ShareSheet(activityItems: ["Hello World"])
+                ShareSheet(activityItems: ["Check this out on zeitgeist://"])
             }
         }
     }
