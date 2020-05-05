@@ -66,8 +66,8 @@
 // MARK: Global
 
 "sizeText" = "Size:";
-"brandText" = "Brand:"
-"priceText" = "Price:"
+"brandText" = "Brand:";
+"priceText" = "Price:";
 "readyCollection" = "Ready for pickup";
 "pendingCollection" = "Pending collection";
 "infoText" = "Reserve to your closest Zircle store and pickup within 3 days";

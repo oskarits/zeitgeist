@@ -34,15 +34,19 @@ struct SingleItemView: View {
                     HStack {
                         VStack(alignment: .leading) {
                             // Item brand name
-                            Text(item.brand).font(.largeTitle)
+                            Text(item.brand)
+                                .padding()
+                                .font(.largeTitle)
+                                
                             HStack {
                                 Text("sizeText")
                                     .fontWeight(.bold)
+                                    
                                 // Item size
                                 Text(item.size)
-                            }
+                            }.padding()
                         }
-                        Spacer()
+                        
                         if (self.shoppingList.firstIndex(where: {$0.value == "\(item.id)"}) != nil) {
                  
                             Button(action: {
@@ -110,7 +114,7 @@ struct SingleItemView: View {
                         // Item condition
                         Text(item.condition)
                         Spacer()
-                    }
+                    }.padding()
                     Text("")
                     HStack(alignment: .top) {
                         Text("descriptionText")
@@ -118,7 +122,7 @@ struct SingleItemView: View {
                         // Item description
                         Text(item.description)
                         Spacer()
-                    }
+                    }.padding()
                 }.padding()
             }
             .onAppear { // Toggles keyboard down

@@ -40,7 +40,7 @@
 "declineText" = "Hylkää";
 "sorryText" = "Olemme pahoillamme virheestä :(";
 "reservedItemsTitle" = "Varatut tuotteet (Työntekijä)";
-"requestText" = "Varaajan nimi:\n";
+"requestText" = "Varaajan nimi:";
 
 // MARK: TabBar
 // issue: view problem with localizable strings
@@ -68,6 +68,8 @@
 // MARK: Global
 
 "sizeText" = "Koko:";
+"brandText" = "Merkki:";
+"priceText" = "Hinta:";
 "readyCollection" = "Noudettavissa";
 "pendingCollection" = "Odottaa vahvistusta";
 "infoText" = "Varaa tuote lähimpään Zircle-myymälään ja noude 3 päivän kuluessa";
