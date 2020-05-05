@@ -20,7 +20,11 @@ struct ListItem: View {
                 .fontWeight(.medium)
                 .lineLimit(1)
             // Item size
-            Text("SIZE: \(item.size)").foregroundColor(Color.black)
+            HStack {
+                Text("sizeText")
+                Text("\(item.size)")
+            }
+                .foregroundColor(Color.black)
                 .font(.system(size: 12))
             // Item price
             Text("\(item.price) €")
