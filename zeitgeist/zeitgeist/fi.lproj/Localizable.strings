@@ -40,6 +40,7 @@
 "declineText" = "Hylkää";
 "sorryText" = "Olemme pahoillamme virheestä :(";
 "reservedItemsTitle" = "Varatut tuotteet (Työntekijä)";
+"requestText" = "Varaajan nimi:\n";
 
 // MARK: TabBar
 // issue: view problem with localizable strings
@@ -58,9 +59,10 @@
 // MARK: EmployeeView
 
 "welcomeText" = "Tervetuloa";
-"welcomeText2" = "työntekijänäkymään"
+"welcomeText2" = "työntekijänäkymään";
 "employeeTitle" = "Työntekijänäkymä";
 "employeeBody" = "Tarkista ja hallitse varauksia ja scannaa asiakkaan Wardrobe QR-koodi";
+"showReservationsText" = "Näytä varaukset";
 
 
 // MARK: Global

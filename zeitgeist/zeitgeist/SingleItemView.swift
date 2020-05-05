@@ -113,7 +113,7 @@ struct SingleItemView: View {
                     }
                     Text("")
                     HStack(alignment: .top) {
-                        Text("decscriptionText")
+                        Text("descriptionText")
                             .fontWeight(.bold)
                         // Item description
                         Text(item.description)

@@ -34,12 +34,12 @@
 // MARK: ReservationsView
 "reservationConfirmed" = "Your reservation has been confirmed :)";
 "reservationDeclined" = "Your reservation has been declined :(";
-"sizeText" = "Size:";
 "pickupText" = "Please pickup :)";
 "acceptText" = "Accept";
 "declineText" = "Decline";
 "sorryText" = "We're sorry about that :(";
 "reservedItemsTitle" = "Reserved Items (Employee)";
+"requestText" = "Reservation request by:\n";
 
 // MARK: ReservationList
 "reservationListTitle" = "Reservations";
@@ -56,15 +56,18 @@
 // MARK: EmployeeView
 
 "welcomeText" = "Welcome";
-"welcomeText2" = "to the employee view"
+"welcomeText2" = "to the employee view";
 "employeeTitle" = "Employee View";
 "sorryText" = "Unfortunately it was not possible to reserve your product";
 "pickupText" = "Your reservation is ready to be picked up!";
 "employeeBody" = "Check current reservations and scan the customer's Wardrobe code";
+"showReservationsText" = "Show reservations";
 
 // MARK: Global
 
 "sizeText" = "Size:";
+"brandText" = "Brand:"
+"priceText" = "Price:"
 "readyCollection" = "Ready for pickup";
 "pendingCollection" = "Pending collection";
 "infoText" = "Reserve to your closest Zircle store and pickup within 3 days";
