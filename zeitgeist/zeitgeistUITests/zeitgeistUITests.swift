@@ -35,7 +35,7 @@ class zeitgeistUITests: XCTestCase {
         // Open size filter
         let sizeButton = app.images["sizeFilter"]
         sizeButton.tap()
-        
+
         // Size options
         let sizeYourSize = app.buttons["Your size"]
         let sizeOneSize = app.buttons["One Size"]
@@ -46,7 +46,7 @@ class zeitgeistUITests: XCTestCase {
         let size40 = app.buttons["40"]
         let size42 = app.buttons["42"]
         let size44 = app.buttons["44"]
-        
+
         // Select all sizes
         sizeYourSize.tap()
         sizeButton.tap()
@@ -69,20 +69,21 @@ class zeitgeistUITests: XCTestCase {
         // Clear size filter
         let removeSizeFilter = app.buttons["removeSizeFilter"]
         removeSizeFilter.tap()
-             
+         
         // Open price filter
         let priceButton = app.images["priceFilter"]
         priceButton.tap()
         
         // Price options
-        let price10 = app.buttons["< 10€"]
-        let price20 = app.buttons["< 20€"]
-        let price30 = app.buttons["< 30€"]
-        let price40 = app.buttons["< 40€"]
-        let price50 = app.buttons["< 50€"]
-        let price60 = app.buttons["< 60€"]
-        let price70 = app.buttons["< 70€"]
-        let price80 = app.buttons["< 80€"]
+        let price10 = app.buttons["0 - 10"]
+        let price20 = app.buttons["10 - 20"]
+        let price30 = app.buttons["20 - 30"]
+        let price40 = app.buttons["30 - 40"]
+        let price50 = app.buttons["40 - 50"]
+        let price60 = app.buttons["50 - 60"]
+        let price70 = app.buttons["60 - 70"]
+        let price80 = app.buttons["70 - 80"]
+        let price90 = app.buttons["80 - 90"]
         
         // Select all prices
         price10.tap()
@@ -100,6 +101,8 @@ class zeitgeistUITests: XCTestCase {
         price70.tap()
         priceButton.tap()
         price80.tap()
+        priceButton.tap()
+        price90.tap()
         
         // Clear price filter
         let removePriceFilter = app.buttons["removePriceFilter"]

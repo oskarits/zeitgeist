@@ -21,7 +21,7 @@ struct ListItem: View {
                 .lineLimit(1)
             // Item size
             Text("SIZE: \(item.size)").foregroundColor(Color.black)
-                .font(.system(size: 12))
+                .font(.system(size: 12)).lineLimit(1)
             // Item price
             Text("\(item.price) €")
                 .font(.system(size: 12))
