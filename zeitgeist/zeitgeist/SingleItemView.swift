@@ -138,7 +138,7 @@ struct SingleItemView: View {
                 }
             }
             .sheet(isPresented: $showShareSheet) {
-                ShareSheet(activityItems: ["Check this out on  zeitgeist:// "])
+                ShareSheet(activityItems: ["Check this out on zeitgeist://"])
             }
         }
     }
