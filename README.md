@@ -100,10 +100,10 @@ Explore the `Zeitgeist` app.
 </p>
 
 ## Authors
-* [J4R1](https://github.com/J4R1) 
-* [oskarits](https://github.com/oskarits) 
-* [ottosoderlund](https://github.com/ottosoderlund)
-* [Smolmeri](https://github.com/Smolmeri) 
+* [Jari Pietikäinen](https://github.com/J4R1) 
+* [Oskari Sieranen](https://github.com/oskarits) 
+* [Otto Söderlund](https://github.com/ottosoderlund)
+* [Tuomas Paavolainen](https://github.com/Smolmeri) 
 
 Project Link: [https://github.com/oskarits/zeitgeist](https://github.com/oskarits/zeitgeist)
 
