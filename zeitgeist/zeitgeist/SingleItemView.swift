@@ -134,7 +134,9 @@ struct SingleItemView: View {
                 Button(action: {
                     self.showShareSheet = true
                 }) {
-                    Image(systemName: "square.and.arrow.up").padding()
+                    Image(systemName: "square.and.arrow.up")
+                        .padding()
+                        .font(.system(size: 30))
                 }
             }
             .sheet(isPresented: $showShareSheet) {
